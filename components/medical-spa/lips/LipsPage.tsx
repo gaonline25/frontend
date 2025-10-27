@@ -1,597 +1,1224 @@
-import React from "react";
+// import React from "react";
 
-function Lip() {
+// function Lip() {
+//   return (
+//     <main id="main">
+//       {/* Page Layout */}
+//       {/* Hero Module */}
+//       <div className="mod_hero banner mobile-stack" data-s3-module>
+//         <div className="wrapper">
+//           <picture className="background">
+//             <source
+//               media="(max-width:420px)"
+//               srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//               data-lazyload-srcset="https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=630 2x"
+//             />
+//             <source
+//               media="(max-width:800px)"
+//               srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//               data-lazyload-srcset="https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=1200 2x"
+//             />
+//             <source
+//               media="(max-width:1400px)"
+//               srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//               data-lazyload-srcset="https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=1400, https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=2100 2x"
+//             />
+//             <source
+//               srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//               data-lazyload-srcset="https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=1994"
+//             />
+//             <img
+//               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//               data-lazyload-src="https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=1994"
+//               loading="lazy"
+//               data-lazyload="img"
+//               width="1994"
+//               height="1206"
+//               alt="Background Texture"
+//               draggable="false"
+//             />
+//           </picture>
+//           <div className="row">
+//             <div className="inner">
+//               <ul className="partial_breadcrumb" data-s3-partial>
+//                 <li>
+//                   <a
+//                     href="/"
+//                     role="link"
+//                     aria-label="Breadcrumbs to help navigate the user"
+//                   >
+//                     Home
+//                   </a>
+//                 </li>
+//                 <li>
+//                   <a
+//                     href="/medical-spa/"
+//                     role="link"
+//                     aria-label="Breadcrumbs to help navigate the user"
+//                   >
+//                     Medical Spa
+//                   </a>
+//                 </li>
+//                 <li>
+//                   <a
+//                     href="/medical-spa/lips/"
+//                     role="link"
+//                     aria-label="Breadcrumbs to help navigate the user"
+//                   >
+//                     Lips
+//                   </a>
+//                 </li>
+//               </ul>
+//               <h1>Lip Fillers</h1>
+//               <div className="text">
+//                 <p>Crafting Beautiful Lips, One Filler at a Time</p>
+//                 <p>
+//                   <a className="btn white" href="/contact/" role="button">
+//                     Book an Appointment
+//                   </a>
+//                 </p>
+//               </div>
+//             </div>
+//           </div>
+//           <div className="media">
+//             <picture className="background">
+//               <source
+//                 media="(max-width:420px)"
+//                 srcSet="https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=630 2x"
+//                 data-lazyload-srcset="https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=630 2x"
+//               />
+//               <source
+//                 media="(max-width:800px)"
+//                 srcSet="https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=1200 2x"
+//                 data-lazyload-srcset="https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=1200 2x"
+//               />
+//               <source
+//                 media="(max-width:1400px)"
+//                 srcSet="https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=1400, https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=2100 2x"
+//                 data-lazyload-srcset="https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=1400, https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=2100 2x"
+//               />
+//               <source
+//                 srcSet="https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=1917"
+//                 data-lazyload-srcset="https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=1917"
+//               />
+//               <img
+//                 src="https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=1917"
+//                 width="1917"
+//                 height="1206"
+//                 alt="Doctor going over file with patient"
+//                 draggable="false"
+//               />
+//             </picture>
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Intro Module */}
+//       <div
+//         className="mod_intro container viewport option-1 wide wow fadeInUp"
+//         data-s3-module
+//       >
+//         <div className="row ">
+//           <picture className="logo">
+//             <img
+//               src="https://www.datocms-assets.com/105497/1692813243-logo-module.svg"
+//               width={58}
+//               height={64}
+//               loading="lazy"
+//               alt="Goldfingers aesthetic logo"
+//               draggable="false"
+//               data-api-key="logo"
+//             />
+//           </picture>
+//           <div className="inner" data-api-key="content">
+//             <h2>The Secret to Fuller, Softer, More Defined Lips</h2>
+//             <p>
+//               At Goldfingers Aesthetics, we offer complimentary consultations
+//               and expert treatments to restore and plump your lips and resolve
+//               vertical lip lines. Our skilled injectors will work with you to
+//               create a customized treatment plan to help you achieve the full,
+//               youthful-looking lips you desire.
+//             </p>
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Banner Module */}
+//       <div
+//         className="mod_banner dark  hide-divider viewport background-9"
+//         data-s3-module
+//       >
+//         <div className="row wow fadeInUp">
+//           <div className="content" data-api-key="top_content">
+//             <h2 className="text-center">
+//               <span className="small">Luscious Lips, Confident Smile:</span>
+//               Transform Your Appearance with Lip Fillers
+//             </h2>
+//             <div className="columns-two">
+//               <div>
+//                 <p>
+//                   If you want to enhance your appearance and boost your
+//                   confidence, lip fillers may be the solution you've been
+//                   searching for. Our expert injectors use the latest techniques
+//                   and products to help you achieve fuller, more defined lips
+//                   that complement your natural beauty.
+//                 </p>
+//                 <p>
+//                   Whether you want to add volume to thin lips or smooth out
+//                   vertical lip lines, we can customize a treatment plan that
+//                   meets your unique needs and goals.
+//                 </p>
+//               </div>
+//               <div>
+//                 <p>
+//                   Here are some specific ways that lip fillers can enhance and
+//                   rejuvenate your lips:
+//                 </p>
+//                 <ul>
+//                   <li>Fuller lips (lip augmentation)</li>
+//                   <li>Defined lip line (vermillion border)</li>
+//                   <li>Happier mouth corners (oral commissures)</li>
+//                   <li>
+//                     Reduced smoker's lines around the mouth (perioral lines)
+//                   </li>
+//                 </ul>
+//                 <p>
+//                   With lip fillers, you can enjoy a more youthful, refreshed
+//                   appearance and a confident, beautiful smile. Contact us today
+//                   to schedule your consultation and learn more about the
+//                   transformative power of lip fillers!
+//                 </p>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//         <picture className="background">
+//           <source
+//             media="(max-width:420px)"
+//             srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//             data-lazyload-srcset="https://www.datocms-assets.com/105497/1693257074-banner-bgd-9.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1693257074-banner-bgd-9.jpg?auto=format,compress&w=1200 2x"
+//           />
+//           <source
+//             media="(max-width:800px)"
+//             srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//             data-lazyload-srcset="https://www.datocms-assets.com/105497/1693257074-banner-bgd-9.jpg?auto=format,compress&w=800&q=85&sharp=5, https://www.datocms-assets.com/105497/1693257074-banner-bgd-9.jpg?auto=format,compress&w=1200&q=85&sharp=5 2x"
+//           />
+//           <source
+//             media="(max-width:1400px)"
+//             srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//             data-lazyload-srcset="https://www.datocms-assets.com/105497/1693257074-banner-bgd-9.jpg?auto=format,compress&w=1400&q=85&sharp=5, https://www.datocms-assets.com/105497/1693257074-banner-bgd-9.jpg?auto=format,compress&w=2100&q=85&sharp=5 2x"
+//           />
+//           <source
+//             srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//             data-lazyload-srcset="https://www.datocms-assets.com/105497/1693257074-banner-bgd-9.jpg?auto=format,compress&w=2200&q=85&sharp=5"
+//           />
+//           <img
+//             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//             data-lazyload-src="https://www.datocms-assets.com/105497/1693257074-banner-bgd-9.jpg?auto=format,compress&w=2200&q=85&sharp=5"
+//             loading="lazy"
+//             data-lazyload="img"
+//             width="2200"
+//             height="802"
+//             alt="Banner media"
+//             draggable="false"
+//           />
+//         </picture>
+//       </div>
+
+//       {/* Column Module */}
+//       <div className="mod_column viewport container has-media" data-s3-module>
+//         <div className="row mt-30 mb-30 media-left" data-api-key="content">
+//           <div className="item">
+//             <h2>
+//               <span className="small">Tailored Lip Injections:</span>
+//               Trust The Specialists At Goldfingers Aesthetics
+//             </h2>
+//             <p>
+//               Our experienced practitioners believe that achieving
+//               natural-looking results with lip fillers requires a breadth of
+//               understanding of facial proportions, symmetry, and harmony. We use
+//               our extensive clinical expertise to determine the optimal amount
+//               and type of filler needed to achieve your desired results while
+//               maintaining a natural appearance.
+//             </p>
+//             <p>
+//               During your consultation, we take the time to listen to your
+//               goals, ensuring that we create a customized treatment plan that
+//               aligns with your vision of beauty. Our Aesthetic Facial Contour
+//               Specialists will analyze your facial features and design a
+//               tailored approach that compliments your beauty.
+//             </p>
+//           </div>
+//           <picture className="media">
+//             <source
+//               media="(max-width:420px)"
+//               srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//               data-lazyload-srcset="https://www.datocms-assets.com/105497/1695239332-accent-3-1.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1695239332-accent-3-1.jpg?auto=format,compress&w=630 2x"
+//             />
+//             <source
+//               media="(max-width:800px)"
+//               srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//               data-lazyload-srcset="https://www.datocms-assets.com/105497/1695239332-accent-3-1.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1695239332-accent-3-1.jpg?auto=format,compress&w=1200 2x"
+//             />
+//             <source
+//               srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//               data-lazyload-srcset="https://www.datocms-assets.com/105497/1695239332-accent-3-1.jpg?auto=format,compress&w=904"
+//             />
+//             <img
+//               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//               data-lazyload-src="https://www.datocms-assets.com/105497/1695239332-accent-3-1.jpg?auto=format,compress&w=904"
+//               loading="lazy"
+//               data-lazyload="img"
+//               width="904"
+//               height="1062"
+//               alt="Goldfingers medspa room"
+//               draggable="false"
+//             />
+//           </picture>
+//         </div>
+//       </div>
+
+//       {/* CTA General Module */}
+//       <div
+//         className="mod_cta_general viewport container cta  thin wow fadeInRight mt-0 mb-0 background-2"
+//         data-s3-module
+//       >
+//         <div className="row">
+//           <div className="text">
+//             <h2>
+//               <a href="/contact/">Schedule a Consultation</a>
+//             </h2>
+//             <a href="/contact/" className="btn white">
+//               Book an Appointment
+//             </a>
+//           </div>
+//           <div className="media"></div>
+//         </div>
+//       </div>
+
+//       {/* CTA Before & After Feed Module */}
+//       <div
+//         className="mod_cta_ba_feed cta container wow fadeInUp mt-0 mb-0"
+//         data-s3-module
+//       >
+//         <div className="row">
+//           <div className="text">
+//             <h2 data-api-key="title">
+//               <span className="small">Lip Fillers</span>
+//               Before & After
+//             </h2>
+//             <div className="patients" data-api-key="patients">
+//               <div className="patient-wrap pslider" data-items="2">
+//                 <div>
+//                   <a
+//                     href="/gallery/non-surgical/lip-fillers/item/176816248/"
+//                     className="patient single"
+//                   >
+//                     <picture className="background">
+//                       <source
+//                         media="(max-width:420px)"
+//                         srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                         data-lazyload-srcset="https://www.datocms-assets.com/105497/1695148802-img_1227.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1695148802-img_1227.jpg?auto=format,compress&w=630 2x"
+//                       />
+//                       <source
+//                         media="(max-width:800px)"
+//                         srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                         data-lazyload-srcset="https://www.datocms-assets.com/105497/1695148802-img_1227.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1695148802-img_1227.jpg?auto=format,compress&w=1200 2x"
+//                       />
+//                       <source
+//                         srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                         data-lazyload-srcset="https://www.datocms-assets.com/105497/1695148802-img_1227.jpg?auto=format,compress&w=1200"
+//                       />
+//                       <img
+//                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                         data-lazyload-src="https://www.datocms-assets.com/105497/1695148802-img_1227.jpg?auto=format,compress&w=1200"
+//                         loading="lazy"
+//                         data-lazyload="img"
+//                         width="1200"
+//                         height="1188"
+//                         alt=""
+//                         draggable="false"
+//                       />
+//                     </picture>
+//                   </a>
+//                 </div>
+//                 <div>
+//                   <a
+//                     href="/gallery/non-surgical/lip-fillers/item/176816252/"
+//                     className="patient single"
+//                   >
+//                     <picture className="background">
+//                       <source
+//                         media="(max-width:420px)"
+//                         srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                         data-lazyload-srcset="https://www.datocms-assets.com/105497/1695148879-img_1937.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1695148879-img_1937.jpg?auto=format,compress&w=630 2x"
+//                       />
+//                       <source
+//                         media="(max-width:800px)"
+//                         srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                         data-lazyload-srcset="https://www.datocms-assets.com/105497/1695148879-img_1937.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1695148879-img_1937.jpg?auto=format,compress&w=1200 2x"
+//                       />
+//                       <source
+//                         srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                         data-lazyload-srcset="https://www.datocms-assets.com/105497/1695148879-img_1937.jpg?auto=format,compress&w=1200"
+//                       />
+//                       <img
+//                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                         data-lazyload-src="https://www.datocms-assets.com/105497/1695148879-img_1937.jpg?auto=format,compress&w=1200"
+//                         loading="lazy"
+//                         data-lazyload="img"
+//                         width="1200"
+//                         height="1190"
+//                         alt=""
+//                         draggable="false"
+//                       />
+//                     </picture>
+//                   </a>
+//                 </div>
+//               </div>
+//             </div>
+//             <a
+//               href="/gallery/non-surgical/lip-fillers/"
+//               className="btn view-more"
+//               title="View before and after gallery images"
+//               aria-label="View before and after gallery images"
+//             >
+//               View More Lip Fillers Results
+//             </a>
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Column Module */}
+//       <div className="mod_column viewport container" data-s3-module>
+//         <div className="row " data-api-key="content">
+//           <div className="item">
+//             <h2>Which Lip Filler Is Right For Me?</h2>
+//             <p>
+//               At Goldfingers Aesthetics, our approach to lip fillers goes beyond
+//               simply augmenting the lips. We prioritize your individuality and
+//               strive to enhance your natural beauty while ensuring that your
+//               results are balanced and harmonious with the rest of your facial
+//               features. With our array of lip filler options and our commitment
+//               to customization, you can trust us to deliver results that enhance
+//               your lips while maintaining your unique aesthetic identity.
+//             </p>
+//             <p>
+//               Our favorite lip fillers are each designed to address specific
+//               concerns and preferences:
+//             </p>
+//             <ul className="columns">
+//               <li>
+//                 <strong>JUVÉDERM VOLBELLA®XC:</strong>
+//                 This filler is ideal for achieving subtle enhancement, smoothing
+//                 vertical lip lines (also known as "smoker's lines"), and
+//                 defining the lip borders. It provides a soft and natural result
+//                 that enhances your lips without overpowering your facial
+//                 features.
+//               </li>
+//               <li>
+//                 <strong>JUVÉDERM VOLLURE®XC:</strong>
+//                 If you're looking to restore volume and create a soft, youthful
+//                 look, JUVÉDERM VOLLURE®XC is an excellent choice. It effectively
+//                 reduces the appearance of nasolabial folds and marionette lines
+//                 while providing natural-looking lip enhancement.
+//               </li>
+//               <li>
+//                 <strong>JUVÉDERM®XC:</strong>
+//                 This versatile filler addresses various areas of the face,
+//                 including the lips. It can provide subtle enhancement and
+//                 definition, catering to different aesthetic preferences.
+//               </li>
+//               <li>
+//                 <strong>RESTYLANE®:</strong>
+//                 RESTYLANE®offers a collection of fillers specially formulated
+//                 for enhancing lips and smoothing wrinkles. It can provide
+//                 fullness, contouring, and reduction of fine lines around the
+//                 mouth area.
+//               </li>
+//             </ul>
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Half Image Module */}
+//       <div
+//         className="mod_half_image  viewport half-image container wow fadeInLeft background-navy"
+//         data-s3-module
+//       >
+//         <div className="row half-image-row top-aligned mt-0 mb-0">
+//           <div className="media">
+//             <picture className="background">
+//               <source
+//                 media="(max-width:420px)"
+//                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-srcset="https://www.datocms-assets.com/105497/1694009299-lip-fillers.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1694009299-lip-fillers.jpg?auto=format,compress&w=630 2x"
+//               />
+//               <source
+//                 media="(max-width:800px)"
+//                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-srcset="https://www.datocms-assets.com/105497/1694009299-lip-fillers.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1694009299-lip-fillers.jpg?auto=format,compress&w=1200 2x"
+//               />
+//               <source
+//                 media="(max-width:1400px)"
+//                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-srcset="https://www.datocms-assets.com/105497/1694009299-lip-fillers.jpg?auto=format,compress&w=1400, https://www.datocms-assets.com/105497/1694009299-lip-fillers.jpg?auto=format,compress&w=2100 2x"
+//               />
+//               <source
+//                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-srcset="https://www.datocms-assets.com/105497/1694009299-lip-fillers.jpg?auto=format,compress&w=1832"
+//               />
+//               <img
+//                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-src="https://www.datocms-assets.com/105497/1694009299-lip-fillers.jpg?auto=format,compress&w=1832"
+//                 loading="lazy"
+//                 data-lazyload="img"
+//                 width="1832"
+//                 height="1824"
+//                 alt="Woman touching lips"
+//                 draggable="false"
+//                 data-api-key="image"
+//               />
+//             </picture>
+//           </div>
+//           <div className="copy ">
+//             <div className="inner">
+//               <div className="content" data-api-key="content">
+//                 <h2>
+//                   <span className="small">Get The Lips You Love:</span>
+//                   Benefits Of Lip Injections
+//                 </h2>
+//                 <p>
+//                   Here are some of the many benefits associated with lip
+//                   injections:
+//                 </p>
+//                 <ul>
+//                   <li>Long-lasting results</li>
+//                   <li>Very minimal bruising</li>
+//                   <li>Can smooth vertical lip lines</li>
+//                   <li>Can enhance lip definition</li>
+//                   <li>Can enhance Cupid's bow</li>
+//                   <li>Lips appear full, plump, and youthful</li>
+//                   <li>Helps to boost your self-confidence</li>
+//                   <li>Treatment can be delivered over some time</li>
+//                   <li>Reversible</li>
+//                 </ul>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Page FAQ Module */}
+//       <div className="mod_faq container" data-s3-module>
+//         <div className="row ">
+//           <div className="side">
+//             <div className="sticky-side">
+//               <h2>
+//                 <span className="small">Lip Filler </span>
+//                 FAQ
+//               </h2>
+//               <div className="list">
+//                 <p>What are lip fillers?</p>
+//                 <p>Am I a good candidate for lip fillers?</p>
+//                 <p>Are lip fillers safe?</p>
+//                 <p>How often should I receive lip fillers?</p>
+//               </div>
+//             </div>
+//           </div>
+//           <div className="content">
+//             <div className="questions">
+//               <div className="question">
+//                 <h2 className="js-exclude">What are lip fillers?</h2>
+//                 <div className="answer">
+//                   <p>
+//                     Lip fillers are injections of a specialized synthetic
+//                     Hyaluronic Acid, injected into your lips to give them a
+//                     plumper, more alluring look. The fillers that contain
+//                     Hyaluronic Acid are the most common dermal fillers. These
+//                     fillers are found naturally in the body, and when added to
+//                     the lips, they help to add increased volume to promote a
+//                     more defined shape and structure.
+//                   </p>
+//                 </div>
+//               </div>
+//               <div className="question">
+//                 <h2 className="js-exclude">
+//                   Am I a good candidate for lip fillers?
+//                 </h2>
+//                 <div className="answer">
+//                   <p>
+//                     Coming in for a consultation with one of our medical
+//                     practitioners at one of our many locations will be the best
+//                     way for us here at Goldfingers Aesthetics to determine if
+//                     you are a good fit for the procedure. The main thing to be
+//                     considered is that you are in good health and are not
+//                     allergic to any of the ingredients contained in the filler.
+//                     Also, you must not have any oral infections or cold sores
+//                     around the injection area.
+//                   </p>
+//                 </div>
+//               </div>
+//               <div className="question">
+//                 <h2 className="js-exclude">Are lip fillers safe?</h2>
+//                 <div className="answer">
+//                   <p>
+//                     When administered by a trained medical practitioner, lip
+//                     fillers are very safe. They are known to be very low risk
+//                     with mild side effects, including minor swelling or bruising
+//                     at the injection sites.
+//                   </p>
+//                 </div>
+//               </div>
+//               <div className="question">
+//                 <h2 className="js-exclude">
+//                   How often should I receive lip fillers?
+//                 </h2>
+//                 <div className="answer">
+//                   <p>
+//                     Generally, people tend to receive lip fillers every six
+//                     months. However, based on your treatment plan and
+//                     expectations for your outcome, your practitioner will
+//                     provide timeline suggestions that suit your desired
+//                     appearance. You must receive consistent injections to
+//                     maintain the appearance of your lips as the fillers are not
+//                     permanent, and the lasting time for each type of filler goes
+//                     based on a different timeline.
+//                   </p>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//       {/* /Page Layout */}
+//     </main>
+//   );
+// }
+
+// export default Lip;
+
+
+import React from "react";
+import {
+  fetchLipFillersPageData,
+  getImageUrl,
+  getResponsiveImageUrls,
+  lexicalToHtml,
+} from "@/lib/api/medicalSpa/fetchLipFillersPageData"; // Adjust the import path as needed for your utility functions
+
+async function Lip() {
+  const data = await fetchLipFillersPageData();
+
+  if (!data) {
+    return (
+      <main id="main">
+        <div>Error loading Lip Fillers page data</div>
+      </main>
+    );
+  }
+
+  // Extract sections for easier access
+  const hero = data.heroSection || {};
+  const intro = data.introSection || {};
+  const banner1 = data.bannerSection1 || {};
+  const column1 = data.columnSection1 || {};
+  const ctaGeneral = data.ctaGeneralSection || {};
+  const ctaBeforeAfter = data.ctaBeforeAfterSection || {};
+  const column2 = data.columnSection2 || {};
+  const halfImage = data.halfImageSection || {};
+  const faq = data.faqSection || {};
+
+  // Get responsive images
+  const heroBg = getResponsiveImageUrls(hero.backgroundImage);
+  const heroMedia = getResponsiveImageUrls(hero.mediaImage);
+  const banner1Bg = getResponsiveImageUrls(banner1.backgroundImage);
+  const column1Media = getResponsiveImageUrls(column1.mediaImage);
+  const halfImageImg = getResponsiveImageUrls(halfImage.image);
+  const introLogoUrl = getImageUrl(intro.logo);
+
+  // Global styles (apply if needed, e.g., via inline styles or classes)
+  const globalStyles = data.globalStyles || {};
+  const typography = data.typographySettings || {};
+  const buttonStyles = data.buttonStyles || {};
+  const animation = data.animationSettings || {};
+
+  // For simplicity, we'll apply some styles inline where relevant, but in a real app, use CSS modules or styled-components
+
   return (
-    <main id="main">
-      {/* Page Layout */}
+    <main
+      id="main"
+      style={{
+        fontFamily: globalStyles.fontFamily,
+        color: globalStyles.textColor,
+      }}
+    >
       {/* Hero Module */}
-      <div className="mod_hero banner mobile-stack" data-s3-module>
-        <div className="wrapper">
+      {hero.show && (
+        <div
+          className="mod_hero banner mobile-stack"
+          data-s3-module
+          style={{
+            backgroundColor: hero.backgroundColor,
+            animation: animation.enableAnimations
+              ? `fadeIn ${animation.fadeInDuration} ${animation.animationEasing}`
+              : "none",
+          }}
+        >
+          <div className="wrapper">
+            <picture className="background">
+              <source
+                media="(max-width:420px)"
+                srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                data-lazyload-srcset={`${heroBg.mobile}?auto=format,compress&w=420, ${heroBg.mobile}?auto=format,compress&w=630 2x`}
+              />
+              <source
+                media="(max-width:800px)"
+                srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                data-lazyload-srcset={`${heroBg.tablet}?auto=format,compress&w=800, ${heroBg.tablet}?auto=format,compress&w=1200 2x`}
+              />
+              <source
+                media="(max-width:1400px)"
+                srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                data-lazyload-srcset={`${heroBg.desktop}?auto=format,compress&w=1400, ${heroBg.desktop}?auto=format,compress&w=2100 2x`}
+              />
+              <source
+                srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                data-lazyload-srcset={`${heroBg.large}?auto=format,compress&w=1994`}
+              />
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                data-lazyload-src={`${heroBg.large}?auto=format,compress&w=1994`}
+                loading="lazy"
+                data-lazyload="img"
+                width="1994"
+                height="1206"
+                alt={heroBg.alt}
+                draggable="false"
+              />
+            </picture>
+            <div className="row">
+              <div className="inner">
+                <ul className="partial_breadcrumb" data-s3-partial>
+                  {(hero.breadcrumbs || []).map((crumb: any, index: number) => (
+                    <li key={index}>
+                      <a
+                        href={crumb.url}
+                        role="link"
+                        aria-label={crumb.ariaLabel}
+                      >
+                        {crumb.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                <h1
+                  style={{
+                    color: hero.titleColor,
+                    fontSize: hero.titleFontSize,
+                  }}
+                >
+                  {hero.title}
+                </h1>
+                <div className="text" style={{ color: hero.descriptionColor }}>
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: lexicalToHtml(hero.description),
+                    }}
+                  />
+                  {hero.ctaButton?.show && (
+                    <p>
+                      <a
+                        className="btn white"
+                        href={hero.ctaButton.url}
+                        role="button"
+                        style={{
+                          backgroundColor: hero.ctaButton.backgroundColor,
+                          color: hero.ctaButton.textColor,
+                        }}
+                      >
+                        {hero.ctaButton.text}
+                      </a>
+                    </p>
+                  )}
+                </div>
+              </div>
+            </div>
+            <div className="media">
+              <picture className="background">
+                <source
+                  media="(max-width:420px)"
+                  srcSet={`${heroMedia.mobile}?auto=format,compress&w=420, ${heroMedia.mobile}?auto=format,compress&w=630 2x`}
+                  data-lazyload-srcset={`${heroMedia.mobile}?auto=format,compress&w=420, ${heroMedia.mobile}?auto=format,compress&w=630 2x`}
+                />
+                <source
+                  media="(max-width:800px)"
+                  srcSet={`${heroMedia.tablet}?auto=format,compress&w=800, ${heroMedia.tablet}?auto=format,compress&w=1200 2x`}
+                  data-lazyload-srcset={`${heroMedia.tablet}?auto=format,compress&w=800, ${heroMedia.tablet}?auto=format,compress&w=1200 2x`}
+                />
+                <source
+                  media="(max-width:1400px)"
+                  srcSet={`${heroMedia.desktop}?auto=format,compress&w=1400, ${heroMedia.desktop}?auto=format,compress&w=2100 2x`}
+                  data-lazyload-srcset={`${heroMedia.desktop}?auto=format,compress&w=1400, ${heroMedia.desktop}?auto=format,compress&w=2100 2x`}
+                />
+                <source
+                  srcSet={`${heroMedia.large}?auto=format,compress&w=1917`}
+                  data-lazyload-srcset={`${heroMedia.large}?auto=format,compress&w=1917`}
+                />
+                <img
+                  src={`${heroMedia.large}?auto=format,compress&w=1917`}
+                  width="1917"
+                  height="1206"
+                  alt={heroMedia.alt}
+                  draggable="false"
+                />
+              </picture>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Intro Module */}
+      {intro.show && (
+        <div
+          className="mod_intro container viewport option-1 wide wow fadeInUp"
+          data-s3-module
+          style={{
+            backgroundColor: intro.backgroundColor,
+            color: intro.textColor,
+          }}
+        >
+          <div className="row ">
+            <picture className="logo">
+              <img
+                src={introLogoUrl}
+                width={58}
+                height={64}
+                loading="lazy"
+                alt={intro.logoAlt}
+                draggable="false"
+                data-api-key="logo"
+              />
+            </picture>
+            <div className="inner" data-api-key="content">
+              <h2 style={{ color: intro.headingColor }}>{intro.heading}</h2>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: lexicalToHtml(intro.content),
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Banner Module 1 */}
+      {banner1.show && (
+        <div
+          className={`mod_banner ${banner1.darkTheme ? "dark" : ""} ${
+            banner1.hideDivider ? "hide-divider" : ""
+          } viewport background-9`}
+          data-s3-module
+          style={{
+            backgroundColor: banner1.backgroundColor,
+            color: banner1.textColor,
+          }}
+        >
+          <div className="row wow fadeInUp">
+            <div className="content" data-api-key="top_content">
+              <h2 className={`text-${banner1.headingAlignment}`}>
+                {banner1.smallHeading && (
+                  <span className="small">{banner1.smallHeading}</span>
+                )}
+                {banner1.heading}
+              </h2>
+              <div className={`columns-${banner1.columnLayout || "two"}`}>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: lexicalToHtml(banner1.content),
+                  }}
+                />
+                <div>
+                  <ul>
+                    {(banner1.bulletPoints || []).map(
+                      (point: any, index: number) => (
+                        <li
+                          key={index}
+                          dangerouslySetInnerHTML={{
+                            __html: lexicalToHtml(point.content),
+                          }}
+                        />
+                      )
+                    )}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
           <picture className="background">
             <source
               media="(max-width:420px)"
               srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-              data-lazyload-srcset="https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=630 2x"
+              data-lazyload-srcset={`${banner1Bg.mobile}?auto=format,compress&w=800, ${banner1Bg.mobile}?auto=format,compress&w=1200 2x`}
             />
             <source
               media="(max-width:800px)"
               srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-              data-lazyload-srcset="https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=1200 2x"
+              data-lazyload-srcset={`${banner1Bg.tablet}?auto=format,compress&w=800&q=85&sharp=5, ${banner1Bg.tablet}?auto=format,compress&w=1200&q=85&sharp=5 2x`}
             />
             <source
               media="(max-width:1400px)"
               srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-              data-lazyload-srcset="https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=1400, https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=2100 2x"
+              data-lazyload-srcset={`${banner1Bg.desktop}?auto=format,compress&w=1400&q=85&sharp=5, ${banner1Bg.desktop}?auto=format,compress&w=2100&q=85&sharp=5 2x`}
             />
             <source
               srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-              data-lazyload-srcset="https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=1994"
+              data-lazyload-srcset={`${banner1Bg.large}?auto=format,compress&w=2200&q=85&sharp=5`}
             />
             <img
               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-              data-lazyload-src="https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=1994"
+              data-lazyload-src={`${banner1Bg.large}?auto=format,compress&w=2200&q=85&sharp=5`}
               loading="lazy"
               data-lazyload="img"
-              width="1994"
-              height="1206"
-              alt="Background Texture"
-              draggable="false"
-            />
-          </picture>
-          <div className="row">
-            <div className="inner">
-              <ul className="partial_breadcrumb" data-s3-partial>
-                <li>
-                  <a
-                    href="/"
-                    role="link"
-                    aria-label="Breadcrumbs to help navigate the user"
-                  >
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/medical-spa/"
-                    role="link"
-                    aria-label="Breadcrumbs to help navigate the user"
-                  >
-                    Medical Spa
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/medical-spa/lips/"
-                    role="link"
-                    aria-label="Breadcrumbs to help navigate the user"
-                  >
-                    Lips
-                  </a>
-                </li>
-              </ul>
-              <h1>Lip Fillers</h1>
-              <div className="text">
-                <p>Crafting Beautiful Lips, One Filler at a Time</p>
-                <p>
-                  <a className="btn white" href="/contact/" role="button">
-                    Book an Appointment
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="media">
-            <picture className="background">
-              <source
-                media="(max-width:420px)"
-                srcSet="https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=630 2x"
-                data-lazyload-srcset="https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=630 2x"
-              />
-              <source
-                media="(max-width:800px)"
-                srcSet="https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=1200 2x"
-                data-lazyload-srcset="https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=1200 2x"
-              />
-              <source
-                media="(max-width:1400px)"
-                srcSet="https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=1400, https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=2100 2x"
-                data-lazyload-srcset="https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=1400, https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=2100 2x"
-              />
-              <source
-                srcSet="https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=1917"
-                data-lazyload-srcset="https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=1917"
-              />
-              <img
-                src="https://www.datocms-assets.com/105497/1694008979-lip-fillers-banner.jpg?auto=format,compress&w=1917"
-                width="1917"
-                height="1206"
-                alt="Doctor going over file with patient"
-                draggable="false"
-              />
-            </picture>
-          </div>
-        </div>
-      </div>
-
-      {/* Intro Module */}
-      <div
-        className="mod_intro container viewport option-1 wide wow fadeInUp"
-        data-s3-module
-      >
-        <div className="row ">
-          <picture className="logo">
-            <img
-              src="https://www.datocms-assets.com/105497/1692813243-logo-module.svg"
-              width={58}
-              height={64}
-              loading="lazy"
-              alt="Goldfingers aesthetic logo"
-              draggable="false"
-              data-api-key="logo"
-            />
-          </picture>
-          <div className="inner" data-api-key="content">
-            <h2>The Secret to Fuller, Softer, More Defined Lips</h2>
-            <p>
-              At Goldfingers Aesthetics, we offer complimentary consultations
-              and expert treatments to restore and plump your lips and resolve
-              vertical lip lines. Our skilled injectors will work with you to
-              create a customized treatment plan to help you achieve the full,
-              youthful-looking lips you desire.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Banner Module */}
-      <div
-        className="mod_banner dark  hide-divider viewport background-9"
-        data-s3-module
-      >
-        <div className="row wow fadeInUp">
-          <div className="content" data-api-key="top_content">
-            <h2 className="text-center">
-              <span className="small">Luscious Lips, Confident Smile:</span>
-              Transform Your Appearance with Lip Fillers
-            </h2>
-            <div className="columns-two">
-              <div>
-                <p>
-                  If you want to enhance your appearance and boost your
-                  confidence, lip fillers may be the solution you've been
-                  searching for. Our expert injectors use the latest techniques
-                  and products to help you achieve fuller, more defined lips
-                  that complement your natural beauty.
-                </p>
-                <p>
-                  Whether you want to add volume to thin lips or smooth out
-                  vertical lip lines, we can customize a treatment plan that
-                  meets your unique needs and goals.
-                </p>
-              </div>
-              <div>
-                <p>
-                  Here are some specific ways that lip fillers can enhance and
-                  rejuvenate your lips:
-                </p>
-                <ul>
-                  <li>Fuller lips (lip augmentation)</li>
-                  <li>Defined lip line (vermillion border)</li>
-                  <li>Happier mouth corners (oral commissures)</li>
-                  <li>
-                    Reduced smoker's lines around the mouth (perioral lines)
-                  </li>
-                </ul>
-                <p>
-                  With lip fillers, you can enjoy a more youthful, refreshed
-                  appearance and a confident, beautiful smile. Contact us today
-                  to schedule your consultation and learn more about the
-                  transformative power of lip fillers!
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <picture className="background">
-          <source
-            media="(max-width:420px)"
-            srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-            data-lazyload-srcset="https://www.datocms-assets.com/105497/1693257074-banner-bgd-9.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1693257074-banner-bgd-9.jpg?auto=format,compress&w=1200 2x"
-          />
-          <source
-            media="(max-width:800px)"
-            srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-            data-lazyload-srcset="https://www.datocms-assets.com/105497/1693257074-banner-bgd-9.jpg?auto=format,compress&w=800&q=85&sharp=5, https://www.datocms-assets.com/105497/1693257074-banner-bgd-9.jpg?auto=format,compress&w=1200&q=85&sharp=5 2x"
-          />
-          <source
-            media="(max-width:1400px)"
-            srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-            data-lazyload-srcset="https://www.datocms-assets.com/105497/1693257074-banner-bgd-9.jpg?auto=format,compress&w=1400&q=85&sharp=5, https://www.datocms-assets.com/105497/1693257074-banner-bgd-9.jpg?auto=format,compress&w=2100&q=85&sharp=5 2x"
-          />
-          <source
-            srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-            data-lazyload-srcset="https://www.datocms-assets.com/105497/1693257074-banner-bgd-9.jpg?auto=format,compress&w=2200&q=85&sharp=5"
-          />
-          <img
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-            data-lazyload-src="https://www.datocms-assets.com/105497/1693257074-banner-bgd-9.jpg?auto=format,compress&w=2200&q=85&sharp=5"
-            loading="lazy"
-            data-lazyload="img"
-            width="2200"
-            height="802"
-            alt="Banner media"
-            draggable="false"
-          />
-        </picture>
-      </div>
-
-      {/* Column Module */}
-      <div className="mod_column viewport container has-media" data-s3-module>
-        <div className="row mt-30 mb-30 media-left" data-api-key="content">
-          <div className="item">
-            <h2>
-              <span className="small">Tailored Lip Injections:</span>
-              Trust The Specialists At Goldfingers Aesthetics
-            </h2>
-            <p>
-              Our experienced practitioners believe that achieving
-              natural-looking results with lip fillers requires a breadth of
-              understanding of facial proportions, symmetry, and harmony. We use
-              our extensive clinical expertise to determine the optimal amount
-              and type of filler needed to achieve your desired results while
-              maintaining a natural appearance.
-            </p>
-            <p>
-              During your consultation, we take the time to listen to your
-              goals, ensuring that we create a customized treatment plan that
-              aligns with your vision of beauty. Our Aesthetic Facial Contour
-              Specialists will analyze your facial features and design a
-              tailored approach that compliments your beauty.
-            </p>
-          </div>
-          <picture className="media">
-            <source
-              media="(max-width:420px)"
-              srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-              data-lazyload-srcset="https://www.datocms-assets.com/105497/1695239332-accent-3-1.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1695239332-accent-3-1.jpg?auto=format,compress&w=630 2x"
-            />
-            <source
-              media="(max-width:800px)"
-              srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-              data-lazyload-srcset="https://www.datocms-assets.com/105497/1695239332-accent-3-1.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1695239332-accent-3-1.jpg?auto=format,compress&w=1200 2x"
-            />
-            <source
-              srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-              data-lazyload-srcset="https://www.datocms-assets.com/105497/1695239332-accent-3-1.jpg?auto=format,compress&w=904"
-            />
-            <img
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-              data-lazyload-src="https://www.datocms-assets.com/105497/1695239332-accent-3-1.jpg?auto=format,compress&w=904"
-              loading="lazy"
-              data-lazyload="img"
-              width="904"
-              height="1062"
-              alt="Goldfingers medspa room"
+              width="2200"
+              height="802"
+              alt={banner1Bg.alt}
               draggable="false"
             />
           </picture>
         </div>
-      </div>
+      )}
 
-      {/* CTA General Module */}
-      <div
-        className="mod_cta_general viewport container cta  thin wow fadeInRight mt-0 mb-0 background-2"
-        data-s3-module
-      >
-        <div className="row">
-          <div className="text">
-            <h2>
-              <a href="/contact/">Schedule a Consultation</a>
-            </h2>
-            <a href="/contact/" className="btn white">
-              Book an Appointment
-            </a>
-          </div>
-          <div className="media"></div>
-        </div>
-      </div>
-
-      {/* CTA Before & After Feed Module */}
-      <div
-        className="mod_cta_ba_feed cta container wow fadeInUp mt-0 mb-0"
-        data-s3-module
-      >
-        <div className="row">
-          <div className="text">
-            <h2 data-api-key="title">
-              <span className="small">Lip Fillers</span>
-              Before & After
-            </h2>
-            <div className="patients" data-api-key="patients">
-              <div className="patient-wrap pslider" data-items="2">
-                <div>
-                  <a
-                    href="/gallery/non-surgical/lip-fillers/item/176816248/"
-                    className="patient single"
-                  >
-                    <picture className="background">
-                      <source
-                        media="(max-width:420px)"
-                        srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-                        data-lazyload-srcset="https://www.datocms-assets.com/105497/1695148802-img_1227.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1695148802-img_1227.jpg?auto=format,compress&w=630 2x"
-                      />
-                      <source
-                        media="(max-width:800px)"
-                        srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-                        data-lazyload-srcset="https://www.datocms-assets.com/105497/1695148802-img_1227.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1695148802-img_1227.jpg?auto=format,compress&w=1200 2x"
-                      />
-                      <source
-                        srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-                        data-lazyload-srcset="https://www.datocms-assets.com/105497/1695148802-img_1227.jpg?auto=format,compress&w=1200"
-                      />
-                      <img
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-                        data-lazyload-src="https://www.datocms-assets.com/105497/1695148802-img_1227.jpg?auto=format,compress&w=1200"
-                        loading="lazy"
-                        data-lazyload="img"
-                        width="1200"
-                        height="1188"
-                        alt=""
-                        draggable="false"
-                      />
-                    </picture>
-                  </a>
-                </div>
-                <div>
-                  <a
-                    href="/gallery/non-surgical/lip-fillers/item/176816252/"
-                    className="patient single"
-                  >
-                    <picture className="background">
-                      <source
-                        media="(max-width:420px)"
-                        srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-                        data-lazyload-srcset="https://www.datocms-assets.com/105497/1695148879-img_1937.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1695148879-img_1937.jpg?auto=format,compress&w=630 2x"
-                      />
-                      <source
-                        media="(max-width:800px)"
-                        srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-                        data-lazyload-srcset="https://www.datocms-assets.com/105497/1695148879-img_1937.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1695148879-img_1937.jpg?auto=format,compress&w=1200 2x"
-                      />
-                      <source
-                        srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-                        data-lazyload-srcset="https://www.datocms-assets.com/105497/1695148879-img_1937.jpg?auto=format,compress&w=1200"
-                      />
-                      <img
-                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-                        data-lazyload-src="https://www.datocms-assets.com/105497/1695148879-img_1937.jpg?auto=format,compress&w=1200"
-                        loading="lazy"
-                        data-lazyload="img"
-                        width="1200"
-                        height="1190"
-                        alt=""
-                        draggable="false"
-                      />
-                    </picture>
-                  </a>
-                </div>
-              </div>
+      {/* Column Module 1 */}
+      {column1.show && (
+        <div
+          className="mod_column viewport container has-media"
+          data-s3-module
+          style={{
+            backgroundColor: column1.backgroundColor,
+            color: column1.textColor,
+          }}
+        >
+          <div
+            className={`row mt-30 mb-30 media-${
+              column1.mediaPosition || "left"
+            }`}
+            data-api-key="content"
+          >
+            <div className="item">
+              <h2 style={{ color: column1.headingColor }}>
+                {column1.smallHeading && (
+                  <span className="small">{column1.smallHeading}</span>
+                )}
+                {column1.heading}
+              </h2>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: lexicalToHtml(column1.content),
+                }}
+              />
             </div>
-            <a
-              href="/gallery/non-surgical/lip-fillers/"
-              className="btn view-more"
-              title="View before and after gallery images"
-              aria-label="View before and after gallery images"
-            >
-              View More Lip Fillers Results
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Column Module */}
-      <div className="mod_column viewport container" data-s3-module>
-        <div className="row " data-api-key="content">
-          <div className="item">
-            <h2>Which Lip Filler Is Right For Me?</h2>
-            <p>
-              At Goldfingers Aesthetics, our approach to lip fillers goes beyond
-              simply augmenting the lips. We prioritize your individuality and
-              strive to enhance your natural beauty while ensuring that your
-              results are balanced and harmonious with the rest of your facial
-              features. With our array of lip filler options and our commitment
-              to customization, you can trust us to deliver results that enhance
-              your lips while maintaining your unique aesthetic identity.
-            </p>
-            <p>
-              Our favorite lip fillers are each designed to address specific
-              concerns and preferences:
-            </p>
-            <ul className="columns">
-              <li>
-                <strong>JUVÉDERM VOLBELLA®XC:</strong>
-                This filler is ideal for achieving subtle enhancement, smoothing
-                vertical lip lines (also known as "smoker's lines"), and
-                defining the lip borders. It provides a soft and natural result
-                that enhances your lips without overpowering your facial
-                features.
-              </li>
-              <li>
-                <strong>JUVÉDERM VOLLURE®XC:</strong>
-                If you're looking to restore volume and create a soft, youthful
-                look, JUVÉDERM VOLLURE®XC is an excellent choice. It effectively
-                reduces the appearance of nasolabial folds and marionette lines
-                while providing natural-looking lip enhancement.
-              </li>
-              <li>
-                <strong>JUVÉDERM®XC:</strong>
-                This versatile filler addresses various areas of the face,
-                including the lips. It can provide subtle enhancement and
-                definition, catering to different aesthetic preferences.
-              </li>
-              <li>
-                <strong>RESTYLANE®:</strong>
-                RESTYLANE®offers a collection of fillers specially formulated
-                for enhancing lips and smoothing wrinkles. It can provide
-                fullness, contouring, and reduction of fine lines around the
-                mouth area.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      {/* Half Image Module */}
-      <div
-        className="mod_half_image  viewport half-image container wow fadeInLeft background-navy"
-        data-s3-module
-      >
-        <div className="row half-image-row top-aligned mt-0 mb-0">
-          <div className="media">
-            <picture className="background">
+            <picture className="media">
               <source
                 media="(max-width:420px)"
                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-                data-lazyload-srcset="https://www.datocms-assets.com/105497/1694009299-lip-fillers.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1694009299-lip-fillers.jpg?auto=format,compress&w=630 2x"
+                data-lazyload-srcset={`${column1Media.mobile}?auto=format,compress&w=420, ${column1Media.mobile}?auto=format,compress&w=630 2x`}
               />
               <source
                 media="(max-width:800px)"
                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-                data-lazyload-srcset="https://www.datocms-assets.com/105497/1694009299-lip-fillers.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1694009299-lip-fillers.jpg?auto=format,compress&w=1200 2x"
-              />
-              <source
-                media="(max-width:1400px)"
-                srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-                data-lazyload-srcset="https://www.datocms-assets.com/105497/1694009299-lip-fillers.jpg?auto=format,compress&w=1400, https://www.datocms-assets.com/105497/1694009299-lip-fillers.jpg?auto=format,compress&w=2100 2x"
+                data-lazyload-srcset={`${column1Media.tablet}?auto=format,compress&w=800, ${column1Media.tablet}?auto=format,compress&w=1200 2x`}
               />
               <source
                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-                data-lazyload-srcset="https://www.datocms-assets.com/105497/1694009299-lip-fillers.jpg?auto=format,compress&w=1832"
+                data-lazyload-srcset={`${column1Media.desktop}?auto=format,compress&w=904`}
               />
               <img
                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-                data-lazyload-src="https://www.datocms-assets.com/105497/1694009299-lip-fillers.jpg?auto=format,compress&w=1832"
+                data-lazyload-src={`${column1Media.desktop}?auto=format,compress&w=904`}
                 loading="lazy"
                 data-lazyload="img"
-                width="1832"
-                height="1824"
-                alt="Woman touching lips"
+                width="904"
+                height="1062"
+                alt={column1Media.alt}
                 draggable="false"
-                data-api-key="image"
               />
             </picture>
           </div>
-          <div className="copy ">
-            <div className="inner">
-              <div className="content" data-api-key="content">
-                <h2>
-                  <span className="small">Get The Lips You Love:</span>
-                  Benefits Of Lip Injections
-                </h2>
-                <p>
-                  Here are some of the many benefits associated with lip
-                  injections:
-                </p>
-                <ul>
-                  <li>Long-lasting results</li>
-                  <li>Very minimal bruising</li>
-                  <li>Can smooth vertical lip lines</li>
-                  <li>Can enhance lip definition</li>
-                  <li>Can enhance Cupid's bow</li>
-                  <li>Lips appear full, plump, and youthful</li>
-                  <li>Helps to boost your self-confidence</li>
-                  <li>Treatment can be delivered over some time</li>
-                  <li>Reversible</li>
-                </ul>
+        </div>
+      )}
+
+      {/* CTA General Module */}
+      {ctaGeneral.show && (
+        <div
+          className={`mod_cta_general viewport container cta ${
+            ctaGeneral.thinStyle ? "thin" : ""
+          } wow fadeInRight mt-0 mb-0 background-2`}
+          data-s3-module
+          style={{
+            backgroundColor: ctaGeneral.backgroundColor,
+            color: ctaGeneral.textColor,
+          }}
+        >
+          <div className="row">
+            <div className="text">
+              <h2 style={{ color: ctaGeneral.headingColor }}>
+                {ctaGeneral.headingLink ? (
+                  <a href={ctaGeneral.headingLink}>{ctaGeneral.heading}</a>
+                ) : (
+                  ctaGeneral.heading
+                )}
+              </h2>
+              <a
+                href={ctaGeneral.ctaButton.url}
+                className="btn white"
+                style={{
+                  backgroundColor: ctaGeneral.ctaButton.backgroundColor,
+                  color: ctaGeneral.ctaButton.textColor,
+                }}
+              >
+                {ctaGeneral.ctaButton.text}
+              </a>
+            </div>
+            <div className="media"></div>
+          </div>
+        </div>
+      )}
+
+      {/* CTA Before & After Feed Module */}
+      {ctaBeforeAfter.show && (
+        <div
+          className="mod_cta_ba_feed cta container wow fadeInUp mt-0 mb-0"
+          data-s3-module
+          style={{
+            backgroundColor: ctaBeforeAfter.backgroundColor,
+            color: ctaBeforeAfter.textColor,
+          }}
+        >
+          <div className="row">
+            <div className="text">
+              <h2 data-api-key="title">
+                {ctaBeforeAfter.smallTitle && (
+                  <span className="small">{ctaBeforeAfter.smallTitle}</span>
+                )}
+                {ctaBeforeAfter.title}
+              </h2>
+              <div className="patients" data-api-key="patients">
+                <div
+                  className="patient-wrap pslider"
+                  data-items={ctaBeforeAfter.sliderItemsToShow || 2}
+                >
+                  {(ctaBeforeAfter.patients || []).map(
+                    (patient: any, index: number) => {
+                      const patientImg = getResponsiveImageUrls(patient.image);
+                      return (
+                        <div key={index}>
+                          <a href={patient.url} className="patient single">
+                            <picture className="background">
+                              <source
+                                media="(max-width:420px)"
+                                srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                                data-lazyload-srcset={`${patientImg.mobile}?auto=format,compress&w=420, ${patientImg.mobile}?auto=format,compress&w=630 2x`}
+                              />
+                              <source
+                                media="(max-width:800px)"
+                                srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                                data-lazyload-srcset={`${patientImg.tablet}?auto=format,compress&w=800, ${patientImg.tablet}?auto=format,compress&w=1200 2x`}
+                              />
+                              <source
+                                srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                                data-lazyload-srcset={`${patientImg.desktop}?auto=format,compress&w=1200`}
+                              />
+                              <img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                                data-lazyload-src={`${patientImg.desktop}?auto=format,compress&w=1200`}
+                                loading="lazy"
+                                data-lazyload="img"
+                                width="1200"
+                                height="1188"
+                                alt={patientImg.alt}
+                                draggable="false"
+                              />
+                            </picture>
+                          </a>
+                        </div>
+                      );
+                    }
+                  )}
+                </div>
+              </div>
+              <a
+                href={ctaBeforeAfter.viewMoreLink?.url}
+                className="btn view-more"
+                title={ctaBeforeAfter.viewMoreLink?.ariaLabel}
+                aria-label={ctaBeforeAfter.viewMoreLink?.ariaLabel}
+              >
+                {ctaBeforeAfter.viewMoreLink?.text}
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Column Module 2 */}
+      {column2.show && (
+        <div
+          className="mod_column viewport container"
+          data-s3-module
+          style={{
+            backgroundColor: column2.backgroundColor,
+            color: column2.textColor,
+          }}
+        >
+          <div className="row " data-api-key="content">
+            <div className="item">
+              <h2 style={{ color: column2.headingColor }}>{column2.heading}</h2>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: lexicalToHtml(column2.content),
+                }}
+              />
+              <ul className={column2.columnLayout ? "columns" : ""}>
+                {(column2.bulletPoints || []).map(
+                  (point: any, index: number) => (
+                    <li
+                      key={index}
+                      dangerouslySetInnerHTML={{
+                        __html: lexicalToHtml(point.content),
+                      }}
+                    />
+                  )
+                )}
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Half Image Module */}
+      {halfImage.show && (
+        <div
+          className={`mod_half_image  viewport half-image container wow fadeInLeft background-navy`}
+          data-s3-module
+          style={{
+            backgroundColor: halfImage.backgroundColor,
+            color: halfImage.textColor,
+          }}
+        >
+          <div
+            className={`row half-image-row ${
+              halfImage.verticalAlignment || "top"
+            }-aligned mt-0 mb-0`}
+          >
+            <div
+              className={`media ${
+                halfImage.imagePosition === "right" ? "order-last" : ""
+              }`}
+            >
+              <picture className="background">
+                <source
+                  media="(max-width:420px)"
+                  srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                  data-lazyload-srcset={`${halfImageImg.mobile}?auto=format,compress&w=420, ${halfImageImg.mobile}?auto=format,compress&w=630 2x`}
+                />
+                <source
+                  media="(max-width:800px)"
+                  srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                  data-lazyload-srcset={`${halfImageImg.tablet}?auto=format,compress&w=800, ${halfImageImg.tablet}?auto=format,compress&w=1200 2x`}
+                />
+                <source
+                  media="(max-width:1400px)"
+                  srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                  data-lazyload-srcset={`${halfImageImg.desktop}?auto=format,compress&w=1400, ${halfImageImg.desktop}?auto=format,compress&w=2100 2x`}
+                />
+                <source
+                  srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                  data-lazyload-srcset={`${halfImageImg.large}?auto=format,compress&w=1832`}
+                />
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                  data-lazyload-src={`${halfImageImg.large}?auto=format,compress&w=1832`}
+                  loading="lazy"
+                  data-lazyload="img"
+                  width="1832"
+                  height="1824"
+                  alt={halfImageImg.alt}
+                  draggable="false"
+                  data-api-key="image"
+                />
+              </picture>
+            </div>
+            <div className="copy ">
+              <div className="inner">
+                <div className="content" data-api-key="content">
+                  <h2 style={{ color: halfImage.headingColor }}>
+                    {halfImage.smallHeading && (
+                      <span className="small">{halfImage.smallHeading}</span>
+                    )}
+                    {halfImage.heading}
+                  </h2>
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: lexicalToHtml(halfImage.content),
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Page FAQ Module */}
-      <div className="mod_faq container" data-s3-module>
-        <div className="row ">
-          <div className="side">
-            <div className="sticky-side">
-              <h2>
-                <span className="small">Lip Filler </span>
-                FAQ
-              </h2>
-              <div className="list">
-                <p>What are lip fillers?</p>
-                <p>Am I a good candidate for lip fillers?</p>
-                <p>Are lip fillers safe?</p>
-                <p>How often should I receive lip fillers?</p>
+      {faq.show && (
+        <div
+          className="mod_faq container"
+          data-s3-module
+          style={{ backgroundColor: faq.backgroundColor, color: faq.textColor }}
+        >
+          <div className="row ">
+            <div
+              className="side"
+              style={{ backgroundColor: faq.sidebarBackgroundColor }}
+            >
+              <div className="sticky-side">
+                <h2 style={{ color: faq.headingColor }}>
+                  {faq.subheading && (
+                    <span className="small">{faq.subheading}</span>
+                  )}
+                  {faq.heading}
+                </h2>
+                <div className="list">
+                  {(faq.questions || []).map((q: any, index: number) => (
+                    <p key={index}>{q.question}</p>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-          <div className="content">
-            <div className="questions">
-              <div className="question">
-                <h2 className="js-exclude">What are lip fillers?</h2>
-                <div className="answer">
-                  <p>
-                    Lip fillers are injections of a specialized synthetic
-                    Hyaluronic Acid, injected into your lips to give them a
-                    plumper, more alluring look. The fillers that contain
-                    Hyaluronic Acid are the most common dermal fillers. These
-                    fillers are found naturally in the body, and when added to
-                    the lips, they help to add increased volume to promote a
-                    more defined shape and structure.
-                  </p>
-                </div>
-              </div>
-              <div className="question">
-                <h2 className="js-exclude">
-                  Am I a good candidate for lip fillers?
-                </h2>
-                <div className="answer">
-                  <p>
-                    Coming in for a consultation with one of our medical
-                    practitioners at one of our many locations will be the best
-                    way for us here at Goldfingers Aesthetics to determine if
-                    you are a good fit for the procedure. The main thing to be
-                    considered is that you are in good health and are not
-                    allergic to any of the ingredients contained in the filler.
-                    Also, you must not have any oral infections or cold sores
-                    around the injection area.
-                  </p>
-                </div>
-              </div>
-              <div className="question">
-                <h2 className="js-exclude">Are lip fillers safe?</h2>
-                <div className="answer">
-                  <p>
-                    When administered by a trained medical practitioner, lip
-                    fillers are very safe. They are known to be very low risk
-                    with mild side effects, including minor swelling or bruising
-                    at the injection sites.
-                  </p>
-                </div>
-              </div>
-              <div className="question">
-                <h2 className="js-exclude">
-                  How often should I receive lip fillers?
-                </h2>
-                <div className="answer">
-                  <p>
-                    Generally, people tend to receive lip fillers every six
-                    months. However, based on your treatment plan and
-                    expectations for your outcome, your practitioner will
-                    provide timeline suggestions that suit your desired
-                    appearance. You must receive consistent injections to
-                    maintain the appearance of your lips as the fillers are not
-                    permanent, and the lasting time for each type of filler goes
-                    based on a different timeline.
-                  </p>
-                </div>
+            <div className="content">
+              <div className="questions">
+                {(faq.questions || []).map((q: any, index: number) => (
+                  <div className="question" key={index}>
+                    <h2
+                      className="js-exclude"
+                      style={{ color: faq.questionColor }}
+                    >
+                      {q.question}
+                    </h2>
+                    <div className="answer" style={{ color: faq.answerColor }}>
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: lexicalToHtml(q.answer),
+                        }}
+                      />
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
-      </div>
-      {/* /Page Layout */}
+      )}
     </main>
   );
 }

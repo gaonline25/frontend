@@ -521,3 +521,1479 @@ const LiquidRhinoplasty: React.FC = () => {
 };
 
 export default LiquidRhinoplasty;
+
+// "use client";
+
+// import React, { useEffect, useState } from "react";
+// import {
+//   fetchLiquidRFillersPageData,
+//   getResponsiveImageUrls,
+//   lexicalToHtml,
+// } from "@/lib/api/medicalSpa/fetchLiquidRhinoplastyPageComponent"; // Adjust path to your API utilities
+
+// interface LiquidRhinoplastyData {
+//   heroSection: {
+//     show: boolean;
+//     backgroundColor?: string;
+//     backgroundImage: {
+//       mobile?: any;
+//       tablet?: any;
+//       desktop?: any;
+//       large?: any;
+//       alt?: string;
+//     };
+//     breadcrumbs: Array<{ label: string; url: string; ariaLabel?: string }>;
+//     title: string;
+//     titleColor?: string;
+//     titleFontSize?: string;
+//     description?: any;
+//     descriptionColor?: string;
+//     ctaButton: {
+//       show: boolean;
+//       text: string;
+//       url: string;
+//       backgroundColor?: string;
+//       textColor?: string;
+//       hoverBackgroundColor?: string;
+//     };
+//     mediaImage: {
+//       mobile?: any;
+//       tablet?: any;
+//       desktop?: any;
+//       large?: any;
+//       alt?: string;
+//     };
+//   };
+//   introSection: {
+//     show: boolean;
+//     backgroundColor?: string;
+//     textColor?: string;
+//     logo?: any;
+//     logoAlt?: string;
+//     heading: string;
+//     headingColor?: string;
+//     smallText?: string;
+//     content: any;
+//   };
+//   halfImageSection: {
+//     show: boolean;
+//     backgroundColor?: string;
+//     textColor?: string;
+//     imagePosition: string;
+//     heading: string;
+//     headingColor?: string;
+//     content?: any;
+//     image: {
+//       mobile?: any;
+//       tablet?: any;
+//       desktop?: any;
+//       large?: any;
+//       alt?: string;
+//     };
+//   };
+//   ctaBeforeAfterSection: {
+//     show: boolean;
+//     backgroundColor?: string;
+//     textColor?: string;
+//     heading: string;
+//     headingColor?: string;
+//     subheading?: string;
+//     patients: Array<{ image: any; alt: string; link?: string }>;
+//     ctaButton: {
+//       text: string;
+//       url: string;
+//       backgroundColor?: string;
+//       textColor?: string;
+//       ariaLabel?: string;
+//     };
+//   };
+//   bannerSection: {
+//     show: boolean;
+//     backgroundColor?: string;
+//     textColor?: string;
+//     theme: string;
+//     hideDivider: boolean;
+//     backgroundImage: {
+//       mobile?: any;
+//       tablet?: any;
+//       desktop?: any;
+//       large?: any;
+//       alt?: string;
+//     };
+//     heading: string;
+//     headingColor?: string;
+//     content?: any;
+//     bulletPoints?: Array<{ content: any }>;
+//   };
+//   ctaGeneralSection: {
+//     show: boolean;
+//     backgroundColor?: string;
+//     textColor?: string;
+//     heading: string;
+//     headingLink?: string;
+//     headingColor?: string;
+//     smallText?: string;
+//     ctaButton: {
+//       text: string;
+//       url: string;
+//       backgroundColor?: string;
+//       textColor?: string;
+//       hoverBackgroundColor?: string;
+//     };
+//     mediaImage: {
+//       mobile?: any;
+//       tablet?: any;
+//       desktop?: any;
+//       large?: any;
+//       alt?: string;
+//     };
+//   };
+//   boxGridSection: {
+//     show: boolean;
+//     backgroundColor?: string;
+//     textColor?: string;
+//     gridLayout: string;
+//     backgroundImage: {
+//       mobile?: any;
+//       tablet?: any;
+//       desktop?: any;
+//       large?: any;
+//       alt?: string;
+//     };
+//     heading: string;
+//     headingColor?: string;
+//     subheading?: any;
+//     boxes: Array<{
+//       heading: string;
+//       content: any;
+//       backgroundColor?: string;
+//       textColor?: string;
+//     }>;
+//   };
+//   sectionOrder: Array<{ section: string }>;
+//   globalStyles: {
+//     containerMaxWidth?: string;
+//     containerPadding?: string;
+//     sectionSpacing?: string;
+//     fontFamily?: string;
+//     primaryColor?: string;
+//     secondaryColor?: string;
+//     textColor?: string;
+//     linkColor?: string;
+//     linkHoverColor?: string;
+//     headingFontSize?: string;
+//   };
+// }
+
+// const LiquidRhinoplasty: React.FC = () => {
+//   const [pageData, setPageData] = useState<LiquidRhinoplastyData | null>(null);
+//   const [loading, setLoading] = useState(true);
+
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       try {
+//         const data = await fetchLiquidRFillersPageData(
+//           "liquid-rhinoplasty-page-component"
+//         );
+//         setPageData(data);
+//       } catch (error) {
+//         console.error("Error fetching liquid rhinoplasty page data:", error);
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
+//     fetchData();
+//   }, []);
+
+//   if (loading) return <div>Loading...</div>;
+//   if (!pageData) return <div>No data available</div>;
+
+//   const {
+//     heroSection,
+//     introSection,
+//     halfImageSection,
+//     ctaBeforeAfterSection,
+//     bannerSection,
+//     ctaGeneralSection,
+//     boxGridSection,
+//     sectionOrder,
+//     globalStyles,
+//   } = pageData;
+
+//   const renderSection = (section: string) => {
+//     switch (section) {
+//       case "hero":
+//         if (!heroSection.show) return null;
+//         const heroBgImages = getResponsiveImageUrls(
+//           heroSection.backgroundImage
+//         );
+//         const heroMediaImages = getResponsiveImageUrls(heroSection.mediaImage);
+//         return (
+//           <div
+//             className="mod_hero banner mobile-stack"
+//             data-s3-module
+//             style={{ backgroundColor: heroSection.backgroundColor }}
+//           >
+//             <div className="wrapper">
+//               <picture className="background">
+//                 <source
+//                   media="(max-width:420px)"
+//                   srcSet={heroBgImages.mobile}
+//                 />
+//                 <source
+//                   media="(max-width:800px)"
+//                   srcSet={heroBgImages.tablet}
+//                 />
+//                 <source
+//                   media="(max-width:1400px)"
+//                   srcSet={heroBgImages.desktop}
+//                 />
+//                 <source srcSet={heroBgImages.large} />
+//                 <img
+//                   src={heroBgImages.large}
+//                   loading="lazy"
+//                   alt={heroBgImages.alt || "Background Texture"}
+//                   draggable="false"
+//                 />
+//               </picture>
+//               <div className="row">
+//                 <div className="inner">
+//                   <ul className="partial_breadcrumb" data-s3-partial>
+//                     {heroSection.breadcrumbs.map((crumb, index) => (
+//                       <li key={index}>
+//                         <a
+//                           href={crumb.url}
+//                           role="link"
+//                           aria-label={crumb.ariaLabel}
+//                         >
+//                           {crumb.label}
+//                         </a>
+//                       </li>
+//                     ))}
+//                   </ul>
+//                   <h1
+//                     style={{
+//                       color: heroSection.titleColor,
+//                       fontSize: heroSection.titleFontSize,
+//                     }}
+//                   >
+//                     {heroSection.title}
+//                   </h1>
+//                   <div
+//                     className="text"
+//                     style={{ color: heroSection.descriptionColor }}
+//                   >
+//                     <div
+//                       dangerouslySetInnerHTML={{
+//                         __html: lexicalToHtml(heroSection.description),
+//                       }}
+//                     />
+//                     {heroSection.ctaButton.show && (
+//                       <p>
+//                         <a
+//                           className="btn white"
+//                           href={heroSection.ctaButton.url}
+//                           role="button"
+//                           style={{
+//                             backgroundColor:
+//                               heroSection.ctaButton.backgroundColor,
+//                             color: heroSection.ctaButton.textColor,
+//                           }}
+//                           onMouseOver={(e) =>
+//                             heroSection.ctaButton.hoverBackgroundColor &&
+//                             (e.currentTarget.style.backgroundColor =
+//                               heroSection.ctaButton.hoverBackgroundColor)
+//                           }
+//                           onMouseOut={(e) =>
+//                             heroSection.ctaButton.backgroundColor &&
+//                             (e.currentTarget.style.backgroundColor =
+//                               heroSection.ctaButton.backgroundColor)
+//                           }
+//                         >
+//                           {heroSection.ctaButton.text}
+//                         </a>
+//                       </p>
+//                     )}
+//                   </div>
+//                 </div>
+//               </div>
+//               <div className="media">
+//                 <picture className="background">
+//                   <source
+//                     media="(max-width:420px)"
+//                     srcSet={heroMediaImages.mobile}
+//                   />
+//                   <source
+//                     media="(max-width:800px)"
+//                     srcSet={heroMediaImages.tablet}
+//                   />
+//                   <source
+//                     media="(max-width:1400px)"
+//                     srcSet={heroMediaImages.desktop}
+//                   />
+//                   <source srcSet={heroMediaImages.large} />
+//                   <img
+//                     src={heroMediaImages.large}
+//                     loading="lazy"
+//                     alt={heroMediaImages.alt || "Woman's side profile"}
+//                     draggable="false"
+//                   />
+//                 </picture>
+//               </div>
+//             </div>
+//           </div>
+//         );
+
+//       case "intro":
+//         if (!introSection.show) return null;
+//         return (
+//           <div
+//             className="mod_intro container viewport option-1 wow fadeInUp"
+//             data-s3-module
+//             style={{
+//               backgroundColor: introSection.backgroundColor,
+//               color: introSection.textColor,
+//             }}
+//           >
+//             <div className="row">
+//               {introSection.logo && (
+//                 <picture className="logo">
+//                   <img
+//                     src={getResponsiveImageUrls(introSection.logo).large}
+//                     loading="lazy"
+//                     alt={introSection.logoAlt || "Goldfingers aesthetic logo"}
+//                     draggable="false"
+//                     data-api-key="logo"
+//                   />
+//                 </picture>
+//               )}
+//               <div className="inner" data-api-key="content">
+//                 <h2 style={{ color: introSection.headingColor }}>
+//                   {introSection.smallText && (
+//                     <span className="small">
+//                       {introSection.smallText} &ndash;
+//                     </span>
+//                   )}
+//                   {introSection.heading}
+//                 </h2>
+//                 <div
+//                   dangerouslySetInnerHTML={{
+//                     __html: lexicalToHtml(introSection.content),
+//                   }}
+//                 />
+//               </div>
+//             </div>
+//           </div>
+//         );
+
+//       case "halfImage":
+//         if (!halfImageSection.show) return null;
+//         const halfImages = getResponsiveImageUrls(halfImageSection.image);
+//         return (
+//           <div
+//             className={`mod_half_image viewport half-image container wow fadeInLeft`}
+//             data-s3-module
+//             style={{
+//               backgroundColor: halfImageSection.backgroundColor,
+//               color: halfImageSection.textColor,
+//             }}
+//           >
+//             <div
+//               className={`row half-image-row ${
+//                 halfImageSection.imagePosition === "left" ? "" : "flipped"
+//               }`}
+//             >
+//               <div className="media">
+//                 <picture className="background">
+//                   <source
+//                     media="(max-width:420px)"
+//                     srcSet={halfImages.mobile}
+//                   />
+//                   <source
+//                     media="(max-width:800px)"
+//                     srcSet={halfImages.tablet}
+//                   />
+//                   <source
+//                     media="(max-width:1400px)"
+//                     srcSet={halfImages.desktop}
+//                   />
+//                   <source srcSet={halfImages.large} />
+//                   <img
+//                     src={halfImages.large}
+//                     loading="lazy"
+//                     alt={halfImages.alt || "Woman touching her neck"}
+//                     draggable="false"
+//                     data-api-key="image"
+//                   />
+//                 </picture>
+//               </div>
+//               <div className="copy">
+//                 <div className="inner">
+//                   <div className="content" data-api-key="content">
+//                     <h2 style={{ color: halfImageSection.headingColor }}>
+//                       {halfImageSection.heading}
+//                     </h2>
+//                     <div
+//                       dangerouslySetInnerHTML={{
+//                         __html: lexicalToHtml(halfImageSection.content),
+//                       }}
+//                     />
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         );
+
+//       case "ctaBeforeAfter":
+//         if (!ctaBeforeAfterSection.show) return null;
+//         return (
+//           <div
+//             className="mod_cta_ba cta container wow fadeInUp"
+//             data-s3-module
+//             style={{
+//               backgroundColor: ctaBeforeAfterSection.backgroundColor,
+//               color: ctaBeforeAfterSection.textColor,
+//             }}
+//           >
+//             <div className="row">
+//               <div className="text">
+//                 <h2
+//                   data-api-key="title"
+//                   style={{ color: ctaBeforeAfterSection.headingColor }}
+//                 >
+//                   {ctaBeforeAfterSection.heading}
+//                 </h2>
+//                 {ctaBeforeAfterSection.subheading && (
+//                   <p>{ctaBeforeAfterSection.subheading}</p>
+//                 )}
+//                 <div className="patients" data-api-key="patients">
+//                   <div className="patient-wrap grid">
+//                     {ctaBeforeAfterSection.patients.map((patient, index) => (
+//                       <div key={index} className="patient single">
+//                         <a href={patient.link || "#"}>
+//                           <picture className="">
+//                             <img
+//                               src={getResponsiveImageUrls(patient.image).large}
+//                               loading="lazy"
+//                               alt={patient.alt || "liquid rhinoplasty"}
+//                               draggable="false"
+//                             />
+//                           </picture>
+//                         </a>
+//                       </div>
+//                     ))}
+//                   </div>
+//                 </div>
+//                 <a
+//                   href={ctaBeforeAfterSection.ctaButton.url}
+//                   className="btn"
+//                   aria-label={ctaBeforeAfterSection.ctaButton.ariaLabel}
+//                   style={{
+//                     backgroundColor:
+//                       ctaBeforeAfterSection.ctaButton.backgroundColor,
+//                     color: ctaBeforeAfterSection.ctaButton.textColor,
+//                   }}
+//                 >
+//                   {ctaBeforeAfterSection.ctaButton.text}
+//                 </a>
+//               </div>
+//             </div>
+//           </div>
+//         );
+
+//       case "banner":
+//         if (!bannerSection.show) return null;
+//         const bannerImages = getResponsiveImageUrls(
+//           bannerSection.backgroundImage
+//         );
+//         return (
+//           <div
+//             className={`mod_banner ${bannerSection.theme} ${
+//               bannerSection.hideDivider ? "hide-divider" : ""
+//             } viewport background-2`}
+//             data-s3-module
+//             style={{
+//               backgroundColor: bannerSection.backgroundColor,
+//               color: bannerSection.textColor,
+//             }}
+//           >
+//             <div className="row wow fadeInUp">
+//               <div className="content" data-api-key="top_content">
+//                 <h2 style={{ color: bannerSection.headingColor }}>
+//                   {bannerSection.heading}
+//                 </h2>
+//                 <div
+//                   dangerouslySetInnerHTML={{
+//                     __html: lexicalToHtml(bannerSection.content),
+//                   }}
+//                 />
+//                 {bannerSection.bulletPoints && (
+//                   <ul className="columns">
+//                     {bannerSection.bulletPoints.map((point, index) => (
+//                       <li
+//                         key={index}
+//                         dangerouslySetInnerHTML={{
+//                           __html: lexicalToHtml(point.content),
+//                         }}
+//                       />
+//                     ))}
+//                   </ul>
+//                 )}
+//               </div>
+//             </div>
+//             <picture className="background">
+//               <source media="(max-width:420px)" srcSet={bannerImages.mobile} />
+//               <source media="(max-width:800px)" srcSet={bannerImages.tablet} />
+//               <source
+//                 media="(max-width:1400px)"
+//                 srcSet={bannerImages.desktop}
+//               />
+//               <source srcSet={bannerImages.large} />
+//               <img
+//                 src={bannerImages.large}
+//                 loading="lazy"
+//                 alt={bannerImages.alt || "Banner media"}
+//                 draggable="false"
+//               />
+//             </picture>
+//           </div>
+//         );
+
+//       case "ctaGeneral":
+//         if (!ctaGeneralSection.show) return null;
+//         const ctaImages = getResponsiveImageUrls(ctaGeneralSection.mediaImage);
+//         return (
+//           <div
+//             className="mod_cta_general viewport container cta wow fadeInRight background-1"
+//             data-s3-module
+//             style={{
+//               backgroundColor: ctaGeneralSection.backgroundColor,
+//               color: ctaGeneralSection.textColor,
+//             }}
+//           >
+//             <div className="row">
+//               <div className="text">
+//                 <h2 style={{ color: ctaGeneralSection.headingColor }}>
+//                   {ctaGeneralSection.smallText && (
+//                     <span className="small">{ctaGeneralSection.smallText}</span>
+//                   )}
+//                   {ctaGeneralSection.headingLink ? (
+//                     <a href={ctaGeneralSection.headingLink}>
+//                       {ctaGeneralSection.heading}
+//                     </a>
+//                   ) : (
+//                     ctaGeneralSection.heading
+//                   )}
+//                 </h2>
+//                 <a
+//                   href={ctaGeneralSection.ctaButton.url}
+//                   className="btn"
+//                   style={{
+//                     backgroundColor:
+//                       ctaGeneralSection.ctaButton.backgroundColor,
+//                     color: ctaGeneralSection.ctaButton.textColor,
+//                   }}
+//                   onMouseOver={(e) =>
+//                     ctaGeneralSection.ctaButton.hoverBackgroundColor &&
+//                     (e.currentTarget.style.backgroundColor =
+//                       ctaGeneralSection.ctaButton.hoverBackgroundColor)
+//                   }
+//                   onMouseOut={(e) =>
+//                     ctaGeneralSection.ctaButton.backgroundColor &&
+//                     (e.currentTarget.style.backgroundColor =
+//                       ctaGeneralSection.ctaButton.backgroundColor)
+//                   }
+//                 >
+//                   {ctaGeneralSection.ctaButton.text}
+//                 </a>
+//               </div>
+//               <div className="media">
+//                 <picture className="background">
+//                   <source media="(max-width:420px)" srcSet={ctaImages.mobile} />
+//                   <source media="(max-width:800px)" srcSet={ctaImages.tablet} />
+//                   <source
+//                     media="(max-width:1400px)"
+//                     srcSet={ctaImages.desktop}
+//                   />
+//                   <source srcSet={ctaImages.large} />
+//                   <img
+//                     src={ctaImages.large}
+//                     loading="lazy"
+//                     alt={ctaImages.alt || "Contact us media"}
+//                     draggable="false"
+//                   />
+//                 </picture>
+//               </div>
+//             </div>
+//           </div>
+//         );
+
+//       case "boxGrid":
+//         if (!boxGridSection.show) return null;
+//         const boxGridImages = getResponsiveImageUrls(
+//           boxGridSection.backgroundImage
+//         );
+//         return (
+//           <div
+//             className={`mod_box_grid viewport container option-1 ${boxGridSection.gridLayout} bkg-image wider`}
+//             data-s3-module
+//             style={{
+//               backgroundColor: boxGridSection.backgroundColor,
+//               color: boxGridSection.textColor,
+//             }}
+//           >
+//             <div className="row">
+//               <div className="content-before">
+//                 <h2 style={{ color: boxGridSection.headingColor }}>
+//                   {boxGridSection.heading}
+//                   {boxGridSection.subheading && (
+//                     <span className="block">{boxGridSection.subheading}</span>
+//                   )}
+//                 </h2>
+//                 <div
+//                   dangerouslySetInnerHTML={{
+//                     __html: lexicalToHtml(boxGridSection.subheading),
+//                   }}
+//                 />
+//               </div>
+//               <div className={`boxes ${boxGridSection.gridLayout}`}>
+//                 {boxGridSection.boxes.map((box, index) => (
+//                   <div
+//                     key={index}
+//                     className="box wow fadeInUp"
+//                     style={{
+//                       backgroundColor: box.backgroundColor,
+//                       color: box.textColor,
+//                     }}
+//                   >
+//                     <h3>{box.heading}</h3>
+//                     <div
+//                       dangerouslySetInnerHTML={{
+//                         __html: lexicalToHtml(box.content),
+//                       }}
+//                     />
+//                   </div>
+//                 ))}
+//               </div>
+//             </div>
+//             <picture className="background">
+//               <source media="(max-width:420px)" srcSet={boxGridImages.mobile} />
+//               <source media="(max-width:800px)" srcSet={boxGridImages.tablet} />
+//               <source
+//                 media="(max-width:1400px)"
+//                 srcSet={boxGridImages.desktop}
+//               />
+//               <source srcSet={boxGridImages.large} />
+//               <img
+//                 src={boxGridImages.large}
+//                 loading="lazy"
+//                 alt={boxGridImages.alt || "Background media"}
+//                 draggable="false"
+//               />
+//             </picture>
+//           </div>
+//         );
+
+//       default:
+//         return null;
+//     }
+//   };
+
+//   return (
+//     <main
+//       id="main"
+//       style={{
+//         maxWidth: globalStyles.containerMaxWidth,
+//         padding: globalStyles.containerPadding,
+//         fontFamily: globalStyles.fontFamily,
+//         color: globalStyles.textColor,
+//         margin: "0 auto",
+//       }}
+//     >
+//       {sectionOrder.map((item, index) => (
+//         <React.Fragment key={index}>
+//           {renderSection(item.section)}
+//         </React.Fragment>
+//       ))}
+//     </main>
+//   );
+// };
+
+// export default LiquidRhinoplasty;
+
+
+
+// "use client";
+
+// import React, { useEffect, useState } from "react";
+// import {
+//   fetchLiquidRFillersPageData,
+//   getResponsiveImageUrls,
+//   lexicalToHtml,
+// } from "@/lib/api/medicalSpa/fetchLiquidRhinoplastyPageComponent";
+
+// interface LiquidRhinoplastyData {
+//   heroSection: {
+//     show: boolean;
+//     backgroundColor?: string;
+//     backgroundImage: {
+//       mobile?: any;
+//       tablet?: any;
+//       desktop?: any;
+//       large?: any;
+//       alt?: string;
+//     };
+//     breadcrumbs: Array<{ label: string; url: string; ariaLabel?: string }>;
+//     title: string;
+//     titleColor?: string;
+//     titleFontSize?: string;
+//     description?: any;
+//     descriptionColor?: string;
+//     ctaButton: {
+//       show: boolean;
+//       text: string;
+//       url: string;
+//       backgroundColor?: string;
+//       textColor?: string;
+//       hoverBackgroundColor?: string;
+//     };
+//     mediaImage: {
+//       mobile?: any;
+//       tablet?: any;
+//       desktop?: any;
+//       large?: any;
+//       alt?: string;
+//     };
+//   };
+//   introSection: {
+//     show: boolean;
+//     backgroundColor?: string;
+//     textColor?: string;
+//     logo?: any;
+//     logoAlt?: string;
+//     heading: string;
+//     headingColor?: string;
+//     smallText?: string;
+//     content: any;
+//   };
+//   halfImageSection: {
+//     show: boolean;
+//     backgroundColor?: string;
+//     textColor?: string;
+//     imagePosition: string;
+//     heading: string;
+//     headingColor?: string;
+//     content?: any;
+//     image: {
+//       mobile?: any;
+//       tablet?: any;
+//       desktop?: any;
+//       large?: any;
+//       alt?: string;
+//     };
+//   };
+//   ctaBeforeAfterSection: {
+//     show: boolean;
+//     backgroundColor?: string;
+//     textColor?: string;
+//     heading: string;
+//     headingColor?: string;
+//     subheading?: string;
+//     patients: Array<{ image: any; alt: string; link?: string }>;
+//     ctaButton: {
+//       text: string;
+//       url: string;
+//       backgroundColor?: string;
+//       textColor?: string;
+//       ariaLabel?: string;
+//     };
+//   };
+//   bannerSection: {
+//     show: boolean;
+//     backgroundColor?: string;
+//     textColor?: string;
+//     theme: string;
+//     hideDivider: boolean;
+//     backgroundImage: {
+//       mobile?: any;
+//       tablet?: any;
+//       desktop?: any;
+//       large?: any;
+//       alt?: string;
+//     };
+//     heading: string;
+//     headingColor?: string;
+//     content?: any;
+//     bulletPoints?: Array<{ content: any }>;
+//   };
+//   ctaGeneralSection: {
+//     show: boolean;
+//     backgroundColor?: string;
+//     textColor?: string;
+//     heading: string;
+//     headingLink?: string;
+//     headingColor?: string;
+//     smallText?: string;
+//     ctaButton: {
+//       text: string;
+//       url: string;
+//       backgroundColor?: string;
+//       textColor?: string;
+//       hoverBackgroundColor?: string;
+//     };
+//     mediaImage: {
+//       mobile?: any;
+//       tablet?: any;
+//       desktop?: any;
+//       large?: any;
+//       alt?: string;
+//     };
+//   };
+//   boxGridSection: {
+//     show: boolean;
+//     backgroundColor?: string;
+//     textColor?: string;
+//     gridLayout: string;
+//     backgroundImage: {
+//       mobile?: any;
+//       tablet?: any;
+//       desktop?: any;
+//       large?: any;
+//       alt?: string;
+//     };
+//     heading: string;
+//     headingColor?: string;
+//     subheading?: any;
+//     boxes: Array<{
+//       heading: string;
+//       content: any;
+//       backgroundColor?: string;
+//       textColor?: string;
+//     }>;
+//   };
+//   sectionOrder: Array<{ section: string }>;
+//   globalStyles: {
+//     containerMaxWidth?: string;
+//     containerPadding?: string;
+//     sectionSpacing?: string;
+//     fontFamily?: string;
+//     primaryColor?: string;
+//     secondaryColor?: string;
+//     textColor?: string;
+//     linkColor?: string;
+//     linkHoverColor?: string;
+//     headingFontSize?: string;
+//   };
+// }
+
+// const LiquidRhinoplasty: React.FC = () => {
+//   const [pageData, setPageData] = useState<LiquidRhinoplastyData | null>(null);
+//   const [loading, setLoading] = useState(true);
+
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       try {
+//         const data = await fetchLiquidRFillersPageData(
+//           "liquid-rhinoplasty-page-component"
+//         );
+//         setPageData(data);
+//       } catch (error) {
+//         console.error("Error fetching liquid rhinoplasty page data:", error);
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
+//     fetchData();
+//   }, []);
+
+//   if (loading) return <div>Loading...</div>;
+//   if (!pageData) return <div>No data available</div>;
+
+//   const {
+//     heroSection,
+//     introSection,
+//     halfImageSection,
+//     ctaBeforeAfterSection,
+//     bannerSection,
+//     ctaGeneralSection,
+//     boxGridSection,
+//     sectionOrder,
+//     globalStyles,
+//   } = pageData;
+
+//   const renderSection = (section: string) => {
+//     switch (section) {
+//       case "hero":
+//         if (!heroSection.show) return null;
+//         const heroBgImages = getResponsiveImageUrls(
+//           heroSection.backgroundImage
+//         );
+//         const heroMediaImages = getResponsiveImageUrls(heroSection.mediaImage);
+//         return (
+//           <div
+//             className="mod_hero banner mobile-stack"
+//             data-s3-module
+//             style={{ backgroundColor: heroSection.backgroundColor }}
+//           >
+//             <div className="wrapper">
+//               {heroBgImages.large && (
+//                 <picture className="background">
+//                   {heroBgImages.mobile && (
+//                     <source
+//                       media="(max-width:420px)"
+//                       srcSet={heroBgImages.mobile}
+//                     />
+//                   )}
+//                   {heroBgImages.tablet && (
+//                     <source
+//                       media="(max-width:800px)"
+//                       srcSet={heroBgImages.tablet}
+//                     />
+//                   )}
+//                   {heroBgImages.desktop && (
+//                     <source
+//                       media="(max-width:1400px)"
+//                       srcSet={heroBgImages.desktop}
+//                     />
+//                   )}
+//                   <source srcSet={heroBgImages.large} />
+//                   <img
+//                     src={heroBgImages.large}
+//                     loading="lazy"
+//                     alt={heroBgImages.alt || "Background Texture"}
+//                     draggable="false"
+//                   />
+//                 </picture>
+//               )}
+//               <div className="row">
+//                 <div className="inner">
+//                   <ul className="partial_breadcrumb" data-s3-partial>
+//                     {heroSection.breadcrumbs.map((crumb, index) => (
+//                       <li key={index}>
+//                         <a
+//                           href={crumb.url}
+//                           role="link"
+//                           aria-label={crumb.ariaLabel}
+//                         >
+//                           {crumb.label}
+//                         </a>
+//                       </li>
+//                     ))}
+//                   </ul>
+//                   <h1
+//                     style={{
+//                       color: heroSection.titleColor,
+//                       fontSize: heroSection.titleFontSize,
+//                     }}
+//                   >
+//                     {heroSection.title}
+//                   </h1>
+//                   <div
+//                     className="text"
+//                     style={{ color: heroSection.descriptionColor }}
+//                   >
+//                     <div
+//                       dangerouslySetInnerHTML={{
+//                         __html: lexicalToHtml(heroSection.description),
+//                       }}
+//                     />
+//                     {heroSection.ctaButton.show && (
+//                       <p>
+//                         <a
+//                           className="btn white"
+//                           href={heroSection.ctaButton.url}
+//                           role="button"
+//                           style={{
+//                             backgroundColor:
+//                               heroSection.ctaButton.backgroundColor,
+//                             color: heroSection.ctaButton.textColor,
+//                           }}
+//                           onMouseOver={(e) =>
+//                             heroSection.ctaButton.hoverBackgroundColor &&
+//                             (e.currentTarget.style.backgroundColor =
+//                               heroSection.ctaButton.hoverBackgroundColor)
+//                           }
+//                           onMouseOut={(e) =>
+//                             heroSection.ctaButton.backgroundColor &&
+//                             (e.currentTarget.style.backgroundColor =
+//                               heroSection.ctaButton.backgroundColor)
+//                           }
+//                         >
+//                           {heroSection.ctaButton.text}
+//                         </a>
+//                       </p>
+//                     )}
+//                   </div>
+//                 </div>
+//               </div>
+//               {heroMediaImages.large && (
+//                 <div className="media">
+//                   <picture className="background">
+//                     {heroMediaImages.mobile && (
+//                       <source
+//                         media="(max-width:420px)"
+//                         srcSet={heroMediaImages.mobile}
+//                       />
+//                     )}
+//                     {heroMediaImages.tablet && (
+//                       <source
+//                         media="(max-width:800px)"
+//                         srcSet={heroMediaImages.tablet}
+//                       />
+//                     )}
+//                     {heroMediaImages.desktop && (
+//                       <source
+//                         media="(max-width:1400px)"
+//                         srcSet={heroMediaImages.desktop}
+//                       />
+//                     )}
+//                     <source srcSet={heroMediaImages.large} />
+//                     <img
+//                       src={heroMediaImages.large}
+//                       loading="lazy"
+//                       alt={heroMediaImages.alt || "Woman's side profile"}
+//                       draggable="false"
+//                     />
+//                   </picture>
+//                 </div>
+//               )}
+//             </div>
+//           </div>
+//         );
+
+//       case "intro":
+//         if (!introSection.show) return null;
+//         const introLogoUrl = introSection.logo
+//           ? getResponsiveImageUrls(introSection.logo).large
+//           : null;
+//         return (
+//           <div
+//             className="mod_intro container viewport option-1 wow fadeInUp"
+//             data-s3-module
+//             style={{
+//               backgroundColor: introSection.backgroundColor,
+//               color: introSection.textColor,
+//             }}
+//           >
+//             <div className="row">
+//               {introLogoUrl && (
+//                 <picture className="logo">
+//                   <img
+//                     src={introLogoUrl}
+//                     loading="lazy"
+//                     alt={introSection.logoAlt || "Goldfingers aesthetic logo"}
+//                     draggable="false"
+//                     data-api-key="logo"
+//                   />
+//                 </picture>
+//               )}
+//               <div className="inner" data-api-key="content">
+//                 <h2 style={{ color: introSection.headingColor }}>
+//                   {introSection.smallText && (
+//                     <span className="small">
+//                       {introSection.smallText} &ndash;
+//                     </span>
+//                   )}
+//                   {introSection.heading}
+//                 </h2>
+//                 <div
+//                   dangerouslySetInnerHTML={{
+//                     __html: lexicalToHtml(introSection.content),
+//                   }}
+//                 />
+//               </div>
+//             </div>
+//           </div>
+//         );
+
+//       case "halfImage":
+//         if (!halfImageSection.show) return null;
+//         const halfImages = getResponsiveImageUrls(halfImageSection.image);
+//         return (
+//           <div
+//             className={`mod_half_image viewport half-image container wow fadeInLeft`}
+//             data-s3-module
+//             style={{
+//               backgroundColor: halfImageSection.backgroundColor,
+//               color: halfImageSection.textColor,
+//             }}
+//           >
+//             <div
+//               className={`row half-image-row ${
+//                 halfImageSection.imagePosition === "left" ? "" : "flipped"
+//               }`}
+//             >
+//               {halfImages.large && (
+//                 <div className="media">
+//                   <picture className="background">
+//                     {halfImages.mobile && (
+//                       <source
+//                         media="(max-width:420px)"
+//                         srcSet={halfImages.mobile}
+//                       />
+//                     )}
+//                     {halfImages.tablet && (
+//                       <source
+//                         media="(max-width:800px)"
+//                         srcSet={halfImages.tablet}
+//                       />
+//                     )}
+//                     {halfImages.desktop && (
+//                       <source
+//                         media="(max-width:1400px)"
+//                         srcSet={halfImages.desktop}
+//                       />
+//                     )}
+//                     <source srcSet={halfImages.large} />
+//                     <img
+//                       src={halfImages.large}
+//                       loading="lazy"
+//                       alt={halfImages.alt || "Woman touching her neck"}
+//                       draggable="false"
+//                       data-api-key="image"
+//                     />
+//                   </picture>
+//                 </div>
+//               )}
+//               <div className="copy">
+//                 <div className="inner">
+//                   <div className="content" data-api-key="content">
+//                     <h2 style={{ color: halfImageSection.headingColor }}>
+//                       {halfImageSection.heading}
+//                     </h2>
+//                     <div
+//                       dangerouslySetInnerHTML={{
+//                         __html: lexicalToHtml(halfImageSection.content),
+//                       }}
+//                     />
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         );
+
+//       case "ctaBeforeAfter":
+//         if (!ctaBeforeAfterSection.show) return null;
+//         return (
+//           <div
+//             className="mod_cta_ba cta container wow fadeInUp"
+//             data-s3-module
+//             style={{
+//               backgroundColor: ctaBeforeAfterSection.backgroundColor,
+//               color: ctaBeforeAfterSection.textColor,
+//             }}
+//           >
+//             <div className="row">
+//               <div className="text">
+//                 <h2
+//                   data-api-key="title"
+//                   style={{ color: ctaBeforeAfterSection.headingColor }}
+//                 >
+//                   {ctaBeforeAfterSection.heading}
+//                 </h2>
+//                 {ctaBeforeAfterSection.subheading && (
+//                   <p>{ctaBeforeAfterSection.subheading}</p>
+//                 )}
+//                 <div className="patients" data-api-key="patients">
+//                   <div className="patient-wrap grid">
+//                     {ctaBeforeAfterSection.patients.map((patient, index) => {
+//                       const patientImageUrl = getResponsiveImageUrls(
+//                         patient.image
+//                       ).large;
+//                       return patientImageUrl ? (
+//                         <div key={index} className="patient single">
+//                           <a href={patient.link || "#"}>
+//                             <picture className="">
+//                               <img
+//                                 src={patientImageUrl}
+//                                 loading="lazy"
+//                                 alt={patient.alt || "liquid rhinoplasty"}
+//                                 draggable="false"
+//                               />
+//                             </picture>
+//                           </a>
+//                         </div>
+//                       ) : null;
+//                     })}
+//                   </div>
+//                 </div>
+//                 <a
+//                   href={ctaBeforeAfterSection.ctaButton.url}
+//                   className="btn"
+//                   aria-label={ctaBeforeAfterSection.ctaButton.ariaLabel}
+//                   style={{
+//                     backgroundColor:
+//                       ctaBeforeAfterSection.ctaButton.backgroundColor,
+//                     color: ctaBeforeAfterSection.ctaButton.textColor,
+//                   }}
+//                 >
+//                   {ctaBeforeAfterSection.ctaButton.text}
+//                 </a>
+//               </div>
+//             </div>
+//           </div>
+//         );
+
+//       case "banner":
+//         if (!bannerSection.show) return null;
+//         const bannerImages = getResponsiveImageUrls(
+//           bannerSection.backgroundImage
+//         );
+//         return (
+//           <div
+//             className={`mod_banner ${bannerSection.theme} ${
+//               bannerSection.hideDivider ? "hide-divider" : ""
+//             } viewport background-2`}
+//             data-s3-module
+//             style={{
+//               backgroundColor: bannerSection.backgroundColor,
+//               color: bannerSection.textColor,
+//             }}
+//           >
+//             <div className="row wow fadeInUp">
+//               <div className="content" data-api-key="top_content">
+//                 <h2 style={{ color: bannerSection.headingColor }}>
+//                   {bannerSection.heading}
+//                 </h2>
+//                 <div
+//                   dangerouslySetInnerHTML={{
+//                     __html: lexicalToHtml(bannerSection.content),
+//                   }}
+//                 />
+//                 {bannerSection.bulletPoints && (
+//                   <ul className="columns">
+//                     {bannerSection.bulletPoints.map((point, index) => (
+//                       <li
+//                         key={index}
+//                         dangerouslySetInnerHTML={{
+//                           __html: lexicalToHtml(point.content),
+//                         }}
+//                       />
+//                     ))}
+//                   </ul>
+//                 )}
+//               </div>
+//             </div>
+//             {bannerImages.large && (
+//               <picture className="background">
+//                 {bannerImages.mobile && (
+//                   <source
+//                     media="(max-width:420px)"
+//                     srcSet={bannerImages.mobile}
+//                   />
+//                 )}
+//                 {bannerImages.tablet && (
+//                   <source
+//                     media="(max-width:800px)"
+//                     srcSet={bannerImages.tablet}
+//                   />
+//                 )}
+//                 {bannerImages.desktop && (
+//                   <source
+//                     media="(max-width:1400px)"
+//                     srcSet={bannerImages.desktop}
+//                   />
+//                 )}
+//                 <source srcSet={bannerImages.large} />
+//                 <img
+//                   src={bannerImages.large}
+//                   loading="lazy"
+//                   alt={bannerImages.alt || "Banner media"}
+//                   draggable="false"
+//                 />
+//               </picture>
+//             )}
+//           </div>
+//         );
+
+//       case "ctaGeneral":
+//         if (!ctaGeneralSection.show) return null;
+//         const ctaImages = getResponsiveImageUrls(ctaGeneralSection.mediaImage);
+//         return (
+//           <div
+//             className="mod_cta_general viewport container cta wow fadeInRight background-1"
+//             data-s3-module
+//             style={{
+//               backgroundColor: ctaGeneralSection.backgroundColor,
+//               color: ctaGeneralSection.textColor,
+//             }}
+//           >
+//             <div className="row">
+//               <div className="text">
+//                 <h2 style={{ color: ctaGeneralSection.headingColor }}>
+//                   {ctaGeneralSection.smallText && (
+//                     <span className="small">{ctaGeneralSection.smallText}</span>
+//                   )}
+//                   {ctaGeneralSection.headingLink ? (
+//                     <a href={ctaGeneralSection.headingLink}>
+//                       {ctaGeneralSection.heading}
+//                     </a>
+//                   ) : (
+//                     ctaGeneralSection.heading
+//                   )}
+//                 </h2>
+//                 <a
+//                   href={ctaGeneralSection.ctaButton.url}
+//                   className="btn"
+//                   style={{
+//                     backgroundColor:
+//                       ctaGeneralSection.ctaButton.backgroundColor,
+//                     color: ctaGeneralSection.ctaButton.textColor,
+//                   }}
+//                   onMouseOver={(e) =>
+//                     ctaGeneralSection.ctaButton.hoverBackgroundColor &&
+//                     (e.currentTarget.style.backgroundColor =
+//                       ctaGeneralSection.ctaButton.hoverBackgroundColor)
+//                   }
+//                   onMouseOut={(e) =>
+//                     ctaGeneralSection.ctaButton.backgroundColor &&
+//                     (e.currentTarget.style.backgroundColor =
+//                       ctaGeneralSection.ctaButton.backgroundColor)
+//                   }
+//                 >
+//                   {ctaGeneralSection.ctaButton.text}
+//                 </a>
+//               </div>
+//               {ctaImages.large && (
+//                 <div className="media">
+//                   <picture className="background">
+//                     {ctaImages.mobile && (
+//                       <source
+//                         media="(max-width:420px)"
+//                         srcSet={ctaImages.mobile}
+//                       />
+//                     )}
+//                     {ctaImages.tablet && (
+//                       <source
+//                         media="(max-width:800px)"
+//                         srcSet={ctaImages.tablet}
+//                       />
+//                     )}
+//                     {ctaImages.desktop && (
+//                       <source
+//                         media="(max-width:1400px)"
+//                         srcSet={ctaImages.desktop}
+//                       />
+//                     )}
+//                     <source srcSet={ctaImages.large} />
+//                     <img
+//                       src={ctaImages.large}
+//                       loading="lazy"
+//                       alt={ctaImages.alt || "Contact us media"}
+//                       draggable="false"
+//                     />
+//                   </picture>
+//                 </div>
+//               )}
+//             </div>
+//           </div>
+//         );
+
+//       case "boxGrid":
+//         if (!boxGridSection.show) return null;
+//         const boxGridImages = getResponsiveImageUrls(
+//           boxGridSection.backgroundImage
+//         );
+//         return (
+//           <div
+//             className={`mod_box_grid viewport container option-1 ${boxGridSection.gridLayout} bkg-image wider`}
+//             data-s3-module
+//             style={{
+//               backgroundColor: boxGridSection.backgroundColor,
+//               color: boxGridSection.textColor,
+//             }}
+//           >
+//             <div className="row">
+//               <div className="content-before">
+//                 <h2 style={{ color: boxGridSection.headingColor }}>
+//                   {boxGridSection.heading}
+//                   {boxGridSection.subheading && (
+//                     <span className="block">{boxGridSection.subheading}</span>
+//                   )}
+//                 </h2>
+//                 <div
+//                   dangerouslySetInnerHTML={{
+//                     __html: lexicalToHtml(boxGridSection.subheading),
+//                   }}
+//                 />
+//               </div>
+//               <div className={`boxes ${boxGridSection.gridLayout}`}>
+//                 {boxGridSection.boxes.map((box, index) => (
+//                   <div
+//                     key={index}
+//                     className="box wow fadeInUp"
+//                     style={{
+//                       backgroundColor: box.backgroundColor,
+//                       color: box.textColor,
+//                     }}
+//                   >
+//                     <h3>{box.heading}</h3>
+//                     <div
+//                       dangerouslySetInnerHTML={{
+//                         __html: lexicalToHtml(box.content),
+//                       }}
+//                     />
+//                   </div>
+//                 ))}
+//               </div>
+//             </div>
+//             {boxGridImages.large && (
+//               <picture className="background">
+//                 {boxGridImages.mobile && (
+//                   <source
+//                     media="(max-width:420px)"
+//                     srcSet={boxGridImages.mobile}
+//                   />
+//                 )}
+//                 {boxGridImages.tablet && (
+//                   <source
+//                     media="(max-width:800px)"
+//                     srcSet={boxGridImages.tablet}
+//                   />
+//                 )}
+//                 {boxGridImages.desktop && (
+//                   <source
+//                     media="(max-width:1400px)"
+//                     srcSet={boxGridImages.desktop}
+//                   />
+//                 )}
+//                 <source srcSet={boxGridImages.large} />
+//                 <img
+//                   src={boxGridImages.large}
+//                   loading="lazy"
+//                   alt={boxGridImages.alt || "Background media"}
+//                   draggable="false"
+//                 />
+//               </picture>
+//             )}
+//           </div>
+//         );
+
+//       default:
+//         return null;
+//     }
+//   };
+
+//   return (
+//     <main
+//       id="main"
+//       style={{
+//         maxWidth: globalStyles.containerMaxWidth,
+//         padding: globalStyles.containerPadding,
+//         fontFamily: globalStyles.fontFamily,
+//         color: globalStyles.textColor,
+//         margin: "0 auto",
+//       }}
+//     >
+//       {sectionOrder.map((item, index) => (
+//         <React.Fragment key={index}>
+//           {renderSection(item.section)}
+//         </React.Fragment>
+//       ))}
+//     </main>
+//   );
+// };
+
+// export default LiquidRhinoplasty;

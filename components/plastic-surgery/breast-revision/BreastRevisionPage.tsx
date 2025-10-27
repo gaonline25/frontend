@@ -1,571 +1,1160 @@
-import React from "react";
+// import React from "react";
+
+// const BreastRevisionPage: React.FC = () => {
+//   return (
+//     <main id="main">
+//       {/* Page Layout */}
+//       {/* Hero Module */}
+//       <div className="mod_hero banner mobile-stack" data-s3-module>
+//         <div className="wrapper">
+//           <picture className="background">
+//             <source
+//               media="(max-width:420px)"
+//               srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//               data-lazyload-srcset="https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=630 2x"
+//             />
+//             <source
+//               media="(max-width:800px)"
+//               srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//               data-lazyload-srcset="https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=1200 2x"
+//             />
+//             <source
+//               media="(max-width:1400px)"
+//               srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//               data-lazyload-srcset="https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=1400, https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=2100 2x"
+//             />
+//             <source
+//               srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//               data-lazyload-srcset="https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=1994"
+//             />
+//             <img
+//               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//               data-lazyload-src="https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=1994"
+//               loading="lazy"
+//               data-lazyload="img"
+//               width="1994"
+//               height="1206"
+//               alt="Background Texture"
+//               draggable="false"
+//             />
+//           </picture>
+//           <div className="row">
+//             <div className="inner">
+//               <ul className="partial_breadcrumb" data-s3-partial>
+//                 <li>
+//                   <a
+//                     href="/"
+//                     role="link"
+//                     aria-label="Breadcrumbs to help navigate the user"
+//                   >
+//                     Home
+//                   </a>
+//                 </li>
+//                 <li>
+//                   <a
+//                     href="/plastic-surgery/"
+//                     role="link"
+//                     aria-label="Breadcrumbs to help navigate the user"
+//                   >
+//                     Plastic Surgery
+//                   </a>
+//                 </li>
+//                 <li>
+//                   <a
+//                     href="/plastic-surgery/breast-revision/"
+//                     role="link"
+//                     aria-label="Breadcrumbs to help navigate the user"
+//                   >
+//                     Breast Revision
+//                   </a>
+//                 </li>
+//               </ul>
+//               <h1>Breast Revision</h1>
+//               <div className="text">
+//                 <p>Refine, Refresh, and Reclaim Your Ideal Breast Shape</p>
+//                 <p>
+//                   <a className="btn white" href="/contact/" role="button">
+//                     Book an Appointment
+//                   </a>
+//                 </p>
+//               </div>
+//             </div>
+//           </div>
+//           <div className="media">
+//             <picture className="background">
+//               <source
+//                 media="(max-width:420px)"
+//                 srcSet="https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=630 2x"
+//                 data-lazyload-srcset="https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=630 2x"
+//               />
+//               <source
+//                 media="(max-width:800px)"
+//                 srcSet="https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=1200 2x"
+//                 data-lazyload-srcset="https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=1200 2x"
+//               />
+//               <source
+//                 media="(max-width:1400px)"
+//                 srcSet="https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=1400, https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=2100 2x"
+//                 data-lazyload-srcset="https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=1400, https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=2100 2x"
+//               />
+//               <source
+//                 srcSet="https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=1920"
+//                 data-lazyload-srcset="https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=1920"
+//               />
+//               <img
+//                 src="https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=1920"
+//                 width="1920"
+//                 height="1206"
+//                 alt="woman walking with nurse"
+//                 draggable="false"
+//               />
+//             </picture>
+//           </div>
+//         </div>
+//       </div>
+//       {/* Intro Module */}
+//       <div
+//         className="mod_intro container viewport option-1 wide wow fadeInUp"
+//         data-s3-module
+//       >
+//         <div className="row ">
+//           <picture className="logo">
+//             <img
+//               src="https://www.datocms-assets.com/105497/1692813243-logo-module.svg"
+//               width={58}
+//               height={64}
+//               loading="lazy"
+//               alt="Goldfingers aesthetic logo"
+//               draggable="false"
+//               data-api-key="logo"
+//             />
+//           </picture>
+//           <div className="inner" data-api-key="content">
+//             <h2>Personalized Breast Revision</h2>
+//             <p>
+//               Breast revision surgery, also known as breast implant revision or
+//               secondary breast augmentation, is a specialized procedure designed
+//               to address concerns that may arise after a previous breast
+//               augmentation surgery. At Goldfingers Aesthetics &Plastic Surgery,
+//               our experienced plastic surgeon, Dr. Michael McClure, offers
+//               personalized breast revision procedures to help you achieve
+//               beautiful results.
+//             </p>
+//           </div>
+//         </div>
+//       </div>
+//       {/* Half Image Module */}
+//       <div
+//         className="mod_half_image  viewport half-image container wow fadeInLeft "
+//         data-s3-module
+//       >
+//         <div className="row half-image-row mb-80-desktop mb-40-tablet-down">
+//           <div className="media">
+//             <picture className="background">
+//               <source
+//                 media="(max-width:420px)"
+//                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-srcset="https://www.datocms-assets.com/105497/1694009208-breast-revision.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1694009208-breast-revision.jpg?auto=format,compress&w=630 2x"
+//               />
+//               <source
+//                 media="(max-width:800px)"
+//                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-srcset="https://www.datocms-assets.com/105497/1694009208-breast-revision.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1694009208-breast-revision.jpg?auto=format,compress&w=1200 2x"
+//               />
+//               <source
+//                 media="(max-width:1400px)"
+//                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-srcset="https://www.datocms-assets.com/105497/1694009208-breast-revision.jpg?auto=format,compress&w=1400, https://www.datocms-assets.com/105497/1694009208-breast-revision.jpg?auto=format,compress&w=2100 2x"
+//               />
+//               <source
+//                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-srcset="https://www.datocms-assets.com/105497/1694009208-breast-revision.jpg?auto=format,compress&w=1832"
+//               />
+//               <img
+//                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-src="https://www.datocms-assets.com/105497/1694009208-breast-revision.jpg?auto=format,compress&w=1832"
+//                 loading="lazy"
+//                 data-lazyload="img"
+//                 width="1832"
+//                 height="1824"
+//                 alt="blonde woman in sports bra"
+//                 draggable="false"
+//                 data-api-key="image"
+//               />
+//             </picture>
+//           </div>
+//           <div className="copy ">
+//             <div className="inner">
+//               <div className="content" data-api-key="content">
+//                 <h2>
+//                   Breast Revision:{" "}
+//                   <span className="small">What You Need to Know</span>
+//                 </h2>
+//                 <p>
+//                   Breast revision is a surgical procedure that involves removing
+//                   or replacing breast implants. This can be done for a variety
+//                   of reasons, including to:
+//                 </p>
+//                 <ul>
+//                   <li>
+//                     Correct complications from a previous breast augmentation
+//                     surgery
+//                   </li>
+//                   <li>Change the size or type of implant</li>
+//                   <li>Address changes in the breast tissue over time</li>
+//                 </ul>
+//                 <p>The surgery typically involves:</p>
+//                 <ul>
+//                   <li>Removing the existing implants</li>
+//                   <li>
+//                     Making any necessary adjustments to the breast tissue or
+//                     implant pocket
+//                   </li>
+//                   <li>Placing new implants</li>
+//                 </ul>
+//                 <p>
+//                   Breast revision can be performed under general anesthesia and
+//                   may require a few days of recovery.
+//                 </p>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//       {/* Banner Module */}
+//       <div
+//         className="mod_banner dark  hide-divider viewport background-4"
+//         data-s3-module
+//       >
+//         <div className="row wow fadeInUp">
+//           <div className="content" data-api-key="top_content">
+//             <h2>Should I Undergo Breast Revision Surgery?</h2>
+//             <p>
+//               If you're experiencing any of the following, you may be a good
+//               candidate for breast revision surgery:
+//             </p>
+//             <ul className="columns">
+//               <li>
+//                 <strong>Capsular Contracture</strong>: Formation of scar tissue
+//                 around the implant, causing firmness, discomfort, and
+//                 distortion.
+//               </li>
+//               <li>
+//                 <strong>Implant Rupture or Leakage</strong>: Silicone or saline
+//                 implant rupture, requiring replacement to restore breast
+//                 appearance.
+//               </li>
+//               <li>
+//                 <strong>Implant Malposition</strong>: Implants shift from their
+//                 original position, leading to asymmetry or unnatural appearance.
+//               </li>
+//               <li>
+//                 <strong>Symmastia</strong>: Implants moving too close together,
+//                 causing a "uni-boob \"appearance.
+//               </li>
+//               <li>
+//                 <strong>Double Bubble</strong>: Visible crease or indentation
+//                 above the implant due to implant displacement.
+//               </li>
+//               <li>
+//                 <strong>Breast Ptosis</strong>: Sagging or drooping breasts over
+//                 time, necessitating a lift or adjustment.
+//               </li>
+//               <li>
+//                 <strong>Desire for Size or Shape Change</strong>: Wanting to
+//                 increase or decrease implant size or switch from saline to
+//                 silicone implants.
+//               </li>
+//               <li>
+//                 <strong>Changes After Pregnancy or Weight Loss</strong>: Changes
+//                 in breast volume and shape following significant life events.
+//               </li>
+//             </ul>
+//           </div>
+//         </div>
+//         <picture className="background">
+//           <source
+//             media="(max-width:420px)"
+//             srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//             data-lazyload-srcset="https://www.datocms-assets.com/105497/1693257047-banner-bgd-4.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1693257047-banner-bgd-4.jpg?auto=format,compress&w=1200 2x"
+//           />
+//           <source
+//             media="(max-width:800px)"
+//             srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//             data-lazyload-srcset="https://www.datocms-assets.com/105497/1693257047-banner-bgd-4.jpg?auto=format,compress&w=800&q=85&sharp=5, https://www.datocms-assets.com/105497/1693257047-banner-bgd-4.jpg?auto=format,compress&w=1200&q=85&sharp=5 2x"
+//           />
+//           <source
+//             media="(max-width:1400px)"
+//             srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//             data-lazyload-srcset="https://www.datocms-assets.com/105497/1693257047-banner-bgd-4.jpg?auto=format,compress&w=1400&q=85&sharp=5, https://www.datocms-assets.com/105497/1693257047-banner-bgd-4.jpg?auto=format,compress&w=2100&q=85&sharp=5 2x"
+//           />
+//           <source
+//             srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//             data-lazyload-srcset="https://www.datocms-assets.com/105497/1693257047-banner-bgd-4.jpg?auto=format,compress&w=2200&q=85&sharp=5"
+//           />
+//           <img
+//             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//             data-lazyload-src="https://www.datocms-assets.com/105497/1693257047-banner-bgd-4.jpg?auto=format,compress&w=2200&q=85&sharp=5"
+//             loading="lazy"
+//             data-lazyload="img"
+//             width="2200"
+//             height="802"
+//             alt="Banner media"
+//             draggable="false"
+//           />
+//         </picture>
+//       </div>
+//       {/* Column Module */}
+//       <div className="mod_column viewport container has-media" data-s3-module>
+//         <div className="row mt-40 mb-40 media-right" data-api-key="content">
+//           <div className="item">
+//             <h2>Dr. McClure Is Here to Help</h2>
+//             <p>
+//               Dr. McClure's meticulous approach to breast revision surgery aims
+//               to enhance your breast appearance, address complications, and
+//               provide you with results that align with your aesthetic goals.
+//               With his expertise and commitment to patient satisfaction, you can
+//               trust that your breast revision procedure at Goldfingers
+//               Aesthetics &Plastic Surgery will be tailored to your unique needs
+//               and preferences.
+//             </p>
+//           </div>
+//           <picture className="media">
+//             <source
+//               media="(max-width:420px)"
+//               srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//               data-lazyload-srcset="https://www.datocms-assets.com/105497/1695239332-accent-3-1.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1695239332-accent-3-1.jpg?auto=format,compress&w=630 2x"
+//             />
+//             <source
+//               media="(max-width:800px)"
+//               srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//               data-lazyload-srcset="https://www.datocms-assets.com/105497/1695239332-accent-3-1.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1695239332-accent-3-1.jpg?auto=format,compress&w=1200 2x"
+//             />
+//             <source
+//               srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//               data-lazyload-srcset="https://www.datocms-assets.com/105497/1695239332-accent-3-1.jpg?auto=format,compress&w=904"
+//             />
+//             <img
+//               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//               data-lazyload-src="https://www.datocms-assets.com/105497/1695239332-accent-3-1.jpg?auto=format,compress&w=904"
+//               loading="lazy"
+//               data-lazyload="img"
+//               width="904"
+//               height="1062"
+//               alt="Goldfingers medspa room"
+//               draggable="false"
+//             />
+//           </picture>
+//         </div>
+//       </div>
+//       {/* Box Grid Module */}
+//       <div
+//         className="mod_box_grid viewport  five-boxes  container option-2 default  bkg-image dark wider "
+//         data-s3-module
+//       >
+//         <div className="row">
+//           <div className="content-before">
+//             <h2>What Does The Surgery Entail?</h2>
+//             <p>
+//               Breast revision surgery is a personalized procedure tailored to
+//               resolve your unique concerns and goals. The specific surgical
+//               approach will depend on the complications or changes you wish to
+//               address. During your Goldfingers Aesthetics &Plastic Surgery
+//               consultation, Dr. Michael McClure will discuss your desired
+//               outcomes and recommend a surgical plan that suits your needs.
+//               Procedures commonly involved in breast revision surgery include:
+//             </p>
+//           </div>
+//           <div className="boxes wider">
+//             <div className="box wow fadeInUp">
+//               <h3>Implant Replacement</h3>
+//               <p>
+//                 Removing the existing implants and replacing them with new ones
+//                 to achieve the desired size or shape or replace older implants.
+//               </p>
+//             </div>
+//             <div className="box wow fadeInUp">
+//               <h3>Implant Removal</h3>
+//               <p>
+//                 Remove implants if you no longer wish to have them, possibly
+//                 accompanied by a breast lift.
+//               </p>
+//             </div>
+//             <div className="box wow fadeInUp">
+//               <h3>Implant Repositioning</h3>
+//               <p>
+//                 Adjusting the implant pocket to correct malposition or
+//                 asymmetry.
+//               </p>
+//             </div>
+//             <div className="box wow fadeInUp">
+//               <h3>Breast Lift (Mastopexy)</h3>
+//               <p>
+//                 Combining a breast revision with a lift you can addresses
+//                 sagging and achieves a more youthful contour.
+//               </p>
+//             </div>
+//             <div className="box wow fadeInUp">
+//               <h3>Capsular Contracture Correction</h3>
+//               <p>
+//                 Removing or releasing the scar tissue capsule around the implant
+//                 and replacing the implant.
+//               </p>
+//             </div>
+//           </div>
+//           <div className="content-after">
+//             <p>
+//               Dr. McClure's experience and skill ensure that your breast
+//               revision surgery is performed with precision and artistry, aiming
+//               for natural and harmonious results.
+//             </p>
+//           </div>
+//         </div>
+//         <picture className="background">
+//           <source
+//             media="(max-width:420px)"
+//             srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//             data-lazyload-srcset="https://www.datocms-assets.com/105497/1693256962-box-mod-bgd-2.jpg?auto=format,compress&w=1000, https://www.datocms-assets.com/105497/1693256962-box-mod-bgd-2.jpg?auto=format,compress&w=1500 2x"
+//           />
+//           <source
+//             media="(max-width:800px)"
+//             srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//             data-lazyload-srcset="https://www.datocms-assets.com/105497/1693256962-box-mod-bgd-2.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1693256962-box-mod-bgd-2.jpg?auto=format,compress&w=1200 2x"
+//           />
+//           <source
+//             media="(max-width:1400px)"
+//             srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//             data-lazyload-srcset="https://www.datocms-assets.com/105497/1693256962-box-mod-bgd-2.jpg?auto=format,compress&w=1400, https://www.datocms-assets.com/105497/1693256962-box-mod-bgd-2.jpg?auto=format,compress&w=2100 2x"
+//           />
+//           <source
+//             srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//             data-lazyload-srcset="https://www.datocms-assets.com/105497/1693256962-box-mod-bgd-2.jpg?auto=format,compress&w=2200"
+//           />
+//           <img
+//             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//             data-lazyload-src="https://www.datocms-assets.com/105497/1693256962-box-mod-bgd-2.jpg?auto=format,compress&w=2200"
+//             loading="lazy"
+//             data-lazyload="img"
+//             width="2200"
+//             height="979"
+//             alt="Background media"
+//             draggable="false"
+//           />
+//         </picture>
+//       </div>
+//       {/* Column Module */}
+//       <div className="mod_column viewport container" data-s3-module>
+//         <div className="row mt-30 mb-30" data-api-key="content">
+//           <div className="item">
+//             <h2 className="text-center">
+//               What Is The Recovery Time{" "}
+//               <span className="block-desktop">
+//                 After Breast Revision Surgery?
+//               </span>
+//             </h2>
+//             <p>
+//               Recovery after breast revision surgery varies depending on the
+//               extent of the procedure and your body's healing process. You may
+//               experience some swelling, bruising, and discomfort, which will
+//               gradually subside over the following weeks. After your breast
+//               revision surgery, taking good care of yourself is essential to
+//               ensure a smooth and successful recovery. Dr. McClure and the
+//               Goldfingers Aesthetics &Plastic Surgery team will provide detailed
+//               aftercare instructions to guide you through the recovery process
+//               and help you achieve the best possible outcomes. Some of the
+//               critical aftercare instructions you may receive include:
+//             </p>
+//             <ul className="columns">
+//               <li>
+//                 Take a few days off work and avoid strenuous activities for
+//                 several weeks
+//               </li>
+//               <li>
+//                 Carefully follow dosage instructions for prescribed pain
+//                 medications and report any side effects
+//               </li>
+//               <li>
+//                 If you have dressings or bandages over your incisions after your
+//                 surgery, keep these clean and dry to prevent infection
+//               </li>
+//               <li>
+//                 Follow instructions on when and how to wear your compression
+//                 garment to help reduce swelling and support your breasts during
+//                 the healing process
+//               </li>
+//               <li>
+//                 Attend follow-up appointments with Dr. McClure to monitor your
+//                 progress and ensure that you're healing properly
+//               </li>
+//             </ul>
+//           </div>
+//         </div>
+//       </div>
+//       {/* Box Grid Module */}
+//       <div
+//         className="mod_box_grid viewport    container option-3 default  bkg-image dark wider "
+//         data-s3-module
+//       >
+//         <div className="row">
+//           <div className="content-before">
+//             <h2>Why choose Goldfingers Aesthetics &Plastic Surgery?</h2>
+//             <p>
+//               Goldfingers Aesthetics &Plastic Surgery is renowned for its
+//               commitment to excellence in cosmetic procedures, including breast
+//               revision surgery. Here's why you can trust us for your breast
+//               revision needs:
+//             </p>
+//           </div>
+//           <div className="boxes wider">
+//             <div className="box wow fadeInUp">
+//               <h3>Over 25 years in aesthetics</h3>
+//               <p>
+//                 With over two decades of experience, we have a rich history of
+//                 delivering exceptional patient results.
+//               </p>
+//             </div>
+//             <div className="box wow fadeInUp">
+//               <h3>Largest Aesthetics Center</h3>
+//               <p>
+//                 We are the largest aesthetics center in Florida, with more than
+//                 24 locations and counting.
+//               </p>
+//             </div>
+//             <div className="box wow fadeInUp">
+//               <h3>Board-Certified Expertise</h3>
+//               <p>
+//                 Dr. Michael McClure is board-certified by the American Board of
+//                 Plastic Surgery, ensuring the highest level of skill and
+//                 knowledge.
+//               </p>
+//             </div>
+//             <div className="box wow fadeInUp">
+//               <h3>Clinical Excellence</h3>
+//               <p>
+//                 Our dedicated team comprises experienced and skilled
+//                 professionals passionate about delivering superior outcomes.
+//               </p>
+//             </div>
+//             <div className="box wow fadeInUp">
+//               <h3>State-of-the-Art Facility</h3>
+//               <p>
+//                 We perform procedures in a state-of-the-art surgical center
+//                 equipped with advanced technology for optimal safety and
+//                 results.
+//               </p>
+//             </div>
+//             <div className="box wow fadeInUp">
+//               <h3>Patient-Centric Care</h3>
+//               <p>
+//                 We prioritize your comfort, safety, and satisfaction throughout
+//                 your entire journey with us.
+//               </p>
+//             </div>
+//           </div>
+//           <div className="content-after">
+//             <p>
+//               When you choose Goldfingers Aesthetics &Plastic Surgery for your
+//               breast revision procedure, you select a team dedicated to
+//               providing personalized, expert care and achieving the best
+//               possible results for your aesthetic goals. If you're ready to take
+//               the next step towards achieving your ideal breast appearance,
+//               contact Goldfingers Aesthetics &Plastic Surgery today to schedule
+//               your consultation with Dr. McClure. Together, we can help you
+//               achieve the beautiful, natural-looking results you deserve.
+//             </p>
+//           </div>
+//         </div>
+//       </div>
+//       {/* /Page Layout */}
+//     </main>
+//   );
+// };
+
+// export default BreastRevisionPage;
+
+
+
+"use client";
+
+import React, { useEffect, useState } from "react";
+import {
+  fetchBreastRevisionPageData,
+  getResponsiveImageUrls,
+  lexicalToHtml,
+} from "@/lib/api/plasticSurgery/fetchBreastRevisionPageComponent";
+
+interface BreastRevisionData {
+  heroSection: any;
+  introSection: any;
+  halfImageSection: any;
+  bannerSection1: any;
+  columnSection1: any;
+  boxGridSection1: any;
+  columnSection2: any;
+  boxGridSection2: any;
+  sectionOrder: any[];
+}
 
 const BreastRevisionPage: React.FC = () => {
+  const [pageData, setPageData] = useState<BreastRevisionData | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await fetchBreastRevisionPageData(
+          "breast-revision-page-component"
+        );
+        setPageData(data);
+      } catch (error) {
+        console.error("Error fetching Breast Revision page data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
+  const getLogoUrl = (logo: any) => {
+    if (!logo) return null;
+
+    // If logo is a string, return it as is
+    if (typeof logo === "string") return logo;
+
+    // Prioritize cloudinary_url if available
+    if (logo.cloudinary_url) return logo.cloudinary_url;
+
+    // Fallback to url property
+    if (logo.url) return logo.url;
+
+    return null;
+  };
+
+
+  if (loading) return <div>Loading...</div>;
+  if (!pageData) return <div>No data available</div>;
+
+  const {
+    heroSection,
+    introSection,
+    halfImageSection,
+    bannerSection1,
+    columnSection1,
+    boxGridSection1,
+    columnSection2,
+    boxGridSection2,
+  } = pageData;
+
+  const getResponsiveSrcSet = (images: any, width: number) => {
+    const baseUrl = getResponsiveImageUrls(images);
+    return `${baseUrl.large}?auto=format,compress&w=${width}, ${
+      baseUrl.large
+    }?auto=format,compress&w=${Math.floor(width * 1.5)} 2x`;
+  };
+
+  const renderRichText = (content: any) => {
+    if (!content) return null;
+    const html = lexicalToHtml(content);
+    return <div dangerouslySetInnerHTML={{ __html: html }} />;
+  };
+
   return (
     <main id="main">
-      {/* Page Layout */}
       {/* Hero Module */}
-      <div className="mod_hero banner mobile-stack" data-s3-module>
-        <div className="wrapper">
-          <picture className="background">
-            <source
-              media="(max-width:420px)"
-              srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-              data-lazyload-srcset="https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=630 2x"
-            />
-            <source
-              media="(max-width:800px)"
-              srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-              data-lazyload-srcset="https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=1200 2x"
-            />
-            <source
-              media="(max-width:1400px)"
-              srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-              data-lazyload-srcset="https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=1400, https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=2100 2x"
-            />
-            <source
-              srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-              data-lazyload-srcset="https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=1994"
-            />
-            <img
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-              data-lazyload-src="https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=1994"
-              loading="lazy"
-              data-lazyload="img"
-              width="1994"
-              height="1206"
-              alt="Background Texture"
-              draggable="false"
-            />
-          </picture>
-          <div className="row">
-            <div className="inner">
-              <ul className="partial_breadcrumb" data-s3-partial>
-                <li>
-                  <a
-                    href="/"
-                    role="link"
-                    aria-label="Breadcrumbs to help navigate the user"
-                  >
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/plastic-surgery/"
-                    role="link"
-                    aria-label="Breadcrumbs to help navigate the user"
-                  >
-                    Plastic Surgery
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/plastic-surgery/breast-revision/"
-                    role="link"
-                    aria-label="Breadcrumbs to help navigate the user"
-                  >
-                    Breast Revision
-                  </a>
-                </li>
-              </ul>
-              <h1>Breast Revision</h1>
-              <div className="text">
-                <p>Refine, Refresh, and Reclaim Your Ideal Breast Shape</p>
-                <p>
-                  <a className="btn white" href="/contact/" role="button">
-                    Book an Appointment
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="media">
-            <picture className="background">
-              <source
-                media="(max-width:420px)"
-                srcSet="https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=630 2x"
-                data-lazyload-srcset="https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=630 2x"
-              />
-              <source
-                media="(max-width:800px)"
-                srcSet="https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=1200 2x"
-                data-lazyload-srcset="https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=1200 2x"
-              />
-              <source
-                media="(max-width:1400px)"
-                srcSet="https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=1400, https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=2100 2x"
-                data-lazyload-srcset="https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=1400, https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=2100 2x"
-              />
-              <source
-                srcSet="https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=1920"
-                data-lazyload-srcset="https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=1920"
-              />
-              <img
-                src="https://www.datocms-assets.com/105497/1695393892-breast-revision-banner.jpg?auto=format,compress&w=1920"
-                width="1920"
-                height="1206"
-                alt="woman walking with nurse"
-                draggable="false"
-              />
-            </picture>
-          </div>
-        </div>
-      </div>
-      {/* Intro Module */}
-      <div
-        className="mod_intro container viewport option-1 wide wow fadeInUp"
-        data-s3-module
-      >
-        <div className="row ">
-          <picture className="logo">
-            <img
-              src="https://www.datocms-assets.com/105497/1692813243-logo-module.svg"
-              width={58}
-              height={64}
-              loading="lazy"
-              alt="Goldfingers aesthetic logo"
-              draggable="false"
-              data-api-key="logo"
-            />
-          </picture>
-          <div className="inner" data-api-key="content">
-            <h2>Personalized Breast Revision</h2>
-            <p>
-              Breast revision surgery, also known as breast implant revision or
-              secondary breast augmentation, is a specialized procedure designed
-              to address concerns that may arise after a previous breast
-              augmentation surgery. At Goldfingers Aesthetics &Plastic Surgery,
-              our experienced plastic surgeon, Dr. Michael McClure, offers
-              personalized breast revision procedures to help you achieve
-              beautiful results.
-            </p>
-          </div>
-        </div>
-      </div>
-      {/* Half Image Module */}
-      <div
-        className="mod_half_image  viewport half-image container wow fadeInLeft "
-        data-s3-module
-      >
-        <div className="row half-image-row mb-80-desktop mb-40-tablet-down">
-          <div className="media">
+      {heroSection?.show && (
+        <div className="mod_hero banner mobile-stack" data-s3-module>
+          <div className="wrapper">
             <picture className="background">
               <source
                 media="(max-width:420px)"
                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-                data-lazyload-srcset="https://www.datocms-assets.com/105497/1694009208-breast-revision.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1694009208-breast-revision.jpg?auto=format,compress&w=630 2x"
+                data-lazyload-srcset={getResponsiveSrcSet(
+                  heroSection.backgroundImage,
+                  420
+                )}
               />
               <source
                 media="(max-width:800px)"
                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-                data-lazyload-srcset="https://www.datocms-assets.com/105497/1694009208-breast-revision.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1694009208-breast-revision.jpg?auto=format,compress&w=1200 2x"
+                data-lazyload-srcset={getResponsiveSrcSet(
+                  heroSection.backgroundImage,
+                  800
+                )}
               />
               <source
                 media="(max-width:1400px)"
                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-                data-lazyload-srcset="https://www.datocms-assets.com/105497/1694009208-breast-revision.jpg?auto=format,compress&w=1400, https://www.datocms-assets.com/105497/1694009208-breast-revision.jpg?auto=format,compress&w=2100 2x"
+                data-lazyload-srcset={getResponsiveSrcSet(
+                  heroSection.backgroundImage,
+                  1400
+                )}
               />
               <source
                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-                data-lazyload-srcset="https://www.datocms-assets.com/105497/1694009208-breast-revision.jpg?auto=format,compress&w=1832"
+                data-lazyload-srcset={`${
+                  getResponsiveImageUrls(heroSection.backgroundImage).large
+                }?auto=format,compress&w=1994`}
               />
               <img
                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-                data-lazyload-src="https://www.datocms-assets.com/105497/1694009208-breast-revision.jpg?auto=format,compress&w=1832"
+                data-lazyload-src={`${
+                  getResponsiveImageUrls(heroSection.backgroundImage).large
+                }?auto=format,compress&w=1994`}
                 loading="lazy"
                 data-lazyload="img"
-                width="1832"
-                height="1824"
-                alt="blonde woman in sports bra"
+                width="1994"
+                height="1206"
+                alt={heroSection.backgroundImage?.alt || "Background Texture"}
                 draggable="false"
-                data-api-key="image"
               />
             </picture>
+            <div className="row">
+              <div className="inner">
+                <ul className="partial_breadcrumb" data-s3-partial>
+                  {heroSection.breadcrumbs?.map((crumb: any, index: number) => (
+                    <li key={index}>
+                      <a
+                        href={crumb.url}
+                        role="link"
+                        aria-label={
+                          crumb.ariaLabel ||
+                          "Breadcrumbs to help navigate the user"
+                        }
+                      >
+                        {crumb.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                <h1>{heroSection.title}</h1>
+                {heroSection.description && (
+                  <div className="text">
+                    {renderRichText(heroSection.description)}
+                    {heroSection.ctaButton?.show && (
+                      <p>
+                        <a
+                          className={heroSection.ctaButton.className}
+                          href={heroSection.ctaButton.url}
+                          role="button"
+                        >
+                          {heroSection.ctaButton.text}
+                        </a>
+                      </p>
+                    )}
+                  </div>
+                )}
+              </div>
+            </div>
+            <div className="media">
+              <picture className="background">
+                <source
+                  media="(max-width:420px)"
+                  srcSet={getResponsiveSrcSet(heroSection.mediaImage, 420)}
+                  data-lazyload-srcset={getResponsiveSrcSet(
+                    heroSection.mediaImage,
+                    420
+                  )}
+                />
+                <source
+                  media="(max-width:800px)"
+                  srcSet={getResponsiveSrcSet(heroSection.mediaImage, 800)}
+                  data-lazyload-srcset={getResponsiveSrcSet(
+                    heroSection.mediaImage,
+                    800
+                  )}
+                />
+                <source
+                  media="(max-width:1400px)"
+                  srcSet={getResponsiveSrcSet(heroSection.mediaImage, 1400)}
+                  data-lazyload-srcset={getResponsiveSrcSet(
+                    heroSection.mediaImage,
+                    1400
+                  )}
+                />
+                <source
+                  srcSet={`${
+                    getResponsiveImageUrls(heroSection.mediaImage).large
+                  }?auto=format,compress&w=1920`}
+                  data-lazyload-srcset={`${
+                    getResponsiveImageUrls(heroSection.mediaImage).large
+                  }?auto=format,compress&w=1920`}
+                />
+                <img
+                  src={`${
+                    getResponsiveImageUrls(heroSection.mediaImage).large
+                  }?auto=format,compress&w=1920`}
+                  width="1920"
+                  height="1206"
+                  alt={
+                    heroSection.mediaImage?.alt || "woman walking with nurse"
+                  }
+                  draggable="false"
+                />
+              </picture>
+            </div>
           </div>
-          <div className="copy ">
-            <div className="inner">
-              <div className="content" data-api-key="content">
-                <h2>
-                  Breast Revision:{" "}
-                  <span className="small">What You Need to Know</span>
-                </h2>
-                <p>
-                  Breast revision is a surgical procedure that involves removing
-                  or replacing breast implants. This can be done for a variety
-                  of reasons, including to:
-                </p>
-                <ul>
-                  <li>
-                    Correct complications from a previous breast augmentation
-                    surgery
-                  </li>
-                  <li>Change the size or type of implant</li>
-                  <li>Address changes in the breast tissue over time</li>
-                </ul>
-                <p>The surgery typically involves:</p>
-                <ul>
-                  <li>Removing the existing implants</li>
-                  <li>
-                    Making any necessary adjustments to the breast tissue or
-                    implant pocket
-                  </li>
-                  <li>Placing new implants</li>
-                </ul>
-                <p>
-                  Breast revision can be performed under general anesthesia and
-                  may require a few days of recovery.
-                </p>
+        </div>
+      )}
+
+      {/* Intro Module */}
+      {introSection?.show && (
+        <div className={introSection.className} data-s3-module>
+          <div className="row">
+            {introSection.logo && (
+              <picture className="logo">
+                <img
+                  // src={getResponsiveImageUrls(introSection.logo).large}
+                  src={getLogoUrl(introSection.logo)}
+                  width={introSection.logoWidth}
+                  height={introSection.logoHeight}
+                  loading="lazy"
+                  alt={introSection.logoAlt}
+                  draggable="false"
+                  data-api-key="logo"
+                />
+              </picture>
+            )}
+            <div className="inner" data-api-key="content">
+              {introSection.heading && <h2>{introSection.heading}</h2>}
+              {introSection.content && renderRichText(introSection.content)}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Half Image Module */}
+      {halfImageSection?.show && (
+        <div className={halfImageSection.className} data-s3-module>
+          <div className="row half-image-row mb-80-desktop mb-40-tablet-down">
+            <div className="media">
+              <picture className="background">
+                <source
+                  media="(max-width:420px)"
+                  srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                  data-lazyload-srcset={getResponsiveSrcSet(
+                    halfImageSection.image,
+                    420
+                  )}
+                />
+                <source
+                  media="(max-width:800px)"
+                  srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                  data-lazyload-srcset={getResponsiveSrcSet(
+                    halfImageSection.image,
+                    800
+                  )}
+                />
+                <source
+                  media="(max-width:1400px)"
+                  srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                  data-lazyload-srcset={getResponsiveSrcSet(
+                    halfImageSection.image,
+                    1400
+                  )}
+                />
+                <source
+                  srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                  data-lazyload-srcset={`${
+                    getResponsiveImageUrls(halfImageSection.image).large
+                  }?auto=format,compress&w=1832`}
+                />
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                  data-lazyload-src={`${
+                    getResponsiveImageUrls(halfImageSection.image).large
+                  }?auto=format,compress&w=1832`}
+                  loading="lazy"
+                  data-lazyload="img"
+                  width="1832"
+                  height="1824"
+                  alt={
+                    halfImageSection.image?.alt || "blonde woman in sports bra"
+                  }
+                  draggable="false"
+                  data-api-key="image"
+                />
+              </picture>
+            </div>
+            <div className="copy">
+              <div className="inner">
+                <div className="content" data-api-key="content">
+                  {halfImageSection.heading && (
+                    <h2>
+                      {halfImageSection.heading}{" "}
+                      {halfImageSection.subheading && (
+                        <span className="small">
+                          {halfImageSection.subheading}
+                        </span>
+                      )}
+                    </h2>
+                  )}
+                  {halfImageSection.content &&
+                    renderRichText(halfImageSection.content)}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      {/* Banner Module */}
-      <div
-        className="mod_banner dark  hide-divider viewport background-4"
-        data-s3-module
-      >
-        <div className="row wow fadeInUp">
-          <div className="content" data-api-key="top_content">
-            <h2>Should I Undergo Breast Revision Surgery?</h2>
-            <p>
-              If you're experiencing any of the following, you may be a good
-              candidate for breast revision surgery:
-            </p>
-            <ul className="columns">
-              <li>
-                <strong>Capsular Contracture</strong>: Formation of scar tissue
-                around the implant, causing firmness, discomfort, and
-                distortion.
-              </li>
-              <li>
-                <strong>Implant Rupture or Leakage</strong>: Silicone or saline
-                implant rupture, requiring replacement to restore breast
-                appearance.
-              </li>
-              <li>
-                <strong>Implant Malposition</strong>: Implants shift from their
-                original position, leading to asymmetry or unnatural appearance.
-              </li>
-              <li>
-                <strong>Symmastia</strong>: Implants moving too close together,
-                causing a "uni-boob \"appearance.
-              </li>
-              <li>
-                <strong>Double Bubble</strong>: Visible crease or indentation
-                above the implant due to implant displacement.
-              </li>
-              <li>
-                <strong>Breast Ptosis</strong>: Sagging or drooping breasts over
-                time, necessitating a lift or adjustment.
-              </li>
-              <li>
-                <strong>Desire for Size or Shape Change</strong>: Wanting to
-                increase or decrease implant size or switch from saline to
-                silicone implants.
-              </li>
-              <li>
-                <strong>Changes After Pregnancy or Weight Loss</strong>: Changes
-                in breast volume and shape following significant life events.
-              </li>
-            </ul>
+      )}
+
+      {/* Banner Module - Should I Undergo */}
+      {bannerSection1?.show && (
+        <div className={bannerSection1.className} data-s3-module>
+          <div className="row wow fadeInUp">
+            <div className="content" data-api-key="top_content">
+              {bannerSection1.heading && <h2>{bannerSection1.heading}</h2>}
+              {bannerSection1.introContent &&
+                renderRichText(bannerSection1.introContent)}
+              <ul className="columns">
+                {bannerSection1.leftColumn?.map((item: any, index: number) => (
+                  <li key={`left-${index}`}>
+                    <strong>{item.title}</strong>: {item.description}
+                  </li>
+                ))}
+                {bannerSection1.rightColumn?.map((item: any, index: number) => (
+                  <li key={`right-${index}`}>
+                    <strong>{item.title}</strong>: {item.description}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          {bannerSection1.backgroundImage && (
+            <picture className="background">
+              <source
+                media="(max-width:420px)"
+                srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                data-lazyload-srcset={getResponsiveSrcSet(
+                  bannerSection1.backgroundImage,
+                  800
+                )}
+              />
+              <source
+                media="(max-width:800px)"
+                srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                data-lazyload-srcset={`${
+                  getResponsiveImageUrls(bannerSection1.backgroundImage).large
+                }?auto=format,compress&w=800&q=85&sharp=5, ${
+                  getResponsiveImageUrls(bannerSection1.backgroundImage).large
+                }?auto=format,compress&w=1200&q=85&sharp=5 2x`}
+              />
+              <source
+                media="(max-width:1400px)"
+                srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                data-lazyload-srcset={`${
+                  getResponsiveImageUrls(bannerSection1.backgroundImage).large
+                }?auto=format,compress&w=1400&q=85&sharp=5, ${
+                  getResponsiveImageUrls(bannerSection1.backgroundImage).large
+                }?auto=format,compress&w=2100&q=85&sharp=5 2x`}
+              />
+              <source
+                srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                data-lazyload-srcset={`${
+                  getResponsiveImageUrls(bannerSection1.backgroundImage).large
+                }?auto=format,compress&w=2200&q=85&sharp=5`}
+              />
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                data-lazyload-src={`${
+                  getResponsiveImageUrls(bannerSection1.backgroundImage).large
+                }?auto=format,compress&w=2200&q=85&sharp=5`}
+                loading="lazy"
+                data-lazyload="img"
+                width="2200"
+                height="802"
+                alt={bannerSection1.backgroundImage?.alt || "Banner media"}
+                draggable="false"
+              />
+            </picture>
+          )}
+        </div>
+      )}
+
+      {/* Column Module 1 - Dr. McClure */}
+      {columnSection1?.show && (
+        <div className={columnSection1.className} data-s3-module>
+          <div className={columnSection1.rowClassName} data-api-key="content">
+            <div className="item">
+              {columnSection1.heading && <h2>{columnSection1.heading}</h2>}
+              {columnSection1.content && renderRichText(columnSection1.content)}
+            </div>
+            {columnSection1.image && (
+              <picture className="media">
+                <source
+                  media="(max-width:420px)"
+                  srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                  data-lazyload-srcset={getResponsiveSrcSet(
+                    columnSection1.image,
+                    420
+                  )}
+                />
+                <source
+                  media="(max-width:800px)"
+                  srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                  data-lazyload-srcset={getResponsiveSrcSet(
+                    columnSection1.image,
+                    800
+                  )}
+                />
+                <source
+                  srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                  data-lazyload-srcset={`${
+                    getResponsiveImageUrls(columnSection1.image).desktop ||
+                    getResponsiveImageUrls(columnSection1.image).large
+                  }?auto=format,compress&w=904`}
+                />
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                  data-lazyload-src={`${
+                    getResponsiveImageUrls(columnSection1.image).desktop ||
+                    getResponsiveImageUrls(columnSection1.image).large
+                  }?auto=format,compress&w=904`}
+                  loading="lazy"
+                  data-lazyload="img"
+                  width="904"
+                  height="1062"
+                  alt={columnSection1.image?.alt || "Goldfingers medspa room"}
+                  draggable="false"
+                />
+              </picture>
+            )}
           </div>
         </div>
-        <picture className="background">
-          <source
-            media="(max-width:420px)"
-            srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-            data-lazyload-srcset="https://www.datocms-assets.com/105497/1693257047-banner-bgd-4.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1693257047-banner-bgd-4.jpg?auto=format,compress&w=1200 2x"
-          />
-          <source
-            media="(max-width:800px)"
-            srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-            data-lazyload-srcset="https://www.datocms-assets.com/105497/1693257047-banner-bgd-4.jpg?auto=format,compress&w=800&q=85&sharp=5, https://www.datocms-assets.com/105497/1693257047-banner-bgd-4.jpg?auto=format,compress&w=1200&q=85&sharp=5 2x"
-          />
-          <source
-            media="(max-width:1400px)"
-            srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-            data-lazyload-srcset="https://www.datocms-assets.com/105497/1693257047-banner-bgd-4.jpg?auto=format,compress&w=1400&q=85&sharp=5, https://www.datocms-assets.com/105497/1693257047-banner-bgd-4.jpg?auto=format,compress&w=2100&q=85&sharp=5 2x"
-          />
-          <source
-            srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-            data-lazyload-srcset="https://www.datocms-assets.com/105497/1693257047-banner-bgd-4.jpg?auto=format,compress&w=2200&q=85&sharp=5"
-          />
-          <img
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-            data-lazyload-src="https://www.datocms-assets.com/105497/1693257047-banner-bgd-4.jpg?auto=format,compress&w=2200&q=85&sharp=5"
-            loading="lazy"
-            data-lazyload="img"
-            width="2200"
-            height="802"
-            alt="Banner media"
-            draggable="false"
-          />
-        </picture>
-      </div>
-      {/* Column Module */}
-      <div className="mod_column viewport container has-media" data-s3-module>
-        <div className="row mt-40 mb-40 media-right" data-api-key="content">
-          <div className="item">
-            <h2>Dr. McClure Is Here to Help</h2>
-            <p>
-              Dr. McClure's meticulous approach to breast revision surgery aims
-              to enhance your breast appearance, address complications, and
-              provide you with results that align with your aesthetic goals.
-              With his expertise and commitment to patient satisfaction, you can
-              trust that your breast revision procedure at Goldfingers
-              Aesthetics &Plastic Surgery will be tailored to your unique needs
-              and preferences.
-            </p>
+      )}
+
+      {/* Box Grid Module 1 - Surgery Procedures */}
+      {boxGridSection1?.show && (
+        <div className={boxGridSection1.className} data-s3-module>
+          <div className="row">
+            <div className="content-before">
+              {boxGridSection1.heading && <h2>{boxGridSection1.heading}</h2>}
+              {boxGridSection1.introContent &&
+                renderRichText(boxGridSection1.introContent)}
+            </div>
+            <div className="boxes wider">
+              {boxGridSection1.boxes?.map((box: any, index: number) => (
+                <div key={index} className="box wow fadeInUp">
+                  {box.heading && <h3>{box.heading}</h3>}
+                  {box.content && renderRichText(box.content)}
+                </div>
+              ))}
+            </div>
+            {boxGridSection1.afterContent && (
+              <div className="content-after">
+                {renderRichText(boxGridSection1.afterContent)}
+              </div>
+            )}
           </div>
-          <picture className="media">
-            <source
-              media="(max-width:420px)"
-              srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-              data-lazyload-srcset="https://www.datocms-assets.com/105497/1695239332-accent-3-1.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1695239332-accent-3-1.jpg?auto=format,compress&w=630 2x"
-            />
-            <source
-              media="(max-width:800px)"
-              srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-              data-lazyload-srcset="https://www.datocms-assets.com/105497/1695239332-accent-3-1.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1695239332-accent-3-1.jpg?auto=format,compress&w=1200 2x"
-            />
-            <source
-              srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-              data-lazyload-srcset="https://www.datocms-assets.com/105497/1695239332-accent-3-1.jpg?auto=format,compress&w=904"
-            />
-            <img
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-              data-lazyload-src="https://www.datocms-assets.com/105497/1695239332-accent-3-1.jpg?auto=format,compress&w=904"
-              loading="lazy"
-              data-lazyload="img"
-              width="904"
-              height="1062"
-              alt="Goldfingers medspa room"
-              draggable="false"
-            />
-          </picture>
+          {boxGridSection1.backgroundImage && (
+            <picture className="background">
+              <source
+                media="(max-width:420px)"
+                srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                data-lazyload-srcset={getResponsiveSrcSet(
+                  boxGridSection1.backgroundImage,
+                  1000
+                )}
+              />
+              <source
+                media="(max-width:800px)"
+                srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                data-lazyload-srcset={getResponsiveSrcSet(
+                  boxGridSection1.backgroundImage,
+                  800
+                )}
+              />
+              <source
+                media="(max-width:1400px)"
+                srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                data-lazyload-srcset={getResponsiveSrcSet(
+                  boxGridSection1.backgroundImage,
+                  1400
+                )}
+              />
+              <source
+                srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                data-lazyload-srcset={`${
+                  getResponsiveImageUrls(boxGridSection1.backgroundImage).large
+                }?auto=format,compress&w=2200`}
+              />
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                data-lazyload-src={`${
+                  getResponsiveImageUrls(boxGridSection1.backgroundImage).large
+                }?auto=format,compress&w=2200`}
+                loading="lazy"
+                data-lazyload="img"
+                width="2200"
+                height="979"
+                alt={boxGridSection1.backgroundImage?.alt || "Background media"}
+                draggable="false"
+              />
+            </picture>
+          )}
         </div>
-      </div>
-      {/* Box Grid Module */}
-      <div
-        className="mod_box_grid viewport  five-boxes  container option-2 default  bkg-image dark wider "
-        data-s3-module
-      >
-        <div className="row">
-          <div className="content-before">
-            <h2>What Does The Surgery Entail?</h2>
-            <p>
-              Breast revision surgery is a personalized procedure tailored to
-              resolve your unique concerns and goals. The specific surgical
-              approach will depend on the complications or changes you wish to
-              address. During your Goldfingers Aesthetics &Plastic Surgery
-              consultation, Dr. Michael McClure will discuss your desired
-              outcomes and recommend a surgical plan that suits your needs.
-              Procedures commonly involved in breast revision surgery include:
-            </p>
-          </div>
-          <div className="boxes wider">
-            <div className="box wow fadeInUp">
-              <h3>Implant Replacement</h3>
-              <p>
-                Removing the existing implants and replacing them with new ones
-                to achieve the desired size or shape or replace older implants.
-              </p>
+      )}
+
+      {/* Column Module 2 - Recovery Time */}
+      {columnSection2?.show && (
+        <div className={columnSection2.className} data-s3-module>
+          <div className={columnSection2.rowClassName} data-api-key="content">
+            <div className="item">
+              {columnSection2.heading && (
+                <h2 className="text-center">
+                  What Is The Recovery Time{" "}
+                  <span className="block-desktop">
+                    After Breast Revision Surgery?
+                  </span>
+                </h2>
+              )}
+              {columnSection2.mainIntro &&
+                renderRichText(columnSection2.mainIntro)}
+              <ul className="columns">
+                {columnSection2.leftColumn && (
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: lexicalToHtml(columnSection2.leftColumn),
+                    }}
+                  />
+                )}
+                {columnSection2.rightColumn && (
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: lexicalToHtml(columnSection2.rightColumn),
+                    }}
+                  />
+                )}
+              </ul>
             </div>
-            <div className="box wow fadeInUp">
-              <h3>Implant Removal</h3>
-              <p>
-                Remove implants if you no longer wish to have them, possibly
-                accompanied by a breast lift.
-              </p>
-            </div>
-            <div className="box wow fadeInUp">
-              <h3>Implant Repositioning</h3>
-              <p>
-                Adjusting the implant pocket to correct malposition or
-                asymmetry.
-              </p>
-            </div>
-            <div className="box wow fadeInUp">
-              <h3>Breast Lift (Mastopexy)</h3>
-              <p>
-                Combining a breast revision with a lift you can addresses
-                sagging and achieves a more youthful contour.
-              </p>
-            </div>
-            <div className="box wow fadeInUp">
-              <h3>Capsular Contracture Correction</h3>
-              <p>
-                Removing or releasing the scar tissue capsule around the implant
-                and replacing the implant.
-              </p>
-            </div>
-          </div>
-          <div className="content-after">
-            <p>
-              Dr. McClure's experience and skill ensure that your breast
-              revision surgery is performed with precision and artistry, aiming
-              for natural and harmonious results.
-            </p>
           </div>
         </div>
-        <picture className="background">
-          <source
-            media="(max-width:420px)"
-            srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-            data-lazyload-srcset="https://www.datocms-assets.com/105497/1693256962-box-mod-bgd-2.jpg?auto=format,compress&w=1000, https://www.datocms-assets.com/105497/1693256962-box-mod-bgd-2.jpg?auto=format,compress&w=1500 2x"
-          />
-          <source
-            media="(max-width:800px)"
-            srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-            data-lazyload-srcset="https://www.datocms-assets.com/105497/1693256962-box-mod-bgd-2.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1693256962-box-mod-bgd-2.jpg?auto=format,compress&w=1200 2x"
-          />
-          <source
-            media="(max-width:1400px)"
-            srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-            data-lazyload-srcset="https://www.datocms-assets.com/105497/1693256962-box-mod-bgd-2.jpg?auto=format,compress&w=1400, https://www.datocms-assets.com/105497/1693256962-box-mod-bgd-2.jpg?auto=format,compress&w=2100 2x"
-          />
-          <source
-            srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-            data-lazyload-srcset="https://www.datocms-assets.com/105497/1693256962-box-mod-bgd-2.jpg?auto=format,compress&w=2200"
-          />
-          <img
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-            data-lazyload-src="https://www.datocms-assets.com/105497/1693256962-box-mod-bgd-2.jpg?auto=format,compress&w=2200"
-            loading="lazy"
-            data-lazyload="img"
-            width="2200"
-            height="979"
-            alt="Background media"
-            draggable="false"
-          />
-        </picture>
-      </div>
-      {/* Column Module */}
-      <div className="mod_column viewport container" data-s3-module>
-        <div className="row mt-30 mb-30" data-api-key="content">
-          <div className="item">
-            <h2 className="text-center">
-              What Is The Recovery Time{" "}
-              <span className="block-desktop">
-                After Breast Revision Surgery?
-              </span>
-            </h2>
-            <p>
-              Recovery after breast revision surgery varies depending on the
-              extent of the procedure and your body's healing process. You may
-              experience some swelling, bruising, and discomfort, which will
-              gradually subside over the following weeks. After your breast
-              revision surgery, taking good care of yourself is essential to
-              ensure a smooth and successful recovery. Dr. McClure and the
-              Goldfingers Aesthetics &Plastic Surgery team will provide detailed
-              aftercare instructions to guide you through the recovery process
-              and help you achieve the best possible outcomes. Some of the
-              critical aftercare instructions you may receive include:
-            </p>
-            <ul className="columns">
-              <li>
-                Take a few days off work and avoid strenuous activities for
-                several weeks
-              </li>
-              <li>
-                Carefully follow dosage instructions for prescribed pain
-                medications and report any side effects
-              </li>
-              <li>
-                If you have dressings or bandages over your incisions after your
-                surgery, keep these clean and dry to prevent infection
-              </li>
-              <li>
-                Follow instructions on when and how to wear your compression
-                garment to help reduce swelling and support your breasts during
-                the healing process
-              </li>
-              <li>
-                Attend follow-up appointments with Dr. McClure to monitor your
-                progress and ensure that you're healing properly
-              </li>
-            </ul>
+      )}
+
+      {/* Box Grid Module 2 - Why Choose */}
+      {boxGridSection2?.show && (
+        <div className={boxGridSection2.className} data-s3-module>
+          <div className="row">
+            <div className="content-before">
+              {boxGridSection2.heading && <h2>{boxGridSection2.heading}</h2>}
+              {boxGridSection2.introContent &&
+                renderRichText(boxGridSection2.introContent)}
+            </div>
+            <div className="boxes wider">
+              {boxGridSection2.boxes?.map((box: any, index: number) => (
+                <div key={index} className="box wow fadeInUp">
+                  {box.heading && <h3>{box.heading}</h3>}
+                  {box.content && renderRichText(box.content)}
+                </div>
+              ))}
+            </div>
+            {boxGridSection2.afterContent && (
+              <div className="content-after">
+                {renderRichText(boxGridSection2.afterContent)}
+              </div>
+            )}
           </div>
         </div>
-      </div>
-      {/* Box Grid Module */}
-      <div
-        className="mod_box_grid viewport    container option-3 default  bkg-image dark wider "
-        data-s3-module
-      >
-        <div className="row">
-          <div className="content-before">
-            <h2>Why choose Goldfingers Aesthetics &Plastic Surgery?</h2>
-            <p>
-              Goldfingers Aesthetics &Plastic Surgery is renowned for its
-              commitment to excellence in cosmetic procedures, including breast
-              revision surgery. Here's why you can trust us for your breast
-              revision needs:
-            </p>
-          </div>
-          <div className="boxes wider">
-            <div className="box wow fadeInUp">
-              <h3>Over 25 years in aesthetics</h3>
-              <p>
-                With over two decades of experience, we have a rich history of
-                delivering exceptional patient results.
-              </p>
-            </div>
-            <div className="box wow fadeInUp">
-              <h3>Largest Aesthetics Center</h3>
-              <p>
-                We are the largest aesthetics center in Florida, with more than
-                24 locations and counting.
-              </p>
-            </div>
-            <div className="box wow fadeInUp">
-              <h3>Board-Certified Expertise</h3>
-              <p>
-                Dr. Michael McClure is board-certified by the American Board of
-                Plastic Surgery, ensuring the highest level of skill and
-                knowledge.
-              </p>
-            </div>
-            <div className="box wow fadeInUp">
-              <h3>Clinical Excellence</h3>
-              <p>
-                Our dedicated team comprises experienced and skilled
-                professionals passionate about delivering superior outcomes.
-              </p>
-            </div>
-            <div className="box wow fadeInUp">
-              <h3>State-of-the-Art Facility</h3>
-              <p>
-                We perform procedures in a state-of-the-art surgical center
-                equipped with advanced technology for optimal safety and
-                results.
-              </p>
-            </div>
-            <div className="box wow fadeInUp">
-              <h3>Patient-Centric Care</h3>
-              <p>
-                We prioritize your comfort, safety, and satisfaction throughout
-                your entire journey with us.
-              </p>
-            </div>
-          </div>
-          <div className="content-after">
-            <p>
-              When you choose Goldfingers Aesthetics &Plastic Surgery for your
-              breast revision procedure, you select a team dedicated to
-              providing personalized, expert care and achieving the best
-              possible results for your aesthetic goals. If you're ready to take
-              the next step towards achieving your ideal breast appearance,
-              contact Goldfingers Aesthetics &Plastic Surgery today to schedule
-              your consultation with Dr. McClure. Together, we can help you
-              achieve the beautiful, natural-looking results you deserve.
-            </p>
-          </div>
-        </div>
-      </div>
-      {/* /Page Layout */}
+      )}
     </main>
   );
 };
