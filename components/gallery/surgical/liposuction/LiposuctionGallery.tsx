@@ -424,7 +424,7 @@ const LiposuctionGallery: React.FC = () => {
         const res = await fetch(
           `${
             process.env.NEXT_PUBLIC_PAYLOAD_API_URL ||
-            "http://localhost:3001/api"
+            "https://goldfingerbackend.vercel.app/api"
           }/LiposuctionGallery?where[isActive][equals]=true&depth=2&limit=100&draft=false&trash=false`,
           {
             next: { revalidate: 60 },
