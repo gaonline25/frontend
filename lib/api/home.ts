@@ -2,7 +2,7 @@
 // // API functions to fetch home page data from Payload CMS
 
 // const PAYLOAD_API_URL =
-//   process.env.NEXT_PUBLIC_PAYLOAD_URL || "http://localhost:3001";
+//   process.env.NEXT_PUBLIC_PAYLOAD_URL || "https://goldfingerbackend.vercel.app";
 
 // export interface HomePageData {
 //   accessibilityMenu: {
@@ -70,7 +70,7 @@
 // export async function fetchHomePageClient(): Promise<HomePageData | null> {
 //   try {
 //     const PAYLOAD_URL =
-//       process.env.NEXT_PUBLIC_PAYLOAD_URL || "http://localhost:3001";
+//       process.env.NEXT_PUBLIC_PAYLOAD_URL || "https://goldfingerbackend.vercel.app";
 //     const res = await fetch(`${PAYLOAD_URL}/api/globals/home?depth=2`, {
 //       cache: "no-store",
 //     });
@@ -104,7 +104,7 @@
 //   // Check for regular URL
 //   if (media.url) {
 //     const PAYLOAD_URL =
-//       process.env.NEXT_PUBLIC_PAYLOAD_URL || "http://localhost:3001";
+//       process.env.NEXT_PUBLIC_PAYLOAD_URL || "https://goldfingerbackend.vercel.app";
 //     return `${PAYLOAD_URL}${media.url}`;
 //   }
 
@@ -113,8 +113,7 @@
 import { populateMediaFields } from "./populate-media";
 
 // lib/api/home.ts
-const PAYLOAD_API_URL =
-  process.env.NEXT_PUBLIC_PAYLOAD_URL || "http://localhost:3001";
+const PAYLOAD_API_URL = "https://goldfingerbackend.vercel.app";
 
 export interface HomePageData {
   accessibilityMenu: {
@@ -204,7 +203,7 @@ export function getImageUrl(media: any): string {
 
   if (media.url) {
     const PAYLOAD_URL =
-      process.env.NEXT_PUBLIC_PAYLOAD_URL || "http://localhost:3001";
+      process.env.NEXT_PUBLIC_PAYLOAD_URL || "https://goldfingerbackend.vercel.app";
     if (media.url.startsWith("http")) {
       return media.url;
     }

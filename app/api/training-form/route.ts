@@ -42,8 +42,7 @@ export async function POST(request: NextRequest) {
     };
 
     // Submit to Payload CMS
-    const payloadUrl =
-      process.env.NEXT_PUBLIC_PAYLOAD_URL || "http://localhost:3001";
+    const payloadUrl = "https://goldfingerbackend.vercel.app";
     const payloadApiKey = process.env.PAYLOAD_API_KEY;
 
     const response = await fetch(

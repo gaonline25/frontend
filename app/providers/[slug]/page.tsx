@@ -448,7 +448,7 @@
 
 // //         // Fetch provider by slug
 // //         const providerRes = await fetch(
-// //           `http://localhost:3001/api/providers?where[slug][equals]=${slug}&depth=2`
+// //           `https://goldfingerbackend.vercel.app/api/providers?where[slug][equals]=${slug}&depth=2`
 // //         );
 // //         const providerData = await providerRes.json();
 
@@ -1005,7 +1005,7 @@
 //         setLoading(true);
 
 //         const providerRes = await fetch(
-//           `http://localhost:3001/api/providers?where[slug][equals]=${slug}&depth=2`
+//           `https://goldfingerbackend.vercel.app/api/providers?where[slug][equals]=${slug}&depth=2`
 //         );
 //         const providerData = await providerRes.json();
 
@@ -1557,7 +1557,7 @@ export default function ProviderProfile() {
   const [map, setMap] = useState<google.maps.Map | null>(null);
   const [marker, setMarker] = useState<google.maps.Marker | null>(null);
   const PAYLOAD_API_URL =
-    process.env.NEXT_PUBLIC_PAYLOAD_URL || "http://localhost:3001";
+    process.env.NEXT_PUBLIC_PAYLOAD_URL || "https://goldfingerbackend.vercel.app";
   
     const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
   
@@ -1579,7 +1579,7 @@ export default function ProviderProfile() {
         setLoading(true);
 
         // const providerRes = await fetch(
-        //   `http://localhost:3001/api/providers?where[slug][equals]=${slug}&depth=2`
+        //   `https://goldfingerbackend.vercel.app/api/providers?where[slug][equals]=${slug}&depth=2`
         // );
         const providerRes = await fetch(
           `${PAYLOAD_API_URL}/api/providers?where[slug][equals]=${slug}&depth=2`

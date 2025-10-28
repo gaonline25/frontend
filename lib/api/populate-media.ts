@@ -1,6 +1,6 @@
 // lib/api/populate-media.ts
 const PAYLOAD_API_URL =
-  process.env.NEXT_PUBLIC_PAYLOAD_URL || "http://localhost:3001";
+  process.env.NEXT_PUBLIC_PAYLOAD_URL || "https://goldfingerbackend.vercel.app";
 
 /**
  * Fetch a single media item by ID

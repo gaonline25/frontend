@@ -1,5 +1,5 @@
 const PAYLOAD_API_URL =
-  process.env.NEXT_PUBLIC_PAYLOAD_API_URL || "http://localhost:3001/api";
+  "https://goldfingerbackend.vercel.app/api";
 
 export async function fetchAboutHeroData() {
   try {

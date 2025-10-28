@@ -1,5 +1,4 @@
-const PAYLOAD_API_URL =
-  process.env.NEXT_PUBLIC_PAYLOAD_API_URL || "http://localhost:3001/api";
+const PAYLOAD_API_URL = "https://goldfingerbackend.vercel.app/api";
 
 /**
  * Fetch Clearwater page data from Payload CMS

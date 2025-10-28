@@ -46,7 +46,7 @@
 //   if (!media) return '';
 //   if (typeof media === 'string') return media;
 //   if (media.cloudinary_url) return media.cloudinary_url;
-//   if (media.url) return `${process.env.NEXT_PUBLIC_PAYLOAD_URL || 'http://localhost:3001'}${media.url}`;
+//   if (media.url) return `${process.env.NEXT_PUBLIC_PAYLOAD_URL || 'https://goldfingerbackend.vercel.app'}${media.url}`;
 //   return '';
 // };
 
@@ -2640,12 +2640,12 @@
 
 // //   // Payload's default URL
 // //   if (media.url) {
-// //     const PAYLOAD_URL = process.env.NEXT_PUBLIC_PAYLOAD_URL || "http://localhost:3001";
+// //     const PAYLOAD_URL = process.env.NEXT_PUBLIC_PAYLOAD_URL || "https://goldfingerbackend.vercel.app";
 // //     return `${PAYLOAD_URL}${media.url}`;
 // //   }
 
 // //   if (media.media?.url) {
-// //     const PAYLOAD_URL = process.env.NEXT_PUBLIC_PAYLOAD_URL || "http://localhost:3001";
+// //     const PAYLOAD_URL = process.env.NEXT_PUBLIC_PAYLOAD_URL || "https://goldfingerbackend.vercel.app";
 // //     return `${PAYLOAD_URL}${media.media.url}`;
 // //   }
 
@@ -2654,7 +2654,7 @@
 
 // //   // Fallback: construct from ID
 // //   if (media.id) {
-// //     const PAYLOAD_URL = process.env.NEXT_PUBLIC_PAYLOAD_URL || "http://localhost:3001";
+// //     const PAYLOAD_URL = process.env.NEXT_PUBLIC_PAYLOAD_URL || "https://goldfingerbackend.vercel.app";
 // //     return `${PAYLOAD_URL}/api/media/file/${media.id}`;
 // //   }
 

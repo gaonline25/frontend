@@ -1,5 +1,5 @@
 // const PAYLOAD_API_URL =
-//   process.env.NEXT_PUBLIC_PAYLOAD_API_URL || "http://localhost:3001/api";
+//   process.env.NEXT_PUBLIC_PAYLOAD_API_URL || "https://goldfingerbackend.vercel.app/api";
 
 // export async function fetchDysportPageData(id = "68e765a6d0c254fea6f304d1") {
 //   try {
@@ -100,7 +100,7 @@
 
 
 const PAYLOAD_API_URL =
-  process.env.NEXT_PUBLIC_PAYLOAD_API_URL || "http://localhost:3001/api";
+  process.env.NEXT_PUBLIC_PAYLOAD_API_URL || "https://goldfingerbackend.vercel.app/api";
 
 export async function fetchDysportPageData(id = "68ea6e1a8253bd170bd9d752") {
   try {

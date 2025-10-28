@@ -496,7 +496,7 @@
 //         const res = await fetch(
 //           `${
 //             process.env.NEXT_PUBLIC_PAYLOAD_API_URL ||
-//             "http://localhost:3001/api"
+//             "https://goldfingerbackend.vercel.app/api"
 //           }/LiquidFaceliftGallery?where[isActive][equals]=true&depth=2&limit=100&draft=false&trash=false`,
 //           {
 //             next: { revalidate: 60 },
@@ -965,7 +965,7 @@ const LiquidFaceliftGallery: React.FC = () => {
         const res = await fetch(
           `${
             process.env.NEXT_PUBLIC_PAYLOAD_API_URL ||
-            "http://localhost:3001/api"
+            "https://goldfingerbackend.vercel.app/api"
           }/LiquidFaceliftGallery?where[isActive][equals]=true&depth=3&limit=1`,
           {
             next: { revalidate: 60 },

@@ -785,7 +785,7 @@ import {
 } from "@/lib/api/locations/fetchSarasotaPageData";
 
 const PAYLOAD_API_URL =
-  process.env.NEXT_PUBLIC_PAYLOAD_API_URL || "http://localhost:3001/api";
+  process.env.NEXT_PUBLIC_PAYLOAD_API_URL || "https://goldfingerbackend.vercel.app/api";
 
 async function fetchSarasotaLocationPageComponent() {
   try {

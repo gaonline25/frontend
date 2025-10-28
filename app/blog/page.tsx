@@ -39,8 +39,7 @@ interface BlogPost {
   };
 }
 
-const PAYLOAD_URL =
-  process.env.NEXT_PUBLIC_PAYLOAD_URL || "http://localhost:3001";
+const PAYLOAD_URL = "https://goldfingerbackend.vercel.app";
 
 const Blog: React.FC = () => {
   const [posts, setPosts] = useState<BlogPost[]>([]);

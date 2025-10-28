@@ -1,5 +1,5 @@
 const PAYLOAD_API_URL =
-  process.env.NEXT_PUBLIC_PAYLOAD_API_URL || "http://localhost:3001/api";
+  process.env.NEXT_PUBLIC_PAYLOAD_API_URL || "https://goldfingerbackend.vercel.app/api";
 
 // export async function fetchJuvedermPageData(id = "68ea75c88253bd170bd9dd19") {
 //   try {

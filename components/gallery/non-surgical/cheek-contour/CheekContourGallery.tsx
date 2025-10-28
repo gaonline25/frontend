@@ -126,7 +126,7 @@ const CheekContourGallery: React.FC = () => {
         const res = await fetch(
           `${
             process.env.NEXT_PUBLIC_PAYLOAD_API_URL ||
-            "http://localhost:3001/api"
+            "https://goldfingerbackend.vercel.app/api"
           }/CheekContourGallery?where[isActive][equals]=true&depth=3&limit=1`,
           {
             next: { revalidate: 60 },

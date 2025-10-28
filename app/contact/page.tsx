@@ -38,7 +38,7 @@
 // // //     const fetchSectionData = async () => {
 // // //       try {
 // // //         const response = await fetch(
-// // //           "http://localhost:3001/api/contact-section?where[isActive][equals]=true&limit=1"
+// // //           "https://goldfingerbackend.vercel.app/api/contact-section?where[isActive][equals]=true&limit=1"
 // // //         );
 // // //         const data = await response.json();
 // // //         if (data.docs && data.docs.length > 0) {
@@ -651,7 +651,7 @@
 // //     const fetchSectionData = async () => {
 // //       try {
 // //         const response = await fetch(
-// //           "http://localhost:3001/api/contact-section?where[isActive][equals]=true&limit=1"
+// //           "https://goldfingerbackend.vercel.app/api/contact-section?where[isActive][equals]=true&limit=1"
 // //         );
 // //         const data = await response.json();
 // //         if (data.docs && data.docs.length > 0) {
@@ -1264,7 +1264,7 @@
 //     const fetchSectionData = async () => {
 //       try {
 //         const response = await fetch(
-//           "http://localhost:3001/api/contact-section?where[isActive][equals]=true&limit=1"
+//           "https://goldfingerbackend.vercel.app/api/contact-section?where[isActive][equals]=true&limit=1"
 //         );
 //         const data = await response.json();
 //         if (data.docs && data.docs.length > 0) {
@@ -1871,7 +1871,7 @@
 import ContactSection from '@/components/ContactSection';
 
 async function getContactData() {
-  const payloadUrl = process.env.NEXT_PUBLIC_PAYLOAD_URL || 'http://localhost:3001';
+  const payloadUrl = process.env.NEXT_PUBLIC_PAYLOAD_URL || 'https://goldfingerbackend.vercel.app';
 
   try {
     const response = await fetch(`${payloadUrl}/api/contact-component`, {

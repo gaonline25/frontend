@@ -477,7 +477,7 @@ const AlleRewards: React.FC = () => {
         const res = await fetch(
           `${
             process.env.NEXT_PUBLIC_PAYLOAD_API_URL ||
-            "http://localhost:3001/api"
+            "https://goldfingerbackend.vercel.app/api"
           }/alle-rewards-page-component?where[isActive][equals]=true&depth=2&limit=100&draft=false&trash=false`,
           {
             next: { revalidate: 60 },
