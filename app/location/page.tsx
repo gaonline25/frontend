@@ -19728,20 +19728,35 @@ const ProviderLocator = () => {
   const contentBodyRef = useRef<HTMLDivElement>(null);
   const scrollbarHandleRef = useRef<HTMLDivElement>(null);
 
+  const PAYLOAD_API_URL =
+      process.env.NEXT_PUBLIC_PAYLOAD_URL || "http://localhost:3001";
+    
+    const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
 
+        // const locationsRes = await fetch(
+        //   "http://localhost:3001/api/locations?depth=2&limit=1000"
+        // );
+        // const locationsData = await locationsRes.json();
+
+        // const providersRes = await fetch(
+        //   "http://localhost:3001/api/providers?depth=2&limit=1000"
+          // );
+          
         const locationsRes = await fetch(
-          "http://localhost:3001/api/locations?depth=2&limit=1000"
+        `${PAYLOAD_API_URL}/api/locations?depth=2&limit=1000`
         );
         const locationsData = await locationsRes.json();
 
         const providersRes = await fetch(
-          "http://localhost:3001/api/providers?depth=2&limit=1000"
+        `${PAYLOAD_API_URL}/api/providers?depth=2&limit=1000`
         );
-        const providersData = await providersRes.json();
+          
+        const providersData = await providersRes.json();    
 
         const transformedLocations = locationsData.docs.map((loc: any) => {
           let imageUrl = "";
@@ -19881,8 +19896,9 @@ const ProviderLocator = () => {
   }, [searchQuery, locations, providers, activeTab]);
 
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCcWunoBpxSOoSPvplvrAzIaTh9pI6QfdU&libraries=places`;
+      const script = document.createElement("script");
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${googleMapsApiKey}&libraries=places`;
+    // script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCcWunoBpxSOoSPvplvrAzIaTh9pI6QfdU&libraries=places`;
     script.async = true;
     script.defer = true;
 

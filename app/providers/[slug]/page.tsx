@@ -1556,6 +1556,11 @@ export default function ProviderProfile() {
   const mapRef = useRef<HTMLDivElement>(null);
   const [map, setMap] = useState<google.maps.Map | null>(null);
   const [marker, setMarker] = useState<google.maps.Marker | null>(null);
+  const PAYLOAD_API_URL =
+    process.env.NEXT_PUBLIC_PAYLOAD_URL || "http://localhost:3001";
+  
+    const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+  
   // const slug = "bria-bennie";
 
       const params = useParams();
@@ -1573,9 +1578,13 @@ export default function ProviderProfile() {
       try {
         setLoading(true);
 
+        // const providerRes = await fetch(
+        //   `http://localhost:3001/api/providers?where[slug][equals]=${slug}&depth=2`
+        // );
         const providerRes = await fetch(
-          `http://localhost:3001/api/providers?where[slug][equals]=${slug}&depth=2`
+          `${PAYLOAD_API_URL}/api/providers?where[slug][equals]=${slug}&depth=2`
         );
+
         const providerData = await providerRes.json();
 
         if (providerData.docs && providerData.docs.length > 0) {
@@ -1681,7 +1690,8 @@ export default function ProviderProfile() {
 
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyC6yYDg1RJRILmiOS2yv4uND1R_xKJKS70&libraries=places`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${googleMapsApiKey}&libraries=places`;
+    // script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyC6yYDg1RJRILmiOS2yv4uND1R_xKJKS70&libraries=places`;
     script.async = true;
     script.defer = true;
 
