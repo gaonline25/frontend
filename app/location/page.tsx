@@ -419,7 +419,7 @@
 // // // // // // // // // // // // //                           Bria Bennie <span className="small">PA-C</span>
 // // // // // // // // // // // // //                         </div>
 // // // // // // // // // // // // //                         <div className="bottom-right">
-// // // // // // // // // // // // //                           <div className="distance">20.4 mi</div>
+// // // // // // // // // // // // //                           <div className="distance"></div>
 // // // // // // // // // // // // //                         </div>
 // // // // // // // // // // // // //                       </div>
 // // // // // // // // // // // // //                     </div>
@@ -479,7 +479,7 @@
 // // // // // // // // // // // // //                           Norma Ojeda <span className="small">MSN, APRN</span>
 // // // // // // // // // // // // //                         </div>
 // // // // // // // // // // // // //                         <div className="bottom-right">
-// // // // // // // // // // // // //                           <div className="distance">20.4 mi</div>
+// // // // // // // // // // // // //                           <div className="distance"></div>
 // // // // // // // // // // // // //                         </div>
 // // // // // // // // // // // // //                       </div>
 // // // // // // // // // // // // //                     </div>
@@ -794,7 +794,7 @@
 // // // // // // // // // // // //       title: "PA-C",
 // // // // // // // // // // // //       image:
 // // // // // // // // // // // //         "https://www.datocms-assets.com/105497/1696451062-bria-bennie.jpg?auto=format,compress&w=400",
-// // // // // // // // // // // //       distance: "20.4 mi",
+// // // // // // // // // // // //       distance: "",
 // // // // // // // // // // // //     },
 // // // // // // // // // // // //     {
 // // // // // // // // // // // //       id: "171463440",
@@ -802,7 +802,7 @@
 // // // // // // // // // // // //       title: "MSN, APRN",
 // // // // // // // // // // // //       image:
 // // // // // // // // // // // //         "https://www.datocms-assets.com/105497/1694009993-norma-ojeda-np.jpg?auto=format,compress&w=400",
-// // // // // // // // // // // //       distance: "20.4 mi",
+// // // // // // // // // // // //       distance: "",
 // // // // // // // // // // // //     },
 // // // // // // // // // // // //     {
 // // // // // // // // // // // //       id: "aZU02WUuTom7FbiqiXlQ_A",
@@ -1403,7 +1403,7 @@
 // // // // // // // // // // // //       title: "PA-C",
 // // // // // // // // // // // //       image:
 // // // // // // // // // // // //         "https://www.datocms-assets.com/105497/1696451062-bria-bennie.jpg?auto=format,compress&w=400",
-// // // // // // // // // // // //       distance: "20.4 mi",
+// // // // // // // // // // // //       distance: "",
 // // // // // // // // // // // //       locationName: "Clermont",
 // // // // // // // // // // // //       address: "861 Oakley Seaver Dr., Suite B, Clermont, FL 34711",
 // // // // // // // // // // // //       phone: "(407) 461-8193",
@@ -1414,7 +1414,7 @@
 // // // // // // // // // // // //       title: "MSN, APRN",
 // // // // // // // // // // // //       image:
 // // // // // // // // // // // //         "https://www.datocms-assets.com/105497/1694009993-norma-ojeda-np.jpg?auto=format,compress&w=400",
-// // // // // // // // // // // //       distance: "20.4 mi",
+// // // // // // // // // // // //       distance: "",
 // // // // // // // // // // // //       locationName: "Clermont",
 // // // // // // // // // // // //       address: "861 Oakley Seaver Dr., Suite B, Clermont, FL 34711",
 // // // // // // // // // // // //       phone: "(407) 461-8193",
@@ -2086,7 +2086,7 @@
 // // // // // // // // // // // //                                   alt="Location"
 // // // // // // // // // // // //                                 />
 // // // // // // // // // // // //                               </div>
-// // // // // // // // // // // //                               <div className="location-distance">20.4 mi</div>
+// // // // // // // // // // // //                               <div className="location-distance"></div>
 // // // // // // // // // // // //                             </div>
 // // // // // // // // // // // //                             <div className="view-relations">
 // // // // // // // // // // // //                               <div className="relations-amount">2</div>
@@ -2105,7 +2105,7 @@
 // // // // // // // // // // // //                                 alt="Location"
 // // // // // // // // // // // //                               />
 // // // // // // // // // // // //                             </div>
-// // // // // // // // // // // //                             <div className="location-distance">20.4 mi</div>
+// // // // // // // // // // // //                             <div className="location-distance"></div>
 // // // // // // // // // // // //                           </div>
 // // // // // // // // // // // //                         </div>
 // // // // // // // // // // // //                       </div>
@@ -2174,7 +2174,7 @@
 // // // // // // // // // // // //                                   alt="Location"
 // // // // // // // // // // // //                                 />
 // // // // // // // // // // // //                               </div>
-// // // // // // // // // // // //                               <div className="distance">20.4 mi</div>
+// // // // // // // // // // // //                               <div className="distance"></div>
 // // // // // // // // // // // //                             </div>
 // // // // // // // // // // // //                           </div>
 // // // // // // // // // // // //                         </div>
@@ -2799,7 +2799,7 @@
 // // // // // // // // // // //       title: "PA-C",
 // // // // // // // // // // //       image:
 // // // // // // // // // // //         "https://www.datocms-assets.com/105497/1696451062-bria-bennie.jpg?auto=format,compress&w=400",
-// // // // // // // // // // //       distance: "20.4 mi",
+// // // // // // // // // // //       distance: "",
 // // // // // // // // // // //       locationName: "Clermont",
 // // // // // // // // // // //       address: "861 Oakley Seaver Dr., Suite B, Clermont, FL 34711",
 // // // // // // // // // // //       phone: "(407) 461-8193",
@@ -2810,7 +2810,7 @@
 // // // // // // // // // // //       title: "MSN, APRN",
 // // // // // // // // // // //       image:
 // // // // // // // // // // //         "https://www.datocms-assets.com/105497/1694009993-norma-ojeda-np.jpg?auto=format,compress&w=400",
-// // // // // // // // // // //       distance: "20.4 mi",
+// // // // // // // // // // //       distance: "",
 // // // // // // // // // // //       locationName: "Clermont",
 // // // // // // // // // // //       address: "861 Oakley Seaver Dr., Suite B, Clermont, FL 34711",
 // // // // // // // // // // //       phone: "(407) 461-8193",
@@ -3482,7 +3482,7 @@
 // // // // // // // // // // //                                   alt="Location"
 // // // // // // // // // // //                                 />
 // // // // // // // // // // //                               </div>
-// // // // // // // // // // //                               <div className="location-distance">20.4 mi</div>
+// // // // // // // // // // //                               <div className="location-distance"></div>
 // // // // // // // // // // //                             </div>
 // // // // // // // // // // //                             <div className="view-relations">
 // // // // // // // // // // //                               <div className="relations-amount">2</div>
@@ -3501,7 +3501,7 @@
 // // // // // // // // // // //                                 alt="Location"
 // // // // // // // // // // //                               />
 // // // // // // // // // // //                             </div>
-// // // // // // // // // // //                             <div className="location-distance">20.4 mi</div>
+// // // // // // // // // // //                             <div className="location-distance"></div>
 // // // // // // // // // // //                           </div>
 // // // // // // // // // // //                         </div>
 // // // // // // // // // // //                       </div>
@@ -3570,7 +3570,7 @@
 // // // // // // // // // // //                                   alt="Location"
 // // // // // // // // // // //                                 />
 // // // // // // // // // // //                               </div>
-// // // // // // // // // // //                               <div className="distance">20.4 mi</div>
+// // // // // // // // // // //                               <div className="distance"></div>
 // // // // // // // // // // //                             </div>
 // // // // // // // // // // //                           </div>
 // // // // // // // // // // //                         </div>
@@ -4200,7 +4200,7 @@
 // // // // // // // // // //       title: "PA-C",
 // // // // // // // // // //       image:
 // // // // // // // // // //         "https://www.datocms-assets.com/105497/1696451062-bria-bennie.jpg?auto=format,compress&w=400",
-// // // // // // // // // //       distance: "20.4 mi",
+// // // // // // // // // //       distance: "",
 // // // // // // // // // //       locationName: "Clermont",
 // // // // // // // // // //       address: "861 Oakley Seaver Dr., Suite B, Clermont, FL 34711",
 // // // // // // // // // //       phone: "(407) 461-8193",
@@ -4211,7 +4211,7 @@
 // // // // // // // // // //       title: "MSN, APRN",
 // // // // // // // // // //       image:
 // // // // // // // // // //         "https://www.datocms-assets.com/105497/1694009993-norma-ojeda-np.jpg?auto=format,compress&w=400",
-// // // // // // // // // //       distance: "20.4 mi",
+// // // // // // // // // //       distance: "",
 // // // // // // // // // //       locationName: "Clermont",
 // // // // // // // // // //       address: "861 Oakley Seaver Dr., Suite B, Clermont, FL 34711",
 // // // // // // // // // //       phone: "(407) 461-8193",
@@ -4883,7 +4883,7 @@
 // // // // // // // // // //                                   alt="Location"
 // // // // // // // // // //                                 />
 // // // // // // // // // //                               </div>
-// // // // // // // // // //                               <div className="location-distance">20.4 mi</div>
+// // // // // // // // // //                               <div className="location-distance"></div>
 // // // // // // // // // //                             </div>
 // // // // // // // // // //                             <div className="view-relations">
 // // // // // // // // // //                               <div className="relations-amount">2</div>
@@ -4902,7 +4902,7 @@
 // // // // // // // // // //                                 alt="Location"
 // // // // // // // // // //                               />
 // // // // // // // // // //                             </div>
-// // // // // // // // // //                             <div className="location-distance">20.4 mi</div>
+// // // // // // // // // //                             <div className="location-distance"></div>
 // // // // // // // // // //                           </div>
 // // // // // // // // // //                         </div>
 // // // // // // // // // //                       </div>
@@ -4971,7 +4971,7 @@
 // // // // // // // // // //                                   alt="Location"
 // // // // // // // // // //                                 />
 // // // // // // // // // //                               </div>
-// // // // // // // // // //                               <div className="distance">20.4 mi</div>
+// // // // // // // // // //                               <div className="distance"></div>
 // // // // // // // // // //                             </div>
 // // // // // // // // // //                           </div>
 // // // // // // // // // //                         </div>
@@ -5601,7 +5601,7 @@
 // // // // // // // // //       title: "PA-C",
 // // // // // // // // //       image:
 // // // // // // // // //         "https://www.datocms-assets.com/105497/1696451062-bria-bennie.jpg?auto=format,compress&w=400",
-// // // // // // // // //       distance: "20.4 mi",
+// // // // // // // // //       distance: "",
 // // // // // // // // //       locationName: "Clermont",
 // // // // // // // // //       address: "861 Oakley Seaver Dr., Suite B, Clermont, FL 34711",
 // // // // // // // // //       phone: "(407) 461-8193",
@@ -5612,7 +5612,7 @@
 // // // // // // // // //       title: "MSN, APRN",
 // // // // // // // // //       image:
 // // // // // // // // //         "https://www.datocms-assets.com/105497/1694009993-norma-ojeda-np.jpg?auto=format,compress&w=400",
-// // // // // // // // //       distance: "20.4 mi",
+// // // // // // // // //       distance: "",
 // // // // // // // // //       locationName: "Clermont",
 // // // // // // // // //       address: "861 Oakley Seaver Dr., Suite B, Clermont, FL 34711",
 // // // // // // // // //       phone: "(407) 461-8193",
@@ -6286,7 +6286,7 @@
 // // // // // // // // //                                   alt="Location"
 // // // // // // // // //                                 />
 // // // // // // // // //                               </div>
-// // // // // // // // //                               <div className="location-distance">20.4 mi</div>
+// // // // // // // // //                               <div className="location-distance"></div>
 // // // // // // // // //                             </div>
 // // // // // // // // //                             <div className="view-relations">
 // // // // // // // // //                               <div className="relations-amount">2</div>
@@ -6305,7 +6305,7 @@
 // // // // // // // // //                                 alt="Location"
 // // // // // // // // //                               />
 // // // // // // // // //                             </div>
-// // // // // // // // //                             <div className="location-distance">20.4 mi</div>
+// // // // // // // // //                             <div className="location-distance"></div>
 // // // // // // // // //                           </div>
 // // // // // // // // //                         </div>
 // // // // // // // // //                       </div>
@@ -6374,7 +6374,7 @@
 // // // // // // // // //                                   alt="Location"
 // // // // // // // // //                                 />
 // // // // // // // // //                               </div>
-// // // // // // // // //                               <div className="distance">20.4 mi</div>
+// // // // // // // // //                               <div className="distance"></div>
 // // // // // // // // //                             </div>
 // // // // // // // // //                           </div>
 // // // // // // // // //                         </div>
@@ -6549,7 +6549,7 @@
 // // // // // // // // //                           <div className="carousel-item-name">
 // // // // // // // // //                             {location.name}
 // // // // // // // // //                           </div>
-// // // // // // // // //                           <div className="carousel-item-distance">20.4 mi</div>
+// // // // // // // // //                           <div className="carousel-item-distance"></div>
 // // // // // // // // //                         </div>
 // // // // // // // // //                       ))}
 // // // // // // // // //                     </div>
@@ -7102,7 +7102,7 @@
 // // // // // // // //             title: provider.title,
 // // // // // // // //             image: imageUrl,
 // // // // // // // //             backgroundImage: bgImageUrl,
-// // // // // // // //             distance: "20.4 mi", // You'll need to calculate this based on user location
+// // // // // // // //             distance: "", // You'll need to calculate this based on user location
 // // // // // // // //             locationName: primaryLoc?.name || "",
 // // // // // // // //             address: primaryLoc?.address || "",
 // // // // // // // //             phone: primaryLoc?.phone || "",
@@ -7754,7 +7754,7 @@
 // // // // // // // //                                   alt="Location"
 // // // // // // // //                                 />
 // // // // // // // //                               </div>
-// // // // // // // //                               <div className="location-distance">20.4 mi</div>
+// // // // // // // //                               <div className="location-distance"></div>
 // // // // // // // //                             </div>
 // // // // // // // //                             <div className="view-relations">
 // // // // // // // //                               <div className="relations-amount">
@@ -7779,7 +7779,7 @@
 // // // // // // // //                                 alt="Location"
 // // // // // // // //                               />
 // // // // // // // //                             </div>
-// // // // // // // //                             <div className="location-distance">20.4 mi</div>
+// // // // // // // //                             <div className="location-distance"></div>
 // // // // // // // //                           </div>
 // // // // // // // //                         </div>
 // // // // // // // //                       </div>
@@ -7848,7 +7848,7 @@
 // // // // // // // //                                   alt="Location"
 // // // // // // // //                                 />
 // // // // // // // //                               </div>
-// // // // // // // //                               <div className="distance">20.4 mi</div>
+// // // // // // // //                               <div className="distance"></div>
 // // // // // // // //                             </div>
 // // // // // // // //                           </div>
 // // // // // // // //                         </div>
@@ -8023,7 +8023,7 @@
 // // // // // // // //                           <div className="carousel-item-name">
 // // // // // // // //                             {location.name}
 // // // // // // // //                           </div>
-// // // // // // // //                           <div className="carousel-item-distance">20.4 mi</div>
+// // // // // // // //                           <div className="carousel-item-distance"></div>
 // // // // // // // //                         </div>
 // // // // // // // //                       ))}
 // // // // // // // //                     </div>
@@ -8567,7 +8567,7 @@
 // // // // // // //             title: provider.title,
 // // // // // // //             image: imageUrl,
 // // // // // // //             backgroundImage: bgImageUrl,
-// // // // // // //             distance: "20.4 mi",
+// // // // // // //             distance: "",
 // // // // // // //             locationName: primaryLoc?.name || "",
 // // // // // // //             address: primaryLoc?.address || "",
 // // // // // // //             phone: primaryLoc?.phone || "",
@@ -9088,7 +9088,7 @@
 // // // // // // //                           <div className="carousel-item-name">
 // // // // // // //                             {location.name}
 // // // // // // //                           </div>
-// // // // // // //                           <div className="carousel-item-distance">20.4 mi</div>
+// // // // // // //                           <div className="carousel-item-distance"></div>
 // // // // // // //                         </div>
 // // // // // // //                       ))}
 // // // // // // //                     </div>
@@ -9255,7 +9255,7 @@
 // // // // // // //                                   alt="Location"
 // // // // // // //                                 />
 // // // // // // //                               </div>
-// // // // // // //                               <div className="location-distance">20.4 mi</div>
+// // // // // // //                               <div className="location-distance"></div>
 // // // // // // //                             </div>
 // // // // // // //                             <div className="view-relations">
 // // // // // // //                               <div className="relations-amount">
@@ -9280,7 +9280,7 @@
 // // // // // // //                                 alt="Location"
 // // // // // // //                               />
 // // // // // // //                             </div>
-// // // // // // //                             <div className="location-distance">20.4 mi</div>
+// // // // // // //                             <div className="location-distance"></div>
 // // // // // // //                           </div>
 // // // // // // //                         </div>
 // // // // // // //                       </div>
@@ -9349,7 +9349,7 @@
 // // // // // // //                                   alt="Location"
 // // // // // // //                                 />
 // // // // // // //                               </div>
-// // // // // // //                               <div className="distance">20.4 mi</div>
+// // // // // // //                               <div className="distance"></div>
 // // // // // // //                             </div>
 // // // // // // //                           </div>
 // // // // // // //                         </div>
@@ -9528,7 +9528,7 @@
 // // // // // // //                           <div className="carousel-item-name">
 // // // // // // //                             {location.name}
 // // // // // // //                           </div>
-// // // // // // //                           <div className="carousel-item-distance">20.4 mi</div>
+// // // // // // //                           <div className="carousel-item-distance"></div>
 // // // // // // //                         </div>
 // // // // // // //                       ))}
 // // // // // // //                     </div>
@@ -9975,7 +9975,7 @@
 // // // // // // //                         <div className="carousel-item-name">
 // // // // // // //                           {location.name}
 // // // // // // //                         </div>
-// // // // // // //                         <div className="carousel-item-distance">20.4 mi</div>
+// // // // // // //                         <div className="carousel-item-distance"></div>
 // // // // // // //                       </div>
 // // // // // // //                     ))}
 // // // // // // //                   </div>
@@ -10116,7 +10116,7 @@
 // // // // // //             title: provider.title,
 // // // // // //             image: imageUrl,
 // // // // // //             backgroundImage: bgImageUrl,
-// // // // // //             distance: "20.4 mi",
+// // // // // //             distance: "",
 // // // // // //             locationName: primaryLoc?.name || "",
 // // // // // //             address: primaryLoc?.address || "",
 // // // // // //             phone: primaryLoc?.phone || "",
@@ -10683,7 +10683,7 @@
 // // // // // //                           <div className="carousel-item-name">
 // // // // // //                             {location.name}
 // // // // // //                           </div>
-// // // // // //                           <div className="carousel-item-distance">20.4 mi</div>
+// // // // // //                           <div className="carousel-item-distance"></div>
 // // // // // //                         </div>
 // // // // // //                       ))}
 // // // // // //                     </div>
@@ -10850,7 +10850,7 @@
 // // // // // //                                   alt="Location"
 // // // // // //                                 />
 // // // // // //                               </div>
-// // // // // //                               <div className="location-distance">20.4 mi</div>
+// // // // // //                               <div className="location-distance"></div>
 // // // // // //                             </div>
 // // // // // //                             <div className="view-relations">
 // // // // // //                               <div className="relations-amount">
@@ -10875,7 +10875,7 @@
 // // // // // //                                 alt="Location"
 // // // // // //                               />
 // // // // // //                             </div>
-// // // // // //                             <div className="location-distance">20.4 mi</div>
+// // // // // //                             <div className="location-distance"></div>
 // // // // // //                           </div>
 // // // // // //                         </div>
 // // // // // //                       </div>
@@ -10944,7 +10944,7 @@
 // // // // // //                                   alt="Location"
 // // // // // //                                 />
 // // // // // //                               </div>
-// // // // // //                               <div className="distance">20.4 mi</div>
+// // // // // //                               <div className="distance"></div>
 // // // // // //                             </div>
 // // // // // //                           </div>
 // // // // // //                         </div>
@@ -11123,7 +11123,7 @@
 // // // // // //                           <div className="carousel-item-name">
 // // // // // //                             {location.name}
 // // // // // //                           </div>
-// // // // // //                           <div className="carousel-item-distance">20.4 mi</div>
+// // // // // //                           <div className="carousel-item-distance"></div>
 // // // // // //                         </div>
 // // // // // //                       ))}
 // // // // // //                     </div>
@@ -11570,7 +11570,7 @@
 // // // // // //                         <div className="carousel-item-name">
 // // // // // //                           {location.name}
 // // // // // //                         </div>
-// // // // // //                         <div className="carousel-item-distance">20.4 mi</div>
+// // // // // //                         <div className="carousel-item-distance"></div>
 // // // // // //                       </div>
 // // // // // //                     ))}
 // // // // // //                   </div>
@@ -11712,7 +11712,7 @@
 // // // // //             title: provider.title,
 // // // // //             image: imageUrl,
 // // // // //             backgroundImage: bgImageUrl,
-// // // // //             distance: "20.4 mi",
+// // // // //             distance: "",
 // // // // //             locationName: primaryLoc?.name || "",
 // // // // //             address: primaryLoc?.address || "",
 // // // // //             phone: primaryLoc?.phone || "",
@@ -12315,7 +12315,7 @@
 // // // // //                           <div className="carousel-item-name">
 // // // // //                             {location.name}
 // // // // //                           </div>
-// // // // //                           <div className="carousel-item-distance">20.4 mi</div>
+// // // // //                           <div className="carousel-item-distance"></div>
 // // // // //                         </div>
 // // // // //                       ))}
 // // // // //                     </div>
@@ -12482,7 +12482,7 @@
 // // // // //                                   alt="Location"
 // // // // //                                 />
 // // // // //                               </div>
-// // // // //                               <div className="location-distance">20.4 mi</div>
+// // // // //                               <div className="location-distance"></div>
 // // // // //                             </div>
 // // // // //                             <div className="view-relations">
 // // // // //                               <div className="relations-amount">
@@ -12507,7 +12507,7 @@
 // // // // //                                 alt="Location"
 // // // // //                               />
 // // // // //                             </div>
-// // // // //                             <div className="location-distance">20.4 mi</div>
+// // // // //                             <div className="location-distance"></div>
 // // // // //                           </div>
 // // // // //                         </div>
 // // // // //                       </div>
@@ -12576,7 +12576,7 @@
 // // // // //                                   alt="Location"
 // // // // //                                 />
 // // // // //                               </div>
-// // // // //                               <div className="distance">20.4 mi</div>
+// // // // //                               <div className="distance"></div>
 // // // // //                             </div>
 // // // // //                           </div>
 // // // // //                         </div>
@@ -12755,7 +12755,7 @@
 // // // // //                           <div className="carousel-item-name">
 // // // // //                             {location.name}
 // // // // //                           </div>
-// // // // //                           <div className="carousel-item-distance">20.4 mi</div>
+// // // // //                           <div className="carousel-item-distance"></div>
 // // // // //                         </div>
 // // // // //                       ))}
 // // // // //                     </div>
@@ -13202,7 +13202,7 @@
 // // // // //                         <div className="carousel-item-name">
 // // // // //                           {location.name}
 // // // // //                         </div>
-// // // // //                         <div className="carousel-item-distance">20.4 mi</div>
+// // // // //                         <div className="carousel-item-distance"></div>
 // // // // //                       </div>
 // // // // //                     ))}
 // // // // //                   </div>
@@ -13341,7 +13341,7 @@
 // // // //             title: provider.title,
 // // // //             image: imageUrl,
 // // // //             backgroundImage: bgImageUrl,
-// // // //             distance: "20.4 mi",
+// // // //             distance: "",
 // // // //             locationName: primaryLoc?.name || "",
 // // // //             address: primaryLoc?.address || "",
 // // // //             phone: primaryLoc?.phone || "",
@@ -13917,7 +13917,7 @@
 // // // //                           <div className="carousel-item-name">
 // // // //                             {location.name}
 // // // //                           </div>
-// // // //                           <div className="carousel-item-distance">20.4 mi</div>
+// // // //                           <div className="carousel-item-distance"></div>
 // // // //                         </div>
 // // // //                       ))}
 // // // //                     </div>
@@ -14084,7 +14084,7 @@
 // // // //                                   alt="Location"
 // // // //                                 />
 // // // //                               </div>
-// // // //                               <div className="location-distance">20.4 mi</div>
+// // // //                               <div className="location-distance"></div>
 // // // //                             </div>
 // // // //                             <div className="view-relations">
 // // // //                               <div className="relations-amount">
@@ -14109,7 +14109,7 @@
 // // // //                                 alt="Location"
 // // // //                               />
 // // // //                             </div>
-// // // //                             <div className="location-distance">20.4 mi</div>
+// // // //                             <div className="location-distance"></div>
 // // // //                           </div>
 // // // //                         </div>
 // // // //                       </div>
@@ -14178,7 +14178,7 @@
 // // // //                                   alt="Location"
 // // // //                                 />
 // // // //                               </div>
-// // // //                               <div className="distance">20.4 mi</div>
+// // // //                               <div className="distance"></div>
 // // // //                             </div>
 // // // //                           </div>
 // // // //                         </div>
@@ -14357,7 +14357,7 @@
 // // // //                           <div className="carousel-item-name">
 // // // //                             {location.name}
 // // // //                           </div>
-// // // //                           <div className="carousel-item-distance">20.4 mi</div>
+// // // //                           <div className="carousel-item-distance"></div>
 // // // //                         </div>
 // // // //                       ))}
 // // // //                     </div>
@@ -14806,7 +14806,7 @@
 // // // //                         <div className="carousel-item-name">
 // // // //                           {location.name}
 // // // //                         </div>
-// // // //                         <div className="carousel-item-distance">20.4 mi</div>
+// // // //                         <div className="carousel-item-distance"></div>
 // // // //                       </div>
 // // // //                     ))}
 // // // //                   </div>
@@ -14946,7 +14946,7 @@
 // // //             title: provider.title,
 // // //             image: imageUrl,
 // // //             backgroundImage: bgImageUrl,
-// // //             distance: "20.4 mi",
+// // //             distance: "",
 // // //             locationName: primaryLoc?.name || "",
 // // //             address: primaryLoc?.address || "",
 // // //             phone: primaryLoc?.phone || "",
@@ -15533,7 +15533,7 @@
 // // //                           <div className="carousel-item-name">
 // // //                             {location.name}
 // // //                           </div>
-// // //                           <div className="carousel-item-distance">20.4 mi</div>
+// // //                           <div className="carousel-item-distance"></div>
 // // //                         </div>
 // // //                       ))}
 // // //                     </div>
@@ -15700,7 +15700,7 @@
 // // //                                   alt="Location"
 // // //                                 />
 // // //                               </div>
-// // //                               <div className="location-distance">20.4 mi</div>
+// // //                               <div className="location-distance"></div>
 // // //                             </div>
 // // //                             <div className="view-relations">
 // // //                               <div className="relations-amount">
@@ -15725,7 +15725,7 @@
 // // //                                 alt="Location"
 // // //                               />
 // // //                             </div>
-// // //                             <div className="location-distance">20.4 mi</div>
+// // //                             <div className="location-distance"></div>
 // // //                           </div>
 // // //                         </div>
 // // //                       </div>
@@ -15794,7 +15794,7 @@
 // // //                                   alt="Location"
 // // //                                 />
 // // //                               </div>
-// // //                               <div className="distance">20.4 mi</div>
+// // //                               <div className="distance"></div>
 // // //                             </div>
 // // //                           </div>
 // // //                         </div>
@@ -15973,7 +15973,7 @@
 // // //                           <div className="carousel-item-name">
 // // //                             {location.name}
 // // //                           </div>
-// // //                           <div className="carousel-item-distance">20.4 mi</div>
+// // //                           <div className="carousel-item-distance"></div>
 // // //                         </div>
 // // //                       ))}
 // // //                     </div>
@@ -16422,7 +16422,7 @@
 // // //                         <div className="carousel-item-name">
 // // //                           {location.name}
 // // //                         </div>
-// // //                         <div className="carousel-item-distance">20.4 mi</div>
+// // //                         <div className="carousel-item-distance"></div>
 // // //                       </div>
 // // //                     ))}
 // // //                   </div>
@@ -16564,7 +16564,7 @@
 // //             title: provider.title,
 // //             image: imageUrl,
 // //             backgroundImage: bgImageUrl,
-// //             distance: "20.4 mi",
+// //             distance: "",
 // //             locationName: primaryLoc?.name || "",
 // //             address: primaryLoc?.address || "",
 // //             phone: primaryLoc?.phone || "",
@@ -17187,7 +17187,7 @@
 // //                           <div className="carousel-item-name">
 // //                             {location.name}
 // //                           </div>
-// //                           <div className="carousel-item-distance">20.4 mi</div>
+// //                           <div className="carousel-item-distance"></div>
 // //                         </div>
 // //                       ))}
 // //                     </div>
@@ -17354,7 +17354,7 @@
 // //                                   alt="Location"
 // //                                 />
 // //                               </div>
-// //                               <div className="location-distance">20.4 mi</div>
+// //                               <div className="location-distance"></div>
 // //                             </div>
 // //                             <div className="view-relations">
 // //                               <div className="relations-amount">
@@ -17379,7 +17379,7 @@
 // //                                 alt="Location"
 // //                               />
 // //                             </div>
-// //                             <div className="location-distance">20.4 mi</div>
+// //                             <div className="location-distance"></div>
 // //                           </div>
 // //                         </div>
 // //                       </div>
@@ -17448,7 +17448,7 @@
 // //                                   alt="Location"
 // //                                 />
 // //                               </div>
-// //                               <div className="distance">20.4 mi</div>
+// //                               <div className="distance"></div>
 // //                             </div>
 // //                           </div>
 // //                         </div>
@@ -17627,7 +17627,7 @@
 // //                           <div className="carousel-item-name">
 // //                             {location.name}
 // //                           </div>
-// //                           <div className="carousel-item-distance">20.4 mi</div>
+// //                           <div className="carousel-item-distance"></div>
 // //                         </div>
 // //                       ))}
 // //                     </div>
@@ -18078,7 +18078,7 @@
 // //                         <div className="carousel-item-name">
 // //                           {location.name}
 // //                         </div>
-// //                         <div className="carousel-item-distance">20.4 mi</div>
+// //                         <div className="carousel-item-distance"></div>
 // //                       </div>
 // //                     ))}
 // //                   </div>
@@ -18234,7 +18234,7 @@
 //             title: provider.title,
 //             image: imageUrl,
 //             backgroundImage: bgImageUrl,
-//             distance: "20.4 mi",
+//             distance: "",
 //             locationName: primaryLoc?.name || "",
 //             address: primaryLoc?.address || "",
 //             phone: primaryLoc?.phone || "",
@@ -18873,7 +18873,7 @@
 //                           <div className="carousel-item-name">
 //                             {location.name}
 //                           </div>
-//                           <div className="carousel-item-distance">20.4 mi</div>
+//                           <div className="carousel-item-distance"></div>
 //                         </div>
 //                       ))}
 //                     </div>
@@ -19040,7 +19040,7 @@
 //                                   alt="Location"
 //                                 />
 //                               </div>
-//                               <div className="location-distance">20.4 mi</div>
+//                               <div className="location-distance"></div>
 //                             </div>
 //                             <div className="view-relations">
 //                               <div className="relations-amount">
@@ -19065,7 +19065,7 @@
 //                                 alt="Location"
 //                               />
 //                             </div>
-//                             <div className="location-distance">20.4 mi</div>
+//                             <div className="location-distance"></div>
 //                           </div>
 //                         </div>
 //                       </div>
@@ -19134,7 +19134,7 @@
 //                                   alt="Location"
 //                                 />
 //                               </div>
-//                               <div className="distance">20.4 mi</div>
+//                               <div className="distance"></div>
 //                             </div>
 //                           </div>
 //                         </div>
@@ -19741,30 +19741,125 @@ const ProviderLocator = () => {
         const providersRes = await fetch(
           "https://goldfingerbackend.vercel.app/api/providers?depth=2&limit=1000"
         );
-        const providersData = await providersRes.json();
+          const providersData = await providersRes.json();
+          
+          const transformedLocations = locationsData.docs.map((loc: any) => {
+            let imageUrl = "";
+            if (typeof loc.image === "object" && loc.image !== null) {
+              imageUrl = loc.image.cloudinary_url || loc.image.url || "";
+            } else if (typeof loc.image === "string") {
+              imageUrl = loc.image;
+            }
 
-        const transformedLocations = locationsData.docs.map((loc: any) => {
-          let imageUrl = "";
-          if (typeof loc.image === "object" && loc.image !== null) {
-            imageUrl = loc.image.cloudinary_url || loc.image.url || "";
-          } else if (typeof loc.image === "string") {
-            imageUrl = loc.image;
-          }
+            console.log("Location image URL:", imageUrl);
 
-          console.log("Location image URL:", imageUrl);
+            return {
+              id: loc.id,
+              name: loc.name,
+              image: imageUrl,
+              phone: loc.phone,
+              alt: loc.alt,
+              address: loc.address,
+              coordinates: loc.coordinates,
+              reviews: loc.reviews,
+              slug: loc.slug,
+              googleMaps: loc.googleMaps || "", // ADD THIS LINE
+            };
+          });
 
-          return {
-            id: loc.id,
-            name: loc.name,
-            image: imageUrl,
-            phone: loc.phone,
-            alt: loc.alt,
-            address: loc.address,
-            coordinates: loc.coordinates,
-            reviews: loc.reviews,
-            slug: loc.slug,
-          };
-        });
+        // const transformedLocations = locationsData.docs.map((loc: any) => {
+        //   let imageUrl = "";
+        //   if (typeof loc.image === "object" && loc.image !== null) {
+        //     imageUrl = loc.image.cloudinary_url || loc.image.url || "";
+        //   } else if (typeof loc.image === "string") {
+        //     imageUrl = loc.image;
+        //   }
+
+        //   console.log("Location image URL:", imageUrl);
+
+        //   return {
+        //     id: loc.id,
+        //     name: loc.name,
+        //     image: imageUrl,
+        //     phone: loc.phone,
+        //     alt: loc.alt,
+        //     address: loc.address,
+        //     coordinates: loc.coordinates,
+        //     reviews: loc.reviews,
+        //     slug: loc.slug,
+        //   };
+        // });
+
+        // const transformedProviders = providersData.docs.map((provider: any) => {
+        //   const primaryLoc =
+        //     typeof provider.primaryLocation === "object"
+        //       ? provider.primaryLocation
+        //       : null;
+
+        //   let imageUrl = "";
+        //   if (provider.image) {
+        //     if (typeof provider.image === "object") {
+        //       imageUrl =
+        //         provider.image.cloudinary_url || provider.image.url || "";
+        //     } else {
+        //       imageUrl = provider.image;
+        //     }
+        //   }
+
+        //   let bgImageUrl = "";
+        //   if (provider.backgroundImage) {
+        //     if (typeof provider.backgroundImage === "object") {
+        //       bgImageUrl =
+        //         provider.backgroundImage.cloudinary_url ||
+        //         provider.backgroundImage.url ||
+        //         "";
+        //     } else {
+        //       bgImageUrl = provider.backgroundImage;
+        //     }
+        //   }
+
+        //   console.log("Provider:", provider.name);
+        //   console.log("Image object:", provider.image);
+        //   console.log("Extracted image URL:", imageUrl);
+        //   console.log("Background image object:", provider.backgroundImage);
+        //   console.log("Extracted bg URL:", bgImageUrl);
+
+        //   // Extract additional locations
+        //   let additionalLocationIds: string[] = [];
+        //   if (
+        //     provider.additionalLocations &&
+        //     Array.isArray(provider.additionalLocations)
+        //   ) {
+        //     additionalLocationIds = provider.additionalLocations.map(
+        //       (loc: any) => (typeof loc === "object" ? loc.id : loc)
+        //     );
+        //   }
+
+        //   return {
+        //     id: provider.id,
+        //     name: provider.name,
+        //     title: provider.title,
+        //     image: imageUrl,
+        //     backgroundImage: bgImageUrl,
+        //     distance: "",
+        //     locationName: primaryLoc?.name || "",
+        //     address: primaryLoc?.address || "",
+        //     phone: primaryLoc?.phone || "",
+        //     coordinates: primaryLoc?.coordinates,
+        //     reviews: provider.reviews,
+        //     slug: provider.slug,
+        //     bio: provider.bio,
+        //     specialties: provider.specialties,
+        //     education: provider.education,
+        //     certifications: provider.certifications,
+        //     languages: provider.languages,
+        //     primaryLocationId:
+        //       typeof provider.primaryLocation === "object"
+        //         ? provider.primaryLocation.id
+        //         : provider.primaryLocation,
+        //     additionalLocationIds: additionalLocationIds,
+        //   };
+        // });
 
         const transformedProviders = providersData.docs.map((provider: any) => {
           const primaryLoc =
@@ -19817,7 +19912,7 @@ const ProviderLocator = () => {
             title: provider.title,
             image: imageUrl,
             backgroundImage: bgImageUrl,
-            distance: "20.4 mi",
+            distance: "",
             locationName: primaryLoc?.name || "",
             address: primaryLoc?.address || "",
             phone: primaryLoc?.phone || "",
@@ -19829,6 +19924,7 @@ const ProviderLocator = () => {
             education: provider.education,
             certifications: provider.certifications,
             languages: provider.languages,
+            googleMaps: provider.googleMaps || "", // ADD THIS LINE
             primaryLocationId:
               typeof provider.primaryLocation === "object"
                 ? provider.primaryLocation.id
@@ -19836,7 +19932,7 @@ const ProviderLocator = () => {
             additionalLocationIds: additionalLocationIds,
           };
         });
-
+          
         setLocations(transformedLocations);
         setProviders(transformedProviders);
         setFilteredLocations(transformedLocations);
@@ -20342,7 +20438,19 @@ const ProviderLocator = () => {
                     <div className="result-footer">
                       <div className="left">
                         <div className="address">{selectedItem.address}</div>
-                        <div className="get-directions">Get Directions&gt;</div>
+                        <a
+                          className="get-directions"
+                          href={
+                            selectedItem.googleMaps ||
+                            `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selectedItem.address)}`
+                          }
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ cursor: "pointer", color:"#fff" }}
+                        >
+                          Get Directions&gt;
+                        </a>
+                        {/* <div className="get-directions">Get Directions&gt;</div> */}
                         <div className="hours hidden">Business Hours&gt;</div>
                       </div>
                       <div className="right">
@@ -20583,7 +20691,7 @@ const ProviderLocator = () => {
                           <div className="carousel-item-name">
                             {location.name}
                           </div>
-                          <div className="carousel-item-distance">20.4 mi</div>
+                          {/* <div className="carousel-item-distance"></div> */}
                         </div>
                       ))}
                     </div>
@@ -20761,7 +20869,7 @@ const ProviderLocator = () => {
                                   alt="Location"
                                 />
                               </div>
-                              <div className="location-distance">20.4 mi</div>
+                              {/* <div className="location-distance"></div> */}
                             </div>
                             <div className="view-relations">
                               <div className="relations-amount">
@@ -20786,7 +20894,7 @@ const ProviderLocator = () => {
                                 alt="Location"
                               />
                             </div>
-                            <div className="location-distance">20.4 mi</div>
+                            {/* <div className="location-distance"></div> */}
                           </div>
                         </div>
                       </div>
@@ -20794,7 +20902,19 @@ const ProviderLocator = () => {
                     <div className="result-footer">
                       <div className="left">
                         <div className="address">{selectedItem.address}</div>
-                        <div className="get-directions">Get Directions&gt;</div>
+                        <a
+                          className="get-directions"
+                          href={
+                            selectedItem.googleMaps ||
+                            `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selectedItem.address)}`
+                          }
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ cursor: "pointer", color: "#fff" }}
+                        >
+                          Get Directions&gt;
+                        </a>
+                        {/* <div className="get-directions">Get Directions&gt;</div> */}
                         <div className="hours hidden">Business Hours&gt;</div>
                       </div>
                       <div className="right">
@@ -20855,7 +20975,7 @@ const ProviderLocator = () => {
                                   alt="Location"
                                 />
                               </div>
-                              <div className="distance">20.4 mi</div>
+                              <div className="distance"></div>
                             </div>
                           </div>
                         </div>

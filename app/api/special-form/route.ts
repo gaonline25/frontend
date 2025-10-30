@@ -1,6 +1,5 @@
 // // Next.js API Route: app/api/special-form/route.ts
 
-
 // import { NextRequest, NextResponse } from "next/server";
 
 // // For App Router (app/api/special-form/route.ts)
@@ -45,7 +44,7 @@
 
 //     // Submit to Payload CMS
 //     const payloadUrl =
-//       process.env.NEXT_PUBLIC_PAYLOAD_URL || "http://localhost:3001";
+//       process.env.NEXT_PUBLIC_PAYLOAD_URL || "https://goldfingerbackend.vercel.app";
 //     const payloadApiKey = process.env.PAYLOAD_API_KEY;
 
 //     const response = await fetch(
@@ -172,14 +171,102 @@
 // }
 // */
 
+// // app/api/special-form/route.ts
+// import { NextRequest, NextResponse } from "next/server";
 
+// export async function POST(request: NextRequest) {
+//   try {
+//     const body = await request.json();
 
-// app/api/special-form/route.ts
+//     // Get client information
+//     const ipAddress =
+//       request.headers.get("x-forwarded-for") ||
+//       request.headers.get("x-real-ip") ||
+//       "unknown";
+//     const userAgent = request.headers.get("user-agent") || "";
+//     const referrer = request.headers.get("referer") || "";
+
+//     // Map frontend field names to Payload CMS field names
+//     const submissionData = {
+//       // ✅ Map to correct Payload field names
+//       firstName: body.first_name,
+//       lastName: body.last_name,
+//       email: body.email,
+//       phone: body.phone,
+//       location: body.location_id,
+//       locationName: body.location_name,
+//       service: body.what_service_are_you_interested_in,
+//       comments: body.commentsquestions || "",
+//       optInSMS:
+//         body.optin_for_sms_texting === "Yes" ||
+//         body.optin_for_sms_texting === true,
+//       consentFollowUp:
+//         body.by_completing_this_form_you_are_giving_us_permission_to_followup_by_phone_email_or_text === "Yes" ||
+//         body.by_completing_this_form_you_are_giving_us_permission_to_followup_by_phone_email_or_text === true,
+
+//       // These will be set by Payload hooks, but including for completeness
+//       ipAddress: ipAddress,
+//       userAgent: userAgent,
+//       referrer: referrer,
+//       source: "contact-form",
+//       status: "new",
+//     };
+
+//     // Submit to Payload CMS
+//     const payloadUrl = "https://goldfingerbackend.vercel.app";
+//     const payloadApiKey = process.env.PAYLOAD_API_KEY;
+
+//     const response = await fetch(
+//       `${payloadUrl}/api/special-contact-form-submissions`,
+//       {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//           ...(payloadApiKey && { Authorization: `Bearer ${payloadApiKey}` }),
+//         },
+//         body: JSON.stringify(submissionData),
+//       }
+//     );
+
+//     if (!response.ok) {
+//       const errorData = await response.json();
+//       console.error("Payload API Error:", errorData);
+//       console.error("Response status:", response.status);
+//       throw new Error(`Failed to submit form to Payload CMS: ${errorData.message || 'Unknown error'}`);
+//     }
+
+//     const result = await response.json();
+
+//     // Optional: Send email notification
+//     // await sendEmailNotification(submissionData);
+
+//     return NextResponse.json(
+//       {
+//         success: true,
+//         message: "Form submitted successfully",
+//         id: result.doc.id,
+//       },
+//       { status: 200 }
+//     );
+//   } catch (error) {
+//     console.error("Form submission error:", error);
+//     return NextResponse.json(
+//       {
+//         success: false,
+//         message: "Failed to submit form. Please try again.",
+//         error: error instanceof Error ? error.message : "Unknown error",
+//       },
+//       { status: 500 }
+//     );
+//   }
+// }
+
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
+    console.log("Received form data:", body);
 
     // Get client information
     const ipAddress =
@@ -189,25 +276,17 @@ export async function POST(request: NextRequest) {
     const userAgent = request.headers.get("user-agent") || "";
     const referrer = request.headers.get("referer") || "";
 
-    // Map frontend field names to Payload CMS field names
+    // ✅ Map frontend field names to Payload CMS field names
     const submissionData = {
-      // ✅ Map to correct Payload field names
-      firstName: body.first_name,
-      lastName: body.last_name,
-      email: body.email,
-      phone: body.phone,
-      location: body.location_id,
-      locationName: body.location_name,
-      service: body.what_service_are_you_interested_in,
+      firstName: body.first_name || "",
+      lastName: body.last_name || "",
+      email: body.email || "",
+      phone: body.phone || "",
+      location: body.location_id || "",
+      service: body.what_service_are_you_interested_in || "",
       comments: body.commentsquestions || "",
-      optInSMS:
-        body.optin_for_sms_texting === "Yes" ||
-        body.optin_for_sms_texting === true,
-      consentFollowUp:
-        body.by_completing_this_form_you_are_giving_us_permission_to_followup_by_phone_email_or_text === "Yes" ||
-        body.by_completing_this_form_you_are_giving_us_permission_to_followup_by_phone_email_or_text === true,
-      
-      // These will be set by Payload hooks, but including for completeness
+      optInSMS: body.optin_for_sms_texting === "Yes",
+      consentFollowUp: true, // ✅ Set this to true since it's required
       ipAddress: ipAddress,
       userAgent: userAgent,
       referrer: referrer,
@@ -215,8 +294,11 @@ export async function POST(request: NextRequest) {
       status: "new",
     };
 
+    console.log("Mapped submission data:", submissionData);
+
     // Submit to Payload CMS
-    const payloadUrl = "https://goldfingerbackend.vercel.app";
+    const payloadUrl =
+      process.env.NEXT_PUBLIC_PAYLOAD_API_URL || "https://goldfingerbackend.vercel.app";
     const payloadApiKey = process.env.PAYLOAD_API_KEY;
 
     const response = await fetch(
@@ -225,29 +307,29 @@ export async function POST(request: NextRequest) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          ...(payloadApiKey && { Authorization: `Bearer ${payloadApiKey}` }),
+          ...(payloadApiKey && {
+            Authorization: `users API-Key ${payloadApiKey}`,
+          }),
         },
         body: JSON.stringify(submissionData),
       }
     );
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      console.error("Payload API Error:", errorData);
-      console.error("Response status:", response.status);
-      throw new Error(`Failed to submit form to Payload CMS: ${errorData.message || 'Unknown error'}`);
-    }
-
     const result = await response.json();
+    console.log("Payload response:", result);
 
-    // Optional: Send email notification
-    // await sendEmailNotification(submissionData);
+    if (!response.ok) {
+      console.error("Payload API Error:", result);
+      throw new Error(
+        result.errors?.[0]?.message || "Failed to submit form to Payload CMS"
+      );
+    }
 
     return NextResponse.json(
       {
         success: true,
-        message: "Form submitted successfully",
-        id: result.doc.id,
+        message: "Thank you! Your form has been submitted successfully.",
+        id: result.doc?.id,
       },
       { status: 200 }
     );

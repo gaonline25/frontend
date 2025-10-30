@@ -920,8 +920,8 @@ const LiquidFacelift: React.FC = () => {
                 halfImageSection.verticalAlignment === "top"
                   ? "top-aligned"
                   : halfImageSection.verticalAlignment === "center"
-                  ? ""
-                  : "bottom-aligned"
+                    ? ""
+                    : "bottom-aligned"
               } ${
                 halfImageSection.imagePosition === "left" ? "" : "flipped"
               } mt-0 mb-0`}

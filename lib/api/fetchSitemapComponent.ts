@@ -4,10 +4,10 @@ const PAYLOAD_API_URL =
   process.env.NEXT_PUBLIC_PAYLOAD_API_URL || "https://goldfingerbackend.vercel.app/api";
 
 // Fetch Lip Fillers Page Data
-export async function fetchLiquidRhinoplastyPageData() {
+export async function fetchSitemapComponent() {
   try {
     const res = await fetch(
-      `${PAYLOAD_API_URL}/liquid-rhinoplasty-page-component?where[isActive][equals]=true&depth=2&limit=100&draft=false&trash=false`,
+      `${PAYLOAD_API_URL}/sitemap-page-component?where[isActive][equals]=true&depth=2&limit=100&draft=false&trash=false`,
       {
         next: { revalidate: 60 },
         cache: "force-cache",

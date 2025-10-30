@@ -1376,3 +1376,296 @@ const Sitemap: React.FC = () => {
 };
 
 export default Sitemap;
+
+// import React from "react";
+// import { fetchSitemapComponent, getResponsiveImageUrls } from "@/lib/api/fetchSitemapComponent";
+
+// const Sitemap: React.FC = async () => {
+//   const componentData = await fetchSitemapComponent();
+
+//   if (!componentData) {
+//     return (
+//       <main id="main">
+//         <div className="container">
+//           <p>Sitemap content is currently unavailable.</p>
+//         </div>
+//       </main>
+//     );
+//   }
+
+//   const {
+//     heroSection,
+//     sitemapNavSection,
+//     socialContactSection,
+//     sectionOrder = [{ section: "hero" }, { section: "sitemapNav" }],
+//   } = componentData;
+
+//   // Helper function to render hero section
+//   const renderHeroSection = () => {
+//     if (!heroSection?.show) return null;
+
+//     const backgroundImages = getResponsiveImageUrls(
+//       heroSection.backgroundImage
+//     );
+
+//     return (
+//       <div
+//         className={`mod_hero ${heroSection.className || "banner mobile-stack no-bg"}`}
+//         data-s3-module=""
+//         style={{
+//           backgroundColor: heroSection.backgroundColor || undefined,
+//         }}
+//       >
+//         <div className="wrapper">
+//           {backgroundImages.mobile && (
+//             <picture className="background">
+//               <source
+//                 media="(max-width:420px)"
+//                 srcSet={`${backgroundImages.mobile}?auto=format,compress&w=420, ${backgroundImages.mobile}?auto=format,compress&w=630 2x`}
+//                 data-lazyload-srcset={`${backgroundImages.mobile}?auto=format,compress&w=420, ${backgroundImages.mobile}?auto=format,compress&w=630 2x`}
+//               />
+//               <source
+//                 media="(max-width:800px)"
+//                 srcSet={`${backgroundImages.tablet || backgroundImages.mobile}?auto=format,compress&w=800, ${backgroundImages.tablet || backgroundImages.mobile}?auto=format,compress&w=1200 2x`}
+//                 data-lazyload-srcset={`${backgroundImages.tablet || backgroundImages.mobile}?auto=format,compress&w=800, ${backgroundImages.tablet || backgroundImages.mobile}?auto=format,compress&w=1200 2x`}
+//               />
+//               <source
+//                 media="(max-width:1400px)"
+//                 srcSet={`${backgroundImages.desktop || backgroundImages.tablet || backgroundImages.mobile}?auto=format,compress&w=1400, ${backgroundImages.desktop || backgroundImages.tablet || backgroundImages.mobile}?auto=format,compress&w=2100 2x`}
+//                 data-lazyload-srcset={`${backgroundImages.desktop || backgroundImages.tablet || backgroundImages.mobile}?auto=format,compress&w=1400, ${backgroundImages.desktop || backgroundImages.tablet || backgroundImages.mobile}?auto=format,compress&w=2100 2x`}
+//               />
+//               <source
+//                 srcSet={`${backgroundImages.large || backgroundImages.desktop || backgroundImages.tablet || backgroundImages.mobile}?auto=format,compress&w=1994`}
+//                 data-lazyload-srcset={`${backgroundImages.large || backgroundImages.desktop || backgroundImages.tablet || backgroundImages.mobile}?auto=format,compress&w=1994`}
+//               />
+//               <img
+//                 src={`${backgroundImages.large || backgroundImages.desktop || backgroundImages.tablet || backgroundImages.mobile}?auto=format,compress&w=1994`}
+//                 data-lazyload-src={`${backgroundImages.large || backgroundImages.desktop || backgroundImages.tablet || backgroundImages.mobile}?auto=format,compress&w=1994`}
+//                 loading="lazy"
+//                 data-lazyload="img"
+//                 width="1994"
+//                 height="1206"
+//                 alt={backgroundImages.alt}
+//                 draggable="false"
+//                 data-lazyload-loaded="true"
+//               />
+//             </picture>
+//           )}
+//           <div className="row">
+//             <div className="inner">
+//               {heroSection.breadcrumbs &&
+//                 heroSection.breadcrumbs.length > 0 && (
+//                   <ul className="partial_breadcrumb" data-s3-partial="">
+//                     {heroSection.breadcrumbs.map(
+//                       (breadcrumb: any, index: number) => (
+//                         <li key={index}>
+//                           <a
+//                             href={breadcrumb.url}
+//                             role="link"
+//                             aria-label={breadcrumb.ariaLabel}
+//                           >
+//                             {breadcrumb.label}
+//                           </a>
+//                         </li>
+//                       )
+//                     )}
+//                   </ul>
+//                 )}
+//               <h1
+//                 style={{
+//                   color: heroSection.titleColor || undefined,
+//                   fontSize: heroSection.titleFontSize || undefined,
+//                 }}
+//               >
+//                 {heroSection.title}
+//               </h1>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     );
+//   };
+
+//   // Helper function to render navigation items recursively
+//   const renderNavItem = (item: any, level: number = 1) => {
+//     const hasChildren =
+//       item.hasChildren && item.subItems && item.subItems.length > 0;
+//     const listItemClass = `partial_nav_item tresio-nav__list-item level-${level} ${item.cssClass || ""}${hasChildren ? " tresio-nav__list-item--has-children" : ""}`;
+
+//     return (
+//       <li
+//         key={item.label}
+//         className={listItemClass}
+//         data-s3-partial=""
+//         role="menuitem"
+//       >
+//         <a
+//           href={item.url}
+//           className={`tresio-nav__link level-${level}`}
+//           role="link"
+//           target={item.openInNewTab ? "_blank" : undefined}
+//           rel={item.rel || (item.openInNewTab ? "noopener" : undefined)}
+//           aria-haspopup={hasChildren ? "true" : undefined}
+//           aria-expanded={hasChildren ? "false" : undefined}
+//         >
+//           {item.label}
+//         </a>
+//         {hasChildren && (
+//           <>
+//             <a
+//               className={`tresio-nav__dropdown level-${level}`}
+//               href="#"
+//               aria-label={item.ariaLabel || `${item.label} dropdown`}
+//               aria-expanded="false"
+//               aria-haspopup="true"
+//               role="button"
+//             >
+//               ▾
+//             </a>
+//             <ul
+//               className={`tresio-nav__list level-${level + 1}`}
+//               role="menu"
+//               aria-label="Submenu"
+//             >
+//               {item.subItems.map((subItem: any) =>
+//                 renderNavItem(subItem, level + 1)
+//               )}
+//             </ul>
+//           </>
+//         )}
+//       </li>
+//     );
+//   };
+
+//   // Helper function to render sitemap navigation section
+//   const renderSitemapNavSection = () => {
+//     if (!sitemapNavSection?.show) return null;
+
+//     const navType = sitemapNavSection.navType || "vertical";
+//     const navVariant = sitemapNavSection.navVariant || "default";
+
+//     return (
+//       <div
+//         className={sitemapNavSection.className || "container mod_sitemap "}
+//         data-s3-module=""
+//         style={{
+//           backgroundColor: sitemapNavSection.backgroundColor || undefined,
+//           color: sitemapNavSection.textColor || undefined,
+//           paddingTop: sitemapNavSection.paddingTop || undefined,
+//           paddingBottom: sitemapNavSection.paddingBottom || undefined,
+//         }}
+//       >
+//         <div className="row">
+//           <nav
+//             className={`tresio-nav tresio-nav--loaded type-${navType} variant-${navVariant}`}
+//             data-type-desktop={navType}
+//             data-type-tablet={sitemapNavSection.tabletNavType || navType}
+//             data-type-mobile={sitemapNavSection.mobileNavType || navType}
+//             data-variant-desktop={navVariant}
+//             data-variant-tablet={navVariant}
+//             data-variant-mobile={navVariant}
+//             data-type={navType}
+//             data-variant={navVariant}
+//             style={
+//               {
+//                 "--tresio-nav-hamburger-color":
+//                   sitemapNavSection.hamburgerColor || "#000000",
+//                 "--tresio-nav-hamburger-color-expanded":
+//                   sitemapNavSection.hamburgerColorExpanded || "#000000",
+//                 "--tresio-nav-menu-offset":
+//                   sitemapNavSection.menuOffset || "0px",
+//                 "--tresio-nav-menu-offset-mobile":
+//                   sitemapNavSection.menuOffsetMobile || "0px",
+//               } as React.CSSProperties
+//             }
+//           >
+//             <ul
+//               className="list partial_nav tresio-nav__main tresio-nav__list level-1"
+//               data-s3-partial=""
+//               role="menubar"
+//               aria-label="Main navigation"
+//             >
+//               {sitemapNavSection.navigationItems &&
+//                 sitemapNavSection.navigationItems.map((item: any) =>
+//                   renderNavItem(item, 1)
+//                 )}
+
+//               {/* Social Media & Contact Section */}
+//               {socialContactSection?.show && (
+//                 <li className="ignore" role="menuitem">
+//                   <div className="info">
+//                     {socialContactSection.socialLinks &&
+//                       socialContactSection.socialLinks.length > 0 && (
+//                         <ul
+//                           className="partial_socials"
+//                           data-s3-partial=""
+//                           role="menu"
+//                         >
+//                           {socialContactSection.socialLinks.map(
+//                             (social: any, index: number) => (
+//                               <li key={index} role="menuitem">
+//                                 <a
+//                                   rel="noopener"
+//                                   title={social.title}
+//                                   href={social.url}
+//                                   target="_blank"
+//                                   aria-label={social.ariaLabel}
+//                                 >
+//                                   <span className={social.iconClass}></span>
+//                                 </a>
+//                               </li>
+//                             )
+//                           )}
+//                         </ul>
+//                       )}
+//                     {socialContactSection.phoneNumber && (
+//                       <p>
+//                         <a
+//                           className="tel ppc-href"
+//                           href={socialContactSection.phoneNumberLink}
+//                           data-s3-event={
+//                             socialContactSection.phoneEventTracking
+//                           }
+//                           role="link"
+//                           aria-label={socialContactSection.phoneAriaLabel}
+//                         >
+//                           <span className="ppc-number">
+//                             {socialContactSection.phoneNumber}
+//                           </span>
+//                         </a>
+//                       </p>
+//                     )}
+//                   </div>
+//                 </li>
+//               )}
+//             </ul>
+//           </nav>
+//         </div>
+//       </div>
+//     );
+//   };
+
+//   // Render sections in order
+//   const renderSections = () => {
+//     return sectionOrder.map((item: any, index: number) => {
+//       switch (item.section) {
+//         case "hero":
+//           return (
+//             <React.Fragment key={index}>{renderHeroSection()}</React.Fragment>
+//           );
+//         case "sitemapNav":
+//           return (
+//             <React.Fragment key={index}>
+//               {renderSitemapNavSection()}
+//             </React.Fragment>
+//           );
+//         default:
+//           return null;
+//       }
+//     });
+//   };
+
+//   return <main id="main">{renderSections()}</main>;
+// };
+
+// export default Sitemap;

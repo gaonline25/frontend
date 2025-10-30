@@ -2994,6 +2994,61 @@ const SpecialsPage: React.FC = () => {
     fetchData();
   }, []);
 
+  // const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   setFormSubmitting(true);
+  //   setFormMessage(null);
+
+  //   const form = e.currentTarget;
+  //   const formData = new FormData(form);
+  //   const formValues: Record<string, any> = {};
+
+  //   formData.forEach((value, key) => {
+  //     if (key !== "human_check" && key !== "submit") {
+  //       formValues[key] = value;
+  //     }
+  //   });
+
+  //   try {
+  //     const response = await fetch("/api/special-form", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(formData),
+  //     });
+
+  //     const result = await response.json();
+
+  //     if (result.success) {
+  //       setFormMessage({
+  //         type: "success",
+  //         text: result.message,
+  //       });
+  //       form.reset();
+
+  //       if (pageData?.contactFormSection.formSettings.redirectUrl) {
+  //         // setTimeout(() => {
+  //         //   window.location.href =
+  //         //     pageData.contactFormSection.formSettings.redirectUrl;
+  //         // }, 2000);
+  //       }
+  //     } else {
+  //       setFormMessage({
+  //         type: "error",
+  //         text: result.message,
+  //       });
+  //     }
+  //   } catch (error) {
+  //     setFormMessage({
+  //       type: "error",
+  //       text: "An unexpected error occurred. Please try again.",
+  //     });
+  //   } finally {
+  //     setFormSubmitting(false);
+  //   }
+  // };
+
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormSubmitting(true);
@@ -3001,10 +3056,16 @@ const SpecialsPage: React.FC = () => {
 
     const form = e.currentTarget;
     const formData = new FormData(form);
+
+    // ✅ Convert FormData to plain object
     const formValues: Record<string, any> = {};
 
     formData.forEach((value, key) => {
-      if (key !== "human_check" && key !== "submit") {
+      if (
+        key !== "human_check" &&
+        key !== "submit" &&
+        key !== "g-recaptcha-response-v3"
+      ) {
         formValues[key] = value;
       }
     });
@@ -3015,18 +3076,19 @@ const SpecialsPage: React.FC = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(formValues), // ✅ Send the plain object, not FormData
       });
 
       const result = await response.json();
 
-      if (result.success) {
+      if (response.ok && result.success) {
         setFormMessage({
           type: "success",
-          text: result.message,
+          text: result.message || "Thank you! We'll be in touch soon.",
         });
         form.reset();
 
+        // Optional redirect
         if (pageData?.contactFormSection.formSettings.redirectUrl) {
           // setTimeout(() => {
           //   window.location.href =
@@ -3036,10 +3098,11 @@ const SpecialsPage: React.FC = () => {
       } else {
         setFormMessage({
           type: "error",
-          text: result.message,
+          text: result.message || "Failed to submit form. Please try again.",
         });
       }
     } catch (error) {
+      console.error("Form submission error:", error);
       setFormMessage({
         type: "error",
         text: "An unexpected error occurred. Please try again.",
