@@ -862,14 +862,781 @@
 
 // export default TummyTuckPage;
 
+// "use client";
 
+// import React, { useEffect, useState } from "react";
+// import {
+//   fetchTummyTuckPageData,
+//   getResponsiveImageUrls,
+//   lexicalToHtml,
+// } from "@/lib/api/plasticSurgery/fetchTummyTuckPageComponent";
 
+// interface TummyTuckData {
+//   heroSection: any;
+//   introSection: any;
+//   halfImageSection: any;
+//   boxGridSection1: any;
+//   boxGridSection2: any;
+//   ctaBeforeAfterSection: any;
+//   bannerSection1: any;
+//   columnMediaSection: any;
+//   bannerSection2: any;
+// }
+
+// const TummyTuckPage: React.FC = () => {
+//   const [pageData, setPageData] = useState<TummyTuckData | null>(null);
+//   const [loading, setLoading] = useState(true);
+
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       try {
+//         const data = await fetchTummyTuckPageData("tummy-tuck-page-component");
+//         setPageData(data);
+//       } catch (error) {
+//         console.error("Error fetching Tummy Tuck page data:", error);
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
+//     fetchData();
+//   }, []);
+
+//   if (loading) return <div>Loading...</div>;
+//   if (!pageData) return <div>No data available</div>;
+
+//   const {
+//     heroSection,
+//     introSection,
+//     halfImageSection,
+//     boxGridSection1,
+//     boxGridSection2,
+//     ctaBeforeAfterSection,
+//     bannerSection1,
+//     columnMediaSection,
+//     bannerSection2,
+//   } = pageData;
+
+//   const getResponsiveSrcSet = (images: any, width: number) => {
+//     const baseUrl = getResponsiveImageUrls(images);
+//     return `${baseUrl.large}?auto=format,compress&w=${width}, ${
+//       baseUrl.large
+//     }?auto=format,compress&w=${Math.floor(width * 1.5)} 2x`;
+//   };
+
+//   return (
+//     <main id="main">
+//       {/* Hero Module */}
+//       {heroSection?.show && (
+//         <div className="mod_hero banner mobile-stack" data-s3-module>
+//           <div className="wrapper">
+//             <picture className="background">
+//               <source
+//                 media="(max-width:420px)"
+//                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-srcset={getResponsiveSrcSet(
+//                   heroSection.backgroundImage,
+//                   420
+//                 )}
+//               />
+//               <source
+//                 media="(max-width:800px)"
+//                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-srcset={getResponsiveSrcSet(
+//                   heroSection.backgroundImage,
+//                   800
+//                 )}
+//               />
+//               <source
+//                 media="(max-width:1400px)"
+//                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-srcset={getResponsiveSrcSet(
+//                   heroSection.backgroundImage,
+//                   1400
+//                 )}
+//               />
+//               <source
+//                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-srcset={`${
+//                   getResponsiveImageUrls(heroSection.backgroundImage).large
+//                 }?auto=format,compress&w=1994`}
+//               />
+//               <img
+//                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-src={`${
+//                   getResponsiveImageUrls(heroSection.backgroundImage).large
+//                 }?auto=format,compress&w=1994`}
+//                 loading="lazy"
+//                 data-lazyload="img"
+//                 width="1994"
+//                 height="1206"
+//                 alt={heroSection.backgroundImage?.alt || "Background Texture"}
+//                 draggable="false"
+//               />
+//             </picture>
+//             <div className="row">
+//               <div className="inner">
+//                 <ul className="partial_breadcrumb" data-s3-partial>
+//                   {heroSection.breadcrumbs?.map((crumb: any, index: number) => (
+//                     <li key={index}>
+//                       <a
+//                         href={crumb.url}
+//                         role="link"
+//                         aria-label={
+//                           crumb.ariaLabel ||
+//                           "Breadcrumbs to help navigate the user"
+//                         }
+//                       >
+//                         {crumb.label}
+//                       </a>
+//                     </li>
+//                   ))}
+//                 </ul>
+//                 <h1>{heroSection.title}</h1>
+//                 {heroSection.description && (
+//                   <div className="text">
+//                     <div
+//                       dangerouslySetInnerHTML={{
+//                         __html: lexicalToHtml(heroSection.description),
+//                       }}
+//                     />
+//                     {heroSection.ctaButton?.show && (
+//                       <p>
+//                         <a
+//                           className={
+//                             heroSection.ctaButton.className || "btn white"
+//                           }
+//                           href={heroSection.ctaButton.url}
+//                           role="button"
+//                         >
+//                           {heroSection.ctaButton.text}
+//                         </a>
+//                       </p>
+//                     )}
+//                   </div>
+//                 )}
+//               </div>
+//             </div>
+//             <div className="media">
+//               <picture className="background">
+//                 <source
+//                   media="(max-width:420px)"
+//                   srcSet={getResponsiveSrcSet(heroSection.mediaImage, 420)}
+//                   data-lazyload-srcset={getResponsiveSrcSet(
+//                     heroSection.mediaImage,
+//                     420
+//                   )}
+//                 />
+//                 <source
+//                   media="(max-width:800px)"
+//                   srcSet={getResponsiveSrcSet(heroSection.mediaImage, 800)}
+//                   data-lazyload-srcset={getResponsiveSrcSet(
+//                     heroSection.mediaImage,
+//                     800
+//                   )}
+//                 />
+//                 <source
+//                   media="(max-width:1400px)"
+//                   srcSet={getResponsiveSrcSet(heroSection.mediaImage, 1400)}
+//                   data-lazyload-srcset={getResponsiveSrcSet(
+//                     heroSection.mediaImage,
+//                     1400
+//                   )}
+//                 />
+//                 <source
+//                   srcSet={`${
+//                     getResponsiveImageUrls(heroSection.mediaImage).large
+//                   }?auto=format,compress&w=1920`}
+//                   data-lazyload-srcset={`${
+//                     getResponsiveImageUrls(heroSection.mediaImage).large
+//                   }?auto=format,compress&w=1920`}
+//                 />
+//                 <img
+//                   src={`${
+//                     getResponsiveImageUrls(heroSection.mediaImage).large
+//                   }?auto=format,compress&w=1920`}
+//                   width="1920"
+//                   height="1206"
+//                   alt={
+//                     heroSection.mediaImage?.alt ||
+//                     "woman in white bikini smiling"
+//                   }
+//                   draggable="false"
+//                 />
+//               </picture>
+//             </div>
+//           </div>
+//         </div>
+//       )}
+
+//       {/* Intro Module */}
+//       {introSection?.show && (
+//         <div className={introSection.className} data-s3-module>
+//           <div className="row ">
+//             {introSection.logo && (
+//               <picture className="logo">
+//                 <img
+//                   src={
+//                     introSection.logo.cloudinary_url || introSection.logo.url
+//                   }
+//                   width={introSection.logoWidth || 58}
+//                   height={introSection.logoHeight || 64}
+//                   loading="lazy"
+//                   alt={introSection.logoAlt || "Goldfingers aesthetic logo"}
+//                   draggable="false"
+//                   data-api-key="logo"
+//                 />
+//               </picture>
+//             )}
+//             <div className="inner" data-api-key="content">
+//               <h2>{introSection.heading}</h2>
+//               <div
+//                 dangerouslySetInnerHTML={{
+//                   __html: lexicalToHtml(introSection.content),
+//                 }}
+//               />
+//             </div>
+//           </div>
+//         </div>
+//       )}
+
+//       {/* Half Image Module */}
+//       {halfImageSection?.show && (
+//         <div className={halfImageSection.className} data-s3-module>
+//           <div className={halfImageSection.rowClassName}>
+//             <div className="media">
+//               <picture className="background">
+//                 <source
+//                   media="(max-width:420px)"
+//                   srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                   data-lazyload-srcset={getResponsiveSrcSet(
+//                     halfImageSection.image,
+//                     420
+//                   )}
+//                 />
+//                 <source
+//                   media="(max-width:800px)"
+//                   srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                   data-lazyload-srcset={getResponsiveSrcSet(
+//                     halfImageSection.image,
+//                     800
+//                   )}
+//                 />
+//                 <source
+//                   media="(max-width:1400px)"
+//                   srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                   data-lazyload-srcset={getResponsiveSrcSet(
+//                     halfImageSection.image,
+//                     1400
+//                   )}
+//                 />
+//                 <source
+//                   srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                   data-lazyload-srcset={`${
+//                     getResponsiveImageUrls(halfImageSection.image).large ||
+//                     getResponsiveImageUrls(halfImageSection.image).desktop
+//                   }?auto=format,compress&w=1832`}
+//                 />
+//                 <img
+//                   src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                   data-lazyload-src={`${
+//                     getResponsiveImageUrls(halfImageSection.image).large ||
+//                     getResponsiveImageUrls(halfImageSection.image).desktop
+//                   }?auto=format,compress&w=1832`}
+//                   loading="lazy"
+//                   data-lazyload="img"
+//                   width="1832"
+//                   height="1824"
+//                   alt={
+//                     halfImageSection.image?.alt ||
+//                     "doctor's hands near woman on chair's stomach"
+//                   }
+//                   draggable="false"
+//                   data-api-key="image"
+//                 />
+//               </picture>
+//             </div>
+//             <div className={halfImageSection.copyClassName}>
+//               <div className="inner">
+//                 <div className="content" data-api-key="content">
+//                   <h2
+//                     dangerouslySetInnerHTML={{
+//                       __html: halfImageSection.heading,
+//                     }}
+//                   />
+//                   <div
+//                     dangerouslySetInnerHTML={{
+//                       __html: lexicalToHtml(halfImageSection.content),
+//                     }}
+//                   />
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       )}
+
+//       {/* Box Grid Module 1 */}
+//       {boxGridSection1?.show && (
+//         <div className={boxGridSection1.className} data-s3-module>
+//           <div className="row">
+//             <div className="content-before">
+//               <h2
+//                 dangerouslySetInnerHTML={{ __html: boxGridSection1.heading }}
+//               />
+//               {boxGridSection1.introContent && (
+//                 <div
+//                   dangerouslySetInnerHTML={{
+//                     __html: lexicalToHtml(boxGridSection1.introContent),
+//                   }}
+//                 />
+//               )}
+//             </div>
+//             <div className="boxes wider">
+//               {boxGridSection1.boxes?.map((box: any, index: number) => (
+//                 <div key={index} className="box wow fadeInUp">
+//                   <h3>{box.heading}</h3>
+//                   {box.content && (
+//                     <div
+//                       dangerouslySetInnerHTML={{
+//                         __html: lexicalToHtml(box.content),
+//                       }}
+//                     />
+//                   )}
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+//           {boxGridSection1.backgroundImage && (
+//             <picture className="background">
+//               <source
+//                 media="(max-width:420px)"
+//                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-srcset={`${
+//                   getResponsiveImageUrls(boxGridSection1.backgroundImage).mobile
+//                 }?auto=format,compress&w=1000, ${
+//                   getResponsiveImageUrls(boxGridSection1.backgroundImage).mobile
+//                 }?auto=format,compress&w=1500 2x`}
+//               />
+//               <source
+//                 media="(max-width:800px)"
+//                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-srcset={`${
+//                   getResponsiveImageUrls(boxGridSection1.backgroundImage).tablet
+//                 }?auto=format,compress&w=800, ${
+//                   getResponsiveImageUrls(boxGridSection1.backgroundImage).tablet
+//                 }?auto=format,compress&w=1200 2x`}
+//               />
+//               <source
+//                 media="(max-width:1400px)"
+//                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-srcset={`${
+//                   getResponsiveImageUrls(boxGridSection1.backgroundImage)
+//                     .desktop
+//                 }?auto=format,compress&w=1400, ${
+//                   getResponsiveImageUrls(boxGridSection1.backgroundImage)
+//                     .desktop
+//                 }?auto=format,compress&w=2100 2x`}
+//               />
+//               <source
+//                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-srcset={`${
+//                   getResponsiveImageUrls(boxGridSection1.backgroundImage).large
+//                 }?auto=format,compress&w=2200`}
+//               />
+//               <img
+//                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-src={`${
+//                   getResponsiveImageUrls(boxGridSection1.backgroundImage).large
+//                 }?auto=format,compress&w=2200`}
+//                 loading="lazy"
+//                 data-lazyload="img"
+//                 width="2200"
+//                 height="1726"
+//                 alt={boxGridSection1.backgroundImage?.alt || "Background media"}
+//                 draggable="false"
+//               />
+//             </picture>
+//           )}
+//         </div>
+//       )}
+
+//       {/* Box Grid Module 2 */}
+//       {boxGridSection2?.show && (
+//         <div className={boxGridSection2.className} data-s3-module>
+//           <div className="row">
+//             <div className="content-before">
+//               <h2
+//                 dangerouslySetInnerHTML={{ __html: boxGridSection2.heading }}
+//               />
+//               {boxGridSection2.introContent && (
+//                 <div
+//                   dangerouslySetInnerHTML={{
+//                     __html: lexicalToHtml(boxGridSection2.introContent),
+//                   }}
+//                 />
+//               )}
+//             </div>
+//             <div className="boxes wider">
+//               {boxGridSection2.boxes?.map((box: any, index: number) => (
+//                 <div key={index} className="box wow fadeInUp">
+//                   <h3>{box.heading}</h3>
+//                   {box.content && (
+//                     <div
+//                       dangerouslySetInnerHTML={{
+//                         __html: lexicalToHtml(box.content),
+//                       }}
+//                     />
+//                   )}
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+//         </div>
+//       )}
+
+//       {/* CTA Before & After Feed Module */}
+//       {ctaBeforeAfterSection?.show && (
+//         <div className={ctaBeforeAfterSection.className} data-s3-module>
+//           <div className="row restricted">
+//             <div className="text">
+//               <h2 data-api-key="title">
+//                 {ctaBeforeAfterSection.titleSmall && (
+//                   <span className="small">
+//                     {ctaBeforeAfterSection.titleSmall}
+//                   </span>
+//                 )}
+//                 {ctaBeforeAfterSection.title}
+//               </h2>
+//               <div className="patients" data-api-key="patients">
+//                 <div className="patient-wrap pslider" data-items="2">
+//                   {ctaBeforeAfterSection.patients?.map(
+//                     (patient: any, index: number) => (
+//                       <div key={index}>
+//                         <a href={patient.url} className="patient double">
+//                           <picture className="background">
+//                             <source
+//                               media="(max-width:420px)"
+//                               srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                               data-lazyload-srcset={getResponsiveSrcSet(
+//                                 patient.beforeImage,
+//                                 420
+//                               )}
+//                             />
+//                             <source
+//                               media="(max-width:800px)"
+//                               srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                               data-lazyload-srcset={getResponsiveSrcSet(
+//                                 patient.beforeImage,
+//                                 800
+//                               )}
+//                             />
+//                             <source
+//                               srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                               data-lazyload-srcset={`${
+//                                 getResponsiveImageUrls(patient.beforeImage)
+//                                   .desktop ||
+//                                 getResponsiveImageUrls(patient.beforeImage)
+//                                   .large
+//                               }?auto=format,compress&w=1200`}
+//                             />
+//                             <img
+//                               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                               data-lazyload-src={`${
+//                                 getResponsiveImageUrls(patient.beforeImage)
+//                                   .desktop ||
+//                                 getResponsiveImageUrls(patient.beforeImage)
+//                                   .large
+//                               }?auto=format,compress&w=1200`}
+//                               loading="lazy"
+//                               data-lazyload="img"
+//                               width="1200"
+//                               height="1601"
+//                               alt={patient.beforeImage?.alt || ""}
+//                               draggable="false"
+//                             />
+//                           </picture>
+//                           <picture className="background">
+//                             <source
+//                               media="(max-width:420px)"
+//                               srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                               data-lazyload-srcset={getResponsiveSrcSet(
+//                                 patient.afterImage,
+//                                 420
+//                               )}
+//                             />
+//                             <source
+//                               srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                               data-lazyload-srcset={`${
+//                                 getResponsiveImageUrls(patient.afterImage)
+//                                   .desktop ||
+//                                 getResponsiveImageUrls(patient.afterImage).large
+//                               }?auto=format,compress&w=500`}
+//                             />
+//                             <img
+//                               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                               data-lazyload-src={`${
+//                                 getResponsiveImageUrls(patient.afterImage)
+//                                   .desktop ||
+//                                 getResponsiveImageUrls(patient.afterImage).large
+//                               }?auto=format,compress&w=500`}
+//                               loading="lazy"
+//                               data-lazyload="img"
+//                               width="500"
+//                               height="476"
+//                               alt={patient.afterImage?.alt || ""}
+//                               draggable="false"
+//                             />
+//                           </picture>
+//                         </a>
+//                       </div>
+//                     )
+//                   )}
+//                 </div>
+//                 {ctaBeforeAfterSection.ageRestricted?.enabled && (
+//                   <div className="age-restricted">
+//                     <div className="inner">
+//                       <h3>
+//                         {ctaBeforeAfterSection.ageRestricted.heading ||
+//                           "Warning:"}
+//                       </h3>
+//                       <p>{ctaBeforeAfterSection.ageRestricted.message}</p>
+//                       <a className="btn">
+//                         {ctaBeforeAfterSection.ageRestricted.buttonText || "Ok"}
+//                       </a>
+//                     </div>
+//                   </div>
+//                 )}
+//               </div>
+//               <a
+//                 href={ctaBeforeAfterSection.viewGalleryButton?.url}
+//                 className="btn view-more"
+//                 title={ctaBeforeAfterSection.viewGalleryButton?.title}
+//                 aria-label={ctaBeforeAfterSection.viewGalleryButton?.ariaLabel}
+//               >
+//                 {ctaBeforeAfterSection.viewGalleryButton?.text}
+//               </a>
+//             </div>
+//           </div>
+//         </div>
+//       )}
+
+//       {/* Banner Module 1 */}
+//       {bannerSection1?.show && (
+//         <div className={bannerSection1.className} data-s3-module>
+//           <div className="row wow fadeInUp">
+//             <div className="content" data-api-key="top_content">
+//               <h2
+//                 dangerouslySetInnerHTML={{ __html: bannerSection1.heading }}
+//               />
+//               <div
+//                 dangerouslySetInnerHTML={{
+//                   __html: lexicalToHtml(bannerSection1.content),
+//                 }}
+//               />
+//             </div>
+//           </div>
+//           {bannerSection1.backgroundImage && (
+//             <picture className="background">
+//               <source
+//                 media="(max-width:420px)"
+//                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-srcset={`${
+//                   bannerSection1.backgroundImage.mobile?.cloudinary_url ||
+//                   bannerSection1.backgroundImage.mobile?.url
+//                 }?auto=format,compress&w=800, ${
+//                   bannerSection1.backgroundImage.mobile?.cloudinary_url ||
+//                   bannerSection1.backgroundImage.mobile?.url
+//                 }?auto=format,compress&w=1200 2x`}
+//               />
+//               <source
+//                 media="(max-width:800px)"
+//                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-srcset={`${
+//                   bannerSection1.backgroundImage.tablet?.cloudinary_url ||
+//                   bannerSection1.backgroundImage.tablet?.url
+//                 }?auto=format,compress&w=800&q=85&sharp=5, ${
+//                   bannerSection1.backgroundImage.tablet?.cloudinary_url ||
+//                   bannerSection1.backgroundImage.tablet?.url
+//                 }?auto=format,compress&w=1200&q=85&sharp=5 2x`}
+//               />
+//               <source
+//                 media="(max-width:1400px)"
+//                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-srcset={`${
+//                   bannerSection1.backgroundImage.desktop?.cloudinary_url ||
+//                   bannerSection1.backgroundImage.desktop?.url
+//                 }?auto=format,compress&w=1400&q=85&sharp=5, ${
+//                   bannerSection1.backgroundImage.desktop?.cloudinary_url ||
+//                   bannerSection1.backgroundImage.desktop?.url
+//                 }?auto=format,compress&w=2100&q=85&sharp=5 2x`}
+//               />
+//               <source
+//                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-srcset={`${
+//                   bannerSection1.backgroundImage.large?.cloudinary_url ||
+//                   bannerSection1.backgroundImage.large?.url
+//                 }?auto=format,compress&w=2200&q=85&sharp=5`}
+//               />
+//               <img
+//                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-src={`${
+//                   bannerSection1.backgroundImage.large?.cloudinary_url ||
+//                   bannerSection1.backgroundImage.large?.url
+//                 }?auto=format,compress&w=2200&q=85&sharp=5`}
+//                 loading="lazy"
+//                 data-lazyload="img"
+//                 width="2200"
+//                 height="802"
+//                 alt={bannerSection1.backgroundImage?.alt || "Banner media"}
+//                 draggable="false"
+//               />
+//             </picture>
+//           )}
+//         </div>
+//       )}
+
+//       {/* Column Module with Media */}
+//       {columnMediaSection?.show && (
+//         <div className={columnMediaSection.className} data-s3-module>
+//           <div
+//             className={columnMediaSection.rowClassName}
+//             data-api-key="content"
+//           >
+//             <div className="item">
+//               <h2>{columnMediaSection.heading}</h2>
+//               <div
+//                 dangerouslySetInnerHTML={{
+//                   __html: lexicalToHtml(columnMediaSection.content),
+//                 }}
+//               />
+//             </div>
+//             <picture className="media">
+//               <source
+//                 media="(max-width:420px)"
+//                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-srcset={getResponsiveSrcSet(
+//                   columnMediaSection.image,
+//                   420
+//                 )}
+//               />
+//               <source
+//                 media="(max-width:800px)"
+//                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-srcset={getResponsiveSrcSet(
+//                   columnMediaSection.image,
+//                   800
+//                 )}
+//               />
+//               <source
+//                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-srcset={`${
+//                   getResponsiveImageUrls(columnMediaSection.image).desktop ||
+//                   getResponsiveImageUrls(columnMediaSection.image).large
+//                 }?auto=format,compress&w=904`}
+//               />
+//               <img
+//                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-src={`${
+//                   getResponsiveImageUrls(columnMediaSection.image).desktop ||
+//                   getResponsiveImageUrls(columnMediaSection.image).large
+//                 }?auto=format,compress&w=904`}
+//                 loading="lazy"
+//                 data-lazyload="img"
+//                 width="904"
+//                 height="1062"
+//                 alt={columnMediaSection.image?.alt || "white sand beach"}
+//                 draggable="false"
+//               />
+//             </picture>
+//           </div>
+//         </div>
+//       )}
+
+//       {/* Banner Module 2 */}
+//       {bannerSection2?.show && (
+//         <div className={bannerSection2.className} data-s3-module>
+//           <div className="row wow fadeInUp">
+//             <div className="content" data-api-key="top_content">
+//               <h2
+//                 className={bannerSection2.headingAlignment || "text-center"}
+//                 dangerouslySetInnerHTML={{ __html: bannerSection2.heading }}
+//               />
+//               <div
+//                 dangerouslySetInnerHTML={{
+//                   __html: lexicalToHtml(bannerSection2.content),
+//                 }}
+//               />
+//             </div>
+//           </div>
+//           {bannerSection2.backgroundImage && (
+//             <picture className="background">
+//               <source
+//                 media="(max-width:420px)"
+//                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-srcset={`${
+//                   bannerSection2.backgroundImage.mobile?.cloudinary_url ||
+//                   bannerSection2.backgroundImage.mobile?.url
+//                 }?auto=format,compress&w=800, ${
+//                   bannerSection2.backgroundImage.mobile?.cloudinary_url ||
+//                   bannerSection2.backgroundImage.mobile?.url
+//                 }?auto=format,compress&w=1200 2x`}
+//               />
+//               <source
+//                 media="(max-width:800px)"
+//                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-srcset={`${
+//                   bannerSection2.backgroundImage.tablet?.cloudinary_url ||
+//                   bannerSection2.backgroundImage.tablet?.url
+//                 }?auto=format,compress&w=800&q=85&sharp=5, ${
+//                   bannerSection2.backgroundImage.tablet?.cloudinary_url ||
+//                   bannerSection2.backgroundImage.tablet?.url
+//                 }?auto=format,compress&w=1200&q=85&sharp=5 2x`}
+//               />
+//               <source
+//                 media="(max-width:1400px)"
+//                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-srcset={`${
+//                   bannerSection2.backgroundImage.desktop?.cloudinary_url ||
+//                   bannerSection2.backgroundImage.desktop?.url
+//                 }?auto=format,compress&w=1400&q=85&sharp=5, ${
+//                   bannerSection2.backgroundImage.desktop?.cloudinary_url ||
+//                   bannerSection2.backgroundImage.desktop?.url
+//                 }?auto=format,compress&w=2100&q=85&sharp=5 2x`}
+//               />
+//               <source
+//                 srcSet="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-srcset={`${
+//                   bannerSection2.backgroundImage.large?.cloudinary_url ||
+//                   bannerSection2.backgroundImage.large?.url
+//                 }?auto=format,compress&w=2200&q=85&sharp=5`}
+//               />
+//               <img
+//                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+//                 data-lazyload-src={`${
+//                   bannerSection2.backgroundImage.large?.cloudinary_url ||
+//                   bannerSection2.backgroundImage.large?.url
+//                 }?auto=format,compress&w=2200&q=85&sharp=5`}
+//                 loading="lazy"
+//                 data-lazyload="img"
+//                 width="2200"
+//                 height="802"
+//                 alt={bannerSection2.backgroundImage?.alt || "Banner media"}
+//                 draggable="false"
+//               />
+//             </picture>
+//           )}
+//         </div>
+//       )}
+//     </main>
+//   );
+// };
+
+// export default TummyTuckPage;
 
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
-  fetchTummyTuckPageData,
   getResponsiveImageUrls,
   lexicalToHtml,
 } from "@/lib/api/plasticSurgery/fetchTummyTuckPageComponent";
@@ -886,27 +1653,11 @@ interface TummyTuckData {
   bannerSection2: any;
 }
 
-const TummyTuckPage: React.FC = () => {
-  const [pageData, setPageData] = useState<TummyTuckData | null>(null);
-  const [loading, setLoading] = useState(true);
+interface TummyTuckPageProps {
+  data: TummyTuckData;
+}
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await fetchTummyTuckPageData("tummy-tuck-page-component");
-        setPageData(data);
-      } catch (error) {
-        console.error("Error fetching Tummy Tuck page data:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, []);
-
-  if (loading) return <div>Loading...</div>;
-  if (!pageData) return <div>No data available</div>;
-
+const TummyTuckPage: React.FC<TummyTuckPageProps> = ({ data }) => {
   const {
     heroSection,
     introSection,
@@ -917,7 +1668,7 @@ const TummyTuckPage: React.FC = () => {
     bannerSection1,
     columnMediaSection,
     bannerSection2,
-  } = pageData;
+  } = data;
 
   const getResponsiveSrcSet = (images: any, width: number) => {
     const baseUrl = getResponsiveImageUrls(images);

@@ -1,462 +1,928 @@
-// // import React from "react";
+// // // import React from "react";
+
+// // // const JuvedermGallery: React.FC = () => {
+// // //   return (
+// // //     <main id="main">
+// // //       {/* Gallery Hero Partial */}
+// // //       <div className="partial_gallery_hero banner bg" data-s3-partial="">
+// // //         <div className="row">
+// // //           <div className="inner">
+// // //             <h1>JUVÉDERM Gallery</h1>
+// // //             <ul className="partial_breadcrumb" data-s3-partial="">
+// // //               <li>
+// // //                 <a
+// // //                   href="/"
+// // //                   role="link"
+// // //                   aria-label="Breadcrumbs to help navigate the user"
+// // //                 >
+// // //                   Home
+// // //                 </a>
+// // //               </li>
+// // //               <li>
+// // //                 <a
+// // //                   href="/gallery/"
+// // //                   role="link"
+// // //                   aria-label="Breadcrumbs to help navigate the user"
+// // //                 >
+// // //                   Gallery
+// // //                 </a>
+// // //               </li>
+// // //               <li>
+// // //                 <a
+// // //                   href="/gallery/non-surgical/"
+// // //                   role="link"
+// // //                   aria-label="Breadcrumbs to help navigate the user"
+// // //                 >
+// // //                   Non Surgical
+// // //                 </a>
+// // //               </li>
+// // //               <li>
+// // //                 <a
+// // //                   href="/gallery/non-surgical/juvederm/"
+// // //                   role="link"
+// // //                   aria-label="Breadcrumbs to help navigate the user"
+// // //                 >
+// // //                   Juvederm
+// // //                 </a>
+// // //               </li>
+// // //             </ul>
+// // //           </div>
+// // //         </div>
+// // //         <picture className="background">
+// // //           <source
+// // //             media="(max-width:420px)"
+// // //             srcSet="https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=630 2x"
+// // //             data-lazyload-srcset="https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=630 2x"
+// // //           />
+// // //           <source
+// // //             media="(max-width:800px)"
+// // //             srcSet="https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=1200 2x"
+// // //             data-lazyload-srcset="https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=1200 2x"
+// // //           />
+// // //           <source
+// // //             media="(max-width:1400px)"
+// // //             srcSet="https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=1400, https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=2100 2x"
+// // //             data-lazyload-srcset="https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=1400, https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=2100 2x"
+// // //           />
+// // //           <source
+// // //             srcSet="https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=2200"
+// // //             data-lazyload-srcset="https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=2200"
+// // //           />
+// // //           <img
+// // //             src="https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=2200"
+// // //             width="2200"
+// // //             height="691"
+// // //             alt="Marble"
+// // //             draggable="false"
+// // //           />
+// // //         </picture>
+// // //       </div>
+
+// // //       <div className="container partial_gallery_item_index" data-s3-partial="">
+// // //         <div className="row">
+// // //           <div className="partial_gallery_dropdown" data-s3-partial="">
+// // //             <ul className="dropdown">
+// // //               <li>
+// // //                 <div className="selector">
+// // //                   <span>JUVÉDERM</span>
+// // //                   <span className="icon-left-open"></span>
+// // //                   <ul className="children">
+// // //                     <li>
+// // //                       <a href="/gallery/non-surgical/lip-fillers/">
+// // //                         Lip Fillers
+// // //                       </a>
+// // //                     </li>
+// // //                     <li>
+// // //                       <a href="/gallery/non-surgical/botox/">BOTOX</a>
+// // //                     </li>
+// // //                     <li>
+// // //                       <a href="/gallery/non-surgical/juvederm/">JUVÉDERM</a>
+// // //                     </li>
+// // //                     <li>
+// // //                       <a href="/gallery/non-surgical/kybella/">KYBELLA</a>
+// // //                     </li>
+// // //                     <li>
+// // //                       <a href="/gallery/non-surgical/micro-channeling/">
+// // //                         Micro-Channeling
+// // //                       </a>
+// // //                     </li>
+// // //                     <li>
+// // //                       <a href="/gallery/non-surgical/restylane-r/">Restylane</a>
+// // //                     </li>
+// // //                     <li>
+// // //                       <a href="/gallery/non-surgical/skinmedica/">SkinMedica</a>
+// // //                     </li>
+// // //                     <li>
+// // //                       <a href="/gallery/non-surgical/dermal-filler/">
+// // //                         Dermal Filler
+// // //                       </a>
+// // //                     </li>
+// // //                     <li>
+// // //                       <a href="/gallery/non-surgical/cheek-contour/">
+// // //                         Cheek Contour
+// // //                       </a>
+// // //                     </li>
+// // //                     <li>
+// // //                       <a href="/gallery/non-surgical/liquid-chin-and-jaw-contouring/">
+// // //                         Liquid Chin & Jaw Contouring
+// // //                       </a>
+// // //                     </li>
+// // //                     <li>
+// // //                       <a href="/gallery/non-surgical/liquid-rhinoplasty/">
+// // //                         Liquid Rhinoplasty
+// // //                       </a>
+// // //                     </li>
+// // //                     <li>
+// // //                       <a href="/gallery/non-surgical/marionette-lines/">
+// // //                         Marionette Lines
+// // //                       </a>
+// // //                     </li>
+// // //                     <li>
+// // //                       <a href="/gallery/non-surgical/liquid-facelift/">
+// // //                         Liquid (Non-Surgical) Facelift
+// // //                       </a>
+// // //                     </li>
+// // //                     <li>
+// // //                       <a href="/gallery/non-surgical/weight-loss/">
+// // //                         Weight Loss
+// // //                       </a>
+// // //                     </li>
+// // //                     <li>
+// // //                       <a href="/gallery/non-surgical/lash-extensions/">
+// // //                         Lash Extensions
+// // //                       </a>
+// // //                     </li>
+// // //                   </ul>
+// // //                 </div>
+// // //               </li>
+// // //             </ul>
+// // //             <a href="/gallery/non-surgical/" className="link">
+// // //               <span className="icon-left-open"></span>
+// // //               Back to Gallery
+// // //             </a>
+// // //           </div>
+
+// // //           <div
+// // //             className="partial_gallery_default_item_index"
+// // //             data-s3-partial=""
+// // //           >
+// // //             <a
+// // //               href="/gallery/non-surgical/juvederm/item/Ula016RnQkWxAjVK9QiwEg/"
+// // //               className="item single"
+// // //             >
+// // //               <picture className="">
+// // //                 <source
+// // //                   srcSet="https://www.datocms-assets.com/105497/1701293888-01.jpg?auto=format,compress&w=400"
+// // //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1701293888-01.jpg?auto=format,compress&w=400"
+// // //                 />
+// // //                 <img
+// // //                   src="https://www.datocms-assets.com/105497/1701293888-01.jpg?auto=format,compress&w=400"
+// // //                   width="400"
+// // //                   height="259"
+// // //                   alt="JUVÉDERM Before & After Gallery - Patient 341440 - Image 1"
+// // //                   draggable="false"
+// // //                 />
+// // //               </picture>
+// // //             </a>
+// // //             <a
+// // //               href="/gallery/non-surgical/juvederm/item/dcmBYu5xR7S2z33_YMbwmg/"
+// // //               className="item single"
+// // //             >
+// // //               <picture className="">
+// // //                 <source
+// // //                   srcSet="https://www.datocms-assets.com/105497/1701293755-01.jpg?auto=format,compress&w=400"
+// // //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1701293755-01.jpg?auto=format,compress&w=400"
+// // //                 />
+// // //                 <img
+// // //                   src="https://www.datocms-assets.com/105497/1701293755-01.jpg?auto=format,compress&w=400"
+// // //                   width="400"
+// // //                   height="259"
+// // //                   alt="JUVÉDERM Before & After Gallery - Patient 146526 - Image 1"
+// // //                   draggable="false"
+// // //                 />
+// // //               </picture>
+// // //             </a>
+// // //             <a
+// // //               href="/gallery/non-surgical/juvederm/item/LKePUy_oTiKpwm61Lb7IXQ/"
+// // //               className="item single"
+// // //             >
+// // //               <picture className="">
+// // //                 <source
+// // //                   srcSet="https://www.datocms-assets.com/105497/1701293668-01.jpg?auto=format,compress&w=400"
+// // //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1701293668-01.jpg?auto=format,compress&w=400"
+// // //                 />
+// // //                 <img
+// // //                   src="https://www.datocms-assets.com/105497/1701293668-01.jpg?auto=format,compress&w=400"
+// // //                   width="400"
+// // //                   height="259"
+// // //                   alt="JUVÉDERM Before & After Gallery - Patient 123022 - Image 1"
+// // //                   draggable="false"
+// // //                 />
+// // //               </picture>
+// // //             </a>
+// // //             <a
+// // //               href="/gallery/non-surgical/juvederm/item/UvPW2oMcTgqNB0WQiiyxJw/"
+// // //               className="item single"
+// // //             >
+// // //               <picture className="">
+// // //                 <source
+// // //                   srcSet="https://www.datocms-assets.com/105497/1701293491-01.jpg?auto=format,compress&w=400"
+// // //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1701293491-01.jpg?auto=format,compress&w=400"
+// // //                 />
+// // //                 <img
+// // //                   src="https://www.datocms-assets.com/105497/1701293491-01.jpg?auto=format,compress&w=400"
+// // //                   width="400"
+// // //                   height="259"
+// // //                   alt="JUVÉDERM Before & After Gallery - Patient 619155 - Image 1"
+// // //                   draggable="false"
+// // //                 />
+// // //               </picture>
+// // //             </a>
+// // //             <a
+// // //               href="/gallery/non-surgical/juvederm/item/VTGvGkm3SnOkzRswzkQj9g/"
+// // //               className="item single"
+// // //             >
+// // //               <picture className="">
+// // //                 <source
+// // //                   srcSet="https://www.datocms-assets.com/105497/1701293379-01.jpg?auto=format,compress&w=400"
+// // //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1701293379-01.jpg?auto=format,compress&w=400"
+// // //                 />
+// // //                 <img
+// // //                   src="https://www.datocms-assets.com/105497/1701293379-01.jpg?auto=format,compress&w=400"
+// // //                   width="400"
+// // //                   height="259"
+// // //                   alt="JUVÉDERM Before & After Gallery - Patient 353084 - Image 1"
+// // //                   draggable="false"
+// // //                 />
+// // //               </picture>
+// // //             </a>
+// // //             <a
+// // //               href="/gallery/non-surgical/juvederm/item/188992002/"
+// // //               className="item single"
+// // //             >
+// // //               <picture className="">
+// // //                 <source
+// // //                   srcSet="https://www.datocms-assets.com/105497/1697059692-01.jpg?auto=format,compress&w=400"
+// // //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1697059692-01.jpg?auto=format,compress&w=400"
+// // //                 />
+// // //                 <img
+// // //                   src="https://www.datocms-assets.com/105497/1697059692-01.jpg?auto=format,compress&w=400"
+// // //                   width="400"
+// // //                   height="150"
+// // //                   alt="JUVÉDERM Before & After Gallery - Patient 188992002 - Image 1"
+// // //                   draggable="false"
+// // //                 />
+// // //               </picture>
+// // //             </a>
+// // //             <a
+// // //               href="/gallery/non-surgical/juvederm/item/168493172/"
+// // //               className="item single"
+// // //             >
+// // //               <picture className="">
+// // //                 <source
+// // //                   srcSet="https://www.datocms-assets.com/105497/1694721141-4-2-edited.png?auto=format,compress&w=400"
+// // //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1694721141-4-2-edited.png?auto=format,compress&w=400"
+// // //                 />
+// // //                 <img
+// // //                   src="https://www.datocms-assets.com/105497/1694721141-4-2-edited.png?auto=format,compress&w=400"
+// // //                   width="400"
+// // //                   height="281"
+// // //                   alt="JUVÉDERM Before & After Gallery - Patient 168493172 - Image 1"
+// // //                   draggable="false"
+// // //                 />
+// // //               </picture>
+// // //             </a>
+// // //             <a
+// // //               href="/gallery/non-surgical/juvederm/item/168486529/"
+// // //               className="item single"
+// // //             >
+// // //               <picture className="">
+// // //                 <source
+// // //                   srcSet="https://www.datocms-assets.com/105497/1693329020-content-img2-5.jpeg?auto=format,compress&w=400"
+// // //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1693329020-content-img2-5.jpeg?auto=format,compress&w=400"
+// // //                 />
+// // //                 <img
+// // //                   src="https://www.datocms-assets.com/105497/1693329020-content-img2-5.jpeg?auto=format,compress&w=400"
+// // //                   width="400"
+// // //                   height="226"
+// // //                   alt="JUVÉDERM Before & After Gallery - Patient 168486529 - Image 1"
+// // //                   draggable="false"
+// // //                 />
+// // //               </picture>
+// // //             </a>
+// // //             <a
+// // //               href="/gallery/non-surgical/juvederm/item/177169538/"
+// // //               className="item single"
+// // //             >
+// // //               <picture className="">
+// // //                 <source
+// // //                   srcSet="https://www.datocms-assets.com/105497/1695234070-female.png?auto=format,compress&w=400"
+// // //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1695234070-female.png?auto=format,compress&w=400"
+// // //                 />
+// // //                 <img
+// // //                   src="https://www.datocms-assets.com/105497/1695234070-female.png?auto=format,compress&w=400"
+// // //                   width="400"
+// // //                   height="398"
+// // //                   alt="JUVÉDERM Before & After Gallery - Patient 177169538 - Image 1"
+// // //                   draggable="false"
+// // //                 />
+// // //               </picture>
+// // //             </a>
+// // //             <a
+// // //               href="/gallery/non-surgical/juvederm/item/177169552/"
+// // //               className="item single"
+// // //             >
+// // //               <picture className="">
+// // //                 <source
+// // //                   srcSet="https://www.datocms-assets.com/105497/1695234165-juvederm-voluma-avi-ba.jpg?auto=format,compress&w=400"
+// // //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1695234165-juvederm-voluma-avi-ba.jpg?auto=format,compress&w=400"
+// // //                 />
+// // //                 <img
+// // //                   src="https://www.datocms-assets.com/105497/1695234165-juvederm-voluma-avi-ba.jpg?auto=format,compress&w=400"
+// // //                   width="400"
+// // //                   height="400"
+// // //                   alt="JUVÉDERM Before & After Gallery - Patient 177169552 - Image 1"
+// // //                   draggable="false"
+// // //                 />
+// // //               </picture>
+// // //             </a>
+// // //             <a
+// // //               href="/gallery/non-surgical/juvederm/item/177169844/"
+// // //               className="item single"
+// // //             >
+// // //               <picture className="">
+// // //                 <source
+// // //                   srcSet="https://www.datocms-assets.com/105497/1695234243-juvederm-voluma-ba-ashlyn-full-face.jpg?auto=format,compress&w=400"
+// // //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1695234243-juvederm-voluma-ba-ashlyn-full-face.jpg?auto=format,compress&w=400"
+// // //                 />
+// // //                 <img
+// // //                   src="https://www.datocms-assets.com/105497/1695234243-juvederm-voluma-ba-ashlyn-full-face.jpg?auto=format,compress&w=400"
+// // //                   width="400"
+// // //                   height="400"
+// // //                   alt="JUVÉDERM Before & After Gallery - Patient 177169844 - Image 1"
+// // //                   draggable="false"
+// // //                 />
+// // //               </picture>
+// // //             </a>
+// // //             <a
+// // //               href="/gallery/non-surgical/juvederm/item/177169850/"
+// // //               className="item single"
+// // //             >
+// // //               <picture className="">
+// // //                 <source
+// // //                   srcSet="https://www.datocms-assets.com/105497/1695234303-juvederm-voluma-ba-batch-2-avi-full-faced.jpg?auto=format,compress&w=400"
+// // //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1695234303-juvederm-voluma-ba-batch-2-avi-full-faced.jpg?auto=format,compress&w=400"
+// // //                 />
+// // //                 <img
+// // //                   src="https://www.datocms-assets.com/105497/1695234303-juvederm-voluma-ba-batch-2-avi-full-faced.jpg?auto=format,compress&w=400"
+// // //                   width="400"
+// // //                   height="400"
+// // //                   alt="JUVÉDERM Before & After Gallery - Patient 177169850 - Image 1"
+// // //                   draggable="false"
+// // //                 />
+// // //               </picture>
+// // //             </a>
+// // //             <a
+// // //               href="/gallery/non-surgical/juvederm/item/177169851/"
+// // //               className="item single"
+// // //             >
+// // //               <picture className="">
+// // //                 <source
+// // //                   srcSet="https://www.datocms-assets.com/105497/1695234333-male.png?auto=format,compress&w=400"
+// // //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1695234333-male.png?auto=format,compress&w=400"
+// // //                 />
+// // //                 <img
+// // //                   src="https://www.datocms-assets.com/105497/1695234333-male.png?auto=format,compress&w=400"
+// // //                   width="400"
+// // //                   height="401"
+// // //                   alt="JUVÉDERM Before & After Gallery - Patient 177169851 - Image 1"
+// // //                   draggable="false"
+// // //                 />
+// // //               </picture>
+// // //             </a>
+// // //             <a
+// // //               href="/gallery/non-surgical/juvederm/item/177170482/"
+// // //               className="item single"
+// // //             >
+// // //               <picture className="">
+// // //                 <source
+// // //                   srcSet="https://www.datocms-assets.com/105497/1695238202-juvederm-before-and-after-scottsdale-2-edited.png?auto=format,compress&w=400"
+// // //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1695238202-juvederm-before-and-after-scottsdale-2-edited.png?auto=format,compress&w=400"
+// // //                 />
+// // //                 <img
+// // //                   src="https://www.datocms-assets.com/105497/1695238202-juvederm-before-and-after-scottsdale-2-edited.png?auto=format,compress&w=400"
+// // //                   width="400"
+// // //                   height="162"
+// // //                   alt="JUVÉDERM Before & After Gallery - Patient 177170482 - Image 1"
+// // //                   draggable="false"
+// // //                 />
+// // //               </picture>
+// // //             </a>
+// // //             <a
+// // //               href="/gallery/non-surgical/juvederm/item/177170483/"
+// // //               className="item single"
+// // //             >
+// // //               <picture className="">
+// // //                 <source
+// // //                   srcSet="https://www.datocms-assets.com/105497/1695238217-juvederm-volite-07-edited.png?auto=format,compress&w=400"
+// // //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1695238217-juvederm-volite-07-edited.png?auto=format,compress&w=400"
+// // //                 />
+// // //                 <img
+// // //                   src="https://www.datocms-assets.com/105497/1695238217-juvederm-volite-07-edited.png?auto=format,compress&w=400"
+// // //                   width="400"
+// // //                   height="210"
+// // //                   alt="JUVÉDERM Before & After Gallery - Patient 177170483 - Image 1"
+// // //                   draggable="false"
+// // //                 />
+// // //               </picture>
+// // //             </a>
+// // //           </div>
+// // //         </div>
+// // //       </div>
+
+// // //       <div className="partial_pagination pagination" data-s3-partial="">
+// // //         <a
+// // //           href="/gallery/non-surgical/juvederm/"
+// // //           className="page-numbers hide-phone current"
+// // //         >
+// // //           1
+// // //         </a>
+// // //         <a
+// // //           className="page-numbers hide-phone "
+// // //           href="/gallery/non-surgical/juvederm/2/"
+// // //         >
+// // //           2
+// // //         </a>
+// // //         <a className="page-numbers" href="/gallery/non-surgical/juvederm/2/">
+// // //           Next
+// // //         </a>
+// // //       </div>
+// // //     </main>
+// // //   );
+// // // };
+
+// // // export default JuvedermGallery;
+
+// // "use client";
+
+// // import React, { useEffect, useState } from "react";
+// // import ImageCarousel from "@/components/gallery/ImageCarousel";
+// // import { getResponsiveImageUrls } from "@/lib/api/Gallery/non-surgical/BotoxPage";
+
+// // interface BotoxGalleryPageData {
+// //   componentName: string;
+// //   slug: string;
+// //   isActive: boolean;
+// //   heroSection: {
+// //     title: string;
+// //     backgroundColor?: string;
+// //     textColor?: string;
+// //     backgroundImage: {
+// //       desktop?: any;
+// //       tablet?: any;
+// //       mobile?: any;
+// //       smallMobile?: any;
+// //       altText?: string;
+// //     };
+// //     breadcrumbs: Array<{
+// //       label: string;
+// //       url: string;
+// //       ariaLabel?: string;
+// //     }>;
+// //     breadcrumbTextColor?: string;
+// //     breadcrumbLinkColor?: string;
+// //     breadcrumbHoverColor?: string;
+// //   };
+// //   dropdownSection: {
+// //     backgroundColor?: string;
+// //     selectedItemLabel: string;
+// //     dropdownItems: Array<{
+// //       label: string;
+// //       url: string;
+// //       isActive: boolean;
+// //     }>;
+// //     backButton: {
+// //       label?: string;
+// //       url?: string;
+// //       iconClass?: string;
+// //     };
+// //     textColor?: string;
+// //     linkColor?: string;
+// //     linkHoverColor?: string;
+// //     borderColor?: string;
+// //   };
+// //   gallerySection: {
+// //     backgroundColor?: string;
+// //     sectionPadding?: string;
+// //     galleryItems: Array<{
+// //       image?: any;
+// //       imageUrl?: string;
+// //       itemUrl: string;
+// //       altText: string;
+// //       patientId?: string;
+// //       imageNumber: number;
+// //       width?: number;
+// //       height?: number;
+// //       customCss?: string;
+// //     }>;
+// //     itemBackgroundColor?: string;
+// //     itemBorderColor?: string;
+// //     itemHoverEffect?: "none" | "scale" | "opacity" | "shadow";
+// //   };
+// //   paginationSection: {
+// //     enabled: boolean;
+// //     backgroundColor?: string;
+// //     textColor?: string;
+// //     activePageColor?: string;
+// //     activePageBackground?: string;
+// //     hoverColor?: string;
+// //     currentPage: number;
+// //     totalPages: number;
+// //     baseUrl?: string;
+// //     pages: Array<{
+// //       pageNumber: number;
+// //       url: string;
+// //       isCurrent: boolean;
+// //       hideOnPhone: boolean;
+// //     }>;
+// //     nextButton: {
+// //       label?: string;
+// //       url?: string;
+// //       enabled: boolean;
+// //     };
+// //     prevButton: {
+// //       label?: string;
+// //       url?: string;
+// //       enabled: boolean;
+// //     };
+// //   };
+// //   globalStyling: {
+// //     containerBackgroundColor?: string;
+// //     containerMaxWidth?: string;
+// //     fontFamily?: string;
+// //     primaryColor?: string;
+// //     secondaryColor?: string;
+// //     customCss?: string;
+// //   };
+// //   sectionOrder: Array<{
+// //     sectionType: "hero" | "dropdown" | "gallery" | "pagination";
+// //     enabled: boolean;
+// //     customId?: string;
+// //     customClass?: string;
+// //   }>;
+// //   seo: {
+// //     metaTitle?: string;
+// //     metaDescription?: string;
+// //     metaKeywords?: string;
+// //     ogImage?: any;
+// //   };
+// // }
 
 // // const JuvedermGallery: React.FC = () => {
-// //   return (
-// //     <main id="main">
-// //       {/* Gallery Hero Partial */}
-// //       <div className="partial_gallery_hero banner bg" data-s3-partial="">
-// //         <div className="row">
-// //           <div className="inner">
-// //             <h1>JUVÉDERM Gallery</h1>
-// //             <ul className="partial_breadcrumb" data-s3-partial="">
-// //               <li>
-// //                 <a
-// //                   href="/"
-// //                   role="link"
-// //                   aria-label="Breadcrumbs to help navigate the user"
-// //                 >
-// //                   Home
-// //                 </a>
-// //               </li>
-// //               <li>
-// //                 <a
-// //                   href="/gallery/"
-// //                   role="link"
-// //                   aria-label="Breadcrumbs to help navigate the user"
-// //                 >
-// //                   Gallery
-// //                 </a>
-// //               </li>
-// //               <li>
-// //                 <a
-// //                   href="/gallery/non-surgical/"
-// //                   role="link"
-// //                   aria-label="Breadcrumbs to help navigate the user"
-// //                 >
-// //                   Non Surgical
-// //                 </a>
-// //               </li>
-// //               <li>
-// //                 <a
-// //                   href="/gallery/non-surgical/juvederm/"
-// //                   role="link"
-// //                   aria-label="Breadcrumbs to help navigate the user"
-// //                 >
-// //                   Juvederm
-// //                 </a>
-// //               </li>
-// //             </ul>
-// //           </div>
-// //         </div>
-// //         <picture className="background">
-// //           <source
-// //             media="(max-width:420px)"
-// //             srcSet="https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=630 2x"
-// //             data-lazyload-srcset="https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=630 2x"
-// //           />
-// //           <source
-// //             media="(max-width:800px)"
-// //             srcSet="https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=1200 2x"
-// //             data-lazyload-srcset="https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=1200 2x"
-// //           />
-// //           <source
-// //             media="(max-width:1400px)"
-// //             srcSet="https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=1400, https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=2100 2x"
-// //             data-lazyload-srcset="https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=1400, https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=2100 2x"
-// //           />
-// //           <source
-// //             srcSet="https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=2200"
-// //             data-lazyload-srcset="https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=2200"
-// //           />
-// //           <img
-// //             src="https://www.datocms-assets.com/105497/1694101214-gallery-banner-bgd.jpg?auto=format,compress&w=2200"
-// //             width="2200"
-// //             height="691"
-// //             alt="Marble"
-// //             draggable="false"
-// //           />
-// //         </picture>
-// //       </div>
+// //   const [pageData, setPageData] = useState<BotoxGalleryPageData | null>(null);
+// //   const [loading, setLoading] = useState(true);
+// //   const [isCarouselOpen, setIsCarouselOpen] = useState(false);
+// //   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-// //       <div className="container partial_gallery_item_index" data-s3-partial="">
-// //         <div className="row">
+// //   useEffect(() => {
+// //     const fetchData = async () => {
+// //       try {
+// //         const res = await fetch(
+// //           `${
+// //             process.env.NEXT_PUBLIC_PAYLOAD_API_URL ||
+// //             "https://goldfingerbackend.vercel.app/api"
+// //           }/juvedermGallery?where[isActive][equals]=true&depth=2&limit=100&draft=false&trash=false`,
+// //           {
+// //             next: { revalidate: 60 },
+// //             cache: "force-cache",
+// //           }
+// //         );
+// //         if (!res.ok) {
+// //           throw new Error(
+// //             `Failed to fetch Botox Gallery data: ${res.statusText}`
+// //           );
+// //         }
+// //         const data = await res.json();
+// //         const activeComponent =
+// //           data.docs?.find((component: any) => component.isActive) || null;
+// //         console.log("Fetched Botox Gallery data:", activeComponent);
+// //         setPageData(activeComponent);
+// //       } catch (error) {
+// //         console.error("Error fetching Botox Gallery data:", error);
+// //       } finally {
+// //         setLoading(false);
+// //       }
+// //     };
+// //     fetchData();
+// //   }, []);
+
+// //   useEffect(() => {
+// //     if (pageData?.globalStyling?.customCss) {
+// //       const style = document.createElement("style");
+// //       style.innerHTML = pageData.globalStyling.customCss;
+// //       document.head.appendChild(style);
+// //     }
+// //   }, [pageData]);
+
+// //   const handleImageClick = (index: number) => {
+// //     setCurrentImageIndex(index);
+// //     setIsCarouselOpen(true);
+// //   };
+
+// //   if (loading) return <div>Loading...</div>;
+// //   if (!pageData) return <div>No data available</div>;
+
+// //   const {
+// //     heroSection,
+// //     dropdownSection,
+// //     gallerySection,
+// //     paginationSection,
+// //     globalStyling,
+// //     sectionOrder,
+// //     seo,
+// //   } = pageData;
+
+// //   const renderSection = (
+// //     sectionType: string,
+// //     enabled: boolean,
+// //     customId?: string,
+// //     customClass?: string
+// //   ) => {
+// //     if (!enabled) return null;
+
+// //     switch (sectionType) {
+// //       case "hero":
+// //         const backgroundImage = getResponsiveImageUrls(
+// //           heroSection.backgroundImage
+// //         );
+// //         return (
+// //           <div className="partial_gallery_hero banner bg" data-s3-partial="">
+// //             <div className="row">
+// //               <div className="inner">
+// //                 <h1>{heroSection.title}</h1>
+// //                 <ul className="partial_breadcrumb" data-s3-partial="">
+// //                   {heroSection.breadcrumbs.map((breadcrumb, index) => (
+// //                     <li key={index}>
+// //                       <a
+// //                         href={breadcrumb.url}
+// //                         role="link"
+// //                         aria-label={breadcrumb.ariaLabel}
+// //                       >
+// //                         {breadcrumb.label}
+// //                       </a>
+// //                     </li>
+// //                   ))}
+// //                 </ul>
+// //               </div>
+// //             </div>
+// //             {backgroundImage.desktop && (
+// //               <picture className="background">
+// //                 <source
+// //                   media="(max-width:420px)"
+// //                   srcSet={`${backgroundImage.smallMobile}?auto=format,compress&w=420, ${backgroundImage.smallMobile}?auto=format,compress&w=630 2x`}
+// //                   data-lazyload-srcset={`${backgroundImage.smallMobile}?auto=format,compress&w=420, ${backgroundImage.smallMobile}?auto=format,compress&w=630 2x`}
+// //                 />
+// //                 <source
+// //                   media="(max-width:800px)"
+// //                   srcSet={`${backgroundImage.mobile}?auto=format,compress&w=800, ${backgroundImage.mobile}?auto=format,compress&w=1200 2x`}
+// //                   data-lazyload-srcset={`${backgroundImage.mobile}?auto=format,compress&w=800, ${backgroundImage.mobile}?auto=format,compress&w=1200 2x`}
+// //                 />
+// //                 <source
+// //                   media="(max-width:1400px)"
+// //                   srcSet={`${backgroundImage.tablet}?auto=format,compress&w=1400, ${backgroundImage.tablet}?auto=format,compress&w=2100 2x`}
+// //                   data-lazyload-srcset={`${backgroundImage.tablet}?auto=format,compress&w=1400, ${backgroundImage.tablet}?auto=format,compress&w=2100 2x`}
+// //                 />
+// //                 <source
+// //                   srcSet={`${backgroundImage.desktop}?auto=format,compress&w=2200`}
+// //                   data-lazyload-srcset={`${backgroundImage.desktop}?auto=format,compress&w=2200`}
+// //                 />
+// //                 <img
+// //                   src={`${backgroundImage.desktop}?auto=format,compress&w=2200`}
+// //                   width="2200"
+// //                   height="691"
+// //                   alt={heroSection.backgroundImage.altText || "Marble"}
+// //                   draggable="false"
+// //                 />
+// //               </picture>
+// //             )}
+// //           </div>
+// //         );
+
+// //       case "dropdown":
+// //         return (
 // //           <div className="partial_gallery_dropdown" data-s3-partial="">
 // //             <ul className="dropdown">
 // //               <li>
 // //                 <div className="selector">
-// //                   <span>JUVÉDERM</span>
-// //                   <span className="icon-left-open"></span>
+// //                   <span>{dropdownSection.selectedItemLabel}</span>
+// //                   <span
+// //                     className={
+// //                       dropdownSection.backButton.iconClass || "icon-left-open"
+// //                     }
+// //                   ></span>
 // //                   <ul className="children">
-// //                     <li>
-// //                       <a href="/gallery/non-surgical/lip-fillers/">
-// //                         Lip Fillers
-// //                       </a>
-// //                     </li>
-// //                     <li>
-// //                       <a href="/gallery/non-surgical/botox/">BOTOX</a>
-// //                     </li>
-// //                     <li>
-// //                       <a href="/gallery/non-surgical/juvederm/">JUVÉDERM</a>
-// //                     </li>
-// //                     <li>
-// //                       <a href="/gallery/non-surgical/kybella/">KYBELLA</a>
-// //                     </li>
-// //                     <li>
-// //                       <a href="/gallery/non-surgical/micro-channeling/">
-// //                         Micro-Channeling
-// //                       </a>
-// //                     </li>
-// //                     <li>
-// //                       <a href="/gallery/non-surgical/restylane-r/">Restylane</a>
-// //                     </li>
-// //                     <li>
-// //                       <a href="/gallery/non-surgical/skinmedica/">SkinMedica</a>
-// //                     </li>
-// //                     <li>
-// //                       <a href="/gallery/non-surgical/dermal-filler/">
-// //                         Dermal Filler
-// //                       </a>
-// //                     </li>
-// //                     <li>
-// //                       <a href="/gallery/non-surgical/cheek-contour/">
-// //                         Cheek Contour
-// //                       </a>
-// //                     </li>
-// //                     <li>
-// //                       <a href="/gallery/non-surgical/liquid-chin-and-jaw-contouring/">
-// //                         Liquid Chin & Jaw Contouring
-// //                       </a>
-// //                     </li>
-// //                     <li>
-// //                       <a href="/gallery/non-surgical/liquid-rhinoplasty/">
-// //                         Liquid Rhinoplasty
-// //                       </a>
-// //                     </li>
-// //                     <li>
-// //                       <a href="/gallery/non-surgical/marionette-lines/">
-// //                         Marionette Lines
-// //                       </a>
-// //                     </li>
-// //                     <li>
-// //                       <a href="/gallery/non-surgical/liquid-facelift/">
-// //                         Liquid (Non-Surgical) Facelift
-// //                       </a>
-// //                     </li>
-// //                     <li>
-// //                       <a href="/gallery/non-surgical/weight-loss/">
-// //                         Weight Loss
-// //                       </a>
-// //                     </li>
-// //                     <li>
-// //                       <a href="/gallery/non-surgical/lash-extensions/">
-// //                         Lash Extensions
-// //                       </a>
-// //                     </li>
+// //                     {dropdownSection.dropdownItems.map((item, index) => (
+// //                       <li key={index}>
+// //                         <a href={item.url}>{item.label}</a>
+// //                       </li>
+// //                     ))}
 // //                   </ul>
 // //                 </div>
 // //               </li>
 // //             </ul>
-// //             <a href="/gallery/non-surgical/" className="link">
-// //               <span className="icon-left-open"></span>
-// //               Back to Gallery
+// //             <a href={dropdownSection.backButton.url} className="link">
+// //               <span
+// //                 className={
+// //                   dropdownSection.backButton.iconClass || "icon-left-open"
+// //                 }
+// //               ></span>
+// //               {dropdownSection.backButton.label}
 // //             </a>
 // //           </div>
+// //         );
 
+// //       case "gallery":
+// //         return (
 // //           <div
 // //             className="partial_gallery_default_item_index"
 // //             data-s3-partial=""
 // //           >
-// //             <a
-// //               href="/gallery/non-surgical/juvederm/item/Ula016RnQkWxAjVK9QiwEg/"
-// //               className="item single"
-// //             >
-// //               <picture className="">
-// //                 <source
-// //                   srcSet="https://www.datocms-assets.com/105497/1701293888-01.jpg?auto=format,compress&w=400"
-// //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1701293888-01.jpg?auto=format,compress&w=400"
-// //                 />
-// //                 <img
-// //                   src="https://www.datocms-assets.com/105497/1701293888-01.jpg?auto=format,compress&w=400"
-// //                   width="400"
-// //                   height="259"
-// //                   alt="JUVÉDERM Before & After Gallery - Patient 341440 - Image 1"
-// //                   draggable="false"
-// //                 />
-// //               </picture>
-// //             </a>
-// //             <a
-// //               href="/gallery/non-surgical/juvederm/item/dcmBYu5xR7S2z33_YMbwmg/"
-// //               className="item single"
-// //             >
-// //               <picture className="">
-// //                 <source
-// //                   srcSet="https://www.datocms-assets.com/105497/1701293755-01.jpg?auto=format,compress&w=400"
-// //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1701293755-01.jpg?auto=format,compress&w=400"
-// //                 />
-// //                 <img
-// //                   src="https://www.datocms-assets.com/105497/1701293755-01.jpg?auto=format,compress&w=400"
-// //                   width="400"
-// //                   height="259"
-// //                   alt="JUVÉDERM Before & After Gallery - Patient 146526 - Image 1"
-// //                   draggable="false"
-// //                 />
-// //               </picture>
-// //             </a>
-// //             <a
-// //               href="/gallery/non-surgical/juvederm/item/LKePUy_oTiKpwm61Lb7IXQ/"
-// //               className="item single"
-// //             >
-// //               <picture className="">
-// //                 <source
-// //                   srcSet="https://www.datocms-assets.com/105497/1701293668-01.jpg?auto=format,compress&w=400"
-// //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1701293668-01.jpg?auto=format,compress&w=400"
-// //                 />
-// //                 <img
-// //                   src="https://www.datocms-assets.com/105497/1701293668-01.jpg?auto=format,compress&w=400"
-// //                   width="400"
-// //                   height="259"
-// //                   alt="JUVÉDERM Before & After Gallery - Patient 123022 - Image 1"
-// //                   draggable="false"
-// //                 />
-// //               </picture>
-// //             </a>
-// //             <a
-// //               href="/gallery/non-surgical/juvederm/item/UvPW2oMcTgqNB0WQiiyxJw/"
-// //               className="item single"
-// //             >
-// //               <picture className="">
-// //                 <source
-// //                   srcSet="https://www.datocms-assets.com/105497/1701293491-01.jpg?auto=format,compress&w=400"
-// //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1701293491-01.jpg?auto=format,compress&w=400"
-// //                 />
-// //                 <img
-// //                   src="https://www.datocms-assets.com/105497/1701293491-01.jpg?auto=format,compress&w=400"
-// //                   width="400"
-// //                   height="259"
-// //                   alt="JUVÉDERM Before & After Gallery - Patient 619155 - Image 1"
-// //                   draggable="false"
-// //                 />
-// //               </picture>
-// //             </a>
-// //             <a
-// //               href="/gallery/non-surgical/juvederm/item/VTGvGkm3SnOkzRswzkQj9g/"
-// //               className="item single"
-// //             >
-// //               <picture className="">
-// //                 <source
-// //                   srcSet="https://www.datocms-assets.com/105497/1701293379-01.jpg?auto=format,compress&w=400"
-// //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1701293379-01.jpg?auto=format,compress&w=400"
-// //                 />
-// //                 <img
-// //                   src="https://www.datocms-assets.com/105497/1701293379-01.jpg?auto=format,compress&w=400"
-// //                   width="400"
-// //                   height="259"
-// //                   alt="JUVÉDERM Before & After Gallery - Patient 353084 - Image 1"
-// //                   draggable="false"
-// //                 />
-// //               </picture>
-// //             </a>
-// //             <a
-// //               href="/gallery/non-surgical/juvederm/item/188992002/"
-// //               className="item single"
-// //             >
-// //               <picture className="">
-// //                 <source
-// //                   srcSet="https://www.datocms-assets.com/105497/1697059692-01.jpg?auto=format,compress&w=400"
-// //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1697059692-01.jpg?auto=format,compress&w=400"
-// //                 />
-// //                 <img
-// //                   src="https://www.datocms-assets.com/105497/1697059692-01.jpg?auto=format,compress&w=400"
-// //                   width="400"
-// //                   height="150"
-// //                   alt="JUVÉDERM Before & After Gallery - Patient 188992002 - Image 1"
-// //                   draggable="false"
-// //                 />
-// //               </picture>
-// //             </a>
-// //             <a
-// //               href="/gallery/non-surgical/juvederm/item/168493172/"
-// //               className="item single"
-// //             >
-// //               <picture className="">
-// //                 <source
-// //                   srcSet="https://www.datocms-assets.com/105497/1694721141-4-2-edited.png?auto=format,compress&w=400"
-// //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1694721141-4-2-edited.png?auto=format,compress&w=400"
-// //                 />
-// //                 <img
-// //                   src="https://www.datocms-assets.com/105497/1694721141-4-2-edited.png?auto=format,compress&w=400"
-// //                   width="400"
-// //                   height="281"
-// //                   alt="JUVÉDERM Before & After Gallery - Patient 168493172 - Image 1"
-// //                   draggable="false"
-// //                 />
-// //               </picture>
-// //             </a>
-// //             <a
-// //               href="/gallery/non-surgical/juvederm/item/168486529/"
-// //               className="item single"
-// //             >
-// //               <picture className="">
-// //                 <source
-// //                   srcSet="https://www.datocms-assets.com/105497/1693329020-content-img2-5.jpeg?auto=format,compress&w=400"
-// //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1693329020-content-img2-5.jpeg?auto=format,compress&w=400"
-// //                 />
-// //                 <img
-// //                   src="https://www.datocms-assets.com/105497/1693329020-content-img2-5.jpeg?auto=format,compress&w=400"
-// //                   width="400"
-// //                   height="226"
-// //                   alt="JUVÉDERM Before & After Gallery - Patient 168486529 - Image 1"
-// //                   draggable="false"
-// //                 />
-// //               </picture>
-// //             </a>
-// //             <a
-// //               href="/gallery/non-surgical/juvederm/item/177169538/"
-// //               className="item single"
-// //             >
-// //               <picture className="">
-// //                 <source
-// //                   srcSet="https://www.datocms-assets.com/105497/1695234070-female.png?auto=format,compress&w=400"
-// //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1695234070-female.png?auto=format,compress&w=400"
-// //                 />
-// //                 <img
-// //                   src="https://www.datocms-assets.com/105497/1695234070-female.png?auto=format,compress&w=400"
-// //                   width="400"
-// //                   height="398"
-// //                   alt="JUVÉDERM Before & After Gallery - Patient 177169538 - Image 1"
-// //                   draggable="false"
-// //                 />
-// //               </picture>
-// //             </a>
-// //             <a
-// //               href="/gallery/non-surgical/juvederm/item/177169552/"
-// //               className="item single"
-// //             >
-// //               <picture className="">
-// //                 <source
-// //                   srcSet="https://www.datocms-assets.com/105497/1695234165-juvederm-voluma-avi-ba.jpg?auto=format,compress&w=400"
-// //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1695234165-juvederm-voluma-avi-ba.jpg?auto=format,compress&w=400"
-// //                 />
-// //                 <img
-// //                   src="https://www.datocms-assets.com/105497/1695234165-juvederm-voluma-avi-ba.jpg?auto=format,compress&w=400"
-// //                   width="400"
-// //                   height="400"
-// //                   alt="JUVÉDERM Before & After Gallery - Patient 177169552 - Image 1"
-// //                   draggable="false"
-// //                 />
-// //               </picture>
-// //             </a>
-// //             <a
-// //               href="/gallery/non-surgical/juvederm/item/177169844/"
-// //               className="item single"
-// //             >
-// //               <picture className="">
-// //                 <source
-// //                   srcSet="https://www.datocms-assets.com/105497/1695234243-juvederm-voluma-ba-ashlyn-full-face.jpg?auto=format,compress&w=400"
-// //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1695234243-juvederm-voluma-ba-ashlyn-full-face.jpg?auto=format,compress&w=400"
-// //                 />
-// //                 <img
-// //                   src="https://www.datocms-assets.com/105497/1695234243-juvederm-voluma-ba-ashlyn-full-face.jpg?auto=format,compress&w=400"
-// //                   width="400"
-// //                   height="400"
-// //                   alt="JUVÉDERM Before & After Gallery - Patient 177169844 - Image 1"
-// //                   draggable="false"
-// //                 />
-// //               </picture>
-// //             </a>
-// //             <a
-// //               href="/gallery/non-surgical/juvederm/item/177169850/"
-// //               className="item single"
-// //             >
-// //               <picture className="">
-// //                 <source
-// //                   srcSet="https://www.datocms-assets.com/105497/1695234303-juvederm-voluma-ba-batch-2-avi-full-faced.jpg?auto=format,compress&w=400"
-// //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1695234303-juvederm-voluma-ba-batch-2-avi-full-faced.jpg?auto=format,compress&w=400"
-// //                 />
-// //                 <img
-// //                   src="https://www.datocms-assets.com/105497/1695234303-juvederm-voluma-ba-batch-2-avi-full-faced.jpg?auto=format,compress&w=400"
-// //                   width="400"
-// //                   height="400"
-// //                   alt="JUVÉDERM Before & After Gallery - Patient 177169850 - Image 1"
-// //                   draggable="false"
-// //                 />
-// //               </picture>
-// //             </a>
-// //             <a
-// //               href="/gallery/non-surgical/juvederm/item/177169851/"
-// //               className="item single"
-// //             >
-// //               <picture className="">
-// //                 <source
-// //                   srcSet="https://www.datocms-assets.com/105497/1695234333-male.png?auto=format,compress&w=400"
-// //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1695234333-male.png?auto=format,compress&w=400"
-// //                 />
-// //                 <img
-// //                   src="https://www.datocms-assets.com/105497/1695234333-male.png?auto=format,compress&w=400"
-// //                   width="400"
-// //                   height="401"
-// //                   alt="JUVÉDERM Before & After Gallery - Patient 177169851 - Image 1"
-// //                   draggable="false"
-// //                 />
-// //               </picture>
-// //             </a>
-// //             <a
-// //               href="/gallery/non-surgical/juvederm/item/177170482/"
-// //               className="item single"
-// //             >
-// //               <picture className="">
-// //                 <source
-// //                   srcSet="https://www.datocms-assets.com/105497/1695238202-juvederm-before-and-after-scottsdale-2-edited.png?auto=format,compress&w=400"
-// //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1695238202-juvederm-before-and-after-scottsdale-2-edited.png?auto=format,compress&w=400"
-// //                 />
-// //                 <img
-// //                   src="https://www.datocms-assets.com/105497/1695238202-juvederm-before-and-after-scottsdale-2-edited.png?auto=format,compress&w=400"
-// //                   width="400"
-// //                   height="162"
-// //                   alt="JUVÉDERM Before & After Gallery - Patient 177170482 - Image 1"
-// //                   draggable="false"
-// //                 />
-// //               </picture>
-// //             </a>
-// //             <a
-// //               href="/gallery/non-surgical/juvederm/item/177170483/"
-// //               className="item single"
-// //             >
-// //               <picture className="">
-// //                 <source
-// //                   srcSet="https://www.datocms-assets.com/105497/1695238217-juvederm-volite-07-edited.png?auto=format,compress&w=400"
-// //                   data-lazyload-srcset="https://www.datocms-assets.com/105497/1695238217-juvederm-volite-07-edited.png?auto=format,compress&w=400"
-// //                 />
-// //                 <img
-// //                   src="https://www.datocms-assets.com/105497/1695238217-juvederm-volite-07-edited.png?auto=format,compress&w=400"
-// //                   width="400"
-// //                   height="210"
-// //                   alt="JUVÉDERM Before & After Gallery - Patient 177170483 - Image 1"
-// //                   draggable="false"
-// //                 />
-// //               </picture>
-// //             </a>
+// //             {gallerySection.galleryItems.map((item, index) => {
+// //               const imageUrl =
+// //                 item.imageUrl ||
+// //                 getResponsiveImageUrls({ desktop: item.image }).desktop;
+// //               return (
+// //                 <a
+// //                   key={index}
+// //                   href={item.itemUrl}
+// //                   className="item single"
+// //                   onClick={(e) => {
+// //                     e.preventDefault();
+// //                     handleImageClick(index);
+// //                   }}
+// //                 >
+// //                   <picture className="">
+// //                     <source
+// //                       srcSet={`${imageUrl}?auto=format,compress&w=${
+// //                         item.width || 400
+// //                       }`}
+// //                       data-lazyload-srcset={`${imageUrl}?auto=format,compress&w=${
+// //                         item.width || 400
+// //                       }`}
+// //                     />
+// //                     <img
+// //                       src={`${imageUrl}?auto=format,compress&w=${
+// //                         item.width || 400
+// //                       }`}
+// //                       width={item.width || 400}
+// //                       height={item.height || 300}
+// //                       alt={item.altText}
+// //                       draggable="false"
+// //                     />
+// //                   </picture>
+// //                 </a>
+// //               );
+// //             })}
 // //           </div>
+// //         );
+
+// //       case "pagination":
+// //         if (!paginationSection.enabled) return null;
+// //         return (
+// //           <div className="partial_pagination pagination" data-s3-partial="">
+// //             {paginationSection.prevButton.enabled &&
+// //               paginationSection.prevButton.url && (
+// //                 <a
+// //                   href={paginationSection.prevButton.url}
+// //                   className="page-numbers"
+// //                 >
+// //                   {paginationSection.prevButton.label || "Previous"}
+// //                 </a>
+// //               )}
+// //             {paginationSection.pages.map((page, index) => (
+// //               <a
+// //                 key={index}
+// //                 href={page.url}
+// //                 className={`page-numbers ${page.isCurrent ? "current" : ""} ${
+// //                   page.hideOnPhone ? "hide-phone" : ""
+// //                 }`}
+// //               >
+// //                 {page.pageNumber}
+// //               </a>
+// //             ))}
+// //             {paginationSection.nextButton.enabled &&
+// //               paginationSection.nextButton.url && (
+// //                 <a
+// //                   href={paginationSection.nextButton.url}
+// //                   className="page-numbers"
+// //                 >
+// //                   {paginationSection.nextButton.label || "Next"}
+// //                 </a>
+// //               )}
+// //           </div>
+// //         );
+
+// //       default:
+// //         return null;
+// //     }
+// //   };
+
+// //   const carouselImages = gallerySection.galleryItems.map((item) => ({
+// //     src:
+// //       item.imageUrl || getResponsiveImageUrls({ desktop: item.image }).desktop,
+// //     alt: item.altText,
+// //   }));
+
+// //   return (
+// //     <main id="main">
+// //       {seo.metaTitle && <title>{seo.metaTitle}</title>}
+// //       {seo.metaDescription && (
+// //         <meta name="description" content={seo.metaDescription} />
+// //       )}
+// //       {seo.metaKeywords && <meta name="keywords" content={seo.metaKeywords} />}
+// //       {seo.ogImage && (
+// //         <meta
+// //           property="og:image"
+// //           content={getResponsiveImageUrls({ desktop: seo.ogImage }).desktop}
+// //         />
+// //       )}
+
+// //       {sectionOrder.map((section, index) => {
+// //         if (section.sectionType === "hero" && section.enabled) {
+// //           return (
+// //             <React.Fragment key={index}>
+// //               {renderSection(
+// //                 section.sectionType,
+// //                 section.enabled,
+// //                 section.customId,
+// //                 section.customClass
+// //               )}
+// //             </React.Fragment>
+// //           );
+// //         }
+// //         return null;
+// //       })}
+
+// //       <div className="container partial_gallery_item_index" data-s3-partial="">
+// //         <div className="row">
+// //           {sectionOrder.map((section, index) => {
+// //             if (section.sectionType === "dropdown" && section.enabled) {
+// //               return (
+// //                 <React.Fragment key={index}>
+// //                   {renderSection(
+// //                     section.sectionType,
+// //                     section.enabled,
+// //                     section.customId,
+// //                     section.customClass
+// //                   )}
+// //                 </React.Fragment>
+// //               );
+// //             }
+// //             return null;
+// //           })}
+
+// //           {sectionOrder.map((section, index) => {
+// //             if (section.sectionType === "gallery" && section.enabled) {
+// //               return (
+// //                 <React.Fragment key={index}>
+// //                   {renderSection(
+// //                     section.sectionType,
+// //                     section.enabled,
+// //                     section.customId,
+// //                     section.customClass
+// //                   )}
+// //                 </React.Fragment>
+// //               );
+// //             }
+// //             return null;
+// //           })}
 // //         </div>
 // //       </div>
 
-// //       <div className="partial_pagination pagination" data-s3-partial="">
-// //         <a
-// //           href="/gallery/non-surgical/juvederm/"
-// //           className="page-numbers hide-phone current"
-// //         >
-// //           1
-// //         </a>
-// //         <a
-// //           className="page-numbers hide-phone "
-// //           href="/gallery/non-surgical/juvederm/2/"
-// //         >
-// //           2
-// //         </a>
-// //         <a className="page-numbers" href="/gallery/non-surgical/juvederm/2/">
-// //           Next
-// //         </a>
-// //       </div>
+// //       {sectionOrder.map((section, index) => {
+// //         if (section.sectionType === "pagination" && section.enabled) {
+// //           return (
+// //             <React.Fragment key={index}>
+// //               {renderSection(
+// //                 section.sectionType,
+// //                 section.enabled,
+// //                 section.customId,
+// //                 section.customClass
+// //               )}
+// //             </React.Fragment>
+// //           );
+// //         }
+// //         return null;
+// //       })}
+
+// //       {isCarouselOpen && (
+// //         <ImageCarousel
+// //           images={carouselImages}
+// //           currentIndex={currentImageIndex}
+// //           onClose={() => setIsCarouselOpen(false)}
+// //           onNavigate={(index) => setCurrentImageIndex(index)}
+// //         />
+// //       )}
 // //     </main>
 // //   );
 // // };
@@ -468,6 +934,7 @@
 // import React, { useEffect, useState } from "react";
 // import ImageCarousel from "@/components/gallery/ImageCarousel";
 // import { getResponsiveImageUrls } from "@/lib/api/Gallery/non-surgical/BotoxPage";
+// import { ChevronLeft } from "lucide-react";
 
 // interface BotoxGalleryPageData {
 //   componentName: string;
@@ -591,7 +1058,7 @@
 //           `${
 //             process.env.NEXT_PUBLIC_PAYLOAD_API_URL ||
 //             "https://goldfingerbackend.vercel.app/api"
-//           }/juvedermGallery?where[isActive][equals]=true&depth=2&limit=100&draft=false&trash=false`,
+//           }/juvedermGallery?where[isActive][equals]=true&depth=3&limit=1`,
 //           {
 //             next: { revalidate: 60 },
 //             cache: "force-cache",
@@ -606,6 +1073,10 @@
 //         const activeComponent =
 //           data.docs?.find((component: any) => component.isActive) || null;
 //         console.log("Fetched Botox Gallery data:", activeComponent);
+//         console.log(
+//           "Gallery Items Count:",
+//           activeComponent?.gallerySection?.galleryItems?.length || 0
+//         );
 //         setPageData(activeComponent);
 //       } catch (error) {
 //         console.error("Error fetching Botox Gallery data:", error);
@@ -715,11 +1186,17 @@
 //               <li>
 //                 <div className="selector">
 //                   <span>{dropdownSection.selectedItemLabel}</span>
-//                   <span
+//                   {/* <span
 //                     className={
 //                       dropdownSection.backButton.iconClass || "icon-left-open"
 //                     }
-//                   ></span>
+//                   ></span> */}
+//                   <ChevronLeft
+//                     className={
+//                       dropdownSection.backButton.iconClass || "icon-left-open"
+//                     }
+//                     style={{ marginTop: "3px" }}
+//                   />
 //                   <ul className="children">
 //                     {dropdownSection.dropdownItems.map((item, index) => (
 //                       <li key={index}>
@@ -730,12 +1207,29 @@
 //                 </div>
 //               </li>
 //             </ul>
-//             <a href={dropdownSection.backButton.url} className="link">
+//             {/* <a href={dropdownSection.backButton.url} className="link">
 //               <span
 //                 className={
 //                   dropdownSection.backButton.iconClass || "icon-left-open"
 //                 }
 //               ></span>
+//               {dropdownSection.backButton.label}
+//             </a> */}
+//             <a
+//               href={dropdownSection.backButton.url}
+//               className="link"
+//               style={{
+//                 display: "flex",
+//                 alignItems: "center",
+//                 gap: "6px", // space between icon and text
+//               }}
+//             >
+//               <ChevronLeft
+//                 className={
+//                   dropdownSection.backButton.iconClass || "icon-left-open"
+//                 }
+//                 style={{ marginTop: "0" }}
+//               />
 //               {dropdownSection.backButton.label}
 //             </a>
 //           </div>
@@ -929,14 +1423,22 @@
 
 // export default JuvedermGallery;
 
-
-
 "use client";
 
-import React, { useEffect, useState } from "react";
-import ImageCarousel from "@/components/gallery/ImageCarousel";
+import React, { useEffect, useState, useCallback, useMemo } from "react";
+import dynamic from "next/dynamic";
 import { getResponsiveImageUrls } from "@/lib/api/Gallery/non-surgical/BotoxPage";
 import { ChevronLeft } from "lucide-react";
+import { JuvedermGallerySchema } from "./JuvedermGallerySchema";
+
+// Lazy load the carousel component
+const ImageCarousel = dynamic(
+  () => import("@/components/gallery/ImageCarousel"),
+  {
+    ssr: false,
+    loading: () => <div>Loading...</div>,
+  }
+);
 
 interface BotoxGalleryPageData {
   componentName: string;
@@ -1050,38 +1552,62 @@ interface BotoxGalleryPageData {
 const JuvedermGallery: React.FC = () => {
   const [pageData, setPageData] = useState<BotoxGalleryPageData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [isCarouselOpen, setIsCarouselOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(
-          `${
-            process.env.NEXT_PUBLIC_PAYLOAD_API_URL ||
-            "https://goldfingerbackend.vercel.app/api"
-          }/juvedermGallery?where[isActive][equals]=true&depth=3&limit=1`,
-          {
-            next: { revalidate: 60 },
-            cache: "force-cache",
-          }
-        );
+        const apiUrl =
+          process.env.NEXT_PUBLIC_PAYLOAD_API_URL ||
+          "https://goldfingerbackend.vercel.app/api";
+
+        // Sanitize API URL to prevent XSS
+        const sanitizedUrl = new URL(`${apiUrl}/juvedermGallery`);
+        sanitizedUrl.searchParams.set("where[isActive][equals]", "true");
+        sanitizedUrl.searchParams.set("depth", "3");
+        sanitizedUrl.searchParams.set("limit", "1");
+
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
+
+        const res = await fetch(sanitizedUrl.toString(), {
+          next: { revalidate: 3600 }, // Increased to 1 hour for better caching
+          cache: "force-cache",
+          signal: controller.signal,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        clearTimeout(timeoutId);
+
         if (!res.ok) {
           throw new Error(
-            `Failed to fetch Botox Gallery data: ${res.statusText}`
+            `Failed to fetch Juvederm Gallery data: ${res.status} ${res.statusText}`
           );
         }
+
         const data = await res.json();
         const activeComponent =
           data.docs?.find((component: any) => component.isActive) || null;
-        console.log("Fetched Botox Gallery data:", activeComponent);
-        console.log(
-          "Gallery Items Count:",
-          activeComponent?.gallerySection?.galleryItems?.length || 0
-        );
+
+        if (process.env.NODE_ENV === "development") {
+          console.log("Fetched Juvederm Gallery data:", activeComponent);
+          console.log(
+            "Gallery Items Count:",
+            activeComponent?.gallerySection?.galleryItems?.length || 0
+          );
+        }
+
         setPageData(activeComponent);
+        setError(null);
       } catch (error) {
-        console.error("Error fetching Botox Gallery data:", error);
+        const errorMessage =
+          error instanceof Error ? error.message : "Unknown error occurred";
+        console.error("Error fetching Juvederm Gallery data:", errorMessage);
+        setError(errorMessage);
       } finally {
         setLoading(false);
       }
@@ -1091,335 +1617,395 @@ const JuvedermGallery: React.FC = () => {
 
   useEffect(() => {
     if (pageData?.globalStyling?.customCss) {
+      // Sanitize CSS to prevent injection attacks
+      const sanitizedCss = pageData.globalStyling.customCss
+        .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "")
+        .replace(/javascript:/gi, "")
+        .replace(/on\w+\s*=/gi, "");
+
       const style = document.createElement("style");
-      style.innerHTML = pageData.globalStyling.customCss;
+      style.setAttribute("data-gallery-custom", "true");
+      style.textContent = sanitizedCss;
       document.head.appendChild(style);
+
+      return () => {
+        // Cleanup on unmount
+        const customStyles = document.querySelectorAll(
+          '[data-gallery-custom="true"]'
+        );
+        customStyles.forEach((style) => style.remove());
+      };
     }
   }, [pageData]);
 
-  const handleImageClick = (index: number) => {
+  const handleImageClick = useCallback((index: number) => {
     setCurrentImageIndex(index);
     setIsCarouselOpen(true);
-  };
+  }, []);
 
-  if (loading) return <div>Loading...</div>;
-  if (!pageData) return <div>No data available</div>;
+  const handleCarouselClose = useCallback(() => {
+    setIsCarouselOpen(false);
+  }, []);
 
-  const {
-    heroSection,
-    dropdownSection,
-    gallerySection,
-    paginationSection,
-    globalStyling,
-    sectionOrder,
-    seo,
-  } = pageData;
+  const handleCarouselNavigate = useCallback((index: number) => {
+    setCurrentImageIndex(index);
+  }, []);
 
-  const renderSection = (
-    sectionType: string,
-    enabled: boolean,
-    customId?: string,
-    customClass?: string
-  ) => {
-    if (!enabled) return null;
+  // Memoize carousel images to prevent unnecessary recalculations
+  const carouselImages = useMemo(() => {
+    if (!pageData?.gallerySection?.galleryItems) return [];
+    return pageData.gallerySection.galleryItems.map((item) => ({
+      src:
+        item.imageUrl ||
+        getResponsiveImageUrls({ desktop: item.image }).desktop,
+      alt: item.altText || "Gallery image",
+    }));
+  }, [pageData?.gallerySection?.galleryItems]);
 
-    switch (sectionType) {
-      case "hero":
-        const backgroundImage = getResponsiveImageUrls(
-          heroSection.backgroundImage
-        );
-        return (
-          <div className="partial_gallery_hero banner bg" data-s3-partial="">
-            <div className="row">
-              <div className="inner">
-                <h1>{heroSection.title}</h1>
-                <ul className="partial_breadcrumb" data-s3-partial="">
-                  {heroSection.breadcrumbs.map((breadcrumb, index) => (
-                    <li key={index}>
-                      <a
-                        href={breadcrumb.url}
-                        role="link"
-                        aria-label={breadcrumb.ariaLabel}
-                      >
-                        {breadcrumb.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            {backgroundImage.desktop && (
-              <picture className="background">
-                <source
-                  media="(max-width:420px)"
-                  srcSet={`${backgroundImage.smallMobile}?auto=format,compress&w=420, ${backgroundImage.smallMobile}?auto=format,compress&w=630 2x`}
-                  data-lazyload-srcset={`${backgroundImage.smallMobile}?auto=format,compress&w=420, ${backgroundImage.smallMobile}?auto=format,compress&w=630 2x`}
-                />
-                <source
-                  media="(max-width:800px)"
-                  srcSet={`${backgroundImage.mobile}?auto=format,compress&w=800, ${backgroundImage.mobile}?auto=format,compress&w=1200 2x`}
-                  data-lazyload-srcset={`${backgroundImage.mobile}?auto=format,compress&w=800, ${backgroundImage.mobile}?auto=format,compress&w=1200 2x`}
-                />
-                <source
-                  media="(max-width:1400px)"
-                  srcSet={`${backgroundImage.tablet}?auto=format,compress&w=1400, ${backgroundImage.tablet}?auto=format,compress&w=2100 2x`}
-                  data-lazyload-srcset={`${backgroundImage.tablet}?auto=format,compress&w=1400, ${backgroundImage.tablet}?auto=format,compress&w=2100 2x`}
-                />
-                <source
-                  srcSet={`${backgroundImage.desktop}?auto=format,compress&w=2200`}
-                  data-lazyload-srcset={`${backgroundImage.desktop}?auto=format,compress&w=2200`}
-                />
-                <img
-                  src={`${backgroundImage.desktop}?auto=format,compress&w=2200`}
-                  width="2200"
-                  height="691"
-                  alt={heroSection.backgroundImage.altText || "Marble"}
-                  draggable="false"
-                />
-              </picture>
-            )}
-          </div>
-        );
+  const renderSection = useCallback(
+    (
+      sectionType: string,
+      enabled: boolean,
+      customId?: string,
+      customClass?: string
+    ) => {
+      if (!enabled || !pageData) return null;
 
-      case "dropdown":
-        return (
-          <div className="partial_gallery_dropdown" data-s3-partial="">
-            <ul className="dropdown">
-              <li>
-                <div className="selector">
-                  <span>{dropdownSection.selectedItemLabel}</span>
-                  {/* <span
-                    className={
-                      dropdownSection.backButton.iconClass || "icon-left-open"
-                    }
-                  ></span> */}
-                  <ChevronLeft
-                    className={
-                      dropdownSection.backButton.iconClass || "icon-left-open"
-                    }
-                    style={{ marginTop: "3px" }}
-                  />
-                  <ul className="children">
-                    {dropdownSection.dropdownItems.map((item, index) => (
-                      <li key={index}>
-                        <a href={item.url}>{item.label}</a>
+      const {
+        heroSection,
+        dropdownSection,
+        gallerySection,
+        paginationSection,
+      } = pageData;
+
+      switch (sectionType) {
+        case "hero":
+          const backgroundImage = getResponsiveImageUrls(
+            heroSection.backgroundImage
+          );
+          return (
+            <div className="partial_gallery_hero banner bg" data-s3-partial="">
+              <div className="row">
+                <div className="inner">
+                  <h1>{heroSection.title}</h1>
+                  <ul className="partial_breadcrumb" data-s3-partial="">
+                    {heroSection.breadcrumbs.map((breadcrumb, index) => (
+                      <li key={`breadcrumb-${index}`}>
+                        <a
+                          href={breadcrumb.url}
+                          role="link"
+                          aria-label={breadcrumb.ariaLabel || breadcrumb.label}
+                          rel="noopener"
+                        >
+                          {breadcrumb.label}
+                        </a>
                       </li>
                     ))}
                   </ul>
                 </div>
-              </li>
-            </ul>
-            {/* <a href={dropdownSection.backButton.url} className="link">
-              <span
-                className={
-                  dropdownSection.backButton.iconClass || "icon-left-open"
-                }
-              ></span>
-              {dropdownSection.backButton.label}
-            </a> */}
-            <a
-              href={dropdownSection.backButton.url}
-              className="link"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "6px", // space between icon and text
-              }}
-            >
-              <ChevronLeft
-                className={
-                  dropdownSection.backButton.iconClass || "icon-left-open"
-                }
-                style={{ marginTop: "0" }}
-              />
-              {dropdownSection.backButton.label}
-            </a>
-          </div>
-        );
-
-      case "gallery":
-        return (
-          <div
-            className="partial_gallery_default_item_index"
-            data-s3-partial=""
-          >
-            {gallerySection.galleryItems.map((item, index) => {
-              const imageUrl =
-                item.imageUrl ||
-                getResponsiveImageUrls({ desktop: item.image }).desktop;
-              return (
-                <a
-                  key={index}
-                  href={item.itemUrl}
-                  className="item single"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleImageClick(index);
-                  }}
-                >
-                  <picture className="">
-                    <source
-                      srcSet={`${imageUrl}?auto=format,compress&w=${
-                        item.width || 400
-                      }`}
-                      data-lazyload-srcset={`${imageUrl}?auto=format,compress&w=${
-                        item.width || 400
-                      }`}
-                    />
-                    <img
-                      src={`${imageUrl}?auto=format,compress&w=${
-                        item.width || 400
-                      }`}
-                      width={item.width || 400}
-                      height={item.height || 300}
-                      alt={item.altText}
-                      draggable="false"
-                    />
-                  </picture>
-                </a>
-              );
-            })}
-          </div>
-        );
-
-      case "pagination":
-        if (!paginationSection.enabled) return null;
-        return (
-          <div className="partial_pagination pagination" data-s3-partial="">
-            {paginationSection.prevButton.enabled &&
-              paginationSection.prevButton.url && (
-                <a
-                  href={paginationSection.prevButton.url}
-                  className="page-numbers"
-                >
-                  {paginationSection.prevButton.label || "Previous"}
-                </a>
+              </div>
+              {backgroundImage.desktop && (
+                <picture className="background">
+                  <source
+                    media="(max-width:420px)"
+                    srcSet={`${backgroundImage.smallMobile}?auto=format,compress&w=420 1x, ${backgroundImage.smallMobile}?auto=format,compress&w=630 2x`}
+                  />
+                  <source
+                    media="(max-width:800px)"
+                    srcSet={`${backgroundImage.mobile}?auto=format,compress&w=800 1x, ${backgroundImage.mobile}?auto=format,compress&w=1200 2x`}
+                  />
+                  <source
+                    media="(max-width:1400px)"
+                    srcSet={`${backgroundImage.tablet}?auto=format,compress&w=1400 1x, ${backgroundImage.tablet}?auto=format,compress&w=2100 2x`}
+                  />
+                  <source
+                    srcSet={`${backgroundImage.desktop}?auto=format,compress&w=2200 1x`}
+                  />
+                  <img
+                    src={`${backgroundImage.desktop}?auto=format,compress&w=2200`}
+                    width="2200"
+                    height="691"
+                    alt={
+                      heroSection.backgroundImage.altText ||
+                      "Juvederm Gallery Hero Background"
+                    }
+                    draggable="false"
+                    loading="eager"
+                    fetchPriority="high"
+                  />
+                </picture>
               )}
-            {paginationSection.pages.map((page, index) => (
+            </div>
+          );
+
+        case "dropdown":
+          return (
+            <div className="partial_gallery_dropdown" data-s3-partial="">
+              <ul className="dropdown">
+                <li>
+                  <div className="selector">
+                    <span>{dropdownSection.selectedItemLabel}</span>
+                    <ChevronLeft
+                      className={
+                        dropdownSection.backButton.iconClass || "icon-left-open"
+                      }
+                      style={{ marginTop: "3px" }}
+                      aria-hidden="true"
+                    />
+                    <ul className="children">
+                      {dropdownSection.dropdownItems.map((item, index) => (
+                        <li key={`dropdown-${index}`}>
+                          <a href={item.url} rel="noopener">
+                            {item.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </li>
+              </ul>
               <a
-                key={index}
-                href={page.url}
-                className={`page-numbers ${page.isCurrent ? "current" : ""} ${
-                  page.hideOnPhone ? "hide-phone" : ""
-                }`}
+                href={dropdownSection.backButton.url}
+                className="link"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "6px",
+                }}
+                rel="noopener"
+                aria-label={`Go back: ${dropdownSection.backButton.label}`}
               >
-                {page.pageNumber}
+                <ChevronLeft
+                  className={
+                    dropdownSection.backButton.iconClass || "icon-left-open"
+                  }
+                  style={{ marginTop: "0" }}
+                  aria-hidden="true"
+                />
+                {dropdownSection.backButton.label}
               </a>
-            ))}
-            {paginationSection.nextButton.enabled &&
-              paginationSection.nextButton.url && (
+            </div>
+          );
+
+        case "gallery":
+          return (
+            <div
+              className="partial_gallery_default_item_index"
+              data-s3-partial=""
+            >
+              {gallerySection.galleryItems.map((item, index) => {
+                const imageUrl =
+                  item.imageUrl ||
+                  getResponsiveImageUrls({ desktop: item.image }).desktop;
+                const width = item.width || 400;
+                const height = item.height || 300;
+
+                return (
+                  <a
+                    key={`gallery-${index}`}
+                    href={item.itemUrl}
+                    className="item single"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleImageClick(index);
+                    }}
+                    aria-label={`View ${item.altText || `image ${index + 1}`}`}
+                  >
+                    <picture className="">
+                      <source
+                        srcSet={`${imageUrl}?auto=format,compress&w=${width} 1x`}
+                      />
+                      <img
+                        src={`${imageUrl}?auto=format,compress&w=${width}`}
+                        width={width}
+                        height={height}
+                        alt={item.altText || `Gallery image ${index + 1}`}
+                        draggable="false"
+                        loading={index < 6 ? "eager" : "lazy"}
+                        decoding="async"
+                      />
+                    </picture>
+                  </a>
+                );
+              })}
+            </div>
+          );
+
+        case "pagination":
+          if (!paginationSection.enabled) return null;
+          return (
+            <div className="partial_pagination pagination" data-s3-partial="">
+              {paginationSection.prevButton.enabled &&
+                paginationSection.prevButton.url && (
+                  <a
+                    href={paginationSection.prevButton.url}
+                    className="page-numbers"
+                    rel="prev noopener"
+                    aria-label="Go to previous page"
+                  >
+                    {paginationSection.prevButton.label || "Previous"}
+                  </a>
+                )}
+              {paginationSection.pages.map((page, index) => (
                 <a
-                  href={paginationSection.nextButton.url}
-                  className="page-numbers"
+                  key={`page-${index}`}
+                  href={page.url}
+                  className={`page-numbers ${page.isCurrent ? "current" : ""} ${
+                    page.hideOnPhone ? "hide-phone" : ""
+                  }`}
+                  aria-label={`Go to page ${page.pageNumber}`}
+                  aria-current={page.isCurrent ? "page" : undefined}
+                  rel="noopener"
                 >
-                  {paginationSection.nextButton.label || "Next"}
+                  {page.pageNumber}
                 </a>
-              )}
-          </div>
-        );
+              ))}
+              {paginationSection.nextButton.enabled &&
+                paginationSection.nextButton.url && (
+                  <a
+                    href={paginationSection.nextButton.url}
+                    className="page-numbers"
+                    rel="next noopener"
+                    aria-label="Go to next page"
+                  >
+                    {paginationSection.nextButton.label || "Next"}
+                  </a>
+                )}
+            </div>
+          );
 
-      default:
-        return null;
-    }
-  };
+        default:
+          return null;
+      }
+    },
+    [pageData, handleImageClick]
+  );
 
-  const carouselImages = gallerySection.galleryItems.map((item) => ({
-    src:
-      item.imageUrl || getResponsiveImageUrls({ desktop: item.image }).desktop,
-    alt: item.altText,
-  }));
+  if (loading) {
+    return (
+      <div
+        role="status"
+        aria-live="polite"
+        style={{ padding: "2rem", textAlign: "center" }}
+      >
+        Loading gallery...
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div
+        role="alert"
+        aria-live="assertive"
+        style={{ padding: "2rem", textAlign: "center" }}
+      >
+        Unable to load gallery. Please try again later.
+      </div>
+    );
+  }
+
+  if (!pageData) {
+    return (
+      <div
+        role="status"
+        aria-live="polite"
+        style={{ padding: "2rem", textAlign: "center" }}
+      >
+        No gallery data available
+      </div>
+    );
+  }
+
+  const { sectionOrder } = pageData;
 
   return (
-    <main id="main">
-      {seo.metaTitle && <title>{seo.metaTitle}</title>}
-      {seo.metaDescription && (
-        <meta name="description" content={seo.metaDescription} />
-      )}
-      {seo.metaKeywords && <meta name="keywords" content={seo.metaKeywords} />}
-      {seo.ogImage && (
-        <meta
-          property="og:image"
-          content={getResponsiveImageUrls({ desktop: seo.ogImage }).desktop}
-        />
-      )}
+    <>
+      {/* Add JSON-LD Schema for SEO */}
+      <JuvedermGallerySchema pageData={pageData} />
 
-      {sectionOrder.map((section, index) => {
-        if (section.sectionType === "hero" && section.enabled) {
-          return (
-            <React.Fragment key={index}>
-              {renderSection(
-                section.sectionType,
-                section.enabled,
-                section.customId,
-                section.customClass
-              )}
-            </React.Fragment>
-          );
-        }
-        return null;
-      })}
+      <main id="main">
+        {sectionOrder.map((section, index) => {
+          if (section.sectionType === "hero" && section.enabled) {
+            return (
+              <React.Fragment key={`section-hero-${index}`}>
+                {renderSection(
+                  section.sectionType,
+                  section.enabled,
+                  section.customId,
+                  section.customClass
+                )}
+              </React.Fragment>
+            );
+          }
+          return null;
+        })}
 
-      <div className="container partial_gallery_item_index" data-s3-partial="">
-        <div className="row">
-          {sectionOrder.map((section, index) => {
-            if (section.sectionType === "dropdown" && section.enabled) {
-              return (
-                <React.Fragment key={index}>
-                  {renderSection(
-                    section.sectionType,
-                    section.enabled,
-                    section.customId,
-                    section.customClass
-                  )}
-                </React.Fragment>
-              );
-            }
-            return null;
-          })}
+        <div
+          className="container partial_gallery_item_index"
+          data-s3-partial=""
+        >
+          <div className="row">
+            {sectionOrder.map((section, index) => {
+              if (section.sectionType === "dropdown" && section.enabled) {
+                return (
+                  <React.Fragment key={`section-dropdown-${index}`}>
+                    {renderSection(
+                      section.sectionType,
+                      section.enabled,
+                      section.customId,
+                      section.customClass
+                    )}
+                  </React.Fragment>
+                );
+              }
+              return null;
+            })}
 
-          {sectionOrder.map((section, index) => {
-            if (section.sectionType === "gallery" && section.enabled) {
-              return (
-                <React.Fragment key={index}>
-                  {renderSection(
-                    section.sectionType,
-                    section.enabled,
-                    section.customId,
-                    section.customClass
-                  )}
-                </React.Fragment>
-              );
-            }
-            return null;
-          })}
+            {sectionOrder.map((section, index) => {
+              if (section.sectionType === "gallery" && section.enabled) {
+                return (
+                  <React.Fragment key={`section-gallery-${index}`}>
+                    {renderSection(
+                      section.sectionType,
+                      section.enabled,
+                      section.customId,
+                      section.customClass
+                    )}
+                  </React.Fragment>
+                );
+              }
+              return null;
+            })}
+          </div>
         </div>
-      </div>
 
-      {sectionOrder.map((section, index) => {
-        if (section.sectionType === "pagination" && section.enabled) {
-          return (
-            <React.Fragment key={index}>
-              {renderSection(
-                section.sectionType,
-                section.enabled,
-                section.customId,
-                section.customClass
-              )}
-            </React.Fragment>
-          );
-        }
-        return null;
-      })}
+        {sectionOrder.map((section, index) => {
+          if (section.sectionType === "pagination" && section.enabled) {
+            return (
+              <React.Fragment key={`section-pagination-${index}`}>
+                {renderSection(
+                  section.sectionType,
+                  section.enabled,
+                  section.customId,
+                  section.customClass
+                )}
+              </React.Fragment>
+            );
+          }
+          return null;
+        })}
 
-      {isCarouselOpen && (
-        <ImageCarousel
-          images={carouselImages}
-          currentIndex={currentImageIndex}
-          onClose={() => setIsCarouselOpen(false)}
-          onNavigate={(index) => setCurrentImageIndex(index)}
-        />
-      )}
-    </main>
+        {isCarouselOpen && (
+          <ImageCarousel
+            images={carouselImages}
+            currentIndex={currentImageIndex}
+            onClose={handleCarouselClose}
+            onNavigate={handleCarouselNavigate}
+          />
+        )}
+      </main>
+    </>
   );
 };
 

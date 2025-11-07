@@ -1,1227 +1,1884 @@
-this are my payload code for my navbar, as you see I have a search bar in my component. when i search something it shows suggestion of all the pages in my website. and on clicking on any suggestion it takes me to that page. but in my payload code i only have option to put search, even if i do that, Icant have the functionality of the search bar. how will i achieve this functionality. also im using payload cms and not supabase.  import { CollectionConfig } from 'payload'
+"use client";
 
-export const MainNav: CollectionConfig = {
-  slug: 'main-nav',
-  admin: {
-    useAsTitle: 'title',
-    description: 'Main navigation configuration',
-  },
-  fields: [
-    {
-      name: 'title',
-      type: 'text',
-      required: true,
-      defaultValue: 'Main Navigation',
-      admin: {
-        description: 'Internal title for reference',
-      },
-    },
-    {
-      name: 'styling',
-      type: 'group',
-      label: 'Styling',
-      fields: [
-        {
-          name: 'headerClass',
-          type: 'text',
-          label: 'Header CSS Class',
-          defaultValue: 'partial_nav_header light',
-          admin: {
-            description: 'e.g., "partial_nav_header light"',
-          },
-        },
-        {
-          name: 'backgroundColor',
-          type: 'text',
-          label: 'Background Color',
-          defaultValue: '#ffffff',
-        },
-        {
-          name: 'textColor',
-          type: 'text',
-          label: 'Text Color',
-          defaultValue: '#000000',
-        },
-        {
-          name: 'linkHoverColor',
-          type: 'text',
-          label: 'Link Hover Color',
-          defaultValue: '#0066cc',
-        },
-        {
-          name: 'activeItemColor',
-          type: 'text',
-          label: 'Active Item Color',
-          defaultValue: '#0066cc',
-        },
-      ],
-    },
-    {
-      name: 'logo',
-      type: 'group',
-      label: 'Logo Configuration',
-      fields: [
-        {
-          name: 'imageUrl',
-          type: 'text',
-          label: 'Logo Image URL',
-          required: true,
-          defaultValue: 'https://www.datocms-assets.com/105497/1692813206-logo-nav.svg',
-        },
-        {
-          name: 'width',
-          type: 'number',
-          label: 'Width',
-          defaultValue: 232,
-        },
-        {
-          name: 'height',
-          type: 'number',
-          label: 'Height',
-          defaultValue: 65,
-        },
-        {
-          name: 'altText',
-          type: 'text',
-          label: 'Alt Text',
-          defaultValue: 'Website Logo',
-        },
-        {
-          name: 'linkUrl',
-          type: 'text',
-          label: 'Link URL',
-          defaultValue: '/',
-        },
-      ],
-    },
-    {
-      name: 'navigationSettings',
-      type: 'group',
-      label: 'Navigation Settings',
-      fields: [
-        {
-          name: 'desktopType',
-          type: 'select',
-          label: 'Desktop Type',
-          defaultValue: 'horizontal',
-          options: [
-            { label: 'Horizontal', value: 'horizontal' },
-            { label: 'Vertical', value: 'vertical' },
-            { label: 'Hamburger', value: 'hamburger' },
-          ],
-        },
-        {
-          name: 'tabletType',
-          type: 'select',
-          label: 'Tablet Type',
-          defaultValue: 'hamburger',
-          options: [
-            { label: 'Horizontal', value: 'horizontal' },
-            { label: 'Vertical', value: 'vertical' },
-            { label: 'Hamburger', value: 'hamburger' },
-          ],
-        },
-        {
-          name: 'mobileType',
-          type: 'select',
-          label: 'Mobile Type',
-          defaultValue: 'hamburger',
-          options: [
-            { label: 'Horizontal', value: 'horizontal' },
-            { label: 'Vertical', value: 'vertical' },
-            { label: 'Hamburger', value: 'hamburger' },
-          ],
-        },
-        {
-          name: 'desktopVariant',
-          type: 'select',
-          label: 'Desktop Variant',
-          defaultValue: 'focus',
-          options: [
-            { label: 'Default', value: 'default' },
-            { label: 'Focus', value: 'focus' },
-          ],
-        },
-        {
-          name: 'tabletVariant',
-          type: 'select',
-          label: 'Tablet Variant',
-          defaultValue: 'default',
-          options: [
-            { label: 'Default', value: 'default' },
-            { label: 'Focus', value: 'focus' },
-          ],
-        },
-        {
-          name: 'mobileVariant',
-          type: 'select',
-          label: 'Mobile Variant',
-          defaultValue: 'default',
-          options: [
-            { label: 'Default', value: 'default' },
-            { label: 'Focus', value: 'focus' },
-          ],
-        },
-        {
-          name: 'breakpointMobile',
-          type: 'number',
-          label: 'Mobile Breakpoint (px)',
-          defaultValue: 640,
-        },
-        {
-          name: 'breakpointTablet',
-          type: 'number',
-          label: 'Tablet Breakpoint (px)',
-          defaultValue: 1024,
-        },
-        {
-          name: 'menuOffset',
-          type: 'number',
-          label: 'Menu Offset (px)',
-          defaultValue: 0,
-        },
-        {
-          name: 'menuOffsetMobile',
-          type: 'number',
-          label: 'Mobile Menu Offset (px)',
-          defaultValue: 0,
-        },
-        {
-          name: 'hamburgerColor',
-          type: 'text',
-          label: 'Hamburger Icon Color',
-          defaultValue: '#fff',
-        },
-        {
-          name: 'hamburgerColorExpanded',
-          type: 'text',
-          label: 'Hamburger Icon Color (Expanded)',
-          defaultValue: '#fff',
-        },
-      ],
-    },
-    {
-      name: 'menuItems',
-      type: 'array',
-      label: 'Menu Items',
-      admin: {
-        description: 'Drag and drop to reorder menu items',
-        // components: {
-        //   RowLabel: ({ data, index }) => {
-        //     return data?.label || `Menu Item ${index + 1}`
-        //   },
-        // },
-      },
-      fields: [
-        {
-          name: 'label',
-          type: 'text',
-          label: 'Label',
-          required: true,
-        },
-        {
-          name: 'href',
-          type: 'text',
-          label: 'Link URL',
-          required: true,
-        },
-        {
-          name: 'isActive',
-          type: 'checkbox',
-          label: 'Is Active',
-          defaultValue: false,
-        },
-        {
-          name: 'rel',
-          type: 'text',
-          label: 'Rel Attribute',
-          admin: {
-            description: 'e.g., "noopener"',
-          },
-        },
-        {
-          name: 'customClasses',
-          type: 'text',
-          label: 'Custom CSS Classes',
-          admin: {
-            description: 'e.g., "mega-menu"',
-          },
-        },
-        {
-          name: 'subMenu',
-          type: 'array',
-          label: 'Sub Menu Items',
-          admin: {
-            description: 'Dropdown menu items',
-            // components: {
-            //   RowLabel: ({ data, index }) => {
-            //     return data?.label || `Sub Item ${index + 1}`
-            //   },
-            // },
-          },
-          fields: [
-            {
-              name: 'label',
-              type: 'text',
-              label: 'Label',
-              required: true,
-            },
-            {
-              name: 'href',
-              type: 'text',
-              label: 'Link URL',
-              required: true,
-            },
-            {
-              name: 'rel',
-              type: 'text',
-              label: 'Rel Attribute',
-            },
-            {
-              name: 'customClasses',
-              type: 'text',
-              label: 'Custom CSS Classes',
-            },
-            {
-              name: 'subMenu',
-              type: 'array',
-              label: 'Nested Sub Menu',
-              admin: {
-                description: 'Third level menu items',
-                // components: {
-                //   RowLabel: ({ data, index }) => {
-                //     return data?.label || `Nested Item ${index + 1}`
-                //   },
-                // },
-              },
-              fields: [
-                {
-                  name: 'label',
-                  type: 'text',
-                  label: 'Label',
-                  required: true,
-                },
-                {
-                  name: 'href',
-                  type: 'text',
-                  label: 'Link URL',
-                  required: true,
-                },
-                {
-                  name: 'rel',
-                  type: 'text',
-                  label: 'Rel Attribute',
-                },
-                {
-                  name: 'customClasses',
-                  type: 'text',
-                  label: 'Custom CSS Classes',
-                },
-              ],
-            },
-          ],
-        },
-        {
-          name: 'ignore',
-          type: 'checkbox',
-          label: 'Ignore (Mobile Info Section)',
-          defaultValue: false,
-          admin: {
-            description: 'Use this for mobile-only info sections',
-          },
-        },
-        {
-          name: 'mobileInfo',
-          type: 'group',
-          label: 'Mobile Info Section',
-          admin: {
-            condition: (data, siblingData) => {
-              return siblingData?.ignore === true
-            },
-          },
-          fields: [
-            {
-              name: 'showSocialLinks',
-              type: 'checkbox',
-              label: 'Show Social Links',
-              defaultValue: false,
-            },
-            {
-              name: 'socialLinks',
-              type: 'array',
-              label: 'Social Links',
-              admin: {
-                condition: (data, siblingData) => {
-                  return siblingData?.showSocialLinks === true
-                },
-              },
-              fields: [
-                {
-                  name: 'platform',
-                  type: 'select',
-                  label: 'Platform',
-                  options: [
-                    { label: 'Instagram', value: 'instagram' },
-                    { label: 'Facebook', value: 'facebook' },
-                    { label: 'YouTube', value: 'youtube' },
-                    { label: 'Twitter', value: 'twitter' },
-                    { label: 'LinkedIn', value: 'linkedin' },
-                  ],
-                },
-                {
-                  name: 'url',
-                  type: 'text',
-                  label: 'URL',
-                },
-                {
-                  name: 'title',
-                  type: 'text',
-                  label: 'Title',
-                },
-                {
-                  name: 'ariaLabel',
-                  type: 'text',
-                  label: 'Aria Label',
-                },
-              ],
-            },
-            {
-              name: 'showPhone',
-              type: 'checkbox',
-              label: 'Show Phone',
-              defaultValue: false,
-            },
-            {
-              name: 'phoneNumber',
-              type: 'text',
-              label: 'Phone Number',
-              admin: {
-                condition: (data, siblingData) => {
-                  return siblingData?.showPhone === true
-                },
-              },
-            },
-            {
-              name: 'phoneLink',
-              type: 'text',
-              label: 'Phone Link',
-              admin: {
-                condition: (data, siblingData) => {
-                  return siblingData?.showPhone === true
-                },
-              },
-            },
-          ],
-        },
-      ],
-    },
-  ],
-}import { CollectionConfig } from 'payload'
+import React, { useEffect, useRef, useState } from "react";
 
-export const UpperNav: CollectionConfig = {
-  slug: 'upper-nav',
-  admin: {
-    useAsTitle: 'title',
-    description: 'Upper navigation bar configuration',
-  },
-  fields: [
-    {
-      name: 'title',
-      type: 'text',
-      required: true,
-      defaultValue: 'Upper Navigation',
-      admin: {
-        description: 'Internal title for reference',
-      },
-    },
-    {
-      name: 'styling',
-      type: 'group',
-      label: 'Styling',
-      fields: [
-        {
-          name: 'backgroundColor',
-          type: 'text',
-          label: 'Background Color',
-          defaultValue: '#ffffff',
-          admin: {
-            description: 'Hex, RGB, or color name',
-          },
-        },
-        {
-          name: 'textColor',
-          type: 'text',
-          label: 'Text Color',
-          defaultValue: '#000000',
-          admin: {
-            description: 'Hex, RGB, or color name',
-          },
-        },
-        {
-          name: 'linkHoverColor',
-          type: 'text',
-          label: 'Link Hover Color',
-          defaultValue: '#0066cc',
-        },
-        {
-          name: 'customClasses',
-          type: 'text',
-          label: 'Custom CSS Classes',
-          admin: {
-            description: 'Space-separated CSS classes',
-          },
-        },
-      ],
-    },
-    {
-      name: 'items',
-      type: 'array',
-      label: 'Navigation Items',
-      admin: {
-        description: 'Drag and drop to reorder items',
-        // components: {
-        //   RowLabel: ({ data, index }) => {
-        //     return data?.label || `Item ${index + 1}`
-        //   },
-        // },
-      },
-      fields: [
-        {
-          name: 'type',
-          type: 'select',
-          label: 'Item Type',
-          required: true,
-          defaultValue: 'link',
-          options: [
-            {
-              label: 'Link',
-              value: 'link',
-            },
-            {
-              label: 'Phone',
-              value: 'phone',
-            },
-            {
-              label: 'Social Links',
-              value: 'social',
-            },
-            {
-              label: 'Search',
-              value: 'search',
-            },
-          ],
-        },
-        {
-          name: 'label',
-          type: 'text',
-          label: 'Label',
-          required: true,
-          admin: {
-            condition: (data, siblingData) => {
-              return siblingData?.type !== 'social'
-            },
-          },
-        },
-        {
-          name: 'href',
-          type: 'text',
-          label: 'Link URL',
-          admin: {
-            condition: (data, siblingData) => {
-              return siblingData?.type === 'link' || siblingData?.type === 'phone'
-            },
-          },
-        },
-        {
-          name: 'ariaLabel',
-          type: 'text',
-          label: 'Aria Label',
-          admin: {
-            description: 'For accessibility',
-          },
-        },
-        {
-          name: 'customClasses',
-          type: 'text',
-          label: 'Custom CSS Classes',
-          admin: {
-            description: 'e.g., "desktop-only", "contact"',
-          },
-        },
-        {
-          name: 'phoneNumber',
-          type: 'text',
-          label: 'Phone Number',
-          admin: {
-            description: 'Display format (e.g., (407) 333-4300)',
-            condition: (data, siblingData) => {
-              return siblingData?.type === 'phone'
-            },
-          },
-        },
-        {
-          name: 'phoneLink',
-          type: 'text',
-          label: 'Phone Link',
-          admin: {
-            description: 'tel: format (e.g., +14073334300)',
-            condition: (data, siblingData) => {
-              return siblingData?.type === 'phone'
-            },
-          },
-        },
-        {
-          name: 'socialLinks',
-          type: 'array',
-          label: 'Social Media Links',
-          admin: {
-            condition: (data, siblingData) => {
-              return siblingData?.type === 'social'
-            },
-          },
-          fields: [
-            {
-              name: 'platform',
-              type: 'select',
-              label: 'Platform',
-              required: true,
-              options: [
-                { label: 'Instagram', value: 'instagram' },
-                { label: 'Facebook', value: 'facebook' },
-                { label: 'YouTube', value: 'youtube' },
-                { label: 'Twitter', value: 'twitter' },
-                { label: 'LinkedIn', value: 'linkedin' },
-                { label: 'TikTok', value: 'tiktok' },
-              ],
-            },
-            {
-              name: 'url',
-              type: 'text',
-              label: 'URL',
-              required: true,
-            },
-            {
-              name: 'title',
-              type: 'text',
-              label: 'Title',
-              admin: {
-                description: 'Tooltip text',
-              },
-            },
-            {
-              name: 'ariaLabel',
-              type: 'text',
-              label: 'Aria Label',
-            },
-            {
-              name: 'iconClass',
-              type: 'text',
-              label: 'Icon CSS Class',
-              admin: {
-                description: 'e.g., "instagram-icon"',
-              },
-            },
-          ],
-        },
-        {
-          name: 'searchConfig',
-          type: 'group',
-          label: 'Search Configuration',
-          admin: {
-            condition: (data, siblingData) => {
-              return siblingData?.type === 'search'
-            },
-          },
-          fields: [
-            {
-              name: 'buttonText',
-              type: 'text',
-              label: 'Button Text',
-              defaultValue: 'Search',
-            },
-            {
-              name: 'buttonAriaLabel',
-              type: 'text',
-              label: 'Button Aria Label',
-              defaultValue: 'Opens search bar',
-            },
-            {
-              name: 'buttonTitle',
-              type: 'text',
-              label: 'Button Title',
-              defaultValue: 'Open search bar',
-            },
-            {
-              name: 'iconClass',
-              type: 'text',
-              label: 'Icon CSS Class',
-            },
-          ],
-        },
-        {
-          name: 'visibility',
-          type: 'group',
-          label: 'Visibility Settings',
-          fields: [
-            {
-              name: 'desktop',
-              type: 'checkbox',
-              label: 'Show on Desktop',
-              defaultValue: true,
-            },
-            {
-              name: 'tablet',
-              type: 'checkbox',
-              label: 'Show on Tablet',
-              defaultValue: true,
-            },
-            {
-              name: 'mobile',
-              type: 'checkbox',
-              label: 'Show on Mobile',
-              defaultValue: true,
-            },
-          ],
-        },
-      ],
-    },
-  ],
-}import Link from "next/link";
+const ProviderLocator = () => {
+  const mapRef = useRef<HTMLDivElement>(null);
+  const [map, setMap] = useState<google.maps.Map | null>(null);
+  const [markers, setMarkers] = useState<google.maps.Marker[]>([]);
+  const [activeTab, setActiveTab] = useState(() => {
+    // Determine initial tab based on URL search parameter
+    if (typeof window !== "undefined") {
+      const searchParams = new URLSearchParams(window.location.search);
+      const tab = searchParams.get("tab");
+      if (tab === "providers") {
+        return "providers";
+      }
+      if (tab === "locations") {
+        return "locations";
+      }
+    }
+    return "locations"; // Default to locations since the page is /location
+  });
+  const [view, setView] = useState("list");
+  const [selectedItem, setSelectedItem] = useState<any>(null);
+  const [locations, setLocations] = useState<any[]>([]);
+  const [providers, setProviders] = useState<any[]>([]);
+  const [filteredLocations, setFilteredLocations] = useState<any[]>([]);
+  const [filteredProviders, setFilteredProviders] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [userLocation, setUserLocation] = useState<{
+    lat: number;
+    lng: number;
+  } | null>(null);
+  const [isLocating, setIsLocating] = useState(false);
+  const contentBodyRef = useRef<HTMLDivElement>(null);
+  const scrollbarHandleRef = useRef<HTMLDivElement>(null);
 
-export default function Navbar() {
-  return (
-    <header className="partial_nav_header light" data-s3-partial="">
-      <div className="upper-nav">
-        <nav>
-          <ul className="partial_nav">
-            <li className="partial_nav_item contact desktop-only">
-              <Link href="/contact/" className="tresio-nav__link level-1">
-                Book Appointment
-              </Link>
-            </li>
-            <li className="partial_nav_item location">
-              <Link
-                href="/location/"
-                className="tresio-nav__link level-1 location"
-              >
-                Find Your Location
-              </Link>
-            </li>
-            <li className="partial_nav_item phone desktop-only">
-              <Link
-                className="tel ppc-href"
-                href="tel:+14073334300"
-                role="link"
-                aria-label="Give Goldfingers Aesthetics a phone call"
-              >
-                (407) 333-4300
-              </Link>
-            </li>
-            <ul className="partial_socials" data-s3-partial="" role="menu">
-              <li role="menuitem">
-                <Link
-                  rel="noopener"
-                  title="Goldfingers Aesthetics on Instagram"
-                  href="https://www.instagram.com/goldfingers.aesthetics/"
-                  target="_blank"
-                  aria-label="Goldfingers Aesthetics on Instagram opens in a new tab"
-                >
-                  <span className="instagram-icon" />
-                </Link>
-              </li>
-              <li role="menuitem">
-                <Link
-                  rel="noopener"
-                  title="Goldfingers Aesthetics on Facebook"
-                  href="https://www.facebook.com/goldfingersaesthetics/"
-                  target="_blank"
-                  aria-label="Goldfingers Aesthetics on Facebook opens in a new tab"
-                >
-                  <span className="facebook-icon" />
-                </Link>
-              </li>
-              <li role="menuitem">
-                <Link
-                  rel="noopener"
-                  title="Goldfingers Aesthetics on Youtube"
-                  href="https://www.youtube.com/channel/UCGb3ma3A8U69pmhGnccOtfQ"
-                  target="_blank"
-                  aria-label="Goldfingers Aesthetics on Youtube opens in a new tab"
-                >
-                  <span className="youtube-icon" />
-                </Link>
-              </li>
-            </ul>
-            <li className="search">
-              <span
-                className="js-search-open"
-                aria-label="Opens search bar"
-                title="Open search bar"
-                role="button"
-              >
-                <span>Search</span>
-              </span>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div className="row">
-        <div className="inner">
-          <div className="logo-holder">
-            <Link href="/" className="logo">
-              <picture className="">
-                <img
-                  src="https://www.datocms-assets.com/105497/1692813206-logo-nav.svg"
-                  width={232}
-                  height={65}
-                  alt="Goldfingers Aesthetics Website Logo"
-                  draggable="false"
-                />
-              </picture>
-            </Link>
-          </div>
-          <div className="nav-links">
-            <nav
-              className="tresio-nav"
-              data-type-desktop="horizontal"
-              data-type-tablet="hamburger"
-              data-type-mobile="hamburger"
-              data-variant-desktop="focus"
-              data-variant-tablet="default"
-              data-variant-mobile="default"
-              data-breakpoint-mobile={640}
-              data-breakpoint-tablet={1024}
-              data-dropdown-label=""
-              data-hamburger-color="#fff"
-              data-hamburger-color-expanded="#fff"
-              data-menu-offset={0}
-              data-menu-offset-mobile={0}
-            >
-              <ul className="list partial_nav" data-s3-partial="">
-                <li className="partial_nav_item is-active" data-s3-partial="">
-                  <Link href="/">Home</Link>
-                </li>
-                <li className="partial_nav_item" data-s3-partial="">
-                  <Link href="/about/">About</Link>
-                  <ul className="">
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/about/founder/">Our Founders</Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/location/" rel="noopener">
-                        Providers
-                      </Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/about/testimonials/">Testimonials</Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/blog/">Blog</Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/about/resource-center/">Videos</Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/about/confidentiality-statement/">
-                        Privacy Policy
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
-                <li className="partial_nav_item" data-s3-partial="">
-                  <Link href="/gallery/">Gallery</Link>
-                  <ul className="">
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/gallery/non-surgical/">Non-Surgical</Link>
-                      <ul className="">
-                        <li className="partial_nav_item" data-s3-partial="">
-                          <Link href="/gallery/non-surgical/lip-fillers/">
-                            Lip Fillers
-                          </Link>
-                        </li>
-                        <li className="partial_nav_item" data-s3-partial="">
-                          <Link href="/gallery/non-surgical/botox/">BOTOX</Link>
-                        </li>
-                        <li className="partial_nav_item" data-s3-partial="">
-                          <Link href="/gallery/non-surgical/juvederm/">
-                            JUVÉDERM
-                          </Link>
-                        </li>
-                        <li className="partial_nav_item" data-s3-partial="">
-                          <Link href="/gallery/non-surgical/kybella/">
-                            KYBELLA
-                          </Link>
-                        </li>
-                        <li className="partial_nav_item" data-s3-partial="">
-                          <Link href="/gallery/non-surgical/micro-channeling/">
-                            Micro-Channeling
-                          </Link>
-                        </li>
-                        <li className="partial_nav_item" data-s3-partial="">
-                          <Link href="/gallery/non-surgical/restylane-r/">
-                            Restylane
-                          </Link>
-                        </li>
-                        <li className="partial_nav_item" data-s3-partial="">
-                          <Link href="/gallery/non-surgical/skinmedica/">
-                            SkinMedica
-                          </Link>
-                        </li>
-                        <li className="partial_nav_item" data-s3-partial="">
-                          <Link href="/gallery/non-surgical/dermal-filler/">
-                            Dermal Filler
-                          </Link>
-                        </li>
-                        <li className="partial_nav_item" data-s3-partial="">
-                          <Link href="/gallery/non-surgical/cheek-contour/">
-                            Cheek Contour
-                          </Link>
-                        </li>
-                        <li className="partial_nav_item" data-s3-partial="">
-                          <Link href="/gallery/non-surgical/liquid-chin-and-jaw-contouring/">
-                            Liquid Chin &amp; Jaw Contouring
-                          </Link>
-                        </li>
-                        <li className="partial_nav_item" data-s3-partial="">
-                          <Link href="/gallery/non-surgical/liquid-rhinoplasty/">
-                            Liquid Rhinoplasty
-                          </Link>
-                        </li>
-                        <li className="partial_nav_item" data-s3-partial="">
-                          <Link href="/gallery/non-surgical/marionette-lines/">
-                            Marionette Lines
-                          </Link>
-                        </li>
-                        <li className="partial_nav_item" data-s3-partial="">
-                          <Link href="/gallery/non-surgical/liquid-facelift/">
-                            Liquid (Non-Surgical) Facelift
-                          </Link>
-                        </li>
-                        <li className="partial_nav_item" data-s3-partial="">
-                          <Link href="/gallery/non-surgical/weight-loss/">
-                            Weight Loss
-                          </Link>
-                        </li>
-                        <li className="partial_nav_item" data-s3-partial="">
-                          <Link href="/gallery/non-surgical/lash-extensions/">
-                            Lash Extensions
-                          </Link>
-                        </li>
-                      </ul>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/gallery/surgical/">Surgical</Link>
-                      <ul className="">
-                        <li className="partial_nav_item" data-s3-partial="">
-                          <Link href="/gallery/surgical/tummy-tuck/">
-                            Tummy Tuck
-                          </Link>
-                        </li>
-                        <li className="partial_nav_item" data-s3-partial="">
-                          <Link href="/gallery/surgical/mommy-makeover/">
-                            Mommy Makeover
-                          </Link>
-                        </li>
-                        <li className="partial_nav_item" data-s3-partial="">
-                          <Link href="/gallery/surgical/liposuction/">
-                            Liposuction
-                          </Link>
-                        </li>
-                        <li className="partial_nav_item" data-s3-partial="">
-                          <Link href="/gallery/surgical/breast-augmentation/">
-                            Breast Augmentation
-                          </Link>
-                        </li>
-                        <li className="partial_nav_item" data-s3-partial="">
-                          <Link href="/gallery/surgical/breast-lift/">
-                            Breast Lift
-                          </Link>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li className="partial_nav_item mega-menu" data-s3-partial="">
-                  <Link href="/medical-spa/">Medical Spa</Link>
-                  <ul className="">
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/medical-spa/injectables/">Injectables</Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/medical-spa/botox/">BOTOX</Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/medical-spa/dysport/">Dysport</Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/medical-spa/dermal-fillers/">
-                        Dermal Fillers
-                      </Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/medical-spa/juvederm/">JUVÉDERM</Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/medical-spa/juvederm-volux/">
-                        Juvederm Volux
-                      </Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/medical-spa/restylane/">Restylane</Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/medical-spa/restylane-contour/">
-                        Restylane Contour
-                      </Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/medical-spa/cheek-fillers/">
-                        Cheek Fillers
-                      </Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/medical-spa/lines-and-wrinkles/">
-                        Lines &amp; Wrinkles
-                      </Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/medical-spa/lips/">Lip Fillers</Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/medical-spa/chin/">Chin Fillers</Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/medical-spa/hands/">Hand Rejuvenation</Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/medical-spa/liquid-facelift/">
-                        Liquid (Non-Surgical) Facelift
-                      </Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/medical-spa/liquid-non-surgical-rhinoplasty/">
-                        Liquid (Non-Surgical) Rhinoplasty
-                      </Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/medical-spa/skinvive/">SkinVive</Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/medical-spa/spa-services/">
-                        Spa Services
-                      </Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/medical-spa/lash-extensions/">
-                        Lash Extensions
-                      </Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/medical-spa/mens-services/">
-                        Men's Services
-                      </Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/medical-spa/micro-channeling/">
-                        Micro-Channeling
-                      </Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/medical-spa/permanent-makeup/">
-                        Permanent Makeup
-                      </Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/medical-spa/diamondglow/">DiamondGlow</Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/medical-spa/skin-medica/">SkinMedica</Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/medical-spa/skincare-services/">
-                        Skincare Services
-                      </Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/medical-spa/weightloss/">Weight Loss</Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/medical-spa/semaglutide-injections/">
-                        Semaglutide Injections
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
-                <li className="partial_nav_item" data-s3-partial="">
-                  <Link href="/plastic-surgery/">Plastic Surgery</Link>
-                  <ul className="">
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/plastic-surgery/breast/">Breast</Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/plastic-surgery/breast-augmentation/">
-                        Breast Augmentation
-                      </Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/plastic-surgery/breast-lift/">
-                        Breast Lift
-                      </Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/plastic-surgery/breast-reduction/">
-                        Breast Reduction
-                      </Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/plastic-surgery/breast-revision/">
-                        Breast Revision
-                      </Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/plastic-surgery/body/">Body</Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/plastic-surgery/liposuction/">
-                        Liposuction
-                      </Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/plastic-surgery/mommy-makeover/">
-                        Mommy Makeover
-                      </Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/plastic-surgery/tummy-tuck/">
-                        Tummy Tuck
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
-                <li className="partial_nav_item" data-s3-partial="">
-                  <Link href="/specials-and-rewards/">
-                    Specials &amp; Rewards
-                  </Link>
-                  <ul className="">
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/specials-and-rewards/specials/">
-                        Specials
-                      </Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/specials-and-rewards/alle/">
-                        Alle Rewards
-                      </Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/specials-and-rewards/aspire-rewards/">
-                        Aspire Rewards
-                      </Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/specials-and-rewards/gift-cards/">
-                        Gift Cards
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
-                <li className="partial_nav_item" data-s3-partial="">
-                  <Link href="/financing/">Financing</Link>
-                </li>
-                <li className="partial_nav_item" data-s3-partial="">
-                  <Link href="/contact/">Contact</Link>
-                </li>
-                <li className="partial_nav_item" data-s3-partial="">
-                  <Link href="/training/">Training</Link>
-                  <ul className="">
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/training/training-program-details/">
-                        Training Program Details
-                      </Link>
-                      <ul className="">
-                        <li className="partial_nav_item" data-s3-partial="">
-                          <Link href="/training/training-program-details/comprehensive-injectables/">
-                            Comprehensive Injectables
-                          </Link>
-                        </li>
-                        <li className="partial_nav_item" data-s3-partial="">
-                          <Link href="/training/training-program-details/foundational-injectables/">
-                            Foundational Injectables
-                          </Link>
-                        </li>
-                      </ul>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/training/enrollment-faqs/">
-                        Enrollment &amp; FAQs
-                      </Link>
-                    </li>
-                    <li className="partial_nav_item" data-s3-partial="">
-                      <Link href="/training/apply-for-your-training-spot-today/">
-                        Apply for Your Training Spot Today
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
-                <li className="ignore" role="menuitem">
-                  <div className="info">
-                    <ul
-                      className="partial_socials"
-                      data-s3-partial=""
-                      role="menu"
-                    >
-                      <li role="menuitem">
-                        <Link
-                          rel="noopener"
-                          title="Goldfingers Aesthetics on Instagram"
-                          href="https://www.instagram.com/goldfingers.aesthetics/"
-                          target="_blank"
-                          aria-label="Goldfingers Aesthetics on Instagram opens in a new tab"
-                        >
-                          <span className="instagram-icon" />
-                        </Link>
-                      </li>
-                      <li role="menuitem">
-                        <Link
-                          rel="noopener"
-                          title="Goldfingers Aesthetics on Facebook"
-                          href="https://www.facebook.com/goldfingersaesthetics/"
-                          target="_blank"
-                          aria-label="Goldfingers Aesthetics on Facebook opens in a new tab"
-                        >
-                          <span className="facebook-icon" />
-                        </Link>
-                      </li>
-                      <li role="menuitem">
-                        <Link
-                          rel="noopener"
-                          title="Goldfingers Aesthetics on Youtube"
-                          href="https://www.youtube.com/channel/UCGb3ma3A8U69pmhGnccOtfQ"
-                          target="_blank"
-                          aria-label="Goldfingers Aesthetics on Youtube opens in a new tab"
-                        >
-                          <span className="youtube-icon" />
-                        </Link>
-                      </li>
-                    </ul>
-                    <p>
-                      <Link
-                        className="tel ppc-href"
-                        href="tel:+14073334300"
-                        data-s3-event="Phone - Mobile Nav"
-                        role="link"
-                        aria-label="Give Goldfingers Aesthetics a phone call"
-                      >
-                        <span className="ppc-number">(407) 333-4300</span>
-                      </Link>
-                    </p>
+  // Listen for URL changes and update active tab
+  useEffect(() => {
+    const handleUrlChange = () => {
+      const searchParams = new URLSearchParams(window.location.search);
+      const tab = searchParams.get("tab");
+      if (tab === "providers") {
+        setActiveTab("providers");
+      } else if (tab === "locations") {
+        setActiveTab("locations");
+      } else {
+        setActiveTab("locations");
+      }
+    };
+
+    // Check on mount
+    handleUrlChange();
+
+    // Listen for popstate (back/forward navigation)
+    window.addEventListener("popstate", handleUrlChange);
+
+    return () => {
+      window.removeEventListener("popstate", handleUrlChange);
+    };
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+
+        const locationsRes = await fetch(
+          "https://goldfingerbackend.vercel.app/api/locations?depth=2&limit=1000"
+        );
+        const locationsData = await locationsRes.json();
+
+        const providersRes = await fetch(
+          "https://goldfingerbackend.vercel.app/api/providers?depth=2&limit=1000"
+        );
+        const providersData = await providersRes.json();
+
+        const transformedLocations = locationsData.docs.map((loc: any) => {
+          let imageUrl = "";
+          if (typeof loc.image === "object" && loc.image !== null) {
+            imageUrl = loc.image.cloudinary_url || loc.image.url || "";
+          } else if (typeof loc.image === "string") {
+            imageUrl = loc.image;
+          }
+
+          console.log("Location image URL:", imageUrl);
+
+          return {
+            id: loc.id,
+            name: loc.name,
+            image: imageUrl,
+            phone: loc.phone,
+            alt: loc.alt,
+            address: loc.address,
+            coordinates: loc.coordinates,
+            reviews: loc.reviews,
+            slug: loc.slug,
+            googleMaps: loc.googleMaps || "", // ADD THIS LINE
+          };
+        });
+
+        // const transformedLocations = locationsData.docs.map((loc: any) => {
+        //   let imageUrl = "";
+        //   if (typeof loc.image === "object" && loc.image !== null) {
+        //     imageUrl = loc.image.cloudinary_url || loc.image.url || "";
+        //   } else if (typeof loc.image === "string") {
+        //     imageUrl = loc.image;
+        //   }
+
+        //   console.log("Location image URL:", imageUrl);
+
+        //   return {
+        //     id: loc.id,
+        //     name: loc.name,
+        //     image: imageUrl,
+        //     phone: loc.phone,
+        //     alt: loc.alt,
+        //     address: loc.address,
+        //     coordinates: loc.coordinates,
+        //     reviews: loc.reviews,
+        //     slug: loc.slug,
+        //   };
+        // });
+
+        // const transformedProviders = providersData.docs.map((provider: any) => {
+        //   const primaryLoc =
+        //     typeof provider.primaryLocation === "object"
+        //       ? provider.primaryLocation
+        //       : null;
+
+        //   let imageUrl = "";
+        //   if (provider.image) {
+        //     if (typeof provider.image === "object") {
+        //       imageUrl =
+        //         provider.image.cloudinary_url || provider.image.url || "";
+        //     } else {
+        //       imageUrl = provider.image;
+        //     }
+        //   }
+
+        //   let bgImageUrl = "";
+        //   if (provider.backgroundImage) {
+        //     if (typeof provider.backgroundImage === "object") {
+        //       bgImageUrl =
+        //         provider.backgroundImage.cloudinary_url ||
+        //         provider.backgroundImage.url ||
+        //         "";
+        //     } else {
+        //       bgImageUrl = provider.backgroundImage;
+        //     }
+        //   }
+
+        //   console.log("Provider:", provider.name);
+        //   console.log("Image object:", provider.image);
+        //   console.log("Extracted image URL:", imageUrl);
+        //   console.log("Background image object:", provider.backgroundImage);
+        //   console.log("Extracted bg URL:", bgImageUrl);
+
+        //   // Extract additional locations
+        //   let additionalLocationIds: string[] = [];
+        //   if (
+        //     provider.additionalLocations &&
+        //     Array.isArray(provider.additionalLocations)
+        //   ) {
+        //     additionalLocationIds = provider.additionalLocations.map(
+        //       (loc: any) => (typeof loc === "object" ? loc.id : loc)
+        //     );
+        //   }
+
+        //   return {
+        //     id: provider.id,
+        //     name: provider.name,
+        //     title: provider.title,
+        //     image: imageUrl,
+        //     backgroundImage: bgImageUrl,
+        //     distance: "",
+        //     locationName: primaryLoc?.name || "",
+        //     address: primaryLoc?.address || "",
+        //     phone: primaryLoc?.phone || "",
+        //     coordinates: primaryLoc?.coordinates,
+        //     reviews: provider.reviews,
+        //     slug: provider.slug,
+        //     bio: provider.bio,
+        //     specialties: provider.specialties,
+        //     education: provider.education,
+        //     certifications: provider.certifications,
+        //     languages: provider.languages,
+        //     primaryLocationId:
+        //       typeof provider.primaryLocation === "object"
+        //         ? provider.primaryLocation.id
+        //         : provider.primaryLocation,
+        //     additionalLocationIds: additionalLocationIds,
+        //   };
+        // });
+
+        const transformedProviders = providersData.docs.map((provider: any) => {
+          const primaryLoc =
+            typeof provider.primaryLocation === "object"
+              ? provider.primaryLocation
+              : null;
+
+          let imageUrl = "";
+          if (provider.image) {
+            if (typeof provider.image === "object") {
+              imageUrl =
+                provider.image.cloudinary_url || provider.image.url || "";
+            } else {
+              imageUrl = provider.image;
+            }
+          }
+
+          let bgImageUrl = "";
+          if (provider.backgroundImage) {
+            if (typeof provider.backgroundImage === "object") {
+              bgImageUrl =
+                provider.backgroundImage.cloudinary_url ||
+                provider.backgroundImage.url ||
+                "";
+            } else {
+              bgImageUrl = provider.backgroundImage;
+            }
+          }
+
+          console.log("Provider:", provider.name);
+          console.log("Image object:", provider.image);
+          console.log("Extracted image URL:", imageUrl);
+          console.log("Background image object:", provider.backgroundImage);
+          console.log("Extracted bg URL:", bgImageUrl);
+
+          // Extract additional locations
+          let additionalLocationIds: string[] = [];
+          if (
+            provider.additionalLocations &&
+            Array.isArray(provider.additionalLocations)
+          ) {
+            additionalLocationIds = provider.additionalLocations.map(
+              (loc: any) => (typeof loc === "object" ? loc.id : loc)
+            );
+          }
+
+          return {
+            id: provider.id,
+            name: provider.name,
+            title: provider.title,
+            image: imageUrl,
+            backgroundImage: bgImageUrl,
+            distance: "",
+            locationName: primaryLoc?.name || "",
+            address: primaryLoc?.address || "",
+            phone: primaryLoc?.phone || "",
+            coordinates: primaryLoc?.coordinates,
+            reviews: provider.reviews,
+            slug: provider.slug,
+            bio: provider.bio,
+            specialties: provider.specialties,
+            education: provider.education,
+            certifications: provider.certifications,
+            languages: provider.languages,
+            googleMaps: provider.googleMaps || "", // ADD THIS LINE
+            primaryLocationId:
+              typeof provider.primaryLocation === "object"
+                ? provider.primaryLocation.id
+                : provider.primaryLocation,
+            additionalLocationIds: additionalLocationIds,
+          };
+        });
+
+        setLocations(transformedLocations);
+        setProviders(transformedProviders);
+        setFilteredLocations(transformedLocations);
+        setFilteredProviders(transformedProviders);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    if (activeTab === "locations") {
+      if (searchQuery.trim() === "") {
+        setFilteredLocations(locations);
+      } else {
+        const filtered = locations.filter(
+          (location) =>
+            location.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            location.address.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+        setFilteredLocations(filtered);
+      }
+    } else if (activeTab === "providers") {
+      if (searchQuery.trim() === "") {
+        setFilteredProviders(providers);
+      } else {
+        const filtered = providers.filter(
+          (provider) =>
+            provider.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            provider.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            provider.locationName
+              .toLowerCase()
+              .includes(searchQuery.toLowerCase())
+        );
+        setFilteredProviders(filtered);
+      }
+    }
+  }, [searchQuery, locations, providers, activeTab]);
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCcWunoBpxSOoSPvplvrAzIaTh9pI6QfdU&libraries=places`;
+    script.async = true;
+    script.defer = true;
+
+    script.onload = () => {
+      if (mapRef.current && window.google) {
+        const mapInstance = new window.google.maps.Map(mapRef.current, {
+          center: { lat: 28.2898, lng: -85.5713 },
+          zoom: 7,
+          mapTypeId: "roadmap",
+        });
+
+        setMap(mapInstance);
+      }
+    };
+
+    document.head.appendChild(script);
+
+    return () => {
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!map || !window.google || (!locations.length && !providers.length))
+      return;
+
+    console.log("Adding markers to map...");
+    console.log("Locations:", locations);
+    console.log("Providers:", providers);
+
+    markers.forEach((marker) => marker.setMap(null));
+    const newMarkers: google.maps.Marker[] = [];
+
+    locations.forEach((location) => {
+      console.log("Location coordinates:", location.name, location.coordinates);
+      if (location.coordinates?.lat && location.coordinates?.lng) {
+        try {
+          const marker = new window.google.maps.Marker({
+            position: {
+              lat: location.coordinates.lat,
+              lng: location.coordinates.lng,
+            },
+            map: map,
+            title: location.name,
+          });
+
+          console.log("Added location marker:", location.name);
+
+          marker.addListener("click", () => {
+            console.log("Location marker clicked:", location.name);
+            handleQuickView(location, "location");
+            map.panTo(marker.getPosition()!);
+          });
+
+          newMarkers.push(marker);
+        } catch (error) {
+          console.error("Error creating location marker:", error);
+        }
+      } else {
+        console.log("Location missing coordinates:", location.name);
+      }
+    });
+
+    providers.forEach((provider) => {
+      console.log("Provider coordinates:", provider.name, provider.coordinates);
+      if (provider.coordinates?.lat && provider.coordinates?.lng) {
+        try {
+          const marker = new window.google.maps.Marker({
+            position: {
+              lat: provider.coordinates.lat,
+              lng: provider.coordinates.lng,
+            },
+            map: map,
+            title: provider.name,
+            icon: {
+              url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+            },
+          });
+
+          console.log("Added provider marker:", provider.name);
+
+          marker.addListener("click", () => {
+            console.log("Provider marker clicked:", provider.name);
+            handleQuickView(provider, "provider");
+            map.panTo(marker.getPosition()!);
+          });
+
+          newMarkers.push(marker);
+        } catch (error) {
+          console.error("Error creating provider marker:", error);
+        }
+      } else {
+        console.log("Provider missing coordinates:", provider.name);
+      }
+    });
+
+    console.log("Total markers added:", newMarkers.length);
+    setMarkers(newMarkers);
+
+    if (newMarkers.length > 0) {
+      const bounds = new window.google.maps.LatLngBounds();
+      newMarkers.forEach((marker) => {
+        bounds.extend(marker.getPosition()!);
+      });
+      map.fitBounds(bounds);
+
+      const listener = google.maps.event.addListenerOnce(
+        map,
+        "bounds_changed",
+        () => {
+          const currentZoom = map.getZoom();
+          if (currentZoom && currentZoom > 11) {
+            map.setZoom(11);
+          }
+        }
+      );
+    }
+  }, [map, locations, providers]);
+
+  const handleTabClick = (tab: string) => {
+    setActiveTab(tab);
+    setView("list");
+    setSelectedItem(null);
+    setSearchQuery("");
+
+    // Update URL with the selected tab
+    if (typeof window !== "undefined") {
+      const url = new URL(window.location.href);
+      url.searchParams.set("tab", tab);
+      window.history.pushState({}, "", url.toString());
+    }
+  };
+
+  const handleQuickView = (item: any, type: string) => {
+    setSelectedItem(item);
+    setView(type === "provider" ? "provider-single" : "location-single");
+  };
+
+  const handleBack = () => {
+    setView("list");
+    setSelectedItem(null);
+  };
+
+  const handleViewProvider = (slug: string) => {
+    window.location.href = `/providers/${slug}`;
+  };
+
+  const handleViewLocation = (slug: string) => {
+    window.location.href = `${slug}`;
+  };
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const renderStars = (rating: number) => {
+    const stars = [];
+    for (let i = 1; i <= 5; i++) {
+      stars.push(
+        <i
+          key={i}
+          className={`f-icon icon-star ${
+            i <= Math.round(rating) ? "active" : ""
+          }`}
+          role="presentation"
+          aria-label="Review Star"
+        ></i>
+      );
+    }
+    return stars;
+  };
+
+  const calculateDistance = (
+    lat1: number,
+    lon1: number,
+    lat2: number,
+    lon2: number
+  ) => {
+    const R = 3958.8;
+    const dLat = ((lat2 - lat1) * Math.PI) / 180;
+    const dLon = ((lon2 - lon1) * Math.PI) / 180;
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos((lat1 * Math.PI) / 180) *
+        Math.cos((lat2 * Math.PI) / 180) *
+        Math.sin(dLon / 2) *
+        Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+  };
+
+  const handleUseMyLocation = () => {
+    if (!navigator.geolocation) {
+      alert("Geolocation is not supported by your browser");
+      return;
+    }
+
+    setIsLocating(true);
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const userLat = position.coords.latitude;
+        const userLng = position.coords.longitude;
+        setUserLocation({ lat: userLat, lng: userLng });
+        setIsLocating(false);
+
+        if (map) {
+          map.setCenter({ lat: userLat, lng: userLng });
+          map.setZoom(11);
+        }
+
+        const locationsWithDistance = locations
+          .map((loc) => ({
+            ...loc,
+            distance:
+              loc.coordinates?.lat && loc.coordinates?.lng
+                ? `${calculateDistance(
+                    userLat,
+                    userLng,
+                    loc.coordinates.lat,
+                    loc.coordinates.lng
+                  ).toFixed(1)} mi`
+                : "N/A",
+          }))
+          .sort((a, b) => {
+            const distA = parseFloat(a.distance);
+            const distB = parseFloat(b.distance);
+            return distA - distB;
+          });
+
+        const providersWithDistance = providers
+          .map((prov) => ({
+            ...prov,
+            distance:
+              prov.coordinates?.lat && prov.coordinates?.lng
+                ? `${calculateDistance(
+                    userLat,
+                    userLng,
+                    prov.coordinates.lat,
+                    prov.coordinates.lng
+                  ).toFixed(1)} mi`
+                : "N/A",
+          }))
+          .sort((a, b) => {
+            const distA = parseFloat(a.distance);
+            const distB = parseFloat(b.distance);
+            return distA - distB;
+          });
+
+        setLocations(locationsWithDistance);
+        setProviders(providersWithDistance);
+        setFilteredLocations(locationsWithDistance);
+        setFilteredProviders(providersWithDistance);
+      },
+      (error) => {
+        setIsLocating(false);
+        alert(
+          "Unable to retrieve your location. Please enable location services."
+        );
+        console.error("Geolocation error:", error);
+      }
+    );
+  };
+
+  useEffect(() => {
+    const contentBody = contentBodyRef.current;
+    const scrollbarHandle = scrollbarHandleRef.current;
+
+    if (!contentBody || !scrollbarHandle) return;
+
+    const updateScrollbar = () => {
+      const scrollPercentage =
+        contentBody.scrollTop /
+        (contentBody.scrollHeight - contentBody.clientHeight);
+      const maxScroll = contentBody.clientHeight - scrollbarHandle.clientHeight;
+      scrollbarHandle.style.top = `${scrollPercentage * maxScroll}px`;
+    };
+
+    const handleScroll = () => {
+      updateScrollbar();
+    };
+
+    contentBody.addEventListener("scroll", handleScroll);
+    updateScrollbar();
+
+    return () => {
+      contentBody.removeEventListener("scroll", handleScroll);
+    };
+  }, [view, activeTab, filteredLocations, filteredProviders, selectedItem]);
+
+  // Get provider-specific locations
+  const getProviderLocations = (provider: any) => {
+    const locationIds = [
+      provider.primaryLocationId,
+      ...provider.additionalLocationIds,
+    ];
+    return locations.filter((loc) => locationIds.includes(loc.id));
+  };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (view === "provider-single" && selectedItem) {
+    const providerLocations = getProviderLocations(selectedItem);
+
+    return (
+      <main id="main">
+        <div className="mod_locator" data-s3-module="">
+          <div className="locator">
+            <section className="content-section">
+              <div className="content-header">
+                <div className="menu">
+                  <div className="menu-icon">
+                    <img
+                      draggable="false"
+                      src="https://i.postimg.cc/fW9XZbTX/search.png"
+                      alt="Search"
+                    />
                   </div>
-                </li>
-              </ul>
-            </nav>
+                  <div
+                    className="menu-item"
+                    data-id="locations"
+                    onClick={() => handleTabClick("locations")}
+                  >
+                    <h1>Locations</h1>
+                  </div>
+                  <div className="menu-item active" data-id="providers">
+                    <h2>Providers</h2>
+                  </div>
+                </div>
+                <div className="breadcrumb"></div>
+                <div
+                  className="use-my-location"
+                  onClick={handleUseMyLocation}
+                  style={{ cursor: "pointer" }}
+                >
+                  <div className="use-my-location-icon" title="Use my location">
+                    <img
+                      src="https://i.postimg.cc/tCzsCn0q/crosshair.png"
+                      alt="Use my location"
+                    />
+                    <div
+                      className={`use-my-location-icon-loader${
+                        isLocating ? " active" : ""
+                      }`}
+                    >
+                      &nbsp;
+                    </div>
+                  </div>
+                  <div className="use-my-location-label">
+                    <div>Use My Location</div>
+                  </div>
+                </div>
+                <div className="search">
+                  <div className="search-wrapper">
+                    <input
+                      id="google-search-input"
+                      name="google-search-input"
+                      className="google-search-input pac-target-input"
+                      placeholder="Search by address or zip code"
+                      defaultValue=""
+                      autoComplete="off"
+                    />
+                    <input
+                      id="provider-search-input"
+                      name="provider-search-input"
+                      className="provider-search-input"
+                      placeholder="Search by provider name"
+                      defaultValue=""
+                    />
+                    <div className="filter-pill">
+                      <div className="name">Clear Lake</div>
+                      <div className="close">✖</div>
+                    </div>
+                    <div
+                      className="search-results-snippet active back"
+                      onClick={handleBack}
+                    >
+                      &lt; Back
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="content-body" ref={contentBodyRef}>
+                <div className="result-detail active providers">
+                  <div className="result location">
+                    <div className="result-content">
+                      <div className="background">
+                        <img
+                          className="detail-background"
+                          draggable="false"
+                          src={
+                            selectedItem.backgroundImage ||
+                            "https://www.datocms-assets.com/105497/1694093825-clermont.jpg?auto=format,compress&w=1000"
+                          }
+                          alt="background"
+                          role=""
+                        />
+                        <img
+                          className="detail-picture"
+                          draggable="false"
+                          src={selectedItem.image}
+                          alt={selectedItem.name}
+                        />
+                      </div>
+                      <div className="foreground">
+                        <div
+                          className="quick-view-button"
+                          onClick={() => handleViewProvider(selectedItem.slug)}
+                        >
+                          View Provider
+                        </div>
+                        <div className="top-right">
+                          <div className="reviews-stars">
+                            {renderStars(selectedItem.reviews?.rating || 0)}
+                          </div>
+                          <div className="reviews-text">
+                            {selectedItem.reviews?.count || 0} Reviews
+                          </div>
+                        </div>
+                        <div className="bottom-left">
+                          <div className="heading">{selectedItem.name}</div>
+                          <div className="subheading-row">
+                            <div>
+                              <div className="location-icon">
+                                <img
+                                  src="/assets/images/location.png"
+                                  alt="Location"
+                                />
+                              </div>
+                              <div className="location-distance">
+                                {selectedItem.distance}
+                              </div>
+                            </div>
+                            <div className="view-relations">
+                              <div className="relations-amount">1</div>
+                              <div className="relations-text">
+                                View Location
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="bottom-right">
+                          <div className="location-name">
+                            {selectedItem.locationName}
+                          </div>
+                          <div className="location-distance-wrapper">
+                            <div className="location-icon">
+                              <img
+                                src="/assets/images/location.png"
+                                alt="Location"
+                              />
+                            </div>
+                            <div className="location-distance">
+                              {selectedItem.distance}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="result-footer">
+                      <div className="left">
+                        <div className="address">{selectedItem.address}</div>
+                        <a
+                          className="get-directions"
+                          href={
+                            selectedItem.googleMaps ||
+                            `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selectedItem.address)}`
+                          }
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ cursor: "pointer", color: "#fff" }}
+                        >
+                          Get Directions&gt;
+                        </a>
+                        {/* <div className="get-directions">Get Directions&gt;</div> */}
+                        <div className="hours hidden">Business Hours&gt;</div>
+                      </div>
+                      <div className="right">
+                        <div
+                          className="cta-button schedule"
+                          data-type="provider"
+                          data-id={selectedItem.id}
+                          style={{ display: "none" }}
+                        >
+                          Schedule
+                        </div>
+                        <a
+                          className="tel ppc-href"
+                          href={`tel:${selectedItem.phone.replace(
+                            /[^0-9]/g,
+                            ""
+                          )}`}
+                        >
+                          {selectedItem.phone}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="results">
+                  <div className="results-container locations">
+                    {providerLocations.slice(0, 1).map((location) => (
+                      <div
+                        key={location.id}
+                        className="result location"
+                        data-type="location"
+                        data-id={location.id}
+                      >
+                        <div className="result-content">
+                          <div className="background">
+                            <img
+                              draggable="false"
+                              src={location.image}
+                              alt={location.alt}
+                            />
+                          </div>
+                          <div className="foreground">
+                            <div
+                              className="quick-view-button"
+                              onClick={() =>
+                                handleQuickView(location, "location")
+                              }
+                            >
+                              Quick View
+                            </div>
+                            <div className="bottom-left">{location.name}</div>
+                            <div className="bottom-right">
+                              <div className="distance-icon">
+                                <img
+                                  src="/assets/images/location.png"
+                                  alt="Location"
+                                />
+                              </div>
+                              <div className="distance"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="result-footer">
+                          <div className="left">
+                            <div
+                              className="cta-button schedule"
+                              data-type="location"
+                              data-id={location.id}
+                            >
+                              Schedule
+                            </div>
+                            <div
+                              className="cta-link location"
+                              data-type="location"
+                              data-id={location.id}
+                            >
+                              View Location
+                            </div>
+                          </div>
+                          <div className="right has-number">
+                            <div className="icon-text">
+                              <div className="result-footer-icon">
+                                <img
+                                  src="/assets/images/web.png"
+                                  alt="View Location"
+                                />
+                              </div>
+                              <div
+                                className="text view-website"
+                                data-id={location.id}
+                                data-type="location"
+                              >
+                                View Location
+                              </div>
+                            </div>
+                            <div className="detail-phone-number">
+                              <a
+                                className="tel ppc-href"
+                                href={`tel:+1${location.phone.replace(
+                                  /[^0-9]/g,
+                                  ""
+                                )}`}
+                                data-number={location.phone}
+                                data-id={location.id}
+                              >
+                                <span className="ppc-number">
+                                  {location.phone}
+                                </span>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="results-container providers">
+                    {providers.slice(0, 1).map((provider) => (
+                      <div
+                        key={provider.id}
+                        className="result provider active"
+                        data-type="provider"
+                        data-id={provider.id}
+                      >
+                        <div className="result-content">
+                          <div className="background">
+                            <img
+                              className="provider-background"
+                              draggable="false"
+                              src="/assets/images/provider-background.jpg?auto=format,compress&w=400"
+                              alt={provider.name}
+                            />
+                            <img
+                              className="provider-picture"
+                              draggable="false"
+                              src={provider.image}
+                              alt={provider.name}
+                            />
+                          </div>
+                          <div className="foreground">
+                            <div
+                              className="quick-view-button"
+                              onClick={() =>
+                                handleQuickView(provider, "provider")
+                              }
+                            >
+                              Quick View
+                            </div>
+                            <div className="bottom-left">
+                              {provider.name}{" "}
+                              <span className="small">{provider.title}</span>
+                            </div>
+                            <div className="bottom-right">
+                              <div className="distance">
+                                {provider.distance}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="result-footer">
+                          <div className="left">
+                            <div className="icon-text">
+                              <div className="result-footer-icon">
+                                <img
+                                  src="https://i.postimg.cc/9Qrc5DC1/web.png"
+                                  alt="View Location"
+                                />
+                              </div>
+                              <div
+                                className="text view-website"
+                                data-id={provider.id}
+                                data-type="provider"
+                              >
+                                View Provider
+                              </div>
+                            </div>
+                          </div>
+                          <div className="right show-number">
+                            <div
+                              className="cta-button schedule"
+                              data-type="provider"
+                              data-id={provider.id}
+                            >
+                              Schedule
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="carousel active">
+                  <div
+                    className="left-arrow"
+                    aria-controls="tns2"
+                    tabIndex={-1}
+                    data-controls="prev"
+                  >
+                    ▸
+                  </div>
+                  <p className="carousel-heading">More Locations Near You</p>
+                  <div className="carousel-content">
+                    <div className="carousel-content-inner">
+                      {providerLocations.map((location, index) => (
+                        <div
+                          key={location.id}
+                          className={`carousel-item tns-item${
+                            index === 0 ? " tns-slide-active active" : ""
+                          }`}
+                          data-id={location.id}
+                          data-type="location"
+                          id={`tns2-item${index}`}
+                        >
+                          <div
+                            className="carousel-item-image-wrapper"
+                            data-id={location.id}
+                            data-type="location"
+                            onClick={() =>
+                              handleQuickView(location, "location")
+                            }
+                            style={{ cursor: "pointer" }}
+                          >
+                            <img
+                              className="carousel-item-image"
+                              src={location.image}
+                              alt={location.alt}
+                            />
+                          </div>
+                          <div
+                            className="cta-button schedule"
+                            data-type="location"
+                            data-id={location.id}
+                          >
+                            Schedule
+                          </div>
+                          <div className="carousel-item-name">
+                            {location.name}
+                          </div>
+                          {/* <div className="carousel-item-distance"></div> */}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div
+                    className="right-arrow"
+                    aria-controls="tns2"
+                    tabIndex={-1}
+                    data-controls="next"
+                  >
+                    ▸
+                  </div>
+                </div>
+
+                <div className="content-body-scrollbar active">
+                  <div className="content-body-scrollbar-line"></div>
+                  <div
+                    ref={scrollbarHandleRef}
+                    className="content-body-scrollbar-handle"
+                    style={{ height: "78%", top: "0%" }}
+                  ></div>
+                </div>
+              </div>
+            </section>
+
+            <section className="map-section" style={{ overflow: "hidden" }}>
+              <div
+                ref={mapRef}
+                style={{
+                  height: "100%",
+                  width: "100%",
+                  position: "absolute",
+                  top: "0px",
+                  left: "0px",
+                }}
+              ></div>
+            </section>
+
+            <section className="mobile-footer-tabs">
+              <div className="mobile-footer-tab active" data-action="details">
+                Details
+              </div>
+              <div className="mobile-footer-tab" data-action="map">
+                Map
+              </div>
+            </section>
           </div>
         </div>
+      </main>
+    );
+  }
+
+  if (view === "location-single" && selectedItem) {
+    const otherLocations = locations.filter((l) => l.id !== selectedItem.id);
+
+    return (
+      <main id="main">
+        <div className="mod_locator" data-s3-module="">
+          <div className="locator">
+            <section className="content-section">
+              <div className="content-header">
+                <div className="menu">
+                  <div className="menu-icon">
+                    <img
+                      draggable="false"
+                      src="https://i.postimg.cc/fW9XZbTX/search.png"
+                      alt="Search"
+                    />
+                  </div>
+                  <div className="menu-item active" data-id="locations">
+                    <h1>Locations</h1>
+                  </div>
+                  <div
+                    className="menu-item"
+                    data-id="providers"
+                    onClick={() => handleTabClick("providers")}
+                  >
+                    <h2>Providers</h2>
+                  </div>
+                </div>
+                <div className="breadcrumb"></div>
+                <div
+                  className="use-my-location"
+                  onClick={handleUseMyLocation}
+                  style={{ cursor: "pointer" }}
+                >
+                  <div className="use-my-location-icon" title="Use my location">
+                    <img
+                      src="https://i.postimg.cc/tCzsCn0q/crosshair.png"
+                      alt="Use my location"
+                    />
+                    <div
+                      className={`use-my-location-icon-loader${
+                        isLocating ? " active" : ""
+                      }`}
+                    >
+                      &nbsp;
+                    </div>
+                  </div>
+                  <div className="use-my-location-label">
+                    <div>Use My Location</div>
+                  </div>
+                </div>
+                <div className="search">
+                  <div className="search-wrapper">
+                    <input
+                      id="google-search-input"
+                      name="google-search-input"
+                      className="google-search-input pac-target-input active"
+                      placeholder="Search by address or zip code"
+                      defaultValue=""
+                      autoComplete="off"
+                    />
+                    <input
+                      id="provider-search-input"
+                      name="provider-search-input"
+                      className="provider-search-input"
+                      placeholder="Search by provider name"
+                      defaultValue=""
+                    />
+                    <div className="filter-pill">
+                      <div className="name">Clear Lake</div>
+                      <div className="close">✖</div>
+                    </div>
+                    <div
+                      className="search-results-snippet active back"
+                      onClick={handleBack}
+                    >
+                      &lt; Back
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="content-body" ref={contentBodyRef}>
+                <div className="result-detail active locations">
+                  <div className="result location">
+                    <div className="result-content">
+                      <div className="background">
+                        <img
+                          className="detail-background"
+                          draggable="false"
+                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                          alt=""
+                          role="presentation"
+                        />
+                        <img
+                          className="detail-picture"
+                          draggable="false"
+                          src={selectedItem.image}
+                          alt={selectedItem.alt}
+                        />
+                      </div>
+                      <div className="foreground">
+                        <div
+                          className="quick-view-button"
+                          onClick={() => handleViewLocation(selectedItem.slug)}
+                        >
+                          View Location
+                        </div>
+                        <div className="top-right active">
+                          <div className="reviews-stars">
+                            {renderStars(selectedItem.reviews?.rating || 0)}
+                          </div>
+                          <div className="reviews-text">
+                            {selectedItem.reviews?.count || 0} Reviews
+                          </div>
+                        </div>
+                        <div className="bottom-left">
+                          <div className="heading">{selectedItem.name}</div>
+                          <div className="subheading-row">
+                            <div>
+                              <div className="location-icon active">
+                                <img
+                                  src="/assets/images/location.png"
+                                  alt="Location"
+                                />
+                              </div>
+                              {/* <div className="location-distance"></div> */}
+                            </div>
+                            <div className="view-relations">
+                              <div className="relations-amount">
+                                {
+                                  providers.filter(
+                                    (p) => p.locationName === selectedItem.name
+                                  ).length
+                                }
+                              </div>
+                              <div className="relations-text">
+                                View Provider
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="bottom-right">
+                          <div className="location-name">&nbsp;</div>
+                          <div className="location-distance-wrapper">
+                            <div className="location-icon active">
+                              <img
+                                src="/assets/images/location.png"
+                                alt="Location"
+                              />
+                            </div>
+                            {/* <div className="location-distance"></div> */}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="result-footer">
+                      <div className="left">
+                        <div className="address">{selectedItem.address}</div>
+                        <a
+                          className="get-directions"
+                          href={
+                            selectedItem.googleMaps ||
+                            `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selectedItem.address)}`
+                          }
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ cursor: "pointer", color: "#fff" }}
+                        >
+                          Get Directions&gt;
+                        </a>
+                        {/* <div className="get-directions">Get Directions&gt;</div> */}
+                        <div className="hours hidden">Business Hours&gt;</div>
+                      </div>
+                      <div className="right">
+                        <div
+                          className="cta-button schedule"
+                          data-type="location"
+                          data-id={selectedItem.id}
+                          style={{ display: "block" }}
+                        >
+                          Schedule
+                        </div>
+                        <a
+                          className="tel ppc-href"
+                          href={`tel:${selectedItem.phone.replace(
+                            /[^0-9]/g,
+                            ""
+                          )}`}
+                        >
+                          {selectedItem.phone}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="results">
+                  <div className="results-container locations">
+                    {locations.slice(0, 3).map((location) => (
+                      <div
+                        key={location.id}
+                        className={`result location ${
+                          location.id === selectedItem.id ? "active" : ""
+                        }`}
+                        data-type="location"
+                        data-id={location.id}
+                      >
+                        <div className="result-content">
+                          <div className="background">
+                            <img
+                              draggable="false"
+                              src={location.image}
+                              alt={location.alt}
+                            />
+                          </div>
+                          <div className="foreground">
+                            <div
+                              className="quick-view-button"
+                              onClick={() =>
+                                handleQuickView(location, "location")
+                              }
+                            >
+                              Quick View
+                            </div>
+                            <div className="bottom-left">{location.name}</div>
+                            <div className="bottom-right">
+                              <div className="distance-icon">
+                                <img
+                                  src="/assets/images/location.png"
+                                  alt="Location"
+                                />
+                              </div>
+                              <div className="distance"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="result-footer">
+                          <div className="left">
+                            <div
+                              className="cta-button schedule"
+                              data-type="location"
+                              data-id={location.id}
+                            >
+                              Schedule
+                            </div>
+                            <div
+                              className="cta-link location"
+                              data-type="location"
+                              data-id={location.id}
+                            >
+                              View Location
+                            </div>
+                          </div>
+                          <div className="right has-number show-number">
+                            <div className="icon-text">
+                              <div className="result-footer-icon">
+                                <img
+                                  src="https://i.postimg.cc/9Qrc5DC1/web.png"
+                                  alt="View Location"
+                                />
+                              </div>
+                              <div
+                                className="text view-website"
+                                data-id={location.id}
+                                data-type="location"
+                              >
+                                View Location
+                              </div>
+                            </div>
+                            <div className="detail-phone-number">
+                              <a
+                                className="tel ppc-href"
+                                href={`tel:+1${location.phone.replace(
+                                  /[^0-9]/g,
+                                  ""
+                                )}`}
+                                data-number={location.phone}
+                                data-id={location.id}
+                              >
+                                <span className="ppc-number">
+                                  {location.phone}
+                                </span>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="results-container providers">
+                    {providers.slice(0, 2).map((provider) => (
+                      <div
+                        key={provider.id}
+                        className="result provider active"
+                        data-type="provider"
+                        data-id={provider.id}
+                      >
+                        <div className="result-content">
+                          <div className="background">
+                            <img
+                              className="provider-background"
+                              draggable="false"
+                              src="/assets/images/provider-background.jpg?auto=format,compress&amp;w=400"
+                              alt={provider.name}
+                            />
+                            <img
+                              className="provider-picture"
+                              draggable="false"
+                              src={provider.image}
+                              alt={provider.name}
+                            />
+                          </div>
+                          <div className="foreground">
+                            <div
+                              className="quick-view-button"
+                              onClick={() =>
+                                handleQuickView(provider, "provider")
+                              }
+                            >
+                              Quick View
+                            </div>
+                            <div className="bottom-left">
+                              {provider.name}{" "}
+                              <span className="small">{provider.title}</span>
+                            </div>
+                            <div className="bottom-right">
+                              <div className="distance">
+                                {provider.distance}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="result-footer">
+                          <div className="left">
+                            <div className="icon-text">
+                              <div className="result-footer-icon">
+                                <img
+                                  src="https://i.postimg.cc/9Qrc5DC1/web.png"
+                                  alt="View Location"
+                                />
+                              </div>
+                              <div
+                                className="text view-website"
+                                data-id={provider.id}
+                                data-type="provider"
+                              >
+                                View Provider
+                              </div>
+                            </div>
+                          </div>
+                          <div className="right show-number">
+                            <div
+                              className="cta-button schedule"
+                              data-type="provider"
+                              data-id={provider.id}
+                            >
+                              Schedule
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="content-body-scrollbar active">
+                  <div className="content-body-scrollbar-line"></div>
+                  <div
+                    ref={scrollbarHandleRef}
+                    className="content-body-scrollbar-handle"
+                    style={{ height: "13%", top: "0%" }}
+                  ></div>
+                </div>
+              </div>
+            </section>
+            <section className="map-section">
+              <div
+                ref={mapRef}
+                style={{
+                  height: "100%",
+                  width: "100%",
+                  position: "absolute",
+                  top: "0px",
+                  left: "0px",
+                }}
+              ></div>
+            </section>
+          </div>
+        </div>
+      </main>
+    );
+  }
+
+  return (
+    <main id="main">
+      <div className="mod_locator" data-s3-module="">
+        <div className="locator">
+          <section className="content-section">
+            <div className="content-header">
+              <div className="menu">
+                <div className="menu-icon">
+                  <img
+                    draggable="false"
+                    src="https://i.postimg.cc/fW9XZbTX/search.png"
+                    alt="Search"
+                  />
+                </div>
+                <div
+                  className={`menu-item ${
+                    activeTab === "locations" ? "active" : ""
+                  }`}
+                  data-id="locations"
+                  onClick={() => handleTabClick("locations")}
+                >
+                  <h1>Locations</h1>
+                </div>
+                <div
+                  className={`menu-item ${
+                    activeTab === "providers" ? "active" : ""
+                  }`}
+                  data-id="providers"
+                  onClick={() => handleTabClick("providers")}
+                >
+                  <h2>Providers</h2>
+                </div>
+              </div>
+              <div className="breadcrumb"></div>
+              <div className="use-my-location">
+                <div className="use-my-location-icon" title="Use my location">
+                  <img
+                    src="https://i.postimg.cc/tCzsCn0q/crosshair.png"
+                    alt="Use my location"
+                  />
+                  <div className="use-my-location-icon-loader">&nbsp;</div>
+                </div>
+                <div className="use-my-location-label">
+                  <div>Use My Location</div>
+                </div>
+              </div>
+              <div className="search">
+                <div className="search-wrapper">
+                  <input
+                    id="google-search-input"
+                    name="google-search-input"
+                    className={`google-search-input pac-target-input ${
+                      activeTab === "locations" ? "active" : ""
+                    }`}
+                    placeholder="Search by address or zip code"
+                    value={activeTab === "locations" ? searchQuery : ""}
+                    onChange={handleSearchChange}
+                    autoComplete="off"
+                  />
+                  <input
+                    id="provider-search-input"
+                    name="provider-search-input"
+                    className={`provider-search-input ${
+                      activeTab === "providers" ? "active" : ""
+                    }`}
+                    placeholder="Search by provider name"
+                    value={activeTab === "providers" ? searchQuery : ""}
+                    onChange={handleSearchChange}
+                  />
+
+                  <div className="filter-pill">
+                    <div className="name">Clear Lake</div>
+                    <div className="close">✖</div>
+                  </div>
+                  <div className="search-results-snippet active">
+                    {activeTab === "providers"
+                      ? `${filteredProviders.length} Providers`
+                      : `${filteredLocations.length} Locations`}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-body">
+              <div
+                className={`result-detail ${
+                  activeTab === "providers" ? "providers" : "locations"
+                }`}
+              >
+                <div className="result location">
+                  <div className="result-content">
+                    <div className="background">
+                      <img
+                        className="detail-background"
+                        draggable="false"
+                        src=""
+                        alt=""
+                      />
+                      <img
+                        className="detail-picture"
+                        draggable="false"
+                        src=""
+                        alt=""
+                      />
+                    </div>
+                    <div className="foreground">
+                      <div className="quick-view-button">View Website</div>
+                      <div className="top-right">
+                        <div className="reviews-stars">
+                          <i
+                            className="f-icon icon-star active"
+                            role="presentation"
+                            aria-label="Review Star"
+                          ></i>
+                          <i
+                            className="f-icon icon-star"
+                            role="presentation"
+                            aria-label="Review Star"
+                          ></i>
+                          <i
+                            className="f-icon icon-star"
+                            role="presentation"
+                            aria-label="Review Star"
+                          ></i>
+                          <i
+                            className="f-icon icon-star"
+                            role="presentation"
+                            aria-label="Review Star"
+                          ></i>
+                          <i
+                            className="f-icon icon-star"
+                            role="presentation"
+                            aria-label="Review Star"
+                          ></i>
+                        </div>
+                        <div className="reviews-text">0 Reviews</div>
+                      </div>
+                      <div className="bottom-left">
+                        <div className="heading">Clearwater</div>
+                        <div className="subheading-row">
+                          <div>
+                            <div className="location-icon">
+                              <img
+                                src="/assets/images/location.png"
+                                alt="Location"
+                              />
+                            </div>
+                            <div className="location-distance">&nbsp;</div>
+                          </div>
+                          <div className="view-relations">
+                            <div className="relations-amount"></div>
+                            <div className="relations-text"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="bottom-right">
+                        <div className="location-name">&nbsp;</div>
+                        <div className="location-distance-wrapper">
+                          <div className="location-icon">
+                            <img
+                              src="/assets/images/location.png"
+                              alt="Location"
+                            />
+                          </div>
+                          <div className="location-distance">&nbsp;</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="result-footer">
+                    <div className="left">
+                      <div className="address">
+                        2745 Fl-580 Suite 101, Clearwater, FL 33761
+                      </div>
+                      <div className="get-directions">Get Directions&gt;</div>
+                      <div className="hours">Business Hours&gt;</div>
+                    </div>
+                    <div className="right">
+                      <div className="cta-button schedule">
+                        Schedule Appointment
+                      </div>
+                      <a className="tel ppc-href" href="tel:+17273789338">
+                        <span className="ppc-number">(727) 378-9338</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="results">
+                <div
+                  className={`results-container locations ${
+                    activeTab === "locations" ? "active" : ""
+                  }`}
+                >
+                  {filteredLocations.map((location) => (
+                    <div
+                      key={location.id}
+                      className="result location active"
+                      data-type="location"
+                      data-id={location.id}
+                    >
+                      <div className="result-content">
+                        <div className="background">
+                          <img
+                            draggable="false"
+                            src={location.image}
+                            alt={location.alt}
+                          />
+                        </div>
+                        <div className="foreground">
+                          <div
+                            className="quick-view-button"
+                            onClick={() =>
+                              handleQuickView(location, "location")
+                            }
+                            style={{ cursor: "pointer" }}
+                          >
+                            Quick View
+                          </div>
+                          <div className="bottom-left">{location.name}</div>
+                          <div className="bottom-right">
+                            <div className="distance-icon">
+                              <img
+                                src="/assets/images/location.png"
+                                alt="Location"
+                              />
+                            </div>
+                            <div className="distance"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="result-footer">
+                        <div className="left">
+                          <div
+                            className="cta-button schedule"
+                            data-type="location"
+                            data-id={location.id}
+                          >
+                            Schedule
+                          </div>
+                          <div
+                            className="cta-link location"
+                            data-type="location"
+                            data-id={location.id}
+                            onClick={() => handleViewLocation(location.slug)}
+                            style={{ cursor: "pointer" }}
+                          >
+                            View Location
+                          </div>
+                        </div>
+                        <div className="right has-number">
+                          <div className="icon-text">
+                            <div className="result-footer-icon">
+                              <img
+                                src="https://i.postimg.cc/9Qrc5DC1/web.png"
+                                alt="View Location"
+                              />
+                            </div>
+                            <div
+                              className="text view-website"
+                              data-id={location.id}
+                              data-type="location"
+                              onClick={() => handleViewLocation(location.slug)}
+                              style={{ cursor: "pointer" }}
+                            >
+                              View Location
+                            </div>
+                          </div>
+                          <div className="detail-phone-number">
+                            <a
+                              className="tel ppc-href"
+                              href={`tel:+1${location.phone.replace(
+                                /[^0-9]/g,
+                                ""
+                              )}`}
+                              data-number={location.phone}
+                              data-id={location.id}
+                            >
+                              <span className="ppc-number">
+                                {location.phone}
+                              </span>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div
+                  className={`results-container providers ${
+                    activeTab === "providers" ? "active" : ""
+                  }`}
+                >
+                  {filteredProviders.map((provider) => (
+                    <div
+                      key={provider.id}
+                      className="result provider active"
+                      data-type="provider"
+                      data-id={provider.id}
+                    >
+                      <div className="result-content">
+                        <div className="background">
+                          <img
+                            className="provider-background"
+                            draggable="false"
+                            src="/assets/images/provider-background.jpg?auto=format,compress&w=400"
+                            alt={provider.name}
+                          />
+                          <img
+                            className="provider-picture"
+                            draggable="false"
+                            src={provider.image}
+                            alt={provider.name}
+                          />
+                        </div>
+                        <div className="foreground">
+                          <div
+                            className="quick-view-button"
+                            onClick={() =>
+                              handleQuickView(provider, "provider")
+                            }
+                          >
+                            Quick View
+                          </div>
+                          <div className="bottom-left">
+                            {provider.name}{" "}
+                            <span className="small">{provider.title}</span>
+                          </div>
+                          <div className="bottom-right">
+                            <div className="distance">{provider.distance}</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="result-footer">
+                        <div className="left">
+                          <div className="icon-text">
+                            <div className="result-footer-icon">
+                              <img
+                                src="https://i.postimg.cc/9Qrc5DC1/web.png"
+                                alt="View Location"
+                              />
+                            </div>
+                            <div
+                              className="text view-website"
+                              data-id={provider.id}
+                              data-type="provider"
+                              onClick={() => handleViewProvider(provider.slug)}
+                            >
+                              View Provider
+                            </div>
+                          </div>
+                        </div>
+                        <div className="right show-number">
+                          <div
+                            className="cta-button schedule"
+                            data-type="provider"
+                            data-id={provider.id}
+                          >
+                            Schedule
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="content-body-scrollbar active">
+                <div className="content-body-scrollbar-line"></div>
+                <div
+                  ref={scrollbarHandleRef}
+                  className="content-body-scrollbar-handle"
+                  style={{ height: "17%", top: "0%" }}
+                ></div>
+              </div>
+            </div>
+          </section>
+
+          <section className="map-section" style={{ overflow: "hidden" }}>
+            <div
+              ref={mapRef}
+              style={{
+                height: "100%",
+                width: "100%",
+                position: "absolute",
+                top: "0px",
+                left: "0px",
+              }}
+            ></div>
+          </section>
+
+          <section className="mobile-footer-tabs">
+            <div className="mobile-footer-tab active" data-action="details">
+              Details
+            </div>
+            <div className="mobile-footer-tab" data-action="map">
+              Map
+            </div>
+          </section>
+        </div>
       </div>
-    </header>
+    </main>
   );
-}
+};
+
+export default ProviderLocator;

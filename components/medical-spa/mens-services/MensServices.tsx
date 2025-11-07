@@ -1848,11 +1848,524 @@
 
 // // export default MensServices;
 
+// "use client";
+
+// import React, { useEffect, useState } from "react";
+// import {
+//   fetchMensFillersPageData,
+//   getResponsiveImageUrls,
+//   lexicalToHtml,
+// } from "@/lib/api/medicalSpa/fetchMensServicesPageComponent";
+
+// interface MensServicesData {
+//   heroSection: {
+//     show: boolean;
+//     backgroundColor?: string;
+//     backgroundImage: any;
+//     breadcrumbs: Array<{ label: string; url: string; ariaLabel?: string }>;
+//     title: string;
+//     titleColor?: string;
+//     titleFontSize?: string;
+//     description?: any;
+//     descriptionColor?: string;
+//     ctaButton: {
+//       show: boolean;
+//       text: string;
+//       url: string;
+//       backgroundColor?: string;
+//       textColor?: string;
+//       hoverBackgroundColor?: string;
+//     };
+//     mediaImage: any;
+//   };
+//   introSection: {
+//     show: boolean;
+//     backgroundColor?: string;
+//     textColor?: string;
+//     logo?: any;
+//     logoAlt?: string;
+//     heading: string;
+//     headingColor?: string;
+//     content: any;
+//   };
+//   bannerSection1: {
+//     show: boolean;
+//     backgroundColor?: string;
+//     textColor?: string;
+//     backgroundImage: any;
+//     isDark?: boolean;
+//     heading: string;
+//     headingColor?: string;
+//     content?: any;
+//     bulletPoints?: Array<{ text: string }>;
+//   };
+//   columnSection1: {
+//     show: boolean;
+//     backgroundColor?: string;
+//     textColor?: string;
+//     paddingTop?: string;
+//     paddingBottom?: string;
+//     heading: string;
+//     headingColor?: string;
+//     content?: any;
+//   };
+//   bannerSection2: {
+//     show: boolean;
+//     backgroundColor?: string;
+//     textColor?: string;
+//     backgroundImage: any;
+//     isDark?: boolean;
+//     heading: string;
+//     headingColor?: string;
+//     content?: any;
+//     useColumnLayout?: boolean;
+//     bulletPoints?: Array<{ text: string }>;
+//   };
+//   columnSection2: {
+//     show: boolean;
+//     backgroundColor?: string;
+//     textColor?: string;
+//     mediaPosition?: string;
+//     paddingTop?: string;
+//     paddingBottom?: string;
+//     heading: string;
+//     headingColor?: string;
+//     content?: any;
+//     bulletPoints?: Array<{ text: string }>;
+//     mediaImage: any;
+//   };
+//   halfImageSection: {
+//     show: boolean;
+//     backgroundColor?: string;
+//     textColor?: string;
+//     imagePosition?: string;
+//     verticalAlignment?: string;
+//     paddingTop?: string;
+//     paddingBottom?: string;
+//     smallHeading?: string;
+//     heading: string;
+//     headingColor?: string;
+//     content?: any;
+//     contentPadded?: boolean;
+//     image: any;
+//   };
+//   globalStyles?: any;
+//   buttonStyles?: any;
+// }
+
+// const MensServices: React.FC = () => {
+//   const [pageData, setPageData] = useState<MensServicesData | null>(null);
+//   const [loading, setLoading] = useState(true);
+
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       try {
+//         const data = await fetchMensFillersPageData(
+//           "mens-services-page-component"
+//         );
+//         setPageData(data);
+//       } catch (error) {
+//         console.error("Error fetching MensServices page data:", error);
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
+//     fetchData();
+//   }, []);
+
+//   if (loading) return <div>Loading...</div>;
+//   if (!pageData) return <div>No data available</div>;
+
+//   const {
+//     heroSection,
+//     introSection,
+//     bannerSection1,
+//     columnSection1,
+//     bannerSection2,
+//     columnSection2,
+//     halfImageSection,
+//     globalStyles = {},
+//     buttonStyles = {},
+//   } = pageData;
+
+//   const heroBgImages = heroSection.show
+//     ? getResponsiveImageUrls(heroSection.backgroundImage)
+//     : {};
+//   const heroMediaImages = heroSection.show
+//     ? getResponsiveImageUrls(heroSection.mediaImage)
+//     : {};
+//   const banner1Images = bannerSection1.show
+//     ? getResponsiveImageUrls(bannerSection1.backgroundImage)
+//     : {};
+//   const banner2Images = bannerSection2.show
+//     ? getResponsiveImageUrls(bannerSection2.backgroundImage)
+//     : {};
+//   const column2MediaImages = columnSection2.show
+//     ? getResponsiveImageUrls(columnSection2.mediaImage)
+//     : {};
+//   const halfImages = halfImageSection.show
+//     ? getResponsiveImageUrls(halfImageSection.image)
+//     : {};
+
+//   return (
+//     <main id="main">
+//       {/* Page Layout */}
+//       {/* Hero Module */}
+//       {heroSection.show && (
+//         <div className="mod_hero banner mobile-stack" data-s3-module>
+//           <div className="wrapper">
+//             <picture className="background">
+//               <source media="(max-width:420px)" srcSet={heroBgImages.mobile} />
+//               <source media="(max-width:800px)" srcSet={heroBgImages.tablet} />
+//               <source
+//                 media="(max-width:1400px)"
+//                 srcSet={heroBgImages.desktop}
+//               />
+//               <source srcSet={heroBgImages.large} />
+//               <img
+//                 src={heroBgImages.large}
+//                 loading="lazy"
+//                 alt={heroBgImages.alt || "Background Texture"}
+//                 draggable="false"
+//               />
+//             </picture>
+//             <div className="row">
+//               <div className="inner">
+//                 <ul className="partial_breadcrumb" data-s3-partial>
+//                   {heroSection.breadcrumbs.map((crumb, index) => (
+//                     <li key={index}>
+//                       <a
+//                         href={crumb.url}
+//                         role="link"
+//                         aria-label={
+//                           crumb.ariaLabel ||
+//                           "Breadcrumbs to help navigate the user"
+//                         }
+//                       >
+//                         {crumb.label}
+//                       </a>
+//                     </li>
+//                   ))}
+//                 </ul>
+//                 <h1>{heroSection.title}</h1>
+//                 <div className="text">
+//                   <div
+//                     dangerouslySetInnerHTML={{
+//                       __html: lexicalToHtml(heroSection.description),
+//                     }}
+//                   />
+//                   {heroSection.ctaButton.show && (
+//                     <p>
+//                       <a
+//                         className="btn white"
+//                         href={heroSection.ctaButton.url}
+//                         role="button"
+//                       >
+//                         {heroSection.ctaButton.text}
+//                       </a>
+//                     </p>
+//                   )}
+//                 </div>
+//               </div>
+//             </div>
+//             <div className="media">
+//               <picture className="background">
+//                 <source
+//                   media="(max-width:420px)"
+//                   srcSet={heroMediaImages.mobile}
+//                 />
+//                 <source
+//                   media="(max-width:800px)"
+//                   srcSet={heroMediaImages.tablet}
+//                 />
+//                 <source
+//                   media="(max-width:1400px)"
+//                   srcSet={heroMediaImages.desktop}
+//                 />
+//                 <source srcSet={heroMediaImages.large} />
+//                 <img
+//                   src={heroMediaImages.large}
+//                   alt={heroMediaImages.alt || "Brunette man smiling"}
+//                   draggable="false"
+//                 />
+//               </picture>
+//             </div>
+//           </div>
+//         </div>
+//       )}
+
+//       {/* Intro Module */}
+//       {introSection.show && (
+//         <div
+//           className="mod_intro container viewport option-1 wide wow fadeInUp"
+//           data-s3-module
+//         >
+//           <div className="row ">
+//             {introSection.logo && (
+//               <picture className="logo">
+//                 <img
+//                   src={getResponsiveImageUrls(introSection.logo).large}
+//                   loading="lazy"
+//                   alt={introSection.logoAlt || "Goldfingers aesthetic logo"}
+//                   draggable="false"
+//                   data-api-key="logo"
+//                 />
+//               </picture>
+//             )}
+//             <div className="inner" data-api-key="content">
+//               <h2>{introSection.heading}</h2>
+//               <div
+//                 dangerouslySetInnerHTML={{
+//                   __html: lexicalToHtml(introSection.content),
+//                 }}
+//               />
+//             </div>
+//           </div>
+//         </div>
+//       )}
+
+//       {/* Banner Module */}
+//       {bannerSection1.show && (
+//         <div
+//           className={`mod_banner ${bannerSection1.isDark ? "dark" : ""}  hide-divider viewport background-9`}
+//           data-s3-module
+//         >
+//           <div className="row wow fadeInUp">
+//             <div className="content" data-api-key="top_content">
+//               <h2>{bannerSection1.heading}</h2>
+//               {bannerSection1.content && (
+//                 <div
+//                   dangerouslySetInnerHTML={{
+//                     __html: lexicalToHtml(bannerSection1.content),
+//                   }}
+//                 />
+//               )}
+//               {bannerSection1.bulletPoints &&
+//                 bannerSection1.bulletPoints.length > 0 && (
+//                   <ul>
+//                     {bannerSection1.bulletPoints.map((point, index) => (
+//                       <li key={index}>{point.text}</li>
+//                     ))}
+//                   </ul>
+//                 )}
+//             </div>
+//           </div>
+//           <picture className="background">
+//             <source media="(max-width:420px)" srcSet={banner1Images.mobile} />
+//             <source media="(max-width:800px)" srcSet={banner1Images.tablet} />
+//             <source media="(max-width:1400px)" srcSet={banner1Images.desktop} />
+//             <source srcSet={banner1Images.large} />
+//             <img
+//               src={banner1Images.large}
+//               loading="lazy"
+//               alt={banner1Images.alt || "Banner media"}
+//               draggable="false"
+//             />
+//           </picture>
+//         </div>
+//       )}
+
+//       {/* Column Module */}
+//       {columnSection1.show && (
+//         <div className="mod_column viewport container" data-s3-module>
+//           <div className="row pt-30 mb-30" data-api-key="content">
+//             <div className="item">
+//               <h2>{columnSection1.heading}</h2>
+//               {columnSection1.content && (
+//                 <div
+//                   dangerouslySetInnerHTML={{
+//                     __html: lexicalToHtml(columnSection1.content),
+//                   }}
+//                 />
+//               )}
+//             </div>
+//           </div>
+//         </div>
+//       )}
+
+//       {/* Banner Module */}
+//       {bannerSection2.show && (
+//         <div
+//           className={`mod_banner ${bannerSection2.isDark ? "dark" : ""}  hide-divider viewport background-14`}
+//           data-s3-module
+//         >
+//           <div className="row wow fadeInUp">
+//             <div className="content" data-api-key="top_content">
+//               {bannerSection2.useColumnLayout ? (
+//                 <div className="columns-two vertical-align">
+//                   <div>
+//                     <h2>{bannerSection2.heading}</h2>
+//                     {bannerSection2.content && (
+//                       <div
+//                         dangerouslySetInnerHTML={{
+//                           __html: lexicalToHtml(bannerSection2.content),
+//                         }}
+//                       />
+//                     )}
+//                   </div>
+//                   <div>
+//                     {bannerSection2.bulletPoints &&
+//                       bannerSection2.bulletPoints.length > 0 && (
+//                         <>
+//                           <p>
+//                             The treatment is non-invasive and typically requires
+//                             multiple sessions to achieve optimal results.
+//                             KYBELLA ®may be right for you if:
+//                           </p>
+//                           <ul>
+//                             {bannerSection2.bulletPoints.map((point, index) => (
+//                               <li key={index}>{point.text}</li>
+//                             ))}
+//                           </ul>
+//                         </>
+//                       )}
+//                   </div>
+//                 </div>
+//               ) : (
+//                 <>
+//                   <h2>{bannerSection2.heading}</h2>
+//                   {bannerSection2.content && (
+//                     <div
+//                       dangerouslySetInnerHTML={{
+//                         __html: lexicalToHtml(bannerSection2.content),
+//                       }}
+//                     />
+//                   )}
+//                   {bannerSection2.bulletPoints &&
+//                     bannerSection2.bulletPoints.length > 0 && (
+//                       <ul>
+//                         {bannerSection2.bulletPoints.map((point, index) => (
+//                           <li key={index}>{point.text}</li>
+//                         ))}
+//                       </ul>
+//                     )}
+//                 </>
+//               )}
+//             </div>
+//           </div>
+//           <picture className="background">
+//             <source media="(max-width:420px)" srcSet={banner2Images.mobile} />
+//             <source media="(max-width:800px)" srcSet={banner2Images.tablet} />
+//             <source media="(max-width:1400px)" srcSet={banner2Images.desktop} />
+//             <source srcSet={banner2Images.large} />
+//             <img
+//               src={banner2Images.large}
+//               loading="lazy"
+//               alt={banner2Images.alt || "Banner media"}
+//               draggable="false"
+//             />
+//           </picture>
+//         </div>
+//       )}
+
+//       {/* Column Module */}
+//       {columnSection2.show && (
+//         <div className="mod_column viewport container has-media" data-s3-module>
+//           <div
+//             className={`row mt-30 mb-30 ${columnSection2.mediaPosition === "right" ? "media-right" : "media-left"}`}
+//             data-api-key="content"
+//           >
+//             <div className="item">
+//               <h2>{columnSection2.heading}</h2>
+//               {columnSection2.content && (
+//                 <div
+//                   dangerouslySetInnerHTML={{
+//                     __html: lexicalToHtml(columnSection2.content),
+//                   }}
+//                 />
+//               )}
+//               {columnSection2.bulletPoints &&
+//                 columnSection2.bulletPoints.length > 0 && (
+//                   <ul className="columns">
+//                     {columnSection2.bulletPoints.map((point, index) => (
+//                       <li key={index}>{point.text}</li>
+//                     ))}
+//                   </ul>
+//                 )}
+//             </div>
+//             <picture className="media">
+//               <source
+//                 media="(max-width:420px)"
+//                 srcSet={column2MediaImages.mobile}
+//               />
+//               <source
+//                 media="(max-width:800px)"
+//                 srcSet={column2MediaImages.tablet}
+//               />
+//               <source srcSet={column2MediaImages.desktop} />
+//               <img
+//                 src={column2MediaImages.desktop || column2MediaImages.large}
+//                 loading="lazy"
+//                 alt={column2MediaImages.alt || "stone wall"}
+//                 draggable="false"
+//               />
+//             </picture>
+//           </div>
+//         </div>
+//       )}
+
+//       {/* Half Image Module */}
+//       {halfImageSection.show && (
+//         <div
+//           className="mod_half_image  viewport half-image container wow fadeInLeft background-navy"
+//           data-s3-module
+//         >
+//           <div className="row half-image-row mt-0 mb-0">
+//             <div className="media">
+//               <picture className="background">
+//                 <source media="(max-width:420px)" srcSet={halfImages.mobile} />
+//                 <source media="(max-width:800px)" srcSet={halfImages.tablet} />
+//                 <source
+//                   media="(max-width:1400px)"
+//                   srcSet={halfImages.desktop}
+//                 />
+//                 <source srcSet={halfImages.large} />
+//                 <img
+//                   src={halfImages.large}
+//                   loading="lazy"
+//                   alt={halfImages.alt || "Man getting a facial"}
+//                   draggable="false"
+//                   data-api-key="image"
+//                 />
+//               </picture>
+//             </div>
+//             <div
+//               className={`copy ${halfImageSection.contentPadded ? "padded" : ""}`}
+//             >
+//               <div className="inner">
+//                 <div className="content" data-api-key="content">
+//                   <h2>
+//                     {halfImageSection.smallHeading && (
+//                       <span className="small">
+//                         {halfImageSection.smallHeading}
+//                       </span>
+//                     )}
+//                     {halfImageSection.heading}
+//                   </h2>
+//                   {halfImageSection.content && (
+//                     <div
+//                       dangerouslySetInnerHTML={{
+//                         __html: lexicalToHtml(halfImageSection.content),
+//                       }}
+//                     />
+//                   )}
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       )}
+//       {/* /Page Layout */}
+//     </main>
+//   );
+// };
+
+// export default MensServices;
+
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
-  fetchMensFillersPageData,
   getResponsiveImageUrls,
   lexicalToHtml,
 } from "@/lib/api/medicalSpa/fetchMensServicesPageComponent";
@@ -1953,28 +2466,20 @@ interface MensServicesData {
   buttonStyles?: any;
 }
 
-const MensServices: React.FC = () => {
-  const [pageData, setPageData] = useState<MensServicesData | null>(null);
-  const [loading, setLoading] = useState(true);
+interface MensServicesPageProps {
+  data: MensServicesData | null;
+}
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await fetchMensFillersPageData(
-          "mens-services-page-component"
-        );
-        setPageData(data);
-      } catch (error) {
-        console.error("Error fetching MensServices page data:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, []);
-
-  if (loading) return <div>Loading...</div>;
-  if (!pageData) return <div>No data available</div>;
+const MensServices: React.FC<MensServicesPageProps> = ({ data }) => {
+  if (!data) {
+    return (
+      <main className="flex items-center justify-center min-h-[60vh]">
+        <p className="text-gray-500 text-center">
+          Unable to load Men's Services page content.
+        </p>
+      </main>
+    );
+  }
 
   const {
     heroSection,
@@ -1986,7 +2491,7 @@ const MensServices: React.FC = () => {
     halfImageSection,
     globalStyles = {},
     buttonStyles = {},
-  } = pageData;
+  } = data;
 
   const heroBgImages = heroSection.show
     ? getResponsiveImageUrls(heroSection.backgroundImage)

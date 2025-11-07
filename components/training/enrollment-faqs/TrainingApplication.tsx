@@ -1,221 +1,221 @@
-// // import React from "react";
+import React from "react";
 
-// // const TrainingApplication: React.FC = () => {
-// //   return (
-// //     <main id="main">
-// //       {/* Page Layout */}
-// //       {/* Two Column Module */}
-// //       <div className="mod_columns_two viewport container" data-s3-module="">
-// //         <div className="row ">
-// //           <div className="content vertical-align">
-// //             <div className="item wow fadeInLeft" data-api-key="content_left">
-// //               <h1>Apply for Your Training Spot Today</h1>
-// //               <p>
-// //                 Launch your career in aesthetics with Goldfingers Aesthetics,
-// //                 the #1 aesthetic center for BOTOX ®treatment in Florida. The
-// //                 Gold Standard Aesthetics Training Program delivers elite
-// //                 education for future injectors —led by industry leaders, powered
-// //                 by over 20 years of expertise, and designed for providers who
-// //                 are ready to elevate their craft.
-// //               </p>
-// //               <p>
-// //                 Whether you're new to aesthetic injectables or seeking to refine
-// //                 and expand your skillset, our AMI-certified program offers
-// //                 hands-on, real-world training at Florida's largest aesthetics
-// //                 center. Join the program that reflects the same artistry,
-// //                 consistency, and results that made Goldfingers Aesthetics a top
-// //                 1% national provider.
-// //               </p>
-// //               <p></p>
-// //             </div>
-// //             <div className="item wow fadeInRight" data-api-key="content_right">
-// //               <p>
-// //                 <img
-// //                   alt="woman handing clipboard back to nurse"
-// //                   src="https://www.datocms-assets.com/105497/1694722251-gallery-banner.jpg"
-// //                 />
-// //               </p>
-// //             </div>
-// //           </div>
-// //         </div>
-// //       </div>
-// //       {/* Column Module */}
-// //       <div className="mod_column viewport container" data-s3-module="">
-// //         <div className="row " data-api-key="content">
-// //           <div className="item">
-// //             <h1>How to Enroll</h1>
-// //             <ul>
-// //               <li>
-// //                 <strong>Fill Out the Initial Application below</strong>
-// //               </li>
-// //               <li>
-// //                 <strong>Receive Confirmation &amp;Payment Instructions:</strong>
-// //                 Once accepted, you'll receive next steps to finalize your
-// //                 enrollment.
-// //               </li>
-// //               <li>
-// //                 <strong>
-// //                   Start Your Online Training &amp;Get Ready for Hands-On
-// //                   Experience:
-// //                 </strong>
-// //                 Dive into our online modules and prepare for in-person training
-// //                 at one of our clinic locations.
-// //                 <br />
-// //                 &nbsp;
-// //               </li>
-// //             </ul>
-// //           </div>
-// //         </div>
-// //       </div>
+const TrainingApplication: React.FC = () => {
+  return (
+    <main id="main">
+      {/* Page Layout */}
+      {/* Two Column Module */}
+      <div className="mod_columns_two viewport container" data-s3-module="">
+        <div className="row ">
+          <div className="content vertical-align">
+            <div className="item wow fadeInLeft" data-api-key="content_left">
+              <h1>Apply for Your Training Spot Today</h1>
+              <p>
+                Launch your career in aesthetics with Goldfingers Aesthetics,
+                the #1 aesthetic center for BOTOX ®treatment in Florida. The
+                Gold Standard Aesthetics Training Program delivers elite
+                education for future injectors —led by industry leaders, powered
+                by over 20 years of expertise, and designed for providers who
+                are ready to elevate their craft.
+              </p>
+              <p>
+                Whether you're new to aesthetic injectables or seeking to refine
+                and expand your skillset, our AMI-certified program offers
+                hands-on, real-world training at Florida's largest aesthetics
+                center. Join the program that reflects the same artistry,
+                consistency, and results that made Goldfingers Aesthetics a top
+                1% national provider.
+              </p>
+              <p></p>
+            </div>
+            <div className="item wow fadeInRight" data-api-key="content_right">
+              <p>
+                <img
+                  alt="woman handing clipboard back to nurse"
+                  src="https://www.datocms-assets.com/105497/1694722251-gallery-banner.jpg"
+                />
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Column Module */}
+      <div className="mod_column viewport container" data-s3-module="">
+        <div className="row " data-api-key="content">
+          <div className="item">
+            <h1>How to Enroll</h1>
+            <ul>
+              <li>
+                <strong>Fill Out the Initial Application below</strong>
+              </li>
+              <li>
+                <strong>Receive Confirmation &amp;Payment Instructions:</strong>
+                Once accepted, you'll receive next steps to finalize your
+                enrollment.
+              </li>
+              <li>
+                <strong>
+                  Start Your Online Training &amp;Get Ready for Hands-On
+                  Experience:
+                </strong>
+                Dive into our online modules and prepare for in-person training
+                at one of our clinic locations.
+                <br />
+                &nbsp;
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-// //       {/* Box Grid Module */}
-// //       <div
-// //         className="mod_box_grid viewport    container option-3 single  bkg-image wider "
-// //         data-s3-module=""
-// //       >
-// //         <div className="row">
-// //           <div className="content-before">
-// //             <h1>FAQs</h1>
-// //           </div>
-// //           <div className="boxes wider">
-// //             <div className="box wow fadeInLeft">
-// //               <h5>
-// //                 <span
-// //                   style={{
-// //                     backgroundColor: "transparent",
-// //                     fontFamily: "inherit",
-// //                     fontSize: "inherit",
-// //                     fontStyle: "inherit",
-// //                     fontVariantLigatures: "inherit",
-// //                     fontVariantCaps: "inherit",
-// //                     fontWeight: "inherit",
-// //                     letterSpacing: "0px",
-// //                   }}
-// //                 >
-// //                   <strong>Who is eligible for this training?</strong>
-// //                 </span>
-// //                 <span
-// //                   style={{
-// //                     backgroundColor: "transparent",
-// //                     fontFamily: "inherit",
-// //                     fontSize: "inherit",
-// //                     fontStyle: "inherit",
-// //                     fontVariantLigatures: "inherit",
-// //                     fontVariantCaps: "inherit",
-// //                     fontWeight: "inherit",
-// //                     letterSpacing: "0px",
-// //                   }}
-// //                 ></span>
-// //               </h5>
-// //               <p>
-// //                 <span
-// //                   style={{
-// //                     backgroundColor: "transparent",
-// //                     fontFamily: "inherit",
-// //                     fontSize: "inherit",
-// //                     fontStyle: "inherit",
-// //                     fontVariantLigatures: "inherit",
-// //                     fontVariantCaps: "inherit",
-// //                     fontWeight: "inherit",
-// //                     letterSpacing: "0px",
-// //                   }}
-// //                 >
-// //                   <strong></strong>
-// //                 </span>
-// //               </p>
-// //               <p>
-// //                 <span
-// //                   style={{
-// //                     backgroundColor: "transparent",
-// //                     fontFamily: "inherit",
-// //                     fontSize: "inherit",
-// //                     fontStyle: "inherit",
-// //                     fontVariantLigatures: "inherit",
-// //                     fontVariantCaps: "inherit",
-// //                     fontWeight: "inherit",
-// //                     letterSpacing: "0px",
-// //                   }}
-// //                 >
-// //                   NPs, PAs, and MDs are welcome to apply. We do not currently
-// //                   accept RNs.
-// //                   <br />
-// //                 </span>
-// //               </p>
-// //             </div>
-// //             <div className="box wow fadeInLeft">
-// //               <h5>
-// //                 <strong>What certification will I receive?</strong>
-// //               </h5>
-// //               <p></p>
-// //               <p>
-// //                 Graduates will earn an AMI (Allergan Medical Institute)
-// //                 Certification.
-// //               </p>
-// //             </div>
-// //             <div className="box wow fadeInLeft">
-// //               <h5>
-// //                 <strong>Do I need prior experience?</strong>
-// //               </h5>
-// //               <p></p>
-// //               <p>
-// //                 No experience is necessary. Our program is designed for all
-// //                 levels.
-// //               </p>
-// //             </div>
-// //             <div className="box wow fadeInLeft">
-// //               <h5>
-// //                 <strong>Where are the trainings held?</strong>
-// //               </h5>
-// //               <p></p>
-// //               <p>
-// //                 In-person training sessions are held at Goldfingers Aesthetics
-// //                 clinics throughout Florida.
-// //               </p>
-// //             </div>
-// //             <div className="box wow fadeInLeft">
-// //               <h5>
-// //                 <strong>What is included in the tuition?</strong>
-// //               </h5>
-// //               <p></p>
-// //               <p>
-// //                 Your tuition includes hands-on training, access to online
-// //                 learning modules, and certification upon completion.
-// //               </p>
-// //             </div>
-// //             <div className="box wow fadeInLeft">
-// //               <h5>
-// //                 <strong>Are payment plans available?</strong>
-// //               </h5>
-// //               <p>Not at this time. Full tuition is required at enrollment.</p>
-// //             </div>
-// //           </div>
-// //         </div>
-// //       </div>
-// //       {/* Column Module */}
-// //       <div className="mod_column viewport container" data-s3-module="">
-// //         <div className="row " data-api-key="content">
-// //           <div className="item">
-// //             <center>
-// //               <p>
-// //                 <a
-// //                   href="https://www.goldfingersaesthetics.com/the-gold-standard-aesthetics-training-program/apply-for-your-training-spot-today/"
-// //                   target="_blank"
-// //                   className="btn"
-// //                   rel="noopener"
-// //                 >
-// //                   Apply Now &amp;Secure Your Spot
-// //                 </a>
-// //               </p>
-// //             </center>
-// //           </div>
-// //         </div>
-// //       </div>
-// //       {/* /Page Layout */}
-// //     </main>
-// //   );
-// // };
+      {/* Box Grid Module */}
+      <div
+        className="mod_box_grid viewport    container option-3 single  bkg-image wider "
+        data-s3-module=""
+      >
+        <div className="row">
+          <div className="content-before">
+            <h1>FAQs</h1>
+          </div>
+          <div className="boxes wider">
+            <div className="box wow fadeInLeft">
+              <h5>
+                <span
+                  style={{
+                    backgroundColor: "transparent",
+                    fontFamily: "inherit",
+                    fontSize: "inherit",
+                    fontStyle: "inherit",
+                    fontVariantLigatures: "inherit",
+                    fontVariantCaps: "inherit",
+                    fontWeight: "inherit",
+                    letterSpacing: "0px",
+                  }}
+                >
+                  <strong>Who is eligible for this training?</strong>
+                </span>
+                <span
+                  style={{
+                    backgroundColor: "transparent",
+                    fontFamily: "inherit",
+                    fontSize: "inherit",
+                    fontStyle: "inherit",
+                    fontVariantLigatures: "inherit",
+                    fontVariantCaps: "inherit",
+                    fontWeight: "inherit",
+                    letterSpacing: "0px",
+                  }}
+                ></span>
+              </h5>
+              <p>
+                <span
+                  style={{
+                    backgroundColor: "transparent",
+                    fontFamily: "inherit",
+                    fontSize: "inherit",
+                    fontStyle: "inherit",
+                    fontVariantLigatures: "inherit",
+                    fontVariantCaps: "inherit",
+                    fontWeight: "inherit",
+                    letterSpacing: "0px",
+                  }}
+                >
+                  <strong></strong>
+                </span>
+              </p>
+              <p>
+                <span
+                  style={{
+                    backgroundColor: "transparent",
+                    fontFamily: "inherit",
+                    fontSize: "inherit",
+                    fontStyle: "inherit",
+                    fontVariantLigatures: "inherit",
+                    fontVariantCaps: "inherit",
+                    fontWeight: "inherit",
+                    letterSpacing: "0px",
+                  }}
+                >
+                  NPs, PAs, and MDs are welcome to apply. We do not currently
+                  accept RNs.
+                  <br />
+                </span>
+              </p>
+            </div>
+            <div className="box wow fadeInLeft">
+              <h5>
+                <strong>What certification will I receive?</strong>
+              </h5>
+              <p></p>
+              <p>
+                Graduates will earn an AMI (Allergan Medical Institute)
+                Certification.
+              </p>
+            </div>
+            <div className="box wow fadeInLeft">
+              <h5>
+                <strong>Do I need prior experience?</strong>
+              </h5>
+              <p></p>
+              <p>
+                No experience is necessary. Our program is designed for all
+                levels.
+              </p>
+            </div>
+            <div className="box wow fadeInLeft">
+              <h5>
+                <strong>Where are the trainings held?</strong>
+              </h5>
+              <p></p>
+              <p>
+                In-person training sessions are held at Goldfingers Aesthetics
+                clinics throughout Florida.
+              </p>
+            </div>
+            <div className="box wow fadeInLeft">
+              <h5>
+                <strong>What is included in the tuition?</strong>
+              </h5>
+              <p></p>
+              <p>
+                Your tuition includes hands-on training, access to online
+                learning modules, and certification upon completion.
+              </p>
+            </div>
+            <div className="box wow fadeInLeft">
+              <h5>
+                <strong>Are payment plans available?</strong>
+              </h5>
+              <p>Not at this time. Full tuition is required at enrollment.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Column Module */}
+      <div className="mod_column viewport container" data-s3-module="">
+        <div className="row " data-api-key="content">
+          <div className="item">
+            <center>
+              <p>
+                <a
+                  href="https://www.goldfingersaesthetics.com/the-gold-standard-aesthetics-training-program/apply-for-your-training-spot-today/"
+                  target="_blank"
+                  className="btn"
+                  rel="noopener"
+                >
+                  Apply Now &amp;Secure Your Spot
+                </a>
+              </p>
+            </center>
+          </div>
+        </div>
+      </div>
+      {/* /Page Layout */}
+    </main>
+  );
+};
 
-// // export default TrainingApplication;
+export default TrainingApplication;
 
 // // // "use client";
 
@@ -1807,623 +1807,623 @@
 
 // export default TrainingApplication;
 
-"use client";
+// "use client";
 
-import React, { useEffect, useState } from "react";
-import {
-  fetchEnrolmentComponent,
-  lexicalToHtml,
-  getImageUrl,
-} from "@/lib/api/traning/fetchEnrolmentComponent";
-import { fetchSpecicalFillersPageData } from "@/lib/api/specials/fetchSpecialsPageComponent";
+// import React, { useEffect, useState } from "react";
+// import {
+//   fetchEnrolmentComponent,
+//   lexicalToHtml,
+//   getImageUrl,
+// } from "@/lib/api/traning/fetchEnrolmentComponent";
+// import { fetchSpecicalFillersPageData } from "@/lib/api/specials/fetchSpecialsPageComponent";
 
-interface EnrolmentData {
-  heroSection?: any;
-  enrollSection?: any;
-  contactFormSection?: any;
-  faqSection?: any;
-  ctaSection?: any;
-  sectionOrder?: Array<{ section: string }>;
-}
+// interface EnrolmentData {
+//   heroSection?: any;
+//   enrollSection?: any;
+//   contactFormSection?: any;
+//   faqSection?: any;
+//   ctaSection?: any;
+//   sectionOrder?: Array<{ section: string }>;
+// }
 
-interface ContactFormSection {
-  show: boolean;
-  backgroundColor?: string;
-  textColor?: string;
-  heading: string;
-  headingColor?: string;
-  formSettings: {
-    formId: string;
-    formAction: string;
-    redirectUrl: string;
-    emailSubject: string;
-  };
-  formFields: Array<{
-    fieldType: string;
-    fieldName: string;
-    fieldId: string;
-    label?: string;
-    placeholder?: string;
-    required?: boolean;
-    defaultValue?: string;
-    columnClass?: string;
-    additionalClasses?: string;
-    selectOptions?: Array<{ label: string; value: string }>;
-    validationMessage?: string;
-  }>;
-  buttonText: string;
-  buttonBackgroundColor?: string;
-  buttonTextColor?: string;
-  buttonHoverBackgroundColor?: string;
-  privacyNotice?: any;
-  enableRecaptcha: boolean;
-}
+// interface ContactFormSection {
+//   show: boolean;
+//   backgroundColor?: string;
+//   textColor?: string;
+//   heading: string;
+//   headingColor?: string;
+//   formSettings: {
+//     formId: string;
+//     formAction: string;
+//     redirectUrl: string;
+//     emailSubject: string;
+//   };
+//   formFields: Array<{
+//     fieldType: string;
+//     fieldName: string;
+//     fieldId: string;
+//     label?: string;
+//     placeholder?: string;
+//     required?: boolean;
+//     defaultValue?: string;
+//     columnClass?: string;
+//     additionalClasses?: string;
+//     selectOptions?: Array<{ label: string; value: string }>;
+//     validationMessage?: string;
+//   }>;
+//   buttonText: string;
+//   buttonBackgroundColor?: string;
+//   buttonTextColor?: string;
+//   buttonHoverBackgroundColor?: string;
+//   privacyNotice?: any;
+//   enableRecaptcha: boolean;
+// }
 
-const TrainingApplication: React.FC = () => {
-  const [data, setData] = useState<EnrolmentData | null>(null);
-  const [contactFormData, setContactFormData] =
-    useState<ContactFormSection | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [formSubmitting, setFormSubmitting] = useState(false);
-  const [formMessage, setFormMessage] = useState<{
-    type: "success" | "error";
-    text: string;
-  } | null>(null);
+// const TrainingApplication: React.FC = () => {
+//   const [data, setData] = useState<EnrolmentData | null>(null);
+//   const [contactFormData, setContactFormData] =
+//     useState<ContactFormSection | null>(null);
+//   const [loading, setLoading] = useState(true);
+//   const [formSubmitting, setFormSubmitting] = useState(false);
+//   const [formMessage, setFormMessage] = useState<{
+//     type: "success" | "error";
+//     text: string;
+//   } | null>(null);
 
-  useEffect(() => {
-    const loadData = async () => {
-      try {
-        // Load training enrollment data
-        const componentData = await fetchEnrolmentComponent();
-        setData(componentData);
+//   useEffect(() => {
+//     const loadData = async () => {
+//       try {
+//         // Load training enrollment data
+//         const componentData = await fetchEnrolmentComponent();
+//         setData(componentData);
 
-        // Load contact form data from SpecialsPage
-        const specialsData = await fetchSpecicalFillersPageData();
-        if (specialsData?.contactFormSection) {
-          setContactFormData(specialsData.contactFormSection);
-        }
-      } catch (error) {
-        console.error("Error loading data:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    loadData();
-  }, []);
+//         // Load contact form data from SpecialsPage
+//         const specialsData = await fetchSpecicalFillersPageData();
+//         if (specialsData?.contactFormSection) {
+//           setContactFormData(specialsData.contactFormSection);
+//         }
+//       } catch (error) {
+//         console.error("Error loading data:", error);
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
+//     loadData();
+//   }, []);
 
-  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setFormSubmitting(true);
-    setFormMessage(null);
+//   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+//     e.preventDefault();
+//     setFormSubmitting(true);
+//     setFormMessage(null);
 
-    const form = e.currentTarget;
-    const formData = new FormData(form);
+//     const form = e.currentTarget;
+//     const formData = new FormData(form);
 
-    // Convert FormData to plain object
-    const formValues: Record<string, any> = {};
+//     // Convert FormData to plain object
+//     const formValues: Record<string, any> = {};
 
-    formData.forEach((value, key) => {
-      if (
-        key !== "human_check" &&
-        key !== "submit" &&
-        key !== "g-recaptcha-response-v3"
-      ) {
-        formValues[key] = value;
-      }
-    });
+//     formData.forEach((value, key) => {
+//       if (
+//         key !== "human_check" &&
+//         key !== "submit" &&
+//         key !== "g-recaptcha-response-v3"
+//       ) {
+//         formValues[key] = value;
+//       }
+//     });
 
-    try {
-      const response = await fetch("/api/special-form", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formValues),
-      });
+//     try {
+//       const response = await fetch("/api/special-form", {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify(formValues),
+//       });
 
-      const result = await response.json();
+//       const result = await response.json();
 
-      if (response.ok && result.success) {
-        setFormMessage({
-          type: "success",
-          text: result.message || "Thank you! We'll be in touch soon.",
-        });
-        form.reset();
+//       if (response.ok && result.success) {
+//         setFormMessage({
+//           type: "success",
+//           text: result.message || "Thank you! We'll be in touch soon.",
+//         });
+//         form.reset();
 
-        // Optional redirect
-        if (contactFormData?.formSettings.redirectUrl) {
-          // setTimeout(() => {
-          //   window.location.href = contactFormData.formSettings.redirectUrl;
-          // }, 2000);
-        }
-      } else {
-        setFormMessage({
-          type: "error",
-          text: result.message || "Failed to submit form. Please try again.",
-        });
-      }
-    } catch (error) {
-      console.error("Form submission error:", error);
-      setFormMessage({
-        type: "error",
-        text: "An unexpected error occurred. Please try again.",
-      });
-    } finally {
-      setFormSubmitting(false);
-    }
-  };
+//         // Optional redirect
+//         if (contactFormData?.formSettings.redirectUrl) {
+//           // setTimeout(() => {
+//           //   window.location.href = contactFormData.formSettings.redirectUrl;
+//           // }, 2000);
+//         }
+//       } else {
+//         setFormMessage({
+//           type: "error",
+//           text: result.message || "Failed to submit form. Please try again.",
+//         });
+//       }
+//     } catch (error) {
+//       console.error("Form submission error:", error);
+//       setFormMessage({
+//         type: "error",
+//         text: "An unexpected error occurred. Please try again.",
+//       });
+//     } finally {
+//       setFormSubmitting(false);
+//     }
+//   };
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+//   if (loading) {
+//     return <div>Loading...</div>;
+//   }
 
-  if (!data) {
-    return <div>No data available</div>;
-  }
+//   if (!data) {
+//     return <div>No data available</div>;
+//   }
 
-  const renderSection = (sectionKey: string) => {
-    switch (sectionKey) {
-      case "hero":
-        return renderHeroSection();
-      case "enroll":
-        return renderEnrollSection();
-      case "contactForm":
-        return renderContactFormFromSpecials();
-      case "faq":
-        return renderFaqSection();
-      case "cta":
-        return renderCtaSection();
-      default:
-        return null;
-    }
-  };
+//   const renderSection = (sectionKey: string) => {
+//     switch (sectionKey) {
+//       case "hero":
+//         return renderHeroSection();
+//       case "enroll":
+//         return renderEnrollSection();
+//       case "contactForm":
+//         return renderContactFormFromSpecials();
+//       case "faq":
+//         return renderFaqSection();
+//       case "cta":
+//         return renderCtaSection();
+//       default:
+//         return null;
+//     }
+//   };
 
-  const renderHeroSection = () => {
-    const hero = data.heroSection;
-    if (!hero?.show) return null;
+//   const renderHeroSection = () => {
+//     const hero = data.heroSection;
+//     if (!hero?.show) return null;
 
-    const leftContent = hero.leftContent ? lexicalToHtml(hero.leftContent) : "";
-    const rightImageUrl =
-      hero.rightImage?.imageUrl || getImageUrl(hero.rightImage?.image);
-    const rightImageAlt =
-      hero.rightImage?.alt || "woman handing clipboard back to nurse";
+//     const leftContent = hero.leftContent ? lexicalToHtml(hero.leftContent) : "";
+//     const rightImageUrl =
+//       hero.rightImage?.imageUrl || getImageUrl(hero.rightImage?.image);
+//     const rightImageAlt =
+//       hero.rightImage?.alt || "woman handing clipboard back to nurse";
 
-    return (
-      <div className="mod_columns_two viewport container" data-s3-module="">
-        <div className="row ">
-          <div className="content vertical-align">
-            <div className="item wow fadeInLeft" data-api-key="content_left">
-              <div dangerouslySetInnerHTML={{ __html: leftContent }} />
-            </div>
-            <div className="item wow fadeInRight" data-api-key="content_right">
-              <p>
-                <img alt={rightImageAlt} src={rightImageUrl} />
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  };
+//     return (
+//       <div className="mod_columns_two viewport container" data-s3-module="">
+//         <div className="row ">
+//           <div className="content vertical-align">
+//             <div className="item wow fadeInLeft" data-api-key="content_left">
+//               <div dangerouslySetInnerHTML={{ __html: leftContent }} />
+//             </div>
+//             <div className="item wow fadeInRight" data-api-key="content_right">
+//               <p>
+//                 <img alt={rightImageAlt} src={rightImageUrl} />
+//               </p>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     );
+//   };
 
-  const renderEnrollSection = () => {
-    const enroll = data.enrollSection;
-    if (!enroll?.show) return null;
+//   const renderEnrollSection = () => {
+//     const enroll = data.enrollSection;
+//     if (!enroll?.show) return null;
 
-    const listTag = enroll.listStyle === "ol" ? "ol" : "ul";
-    const ListComponent = listTag;
+//     const listTag = enroll.listStyle === "ol" ? "ol" : "ul";
+//     const ListComponent = listTag;
 
-    return (
-      <div className="mod_column viewport container" data-s3-module="">
-        <div className="row " data-api-key="content">
-          <div className="item">
-            <h1>{enroll.heading || "How to Enroll"}</h1>
-            <ListComponent>
-              {enroll.steps?.map((step: any, index: number) => (
-                <li key={index}>
-                  {step.stepTitleBold ? (
-                    <strong>{step.stepTitle}</strong>
-                  ) : (
-                    step.stepTitle
-                  )}
-                  {step.stepDescription && ` ${step.stepDescription}`}
-                </li>
-              ))}
-            </ListComponent>
-          </div>
-        </div>
-      </div>
-    );
-  };
+//     return (
+//       <div className="mod_column viewport container" data-s3-module="">
+//         <div className="row " data-api-key="content">
+//           <div className="item">
+//             <h1>{enroll.heading || "How to Enroll"}</h1>
+//             <ListComponent>
+//               {enroll.steps?.map((step: any, index: number) => (
+//                 <li key={index}>
+//                   {step.stepTitleBold ? (
+//                     <strong>{step.stepTitle}</strong>
+//                   ) : (
+//                     step.stepTitle
+//                   )}
+//                   {step.stepDescription && ` ${step.stepDescription}`}
+//                 </li>
+//               ))}
+//             </ListComponent>
+//           </div>
+//         </div>
+//       </div>
+//     );
+//   };
 
-  const renderContactFormFromSpecials = () => {
-    // If no contact form data loaded from SpecialsPage, fall back to embed code
-    if (!contactFormData?.show) {
-      const form = data.contactFormSection;
-      if (!form?.show) return null;
+//   const renderContactFormFromSpecials = () => {
+//     // If no contact form data loaded from SpecialsPage, fall back to embed code
+//     if (!contactFormData?.show) {
+//       const form = data.contactFormSection;
+//       if (!form?.show) return null;
 
-      if (form.embedCode) {
-        return (
-          <div
-            className="mod_contact_form viewport container"
-            data-s3-module=""
-          >
-            <div className="row">
-              <div dangerouslySetInnerHTML={{ __html: form.embedCode }} />
-            </div>
-          </div>
-        );
-      }
-      return null;
-    }
+//       if (form.embedCode) {
+//         return (
+//           <div
+//             className="mod_contact_form viewport container"
+//             data-s3-module=""
+//           >
+//             <div className="row">
+//               <div dangerouslySetInnerHTML={{ __html: form.embedCode }} />
+//             </div>
+//           </div>
+//         );
+//       }
+//       return null;
+//     }
 
-    // Render contact form from SpecialsPage
-    return (
-      <div
-        className="mod_contact_form"
-        data-s3-module
-        style={{
-          backgroundColor: contactFormData.backgroundColor,
-          color: contactFormData.textColor,
-        }}
-      >
-        <div className="wrapper">
-          <div className="row">
-            <h2 style={{ color: contactFormData.headingColor }}>
-              {contactFormData.heading}
-            </h2>
-            <div className="partial_form" data-s3-partial>
-              {formMessage && (
-                <div
-                  className={`form-message ${formMessage.type}`}
-                  style={{
-                    padding: "10px",
-                    marginBottom: "20px",
-                    borderRadius: "4px",
-                    backgroundColor:
-                      formMessage.type === "success" ? "#d4edda" : "#f8d7da",
-                    color:
-                      formMessage.type === "success" ? "#155724" : "#721c24",
-                    border: `1px solid ${
-                      formMessage.type === "success" ? "#c3e6cb" : "#f5c6cb"
-                    }`,
-                  }}
-                >
-                  {formMessage.text}
-                </div>
-              )}
-              <form
-                id={`form_${contactFormData.formSettings.formId}`}
-                className="s3-form"
-                method="post"
-                onSubmit={handleFormSubmit}
-                data-abide=""
-                encType="multipart/form-data"
-                noValidate
-              >
-                <div className="fields">
-                  {contactFormData.formFields.map((field, index) => {
-                    const fieldClasses = `field-row ${
-                      field.columnClass || "col1"
-                    } ${field.additionalClasses || ""}`.trim();
+//     // Render contact form from SpecialsPage
+//     return (
+//       <div
+//         className="mod_contact_form"
+//         data-s3-module
+//         style={{
+//           backgroundColor: contactFormData.backgroundColor,
+//           color: contactFormData.textColor,
+//         }}
+//       >
+//         <div className="wrapper">
+//           <div className="row">
+//             <h2 style={{ color: contactFormData.headingColor }}>
+//               {contactFormData.heading}
+//             </h2>
+//             <div className="partial_form" data-s3-partial>
+//               {formMessage && (
+//                 <div
+//                   className={`form-message ${formMessage.type}`}
+//                   style={{
+//                     padding: "10px",
+//                     marginBottom: "20px",
+//                     borderRadius: "4px",
+//                     backgroundColor:
+//                       formMessage.type === "success" ? "#d4edda" : "#f8d7da",
+//                     color:
+//                       formMessage.type === "success" ? "#155724" : "#721c24",
+//                     border: `1px solid ${
+//                       formMessage.type === "success" ? "#c3e6cb" : "#f5c6cb"
+//                     }`,
+//                   }}
+//                 >
+//                   {formMessage.text}
+//                 </div>
+//               )}
+//               <form
+//                 id={`form_${contactFormData.formSettings.formId}`}
+//                 className="s3-form"
+//                 method="post"
+//                 onSubmit={handleFormSubmit}
+//                 data-abide=""
+//                 encType="multipart/form-data"
+//                 noValidate
+//               >
+//                 <div className="fields">
+//                   {contactFormData.formFields.map((field, index) => {
+//                     const fieldClasses = `field-row ${
+//                       field.columnClass || "col1"
+//                     } ${field.additionalClasses || ""}`.trim();
 
-                    if (field.fieldType === "hidden") {
-                      return (
-                        <div key={index} className={fieldClasses}>
-                          <div className="field hidden">
-                            <input
-                              type="hidden"
-                              name={field.fieldName}
-                              id={field.fieldId}
-                              value={field.defaultValue || ""}
-                            />
-                          </div>
-                        </div>
-                      );
-                    }
+//                     if (field.fieldType === "hidden") {
+//                       return (
+//                         <div key={index} className={fieldClasses}>
+//                           <div className="field hidden">
+//                             <input
+//                               type="hidden"
+//                               name={field.fieldName}
+//                               id={field.fieldId}
+//                               value={field.defaultValue || ""}
+//                             />
+//                           </div>
+//                         </div>
+//                       );
+//                     }
 
-                    if (field.fieldType === "textarea") {
-                      return (
-                        <div key={index} className={fieldClasses}>
-                          <div className="field textarea">
-                            {field.label && (
-                              <label htmlFor={field.fieldId}>
-                                {field.label}
-                              </label>
-                            )}
-                            <textarea
-                              rows={6}
-                              cols={48}
-                              name={field.fieldName}
-                              id={field.fieldId}
-                              placeholder={field.placeholder}
-                              required={field.required}
-                              aria-required={field.required ? "true" : "false"}
-                              defaultValue=""
-                            ></textarea>
-                          </div>
-                        </div>
-                      );
-                    }
+//                     if (field.fieldType === "textarea") {
+//                       return (
+//                         <div key={index} className={fieldClasses}>
+//                           <div className="field textarea">
+//                             {field.label && (
+//                               <label htmlFor={field.fieldId}>
+//                                 {field.label}
+//                               </label>
+//                             )}
+//                             <textarea
+//                               rows={6}
+//                               cols={48}
+//                               name={field.fieldName}
+//                               id={field.fieldId}
+//                               placeholder={field.placeholder}
+//                               required={field.required}
+//                               aria-required={field.required ? "true" : "false"}
+//                               defaultValue=""
+//                             ></textarea>
+//                           </div>
+//                         </div>
+//                       );
+//                     }
 
-                    if (field.fieldType === "select") {
-                      return (
-                        <div key={index} className={fieldClasses}>
-                          <div className="field select">
-                            {field.label && (
-                              <label htmlFor={field.fieldId}>
-                                {field.label}
-                              </label>
-                            )}
-                            {field.required && (
-                              <small>
-                                {field.validationMessage ||
-                                  "This field is required."}
-                              </small>
-                            )}
-                            <select
-                              name={field.fieldName}
-                              id={field.fieldId}
-                              required={field.required}
-                              aria-required={field.required ? "true" : "false"}
-                            >
-                              <option value="" disabled>
-                                {field.placeholder}
-                              </option>
-                              {field.selectOptions?.map((option, optIndex) => (
-                                <option key={optIndex} value={option.value}>
-                                  {option.label}
-                                </option>
-                              ))}
-                            </select>
-                          </div>
-                        </div>
-                      );
-                    }
+//                     if (field.fieldType === "select") {
+//                       return (
+//                         <div key={index} className={fieldClasses}>
+//                           <div className="field select">
+//                             {field.label && (
+//                               <label htmlFor={field.fieldId}>
+//                                 {field.label}
+//                               </label>
+//                             )}
+//                             {field.required && (
+//                               <small>
+//                                 {field.validationMessage ||
+//                                   "This field is required."}
+//                               </small>
+//                             )}
+//                             <select
+//                               name={field.fieldName}
+//                               id={field.fieldId}
+//                               required={field.required}
+//                               aria-required={field.required ? "true" : "false"}
+//                             >
+//                               <option value="" disabled>
+//                                 {field.placeholder}
+//                               </option>
+//                               {field.selectOptions?.map((option, optIndex) => (
+//                                 <option key={optIndex} value={option.value}>
+//                                   {option.label}
+//                                 </option>
+//                               ))}
+//                             </select>
+//                           </div>
+//                         </div>
+//                       );
+//                     }
 
-                    if (field.fieldType === "checkbox") {
-                      return (
-                        <div key={index} className={fieldClasses}>
-                          <div
-                            className={`field checkbox ${
-                              field.additionalClasses || ""
-                            }`}
-                          >
-                            {field.required && (
-                              <small>
-                                {field.validationMessage ||
-                                  "This field is required."}
-                              </small>
-                            )}
-                            <div className="field-item checkbox-item">
-                              <input
-                                type="checkbox"
-                                id={field.fieldId}
-                                name={field.fieldName}
-                                value={field.defaultValue || "Yes"}
-                                required={field.required}
-                                aria-required={
-                                  field.required ? "true" : "false"
-                                }
-                              />
-                              {field.label && (
-                                <label htmlFor={field.fieldId}>
-                                  {field.label}
-                                </label>
-                              )}
-                            </div>
-                          </div>
-                        </div>
-                      );
-                    }
+//                     if (field.fieldType === "checkbox") {
+//                       return (
+//                         <div key={index} className={fieldClasses}>
+//                           <div
+//                             className={`field checkbox ${
+//                               field.additionalClasses || ""
+//                             }`}
+//                           >
+//                             {field.required && (
+//                               <small>
+//                                 {field.validationMessage ||
+//                                   "This field is required."}
+//                               </small>
+//                             )}
+//                             <div className="field-item checkbox-item">
+//                               <input
+//                                 type="checkbox"
+//                                 id={field.fieldId}
+//                                 name={field.fieldName}
+//                                 value={field.defaultValue || "Yes"}
+//                                 required={field.required}
+//                                 aria-required={
+//                                   field.required ? "true" : "false"
+//                                 }
+//                               />
+//                               {field.label && (
+//                                 <label htmlFor={field.fieldId}>
+//                                   {field.label}
+//                                 </label>
+//                               )}
+//                             </div>
+//                           </div>
+//                         </div>
+//                       );
+//                     }
 
-                    return (
-                      <div key={index} className={fieldClasses}>
-                        <div className={`field ${field.fieldType}`}>
-                          {field.label && (
-                            <label htmlFor={field.fieldId}>{field.label}</label>
-                          )}
-                          {field.required && (
-                            <small>
-                              {field.validationMessage ||
-                                "This field is required."}
-                            </small>
-                          )}
-                          <input
-                            type={field.fieldType}
-                            size={50}
-                            name={field.fieldName}
-                            id={field.fieldId}
-                            defaultValue=""
-                            required={field.required}
-                            aria-required={field.required ? "true" : "false"}
-                            placeholder={field.placeholder}
-                          />
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-                {contactFormData.enableRecaptcha && (
-                  <div>
-                    <input
-                      id={`${contactFormData.formSettings.formId}_recaptchaV3`}
-                      name="g-recaptcha-response-v3"
-                      type="hidden"
-                    />
-                    <div
-                      id={`${contactFormData.formSettings.formId}_recaptchaV2`}
-                      data-recaptcha
-                    ></div>
-                    <div
-                      id={`${contactFormData.formSettings.formId}_recaptcha`}
-                      data-recaptcha-error
-                    >
-                      <small>This field is required.</small>
-                    </div>
-                  </div>
-                )}
-                <input
-                  type="hidden"
-                  name="form_id"
-                  id="form_id"
-                  value={contactFormData.formSettings.formId}
-                />
-                <input name="human_check" type="hidden" />
-                <button
-                  type="submit"
-                  id={`submit_${contactFormData.formSettings.formId}`}
-                  value="submitted"
-                  name="submit"
-                  className="submit btn"
-                  tabIndex={0}
-                  disabled={formSubmitting}
-                  style={{
-                    backgroundColor: contactFormData.buttonBackgroundColor,
-                    color: contactFormData.buttonTextColor,
-                    opacity: formSubmitting ? 0.6 : 1,
-                    cursor: formSubmitting ? "not-allowed" : "pointer",
-                  }}
-                >
-                  {formSubmitting
-                    ? "Submitting..."
-                    : contactFormData.buttonText}
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  };
+//                     return (
+//                       <div key={index} className={fieldClasses}>
+//                         <div className={`field ${field.fieldType}`}>
+//                           {field.label && (
+//                             <label htmlFor={field.fieldId}>{field.label}</label>
+//                           )}
+//                           {field.required && (
+//                             <small>
+//                               {field.validationMessage ||
+//                                 "This field is required."}
+//                             </small>
+//                           )}
+//                           <input
+//                             type={field.fieldType}
+//                             size={50}
+//                             name={field.fieldName}
+//                             id={field.fieldId}
+//                             defaultValue=""
+//                             required={field.required}
+//                             aria-required={field.required ? "true" : "false"}
+//                             placeholder={field.placeholder}
+//                           />
+//                         </div>
+//                       </div>
+//                     );
+//                   })}
+//                 </div>
+//                 {contactFormData.enableRecaptcha && (
+//                   <div>
+//                     <input
+//                       id={`${contactFormData.formSettings.formId}_recaptchaV3`}
+//                       name="g-recaptcha-response-v3"
+//                       type="hidden"
+//                     />
+//                     <div
+//                       id={`${contactFormData.formSettings.formId}_recaptchaV2`}
+//                       data-recaptcha
+//                     ></div>
+//                     <div
+//                       id={`${contactFormData.formSettings.formId}_recaptcha`}
+//                       data-recaptcha-error
+//                     >
+//                       <small>This field is required.</small>
+//                     </div>
+//                   </div>
+//                 )}
+//                 <input
+//                   type="hidden"
+//                   name="form_id"
+//                   id="form_id"
+//                   value={contactFormData.formSettings.formId}
+//                 />
+//                 <input name="human_check" type="hidden" />
+//                 <button
+//                   type="submit"
+//                   id={`submit_${contactFormData.formSettings.formId}`}
+//                   value="submitted"
+//                   name="submit"
+//                   className="submit btn"
+//                   tabIndex={0}
+//                   disabled={formSubmitting}
+//                   style={{
+//                     backgroundColor: contactFormData.buttonBackgroundColor,
+//                     color: contactFormData.buttonTextColor,
+//                     opacity: formSubmitting ? 0.6 : 1,
+//                     cursor: formSubmitting ? "not-allowed" : "pointer",
+//                   }}
+//                 >
+//                   {formSubmitting
+//                     ? "Submitting..."
+//                     : contactFormData.buttonText}
+//                 </button>
+//               </form>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     );
+//   };
 
-  const renderFaqSection = () => {
-    const faq = data.faqSection;
-    if (!faq?.show) return null;
+//   const renderFaqSection = () => {
+//     const faq = data.faqSection;
+//     if (!faq?.show) return null;
 
-    return (
-      <div
-        className="mod_box_grid viewport    container option-3 single  bkg-image wider "
-        data-s3-module=""
-      >
-        <div className="row">
-          <div className="content-before">
-            <h1>{faq.mainHeading || "FAQs"}</h1>
-          </div>
-          <div className="boxes wider">
-            {faq.faqs?.map((faqItem: any, index: number) => {
-              const answer = faqItem.answer
-                ? lexicalToHtml(faqItem.answer)
-                : "";
+//     return (
+//       <div
+//         className="mod_box_grid viewport    container option-3 single  bkg-image wider "
+//         data-s3-module=""
+//       >
+//         <div className="row">
+//           <div className="content-before">
+//             <h1>{faq.mainHeading || "FAQs"}</h1>
+//           </div>
+//           <div className="boxes wider">
+//             {faq.faqs?.map((faqItem: any, index: number) => {
+//               const answer = faqItem.answer
+//                 ? lexicalToHtml(faqItem.answer)
+//                 : "";
 
-              return (
-                <div className="box wow fadeInLeft" key={index}>
-                  <h5>
-                    <span
-                      style={{
-                        backgroundColor: "transparent",
-                        fontFamily: "inherit",
-                        fontSize: "inherit",
-                        fontStyle: "inherit",
-                        fontVariantLigatures: "inherit",
-                        fontVariantCaps: "inherit",
-                        fontWeight: "inherit",
-                        letterSpacing: "0px",
-                      }}
-                    >
-                      {faqItem.questionBold ? (
-                        <strong>{faqItem.question}</strong>
-                      ) : (
-                        faqItem.question
-                      )}
-                    </span>
-                  </h5>
-                  <div dangerouslySetInnerHTML={{ __html: answer }} />
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-    );
-  };
+//               return (
+//                 <div className="box wow fadeInLeft" key={index}>
+//                   <h5>
+//                     <span
+//                       style={{
+//                         backgroundColor: "transparent",
+//                         fontFamily: "inherit",
+//                         fontSize: "inherit",
+//                         fontStyle: "inherit",
+//                         fontVariantLigatures: "inherit",
+//                         fontVariantCaps: "inherit",
+//                         fontWeight: "inherit",
+//                         letterSpacing: "0px",
+//                       }}
+//                     >
+//                       {faqItem.questionBold ? (
+//                         <strong>{faqItem.question}</strong>
+//                       ) : (
+//                         faqItem.question
+//                       )}
+//                     </span>
+//                   </h5>
+//                   <div dangerouslySetInnerHTML={{ __html: answer }} />
+//                 </div>
+//               );
+//             })}
+//           </div>
+//         </div>
+//       </div>
+//     );
+//   };
 
-  const renderCtaSection = () => {
-    const cta = data.ctaSection;
-    if (!cta?.show) return null;
+//   const renderCtaSection = () => {
+//     const cta = data.ctaSection;
+//     if (!cta?.show) return null;
 
-    const description = cta.description ? lexicalToHtml(cta.description) : "";
-    const alignmentClass = cta.contentAlignment === "center" ? "center" : "";
+//     const description = cta.description ? lexicalToHtml(cta.description) : "";
+//     const alignmentClass = cta.contentAlignment === "center" ? "center" : "";
 
-    return (
-      <div className="mod_column viewport container" data-s3-module="">
-        <div className="row " data-api-key="content">
-          <div className="item">
-            {alignmentClass === "center" && (
-              <center>
-                {cta.heading && <h2>{cta.heading}</h2>}
-                {description && (
-                  <div dangerouslySetInnerHTML={{ __html: description }} />
-                )}
-                <p>
-                  {cta.buttons?.map((button: any, index: number) => (
-                    <a
-                      key={index}
-                      href={button.url}
-                      target={button.openInNewTab ? "_blank" : "_self"}
-                      className={button.className || "btn"}
-                      rel={button.openInNewTab ? "noopener" : undefined}
-                    >
-                      {button.text}
-                    </a>
-                  ))}
-                </p>
-              </center>
-            )}
-            {alignmentClass !== "center" && (
-              <>
-                {cta.heading && <h2>{cta.heading}</h2>}
-                {description && (
-                  <div dangerouslySetInnerHTML={{ __html: description }} />
-                )}
-                <p>
-                  {cta.buttons?.map((button: any, index: number) => (
-                    <a
-                      key={index}
-                      href={button.url}
-                      target={button.openInNewTab ? "_blank" : "_self"}
-                      className={button.className || "btn"}
-                      rel={button.openInNewTab ? "noopener" : undefined}
-                    >
-                      {button.text}
-                    </a>
-                  ))}
-                </p>
-              </>
-            )}
-          </div>
-        </div>
-      </div>
-    );
-  };
+//     return (
+//       <div className="mod_column viewport container" data-s3-module="">
+//         <div className="row " data-api-key="content">
+//           <div className="item">
+//             {alignmentClass === "center" && (
+//               <center>
+//                 {cta.heading && <h2>{cta.heading}</h2>}
+//                 {description && (
+//                   <div dangerouslySetInnerHTML={{ __html: description }} />
+//                 )}
+//                 <p>
+//                   {cta.buttons?.map((button: any, index: number) => (
+//                     <a
+//                       key={index}
+//                       href={button.url}
+//                       target={button.openInNewTab ? "_blank" : "_self"}
+//                       className={button.className || "btn"}
+//                       rel={button.openInNewTab ? "noopener" : undefined}
+//                     >
+//                       {button.text}
+//                     </a>
+//                   ))}
+//                 </p>
+//               </center>
+//             )}
+//             {alignmentClass !== "center" && (
+//               <>
+//                 {cta.heading && <h2>{cta.heading}</h2>}
+//                 {description && (
+//                   <div dangerouslySetInnerHTML={{ __html: description }} />
+//                 )}
+//                 <p>
+//                   {cta.buttons?.map((button: any, index: number) => (
+//                     <a
+//                       key={index}
+//                       href={button.url}
+//                       target={button.openInNewTab ? "_blank" : "_self"}
+//                       className={button.className || "btn"}
+//                       rel={button.openInNewTab ? "noopener" : undefined}
+//                     >
+//                       {button.text}
+//                     </a>
+//                   ))}
+//                 </p>
+//               </>
+//             )}
+//           </div>
+//         </div>
+//       </div>
+//     );
+//   };
 
-  const sectionOrder = data.sectionOrder || [
-    { section: "hero" },
-    { section: "enroll" },
-    { section: "contactForm" },
-    { section: "faq" },
-    { section: "cta" },
-  ];
+//   const sectionOrder = data.sectionOrder || [
+//     { section: "hero" },
+//     { section: "enroll" },
+//     { section: "contactForm" },
+//     { section: "faq" },
+//     { section: "cta" },
+//   ];
 
-  return (
-    <main id="main">
-      {sectionOrder.map((item, index) => (
-        <React.Fragment key={index}>
-          {renderSection(item.section)}
-        </React.Fragment>
-      ))}
-    </main>
-  );
-};
+//   return (
+//     <main id="main">
+//       {sectionOrder.map((item, index) => (
+//         <React.Fragment key={index}>
+//           {renderSection(item.section)}
+//         </React.Fragment>
+//       ))}
+//     </main>
+//   );
+// };
 
-export default TrainingApplication;
+// export default TrainingApplication;

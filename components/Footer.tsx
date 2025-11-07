@@ -912,7 +912,7 @@ export default function Footer() {
       {renderCtaSubSection()}
       {renderFooterMainSection()}
       {renderDisclaimerSection()}
-      <div className="search-input-container">
+      {/* <div className="search-input-container">
         <div className="inner">
           <input type="text" id="js-search-input" placeholder="Search" />
           <div className="js-predictions" />
@@ -924,7 +924,7 @@ export default function Footer() {
             className="js-search-close"
           />
         </div>
-      </div>
+      </div> */}
       {renderStickyForm()}
     </>
   );

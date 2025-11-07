@@ -4694,8 +4694,8 @@ function ReviewsSliderSection({ section, style }: { section: Section; style: Rea
                 <span className="author">–{review.author}</span>
                 <span className="review-stars">
                   {[...Array(review.rating || 5)].map((_, i) => (
-                    // <i key={i} className="f-icon icon-star" role="none" />
-                    <Star key={i} className="f-icon icon-star" />
+                    <i key={i} className="f-icon icon-star" role="none" />
+                    // <Star key={i} className="f-icon icon-star" />
                   ))}
                 </span>
               </div>
@@ -4812,14 +4812,20 @@ function DoubleBannerSection({ section, style }: { section: Section; style: Reac
   );
 }
 
-// Locations Banner Section
-function LocationsBannerSection({ section, style }: { section: Section; style: React.CSSProperties }) {
+
+function LocationsBannerSection({
+  section,
+  style,
+}: {
+  section: Section;
+  style: React.CSSProperties;
+}) {
   const data = section.locationsBanner;
   if (!data) return null;
 
   return (
     <div
-      className={`mod_locations_banner container viewport ${section.customClasses || ''}`}
+      className={`mod_locations_banner container viewport ${section.customClasses || ""}`}
       style={style}
       data-s3-module=""
     >
@@ -4842,48 +4848,70 @@ function LocationsBannerSection({ section, style }: { section: Section; style: R
             )}
           </div>
           <div className="locations">
-            {data.locations?.map((loc: any, idx: number) => (
-              <span
-                key={idx}
-                className="location"
-                style={{ 
-                  left: loc.leftPosition ? `${loc.leftPosition}%` : undefined, 
-                  top: loc.topPosition ? `${loc.topPosition}%` : undefined 
-                }}
-              >
-                <a
-                  className="pin-link"
-                  aria-label={loc.ariaLabel || `${loc.name} pin on a map`}
-                  href={loc.url || '#'}
+            {data.locations?.map((loc: any, idx: number) => {
+              // Only render location if it has valid position values
+              const hasValidPosition =
+                loc.leftPosition != null &&
+                loc.leftPosition !== "" &&
+                !isNaN(parseFloat(loc.leftPosition)) &&
+                loc.topPosition != null &&
+                loc.topPosition !== "" &&
+                !isNaN(parseFloat(loc.topPosition));
+
+              if (!hasValidPosition) {
+                console.warn(
+                  `Location "${loc.name}" has invalid position values:`,
+                  {
+                    left: loc.leftPosition,
+                    top: loc.topPosition,
+                  }
+                );
+                return null;
+              }
+
+              return (
+                <span
+                  key={idx}
+                  className="location"
+                  style={{
+                    left: `${loc.leftPosition}%`,
+                    top: `${loc.topPosition}%`,
+                  }}
                 >
-                  <span className="pin" />
-                </a>
-                <span className="tip">
-                  <span className="info">
-                    <h3>{loc.name}</h3>
-                    <hr />
-                    <span className="address">
-                      <p>
-                        {loc.addressLine1}
-                        {loc.addressLine2 && (
-                          <span className="block">{loc.addressLine2}</span>
-                        )}
-                      </p>
+                  <a
+                    className="pin-link"
+                    aria-label={loc.ariaLabel || `${loc.name} pin on a map`}
+                    href={loc.url || "#"}
+                  >
+                    <span className="pin" />
+                  </a>
+                  <span className="tip">
+                    <span className="info">
+                      <h3>{loc.name}</h3>
+                      <hr />
+                      <span className="address">
+                        <p>
+                          {loc.addressLine1}
+                          {loc.addressLine2 && (
+                            <span className="block">{loc.addressLine2}</span>
+                          )}
+                        </p>
+                      </span>
+                      {loc.phone && loc.phoneLink && (
+                        <a
+                          className="tel ppc-href"
+                          href={loc.phoneLink}
+                          aria-label="Call Goldfingers Aesthetics on the phone"
+                          role="link"
+                        >
+                          <span className="ppc-number">{loc.phone}</span>
+                        </a>
+                      )}
                     </span>
-                    {loc.phone && loc.phoneLink && (
-                      <a
-                        className="tel ppc-href"
-                        href={loc.phoneLink}
-                        aria-label="Call Goldfingers Aesthetics on the phone"
-                        role="link"
-                      >
-                        <span className="ppc-number">{loc.phone}</span>
-                      </a>
-                    )}
                   </span>
                 </span>
-              </span>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
