@@ -11,7 +11,7 @@
 
 
 import LiquidChinJawGallery from "@/components/gallery/non-surgical/liquid-chin-and-jaw-contouring/LiquidChinJawGallery";
-import { fetchLiquidChinJawGalleryData } from "@/lib/api/gallery/non-surgical/fetchLiquidChinJawGalleryData";
+import { fetchLiquidChinJawGalleryData } from "@/lib/api/Gallery/non-surgical/fetchLiquidChinJawGalleryData";
 import type { Metadata } from "next";
 
 export const revalidate = 60; // ✅ Revalidate every 60 seconds (ISR)
