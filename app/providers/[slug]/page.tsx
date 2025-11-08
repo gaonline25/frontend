@@ -2151,7 +2151,7 @@ export default function ProviderProfile() {
     process.env.NEXT_PUBLIC_PAYLOAD_URL ||
     "https://goldfingerbackend.vercel.app";
 
-  const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+  const googleMapsApiKey = "AIzaSyCcWunoBpxSOoSPvplvrAzIaTh9pI6QfdU";
 
   const params = useParams();
   const slug = params.slug;

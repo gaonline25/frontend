@@ -3,7 +3,7 @@ const PAYLOAD_API_URL = "https://goldfingerbackend.vercel.app/api";
 export async function fetchSatelliteLocationsPageComponent() {
   try {
     const res = await fetch(
-      `${PAYLOAD_API_URL}/satellite-location-page-component?where[isActive][equals]=true&depth=2&limit=100&draft=false&trash=false`,
+      `${PAYLOAD_API_URL}/satellite-locations-page-component?where[isActive][equals]=true&depth=2&limit=100&draft=false&trash=false`,
       {
         next: { revalidate: 60 },
         cache: "force-cache",

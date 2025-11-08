@@ -30214,3 +30214,11 @@
         }
       }
     
+
+      .map-section {
+        position: relative;
+        height: 100vh; /* or any fixed size */
+        width: 100%;
+        min-height: 400px;
+        overflow: hidden;
+      }
