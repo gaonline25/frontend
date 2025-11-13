@@ -1504,29 +1504,9 @@ const sitemapData = [
   },
   { title: "Surgical", slug: "surgical", url: "/gallery/surgical/" },
   {
-    title: "Tummy Tuck",
-    slug: "tummy-tuck",
-    url: "/gallery/surgical/tummy-tuck/",
-  },
-  {
     title: "Mommy Makeover",
     slug: "mommy-makeover",
     url: "/gallery/surgical/mommy-makeover/",
-  },
-  {
-    title: "Liposuction",
-    slug: "liposuction",
-    url: "/gallery/surgical/liposuction/",
-  },
-  {
-    title: "Breast Augmentation",
-    slug: "breast-augmentation",
-    url: "/gallery/surgical/breast-augmentation/",
-  },
-  {
-    title: "Breast Lift",
-    slug: "breast-lift",
-    url: "/gallery/surgical/breast-lift/",
   },
   { title: "Medical Spa", slug: "medical-spa", url: "/medical-spa/" },
   {
@@ -1747,7 +1727,10 @@ export default function Navbar() {
           <nav>
             <ul className="partial_nav">
               <li className="partial_nav_item contact desktop-only">
-                <Link href="/contact/" className="tresio-nav__link level-1">
+                <Link
+                  href="/book-appointment/"
+                  className="tresio-nav__link level-1"
+                >
                   Book Appointment
                 </Link>
               </li>
@@ -1969,28 +1952,8 @@ export default function Navbar() {
                         <Link href="/gallery/surgical/">Surgical</Link>
                         <ul className="">
                           <li className="partial_nav_item" data-s3-partial="">
-                            <Link href="/gallery/surgical/tummy-tuck/">
-                              Tummy Tuck
-                            </Link>
-                          </li>
-                          <li className="partial_nav_item" data-s3-partial="">
                             <Link href="/gallery/surgical/mommy-makeover/">
                               Mommy Makeover
-                            </Link>
-                          </li>
-                          <li className="partial_nav_item" data-s3-partial="">
-                            <Link href="/gallery/surgical/liposuction/">
-                              Liposuction
-                            </Link>
-                          </li>
-                          <li className="partial_nav_item" data-s3-partial="">
-                            <Link href="/gallery/surgical/breast-augmentation/">
-                              Breast Augmentation
-                            </Link>
-                          </li>
-                          <li className="partial_nav_item" data-s3-partial="">
-                            <Link href="/gallery/surgical/breast-lift/">
-                              Breast Lift
                             </Link>
                           </li>
                         </ul>
@@ -2058,11 +2021,11 @@ export default function Navbar() {
                           Liquid (Non-Surgical) Facelift
                         </Link>
                       </li>
-                      <li className="partial_nav_item" data-s3-partial="">
+                      {/* <li className="partial_nav_item" data-s3-partial="">
                         <Link href="/medical-spa/liquid-non-surgical-rhinoplasty/">
                           Liquid (Non-Surgical) Rhinoplasty
                         </Link>
-                      </li>
+                      </li> */}
                       <li className="partial_nav_item" data-s3-partial="">
                         <Link href="/medical-spa/skinvive/">SkinVive</Link>
                       </li>
