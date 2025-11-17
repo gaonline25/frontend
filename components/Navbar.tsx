@@ -2129,9 +2129,9 @@ export default function Navbar() {
                     </Link>
                     <ul className="">
                       <li className="partial_nav_item" data-s3-partial="">
-                        <Link href="/specials-and-rewards/specials/">
+                        <a href="/specials-and-rewards/specials/">
                           Specials
-                        </Link>
+                        </a>
                       </li>
                       <li className="partial_nav_item" data-s3-partial="">
                         <Link href="/specials-and-rewards/alle/">
@@ -2154,7 +2154,7 @@ export default function Navbar() {
                     <Link href="/financing/">Financing</Link>
                   </li>
                   <li className="partial_nav_item" data-s3-partial="">
-                    <Link href="/contact/">Contact</Link>
+                    <a href="/contact/">Contact</a>
                   </li>
                   <li className="partial_nav_item" data-s3-partial="">
                     <Link href="/training/">Training</Link>
@@ -2182,9 +2182,9 @@ export default function Navbar() {
                         </Link>
                       </li>
                       <li className="partial_nav_item" data-s3-partial="">
-                        <Link href="/training/apply-for-your-training-spot-today/">
+                        <a href="/training/apply-for-your-training-spot-today/">
                           Apply for Your Training Spot Today
-                        </Link>
+                        </a>
                       </li>
                     </ul>
                   </li>
