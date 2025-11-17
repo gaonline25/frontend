@@ -3790,7 +3790,7 @@
 
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import {
   getResponsiveImageUrls,
@@ -3942,6 +3942,14 @@ const SpecialsPage: React.FC<SpecialsPageProps> = ({ data }) => {
     text: string;
   } | null>(null);
 
+  const [captchaVerified, setCaptchaVerified] = useState(false);
+
+  useEffect(() => {
+    (window as any).onRecaptchaSuccess = () => {
+      setCaptchaVerified(true);
+    };
+  }, []);
+
   const {
     heroSection,
     introSection,
@@ -3953,61 +3961,7 @@ const SpecialsPage: React.FC<SpecialsPageProps> = ({ data }) => {
     globalStyles,
   } = data;
 
-  // const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  //   setFormSubmitting(true);
-  //   setFormMessage(null);
-
-  //   const form = e.currentTarget;
-  //   const formData = new FormData(form);
-  //   const formValues: Record<string, any> = {};
-
-  //   formData.forEach((value, key) => {
-  //     if (key !== "human_check" && key !== "submit") {
-  //       formValues[key] = value;
-  //     }
-  //   });
-
-  //   try {
-  //     const response = await fetch("/api/special-form", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(formData),
-  //     });
-
-  //     const result = await response.json();
-
-  //     if (result.success) {
-  //       setFormMessage({
-  //         type: "success",
-  //         text: result.message,
-  //       });
-  //       form.reset();
-
-  //       if (data?.contactFormSection.formSettings.redirectUrl) {
-  //         // setTimeout(() => {
-  //         //   window.location.href =
-  //         //     data.contactFormSection.formSettings.redirectUrl;
-  //         // }, 2000);
-  //       }
-  //     } else {
-  //       setFormMessage({
-  //         type: "error",
-  //         text: result.message,
-  //       });
-  //     }
-  //   } catch (error) {
-  //     setFormMessage({
-  //       type: "error",
-  //       text: "An unexpected error occurred. Please try again.",
-  //     });
-  //   } finally {
-  //     setFormSubmitting(false);
-  //   }
-  // };
-
+  
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormSubmitting(true);
@@ -4029,6 +3983,15 @@ const SpecialsPage: React.FC<SpecialsPageProps> = ({ data }) => {
       }
     });
 
+    if (!captchaVerified) {
+      setFormMessage({
+        type: "error",
+        text: "Please complete the captcha before submitting.",
+      });
+      return;
+    }
+    
+
     try {
       const response = await fetch("/api/special-form", {
         method: "POST",
@@ -4049,10 +4012,7 @@ const SpecialsPage: React.FC<SpecialsPageProps> = ({ data }) => {
 
         // Optional redirect
         if (data?.contactFormSection.formSettings.redirectUrl) {
-          // setTimeout(() => {
-          //   window.location.href =
-          //     data.contactFormSection.formSettings.redirectUrl;
-          // }, 2000);
+          
         }
       } else {
         setFormMessage({
@@ -4653,36 +4613,31 @@ const SpecialsPage: React.FC<SpecialsPageProps> = ({ data }) => {
                       value={contactFormSection.formSettings.formId}
                     />
                     <input name="human_check" type="hidden" />
-                    <div className="submit-holder">
-                      {/* <div
-                        className="btn validate disabled"
-                        id={`validate_${contactFormSection.formSettings.formId}`}
-                        tabIndex={0}
-                      >
-                        {contactFormSection.buttonText}
-                      </div> */}
-                      {/* <button
-                        type="submit"
-                        id={`submit_${contactFormSection.formSettings.formId}`}
-                        value="submitted"
-                        name="submit"
-                        className="submit btn"
-                        tabIndex={0}
-                        disabled={formSubmitting}
-                        style={{
-                          backgroundColor:
-                            contactFormSection.buttonBackgroundColor,
-                          color: contactFormSection.buttonTextColor,
-                          opacity: formSubmitting ? 0.6 : 1,
-                          cursor: formSubmitting ? "not-allowed" : "pointer",
-                        }}
-                      >
-                        {formSubmitting
-                          ? "Submitting..."
-                          : contactFormSection.buttonText}
-                      </button> */}
+                    <div className="submit-holder"></div>
+
+                    <div
+                      className="captcha-wrapper"
+                      style={{ marginBottom: "20px" }}
+                    >
+                      <div
+                        className="g-recaptcha"
+                        data-sitekey="6LctvQ8sAAAAAKw24zdzz58FEKyM6VA9CuZC6Rl2"
+                        data-callback="onRecaptchaSuccess"
+                      ></div>
+
+                      {!captchaVerified && (
+                        <small
+                          style={{
+                            color: "red",
+                            marginTop: "8px",
+                            display: "block",
+                          }}
+                        >
+                          Please complete the captcha.
+                        </small>
+                      )}
                     </div>
-                    <button
+                    {/* <button
                       type="submit"
                       id={`submit_${contactFormSection.formSettings.formId}`}
                       value="submitted"
@@ -4690,6 +4645,27 @@ const SpecialsPage: React.FC<SpecialsPageProps> = ({ data }) => {
                       className="submit btn"
                       tabIndex={0}
                       disabled={formSubmitting}
+                      style={{
+                        backgroundColor:
+                          contactFormSection.buttonBackgroundColor,
+                        color: contactFormSection.buttonTextColor,
+                        opacity: formSubmitting ? 0.6 : 1,
+                        cursor: formSubmitting ? "not-allowed" : "pointer",
+                      }}
+                    >
+                      {formSubmitting
+                        ? "Submitting..."
+                        : contactFormSection.buttonText}
+                    </button> */}
+
+                    <button
+                      type="submit"
+                      id={`submit_${contactFormSection.formSettings.formId}`}
+                      value="submitted"
+                      name="submit"
+                      className="submit btn"
+                      tabIndex={0}
+                      disabled={formSubmitting || !captchaVerified} // 🔥 ADDED
                       style={{
                         backgroundColor:
                           contactFormSection.buttonBackgroundColor,

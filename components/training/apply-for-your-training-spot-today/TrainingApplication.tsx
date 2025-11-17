@@ -953,7 +953,7 @@
 
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 interface CloudinaryImage {
   cloudinary_url?: string;
@@ -1009,6 +1009,12 @@ const TrainingApplication: React.FC<TrainingApplicationProps> = ({ data }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
 
+  useEffect(() => {
+      (window as any).onCaptchaSuccess = () => {
+        setFormData((prev) => ({ ...prev, captchaVerified: true }));
+      };
+    }, []);
+
   const handleInputChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -1028,6 +1034,11 @@ const TrainingApplication: React.FC<TrainingApplicationProps> = ({ data }) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitMessage("");
+
+    if (!formData.captchaVerified) {
+      setSubmitMessage("Please verify the captcha before submitting.");
+      return;
+    }
 
     try {
       const response = await fetch("/api/training-form", {
@@ -1334,7 +1345,7 @@ const TrainingApplication: React.FC<TrainingApplicationProps> = ({ data }) => {
                 </div>
 
                 {/* reCAPTCHA placeholders */}
-                <div>
+                {/* <div>
                   <input
                     id="training_recaptchaV3"
                     name="g-recaptcha-response-v3"
@@ -1344,7 +1355,13 @@ const TrainingApplication: React.FC<TrainingApplicationProps> = ({ data }) => {
                   <div id="training_recaptcha" data-recaptcha-error="">
                     <small>This field is required.</small>
                   </div>
-                </div>
+                </div> */}
+
+                <div
+                  className="g-recaptcha"
+                  data-sitekey="6LctvQ8sAAAAAKw24zdzz58FEKyM6VA9CuZC6Rl2"
+                  data-callback="onCaptchaSuccess"
+                ></div>
 
                 <input
                   type="hidden"
@@ -1352,7 +1369,7 @@ const TrainingApplication: React.FC<TrainingApplicationProps> = ({ data }) => {
                   id="form_id"
                   value="training"
                 />
-                <input name="human_check" type="hidden" />
+                {/* <input name="human_check" type="hidden" /> */}
 
                 {/* <div className="submit-holder">
                   <div
@@ -1382,7 +1399,7 @@ const TrainingApplication: React.FC<TrainingApplicationProps> = ({ data }) => {
                   </button>
                 </div> */}
 
-                <button
+                {/* <button
                   type="submit"
                   id="submit_training"
                   value="submitted"
@@ -1390,6 +1407,25 @@ const TrainingApplication: React.FC<TrainingApplicationProps> = ({ data }) => {
                   className="submit btn"
                   tabIndex={0}
                   disabled={isSubmitting}
+                  style={{
+                    backgroundColor:
+                      data.formSection.submitButton.backgroundColor,
+                    color: data.formSection.submitButton.textColor,
+                  }}
+                >
+                  {isSubmitting
+                    ? "Submitting..."
+                    : data.formSection.submitButton.text}
+                </button> */}
+
+                <button
+                  type="submit"
+                  id="submit_training"
+                  value="submitted"
+                  name="submit"
+                  className="submit btn"
+                  tabIndex={0}
+                  disabled={isSubmitting || !formData.captchaVerified} // 🔥 Add this
                   style={{
                     backgroundColor:
                       data.formSection.submitButton.backgroundColor,
