@@ -958,7 +958,7 @@
 
 "use client"; 
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 interface CloudinaryImage {
   cloudinary_url?: string;
@@ -1042,6 +1042,12 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
 
+  useEffect(() => {
+    (window as any).onCaptchaSuccess = () => {
+      setFormData((prev) => ({ ...prev, captchaVerified: true }));
+    };
+  }, []);
+
   const handleInputChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -1075,6 +1081,21 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitMessage("");
+
+    // const token = await grecaptcha.execute("YOUR_SITE_KEY", {
+    //   action: "submit",
+    // });
+
+    // if (!token) {
+    //   setSubmitMessage("Captcha failed. Please try again.");
+    //   setIsSubmitting(false);
+    //   return;
+    // }
+
+    if (!formData.captchaVerified) {
+      setSubmitMessage("Please verify the captcha before submitting.");
+      return;
+    }
 
     try {
       const response = await fetch("/api/contact-form", {
@@ -1333,10 +1354,33 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
                   )}
                 </div>
 
-                <button
+                <div
+                  className="g-recaptcha"
+                  data-sitekey="6LctvQ8sAAAAAKw24zdzz58FEKyM6VA9CuZC6Rl2"
+                  data-callback="onCaptchaSuccess"
+                ></div>
+
+                {/* <button
                   type="submit"
                   className="submit btn"
                   disabled={isSubmitting}
+                  style={{
+                    backgroundColor:
+                      data.contactSection.formSection.submitButton
+                        .backgroundColor,
+                    color:
+                      data.contactSection.formSection.submitButton.textColor,
+                  }}
+                >
+                  {isSubmitting
+                    ? "Submitting..."
+                    : data.contactSection.formSection.submitButton.text}
+                </button> */}
+
+                <button
+                  type="submit"
+                  className="submit btn"
+                  disabled={isSubmitting || !formData.captchaVerified}
                   style={{
                     backgroundColor:
                       data.contactSection.formSection.submitButton

@@ -740,6 +740,11 @@ export default function BodyScripts({
 }: BodyScriptsProps) {
   return (
     <>
+      <Script
+        src={`https://www.google.com/recaptcha/api.js`}
+        strategy="afterInteractive"
+      />
+
       {/* Site Flushing Script */}
       <Script id="site-flush" strategy="afterInteractive">
         {`
