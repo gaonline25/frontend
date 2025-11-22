@@ -76,10 +76,10 @@ const MemberShipPage: React.FC = () => {
             <picture className="background">
               <source
                 media="(max-width:420px)"
-                srcSet="https://www.datocms-assets.com/105497/1706814483-specials-team.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1706814483-specials-team.jpg?auto=format,compress&w=630 2x"
-                data-lazyload-srcset="https://www.datocms-assets.com/105497/1706814483-specials-team.jpg?auto=format,compress&w=420, https://www.datocms-assets.com/105497/1706814483-specials-team.jpg?auto=format,compress&w=630 2x"
+                srcSet="https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=1994 2x"
+                data-lazyload-srcset="https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=1994 2x"
               />
-              <source
+              {/* <source
                 media="(max-width:800px)"
                 srcSet="https://www.datocms-assets.com/105497/1706814483-specials-team.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1706814483-specials-team.jpg?auto=format,compress&w=1200 2x"
                 data-lazyload-srcset="https://www.datocms-assets.com/105497/1706814483-specials-team.jpg?auto=format,compress&w=800, https://www.datocms-assets.com/105497/1706814483-specials-team.jpg?auto=format,compress&w=1200 2x"
@@ -92,9 +92,9 @@ const MemberShipPage: React.FC = () => {
               <source
                 srcSet="https://www.datocms-assets.com/105497/1706814483-specials-team.jpg?auto=format,compress&w=1600"
                 data-lazyload-srcset="https://www.datocms-assets.com/105497/1706814483-specials-team.jpg?auto=format,compress&w=1600"
-              />
+              /> */}
               <img
-                src="https://www.datocms-assets.com/105497/1706814483-specials-team.jpg?auto=format,compress&w=1600"
+                src="https://www.datocms-assets.com/105497/1694632205-banner-left-with-text.jpg?auto=format,compress&w=1994"
                 width="1600"
                 height="730"
                 alt="team photo"
@@ -138,8 +138,6 @@ const MemberShipPage: React.FC = () => {
           </div>
         </div>
       </div>
-
-      
 
       <div
         className="mod_half_image viewport half-image container viewport half-image container in-viewport"
@@ -497,12 +495,8 @@ const MemberShipPage: React.FC = () => {
               <p>Join the Platinum Botox Membership Today.</p>
             </div>
           </div>
-          
-          
         </div>
       </div>
-
-      
 
       {/* Column Module */}
       <div className="mod_column viewport container" data-s3-module>
@@ -519,10 +513,6 @@ const MemberShipPage: React.FC = () => {
         </div>
       </div>
 
-      
-
-      
-      
       {/* /Page Layout */}
     </main>
   );
