@@ -2129,9 +2129,10 @@ export default function Navbar() {
                     </Link>
                     <ul className="">
                       <li className="partial_nav_item" data-s3-partial="">
-                        <a href="/specials-and-rewards/specials/">
-                          Specials
-                        </a>
+                        <Link href="/membership">Membership</Link>
+                      </li>
+                      <li className="partial_nav_item" data-s3-partial="">
+                        <a href="/specials-and-rewards/specials/">Specials</a>
                       </li>
                       <li className="partial_nav_item" data-s3-partial="">
                         <Link href="/specials-and-rewards/alle/">
