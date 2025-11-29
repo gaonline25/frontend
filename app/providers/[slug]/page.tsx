@@ -445,7 +445,7 @@
 
 // // //         // Fetch provider by slug
 // // //         const providerRes = await fetch(
-// // //           `https://goldfingerbackend.vercel.app/api/providers?where[slug][equals]=${slug}&depth=2`
+// // //           `https://backend-orpin-six-56.vercel.app/api/providers?where[slug][equals]=${slug}&depth=2`
 // // //         );
 // // //         const providerData = await providerRes.json();
 
@@ -998,7 +998,7 @@
 // //         setLoading(true);
 
 // //         const providerRes = await fetch(
-// //           `https://goldfingerbackend.vercel.app/api/providers?where[slug][equals]=${slug}&depth=2`
+// //           `https://backend-orpin-six-56.vercel.app/api/providers?where[slug][equals]=${slug}&depth=2`
 // //         );
 // //         const providerData = await providerRes.json();
 
@@ -1546,7 +1546,7 @@
 //   const [map, setMap] = useState<google.maps.Map | null>(null);
 //   const [marker, setMarker] = useState<google.maps.Marker | null>(null);
 //   const PAYLOAD_API_URL =
-//     process.env.NEXT_PUBLIC_PAYLOAD_URL || "https://goldfingerbackend.vercel.app";
+//     process.env.NEXT_PUBLIC_PAYLOAD_URL || "https://backend-orpin-six-56.vercel.app";
 
 //     const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 
@@ -1568,7 +1568,7 @@
 //         setLoading(true);
 
 //         // const providerRes = await fetch(
-//         //   `https://goldfingerbackend.vercel.app/api/providers?where[slug][equals]=${slug}&depth=2`
+//         //   `https://backend-orpin-six-56.vercel.app/api/providers?where[slug][equals]=${slug}&depth=2`
 //         // );
 //         const providerRes = await fetch(
 //           `${PAYLOAD_API_URL}/api/providers?where[slug][equals]=${slug}&depth=2`
@@ -2149,7 +2149,7 @@ export default function ProviderProfile() {
   const [marker, setMarker] = useState<google.maps.Marker | null>(null);
   const PAYLOAD_API_URL =
     process.env.NEXT_PUBLIC_PAYLOAD_URL ||
-    "https://goldfingerbackend.vercel.app";
+    "https://backend-orpin-six-56.vercel.app";
 
   const googleMapsApiKey = "AIzaSyCcWunoBpxSOoSPvplvrAzIaTh9pI6QfdU";
 

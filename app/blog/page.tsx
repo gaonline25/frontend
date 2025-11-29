@@ -39,7 +39,7 @@
 //   };
 // }
 
-// const PAYLOAD_URL = "https://goldfingerbackend.vercel.app";
+// const PAYLOAD_URL = "https://backend-orpin-six-56.vercel.app";
 
 // const Blog: React.FC = () => {
 //   const [posts, setPosts] = useState<BlogPost[]>([]);
@@ -293,7 +293,7 @@ interface BlogPost {
 }
 
 const PAYLOAD_URL =
-  process.env.PAYLOAD_API_URL || "https://goldfingerbackend.vercel.app";
+  process.env.PAYLOAD_API_URL || "https://backend-orpin-six-56.vercel.app";
 
 export const revalidate = 300; // ✅ Rebuild every 5 minutes
 

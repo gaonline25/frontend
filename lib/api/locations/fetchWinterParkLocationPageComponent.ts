@@ -1,4 +1,4 @@
-const PAYLOAD_API_URL = "https://goldfingerbackend.vercel.app/api";
+const PAYLOAD_API_URL = "https://backend-orpin-six-56.vercel.app/api";
 
 export async function fetchWinterParkLocationPageComponent() {
   try {

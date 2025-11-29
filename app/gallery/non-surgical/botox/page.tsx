@@ -19,7 +19,7 @@ export const revalidate = 60; // ✅ incremental static regeneration (every 60 s
 async function getData() {
   const res = await fetch(
     `${process.env.PAYLOAD_API_URL ||
-      "https://goldfingerbackend.vercel.app/api"}/botox-page?where[isActive][equals]=true&where[componentName][equals]=BOTOX%20Gallery&depth=3&limit=1`,
+      "https://backend-orpin-six-56.vercel.app/api"}/botox-page?where[isActive][equals]=true&where[componentName][equals]=BOTOX%20Gallery&depth=3&limit=1`,
     { next: { revalidate: 60 } } // ✅ cached & revalidated by Next.js
   );
 

@@ -22,7 +22,7 @@ async function getKybellaData() {
   const res = await fetch(
     `${
       process.env.PAYLOAD_API_URL ||
-      "https://goldfingerbackend.vercel.app/api"
+      "https://backend-orpin-six-56.vercel.app/api"
     }/KybellaGallery?where[isActive][equals]=true&depth=3&limit=1`,
     { next: { revalidate: 60 } }
   );

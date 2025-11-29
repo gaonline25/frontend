@@ -320,7 +320,7 @@
 // //         const res = await fetch(
 // //           `${
 // //             process.env.NEXT_PUBLIC_PAYLOAD_API_URL ||
-// //             "https://goldfingerbackend.vercel.app/api"
+// //             "https://backend-orpin-six-56.vercel.app/api"
 // //           }/RestylaneGallery?where[isActive][equals]=true&depth=2&limit=100&draft=false&trash=false`,
 // //           {
 // //             next: { revalidate: 60 },
@@ -787,7 +787,7 @@
 //         const res = await fetch(
 //           `${
 //             process.env.NEXT_PUBLIC_PAYLOAD_API_URL ||
-//             "https://goldfingerbackend.vercel.app/api"
+//             "https://backend-orpin-six-56.vercel.app/api"
 //           }/RestylaneGallery?where[isActive][equals]=true&depth=3&limit=1`,
 //           {
 //             next: { revalidate: 60 },

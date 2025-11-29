@@ -101,7 +101,7 @@
 
 //   // Memoized API URLs
 //   const API_BASE_URL = useMemo(() =>
-//     process.env.NEXT_PUBLIC_API_BASE_URL || "https://goldfingerbackend.vercel.app/api"
+//     process.env.NEXT_PUBLIC_API_BASE_URL || "https://backend-orpin-six-56.vercel.app/api"
 //   , []);
 
 //   // Handle URL changes
@@ -2047,7 +2047,7 @@ const ProviderLocator = () => {
   const API_BASE_URL = useMemo(
     () =>
       process.env.NEXT_PUBLIC_API_BASE_URL ||
-      "https://goldfingerbackend.vercel.app/api",
+      "https://backend-orpin-six-56.vercel.app/api",
     []
   );
 

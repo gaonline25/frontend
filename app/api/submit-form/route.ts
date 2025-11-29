@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
 
     // Submit to Payload CMS
     const response = await fetch(
-      `https://goldfingerbackend.vercel.app/api/form-submissions`,
+      `https://backend-orpin-six-56.vercel.app/api/form-submissions`,
       {
         method: "POST",
         headers: {

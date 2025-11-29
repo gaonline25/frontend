@@ -7011,12 +7011,12 @@
 // // // // // // // // // // //         setLoading(true);
 
 // // // // // // // // // // //         // Fetch locations
-// // // // // // // // // // //         const locationsRes = await fetch("https://goldfingerbackend.vercel.app/api/locations?depth=2");
+// // // // // // // // // // //         const locationsRes = await fetch("https://backend-orpin-six-56.vercel.app/api/locations?depth=2");
 // // // // // // // // // // //         const locationsData = await locationsRes.json();
 
 // // // // // // // // // // //         // Fetch providers
 // // // // // // // // // // //         const providersRes = await fetch(
-// // // // // // // // // // //           "https://goldfingerbackend.vercel.app/api/providers?depth=2"
+// // // // // // // // // // //           "https://backend-orpin-six-56.vercel.app/api/providers?depth=2"
 // // // // // // // // // // //         );
 // // // // // // // // // // //         const providersData = await providersRes.json();
 
@@ -8481,12 +8481,12 @@
 // // // // // // // // // //         setLoading(true);
 
 // // // // // // // // // //         const locationsRes = await fetch(
-// // // // // // // // // //           "https://goldfingerbackend.vercel.app/api/locations?depth=2"
+// // // // // // // // // //           "https://backend-orpin-six-56.vercel.app/api/locations?depth=2"
 // // // // // // // // // //         );
 // // // // // // // // // //         const locationsData = await locationsRes.json();
 
 // // // // // // // // // //         const providersRes = await fetch(
-// // // // // // // // // //           "https://goldfingerbackend.vercel.app/api/providers?depth=2"
+// // // // // // // // // //           "https://backend-orpin-six-56.vercel.app/api/providers?depth=2"
 // // // // // // // // // //         );
 // // // // // // // // // //         const providersData = await providersRes.json();
 
@@ -10028,12 +10028,12 @@
 // // // // // // // // //         setLoading(true);
 
 // // // // // // // // //         const locationsRes = await fetch(
-// // // // // // // // //           "https://goldfingerbackend.vercel.app/api/locations?depth=2"
+// // // // // // // // //           "https://backend-orpin-six-56.vercel.app/api/locations?depth=2"
 // // // // // // // // //         );
 // // // // // // // // //         const locationsData = await locationsRes.json();
 
 // // // // // // // // //         const providersRes = await fetch(
-// // // // // // // // //           "https://goldfingerbackend.vercel.app/api/providers?depth=2"
+// // // // // // // // //           "https://backend-orpin-six-56.vercel.app/api/providers?depth=2"
 // // // // // // // // //         );
 // // // // // // // // //         const providersData = await providersRes.json();
 
@@ -11621,12 +11621,12 @@
 // // // // // // // //         setLoading(true);
 
 // // // // // // // //         const locationsRes = await fetch(
-// // // // // // // //           "https://goldfingerbackend.vercel.app/api/locations?depth=2"
+// // // // // // // //           "https://backend-orpin-six-56.vercel.app/api/locations?depth=2"
 // // // // // // // //         );
 // // // // // // // //         const locationsData = await locationsRes.json();
 
 // // // // // // // //         const providersRes = await fetch(
-// // // // // // // //           "https://goldfingerbackend.vercel.app/api/providers?depth=2"
+// // // // // // // //           "https://backend-orpin-six-56.vercel.app/api/providers?depth=2"
 // // // // // // // //         );
 // // // // // // // //         const providersData = await providersRes.json();
 
@@ -13250,12 +13250,12 @@
 // // // // // // //         setLoading(true);
 
 // // // // // // //         const locationsRes = await fetch(
-// // // // // // //           "https://goldfingerbackend.vercel.app/api/locations?depth=2"
+// // // // // // //           "https://backend-orpin-six-56.vercel.app/api/locations?depth=2"
 // // // // // // //         );
 // // // // // // //         const locationsData = await locationsRes.json();
 
 // // // // // // //         const providersRes = await fetch(
-// // // // // // //           "https://goldfingerbackend.vercel.app/api/providers?depth=2"
+// // // // // // //           "https://backend-orpin-six-56.vercel.app/api/providers?depth=2"
 // // // // // // //         );
 // // // // // // //         const providersData = await providersRes.json();
 
@@ -14854,12 +14854,12 @@
 // // // // // //         setLoading(true);
 
 // // // // // //         const locationsRes = await fetch(
-// // // // // //           "https://goldfingerbackend.vercel.app/api/locations?depth=2"
+// // // // // //           "https://backend-orpin-six-56.vercel.app/api/locations?depth=2"
 // // // // // //         );
 // // // // // //         const locationsData = await locationsRes.json();
 
 // // // // // //         const providersRes = await fetch(
-// // // // // //           "https://goldfingerbackend.vercel.app/api/providers?depth=2"
+// // // // // //           "https://backend-orpin-six-56.vercel.app/api/providers?depth=2"
 // // // // // //         );
 // // // // // //         const providersData = await providersRes.json();
 
@@ -16472,12 +16472,12 @@
 // // // // //         setLoading(true);
 
 // // // // //         const locationsRes = await fetch(
-// // // // //           "https://goldfingerbackend.vercel.app/api/locations?depth=2&limit=1000"
+// // // // //           "https://backend-orpin-six-56.vercel.app/api/locations?depth=2&limit=1000"
 // // // // //         );
 // // // // //         const locationsData = await locationsRes.json();
 
 // // // // //         const providersRes = await fetch(
-// // // // //           "https://goldfingerbackend.vercel.app/api/providers?depth=2&limit=1000"
+// // // // //           "https://backend-orpin-six-56.vercel.app/api/providers?depth=2&limit=1000"
 // // // // //         );
 // // // // //         const providersData = await providersRes.json();
 
@@ -18128,12 +18128,12 @@
 // // // //         setLoading(true);
 
 // // // //         const locationsRes = await fetch(
-// // // //           "https://goldfingerbackend.vercel.app/api/locations?depth=2&limit=1000"
+// // // //           "https://backend-orpin-six-56.vercel.app/api/locations?depth=2&limit=1000"
 // // // //         );
 // // // //         const locationsData = await locationsRes.json();
 
 // // // //         const providersRes = await fetch(
-// // // //           "https://goldfingerbackend.vercel.app/api/providers?depth=2&limit=1000"
+// // // //           "https://backend-orpin-six-56.vercel.app/api/providers?depth=2&limit=1000"
 // // // //         );
 // // // //         const providersData = await providersRes.json();
 
@@ -19708,12 +19708,12 @@
 // // //         setLoading(true);
 
 // // //         const locationsRes = await fetch(
-// // //           "https://goldfingerbackend.vercel.app/api/locations?depth=2&limit=1000"
+// // //           "https://backend-orpin-six-56.vercel.app/api/locations?depth=2&limit=1000"
 // // //         );
 // // //         const locationsData = await locationsRes.json();
 
 // // //         const providersRes = await fetch(
-// // //           "https://goldfingerbackend.vercel.app/api/providers?depth=2&limit=1000"
+// // //           "https://backend-orpin-six-56.vercel.app/api/providers?depth=2&limit=1000"
 // // //         );
 // // //           const providersData = await providersRes.json();
 
@@ -21586,12 +21586,12 @@
 // //         setLoading(true);
 
 // //         const locationsRes = await fetch(
-// //           "https://goldfingerbackend.vercel.app/api/locations?depth=2&limit=1000"
+// //           "https://backend-orpin-six-56.vercel.app/api/locations?depth=2&limit=1000"
 // //         );
 // //         const locationsData = await locationsRes.json();
 
 // //         const providersRes = await fetch(
-// //           "https://goldfingerbackend.vercel.app/api/providers?depth=2&limit=1000"
+// //           "https://backend-orpin-six-56.vercel.app/api/providers?depth=2&limit=1000"
 // //         );
 // //         const providersData = await providersRes.json();
 
@@ -23473,11 +23473,11 @@
 
 //         const [locationsRes, providersRes] = await Promise.all([
 //           fetch(
-//             "https://goldfingerbackend.vercel.app/api/locations?depth=2&limit=1000",
+//             "https://backend-orpin-six-56.vercel.app/api/locations?depth=2&limit=1000",
 //             { cache: "force-cache" }
 //           ),
 //           fetch(
-//             "https://goldfingerbackend.vercel.app/api/providers?depth=2&limit=1000",
+//             "https://backend-orpin-six-56.vercel.app/api/providers?depth=2&limit=1000",
 //             { cache: "force-cache" }
 //           ),
 //         ]);

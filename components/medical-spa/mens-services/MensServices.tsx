@@ -1215,7 +1215,7 @@
 // //     const fetchData = async () => {
 // //       try {
 // //         const response = await fetch(
-// //           "https://goldfingerbackend.vercel.app/api/mens-services-page-component?where[isActive][equals]=true&limit=1"
+// //           "https://backend-orpin-six-56.vercel.app/api/mens-services-page-component?where[isActive][equals]=true&limit=1"
 // //         );
 // //         const result = await response.json();
 // //         if (result.docs && result.docs.length > 0) {

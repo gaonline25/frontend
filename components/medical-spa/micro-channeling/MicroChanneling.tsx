@@ -1955,7 +1955,7 @@
 // const fetchMicroChannelingPageData = async (slug: string) => {
 //   try {
 //     const response = await fetch(
-//       `https://goldfingerbackend.vercel.app/api/micro-channeling-page-component?where[componentName][equals]=${slug}`
+//       `https://backend-orpin-six-56.vercel.app/api/micro-channeling-page-component?where[componentName][equals]=${slug}`
 //     );
 //     const data = await response.json();
 //     return data.docs[0];

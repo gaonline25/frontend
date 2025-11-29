@@ -2,7 +2,7 @@
 // API functions to fetch navbar data from Payload CMS
 
 const PAYLOAD_API_URL =
-  process.env.NEXT_PUBLIC_PAYLOAD_URL || "https://goldfingerbackend.vercel.app";
+  process.env.NEXT_PUBLIC_PAYLOAD_URL || "https://backend-orpin-six-56.vercel.app";
 
 export interface NavbarData {
   enabled: boolean;

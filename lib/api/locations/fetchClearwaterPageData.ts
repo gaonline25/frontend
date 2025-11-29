@@ -1,4 +1,4 @@
-const PAYLOAD_API_URL = "https://goldfingerbackend.vercel.app/api";
+const PAYLOAD_API_URL = "https://backend-orpin-six-56.vercel.app/api";
 
 /**
  * Fetch Clearwater page data from Payload CMS

@@ -22,7 +22,7 @@
 // // import ContactSection from '@/components/ContactSection';
 
 // async function getContactData() {
-//   const payloadUrl = process.env.NEXT_PUBLIC_PAYLOAD_URL || 'https://goldfingerbackend.vercel.app';
+//   const payloadUrl = process.env.NEXT_PUBLIC_PAYLOAD_URL || 'https://backend-orpin-six-56.vercel.app';
 
 //   try {
 //     const response = await fetch(`${payloadUrl}/api/training-application`, {
@@ -109,7 +109,7 @@ import { transformTrainingData } from "@/components/transformTrainingData";
 
 async function getTrainingApplicationData() {
   const payloadUrl =
-    process.env.NEXT_PUBLIC_PAYLOAD_URL || "https://goldfingerbackend.vercel.app";
+    process.env.NEXT_PUBLIC_PAYLOAD_URL || "https://backend-orpin-six-56.vercel.app";
 
   try {
     const response = await fetch(

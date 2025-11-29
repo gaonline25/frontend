@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
     };
 
     // Submit to Payload CMS
-    const payloadUrl = "https://goldfingerbackend.vercel.app";
+    const payloadUrl = "https://backend-orpin-six-56.vercel.app";
     const payloadApiKey = process.env.PAYLOAD_API_KEY;
 
     const response = await fetch(

@@ -1,7 +1,7 @@
 // lib/api/training/fetchTrainingApplicationSimple.ts
 
 const PAYLOAD_API_URL =
-  process.env.NEXT_PUBLIC_PAYLOAD_API_URL || "https://goldfingerbackend.vercel.app/api";
+  process.env.NEXT_PUBLIC_PAYLOAD_API_URL || "https://backend-orpin-six-56.vercel.app/api";
 
 export interface TrainingApplicationSimpleData {
   componentName?: string;

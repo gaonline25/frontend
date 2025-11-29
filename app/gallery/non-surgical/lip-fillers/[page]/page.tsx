@@ -140,7 +140,7 @@
 //         const res = await fetch(
 //           `${
 //             process.env.NEXT_PUBLIC_PAYLOAD_API_URL ||
-//             "https://goldfingerbackend.vercel.app/api"
+//             "https://backend-orpin-six-56.vercel.app/api"
 //           }/ChinFillersPage?where[isActive][equals]=true&depth=3&limit=1`,
 //           {
 //             next: { revalidate: 60 },
@@ -535,7 +535,7 @@ export async function generateMetadata({
   try {
     const apiUrl =
       process.env.NEXT_PUBLIC_PAYLOAD_API_URL ||
-      "https://goldfingerbackend.vercel.app/api";
+      "https://backend-orpin-six-56.vercel.app/api";
 
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 5000);

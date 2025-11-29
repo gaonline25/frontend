@@ -22,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
     const res = await fetch(
       `${
         process.env.PAYLOAD_API_URL ||
-        "https://goldfingerbackend.vercel.app/api"
+        "https://backend-orpin-six-56.vercel.app/api"
       }/confidentiality-statement-component?depth=2&limit=1`,
       { next: { revalidate: 300 } }
     );
@@ -80,7 +80,7 @@ async function getConfidentialityData() {
   const res = await fetch(
     `${
       process.env.PAYLOAD_API_URL ||
-      "https://goldfingerbackend.vercel.app/api"
+      "https://backend-orpin-six-56.vercel.app/api"
     }/confidentiality-statement-component?depth=2&limit=1`,
     { next: { revalidate: 300 } }
   );
