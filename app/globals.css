@@ -2140,7 +2140,7 @@
       .row {
         width: 100%;
         margin: 0 auto;
-        *zoom: 1;
+        /* *zoom: 1; */
         max-width: 1200px;
       }
       .row .row {
@@ -2150,7 +2150,7 @@
         margin-top: 0;
         margin-bottom: 0;
         max-width: none;
-        *zoom: 1;
+        /* *zoom: 1; */
       }
       .container > .row {
         padding-top: 60px;
