@@ -1117,20 +1117,41 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
   // };
 
 
+  // const handleLocationChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  //   const selectedLocationId = e.target.value;
+
+  //   // Match by slug (remove any slashes if present)
+  //   const selectedLocation = data.locationsBanner.locations.find(
+  //     (loc) => loc.slug === selectedLocationId
+  //   );
+
+  //   // Clean the slug by removing slashes
+  //   const cleanSlug = selectedLocationId.replace(/^\/+|\/+$/g, "");
+
+  //   setFormData((prev) => ({
+  //     ...prev,
+  //     location_id: cleanSlug, // Store without slashes
+  //     location_name: selectedLocation?.name || "",
+  //   }));
+  // };
+
   const handleLocationChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedLocationId = e.target.value;
+    const selectedLocationId = e.target.value; // This is already clean
 
-    // Match by slug (remove any slashes if present)
-    const selectedLocation = data.locationsBanner.locations.find(
-      (loc) => loc.slug === selectedLocationId
-    );
+    // Match by the cleaned slug
+    const selectedLocation = data.locationsBanner.locations.find((loc) => {
+      const cleanSlug = loc.slug?.replace(/^\/+|\/+$/g, "");
+      return cleanSlug === selectedLocationId;
+    });
 
-    // Clean the slug by removing slashes
-    const cleanSlug = selectedLocationId.replace(/^\/+|\/+$/g, "");
+    console.log("Location selected:", {
+      value: selectedLocationId,
+      location: selectedLocation?.name,
+    });
 
     setFormData((prev) => ({
       ...prev,
-      location_id: cleanSlug, // Store without slashes
+      location_id: selectedLocationId, // Already clean
       location_name: selectedLocation?.name || "",
     }));
   };
@@ -1196,6 +1217,51 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
 
   const renderFormField = (field: any, index: number) => {
     // Special handling for location field
+    // if (field.name === "location_id" || field.fieldType === "location") {
+    //   return (
+    //     <div key={index} className="field-row col1">
+    //       <div className="field select">
+    //         {field.label && (
+    //           <label htmlFor="contact_location_id">{field.label}</label>
+    //         )}
+    //         {field.required && <small>This field is required.</small>}
+    //         {/* <select
+    //           name="location_id"
+    //           id="contact_location_id"
+    //           required={field.required}
+    //           onChange={handleLocationChange}
+    //           value={formData.location_id || ""}
+    //         >
+    //           <option value="" disabled>
+    //             {field.placeholder || "Select a location"}
+    //           </option>
+    //           {data.locationsBanner.locations.map((location, locIndex) => (
+    //             <option key={locIndex} value={location.id || location.name}>
+    //               {location.name}
+    //             </option>
+    //           ))}
+    //         </select> */}
+    //         <select
+    //           name="location_id"
+    //           id="contact_location_id"
+    //           required={field.required}
+    //           onChange={handleLocationChange}
+    //           value={formData.location_id || ""}
+    //         >
+    //           <option value="" disabled>
+    //             {field.placeholder || "Select a location"}
+    //           </option>
+    //           {data.locationsBanner.locations.map((location, locIndex) => (
+    //             <option key={locIndex} value={location.slug}>
+    //               {location.name}
+    //             </option>
+    //           ))}
+    //         </select>
+    //       </div>
+    //     </div>
+    //   );
+    // }
+
     if (field.name === "location_id" || field.fieldType === "location") {
       return (
         <div key={index} className="field-row col1">
@@ -1204,22 +1270,6 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
               <label htmlFor="contact_location_id">{field.label}</label>
             )}
             {field.required && <small>This field is required.</small>}
-            {/* <select
-              name="location_id"
-              id="contact_location_id"
-              required={field.required}
-              onChange={handleLocationChange}
-              value={formData.location_id || ""}
-            >
-              <option value="" disabled>
-                {field.placeholder || "Select a location"}
-              </option>
-              {data.locationsBanner.locations.map((location, locIndex) => (
-                <option key={locIndex} value={location.id || location.name}>
-                  {location.name}
-                </option>
-              ))}
-            </select> */}
             <select
               name="location_id"
               id="contact_location_id"
@@ -1230,11 +1280,16 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
               <option value="" disabled>
                 {field.placeholder || "Select a location"}
               </option>
-              {data.locationsBanner.locations.map((location, locIndex) => (
-                <option key={locIndex} value={location.slug}>
-                  {location.name}
-                </option>
-              ))}
+              {data.locationsBanner.locations.map((location, locIndex) => {
+                // ✅ Clean the slug when creating options
+                const cleanSlug =
+                  location.slug?.replace(/^\/+|\/+$/g, "") || location.name;
+                return (
+                  <option key={locIndex} value={cleanSlug}>
+                    {location.name}
+                  </option>
+                );
+              })}
             </select>
           </div>
         </div>
