@@ -1048,6 +1048,21 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
     };
   }, []);
 
+  // const handleInputChange = (
+  //   e: React.ChangeEvent<
+  //     HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+  //   >
+  // ) => {
+  //   const { name, value, type } = e.target;
+
+  //   if (type === "checkbox") {
+  //     const checked = (e.target as HTMLInputElement).checked;
+  //     setFormData((prev) => ({ ...prev, [name]: checked ? "Yes" : "" }));
+  //   } else {
+  //     setFormData((prev) => ({ ...prev, [name]: value }));
+  //   }
+  // };
+
   const handleInputChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -1057,25 +1072,69 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
 
     if (type === "checkbox") {
       const checked = (e.target as HTMLInputElement).checked;
-      setFormData((prev) => ({ ...prev, [name]: checked ? "Yes" : "" }));
+
+      // ✅ FIX — store BOOLEAN, NOT STRING
+      setFormData((prev) => ({
+        ...prev,
+        [name]: checked,
+      }));
     } else {
-      setFormData((prev) => ({ ...prev, [name]: value }));
+      setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
     }
   };
+  
 
   // Special handler for location select to capture both ID and name
+  // const handleLocationChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  //   const selectedLocationId = e.target.value;
+  //   const selectedLocation = data.locationsBanner.locations.find(
+  //     (loc) => (loc.id || loc.name) === selectedLocationId
+  //   );
+
+  //   setFormData((prev) => ({
+  //     ...prev,
+  //     location_id: selectedLocationId,
+  //     location_name: selectedLocation?.name || "",
+  //   }));
+  // };
+
+  // const handleLocationChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  //   const selectedLocationId = e.target.value;
+
+  //   // ✅ Match by slug
+  //   const selectedLocation = data.locationsBanner.locations.find(
+  //     (loc) => loc.slug === selectedLocationId
+  //   );
+
+  //   setFormData((prev) => ({
+  //     ...prev,
+  //     location_id: selectedLocationId, // e.g. "clearwater"
+  //     location_name: selectedLocation?.name || "", // e.g. "Clearwater"
+  //   }));
+  // };
+
+
   const handleLocationChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedLocationId = e.target.value;
+
+    // Match by slug (remove any slashes if present)
     const selectedLocation = data.locationsBanner.locations.find(
-      (loc) => (loc.id || loc.name) === selectedLocationId
+      (loc) => loc.slug === selectedLocationId
     );
+
+    // Clean the slug by removing slashes
+    const cleanSlug = selectedLocationId.replace(/^\/+|\/+$/g, "");
 
     setFormData((prev) => ({
       ...prev,
-      location_id: selectedLocationId,
+      location_id: cleanSlug, // Store without slashes
       location_name: selectedLocation?.name || "",
     }));
   };
+  
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -1145,7 +1204,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
               <label htmlFor="contact_location_id">{field.label}</label>
             )}
             {field.required && <small>This field is required.</small>}
-            <select
+            {/* <select
               name="location_id"
               id="contact_location_id"
               required={field.required}
@@ -1157,6 +1216,22 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
               </option>
               {data.locationsBanner.locations.map((location, locIndex) => (
                 <option key={locIndex} value={location.id || location.name}>
+                  {location.name}
+                </option>
+              ))}
+            </select> */}
+            <select
+              name="location_id"
+              id="contact_location_id"
+              required={field.required}
+              onChange={handleLocationChange}
+              value={formData.location_id || ""}
+            >
+              <option value="" disabled>
+                {field.placeholder || "Select a location"}
+              </option>
+              {data.locationsBanner.locations.map((location, locIndex) => (
+                <option key={locIndex} value={location.slug}>
                   {location.name}
                 </option>
               ))}
@@ -1246,9 +1321,8 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
                   type="checkbox"
                   id={commonProps.id}
                   name={field.name}
-                  value={field.defaultValue || "Yes"}
                   onChange={handleInputChange}
-                  checked={formData[field.name] === "Yes"}
+                  checked={!!formData[field.name]}
                   required={field.required}
                 />
                 {field.label && (
@@ -1258,6 +1332,29 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
             </div>
           </div>
         );
+
+      // case "checkbox":
+      //   return (
+      //     <div key={index} className="field-row col1">
+      //       <div className="field checkbox">
+      //         {field.required && <small>This field is required.</small>}
+      //         <div className="field-item checkbox-item">
+      //           <input
+      //             type="checkbox"
+      //             id={commonProps.id}
+      //             name={field.name}
+      //             value={field.defaultValue || "Yes"}
+      //             onChange={handleInputChange}
+      //             checked={formData[field.name] === "Yes"}
+      //             required={field.required}
+      //           />
+      //           {field.label && (
+      //             <label htmlFor={commonProps.id}>{field.label}</label>
+      //           )}
+      //         </div>
+      //       </div>
+      //     </div>
+      //   );
 
       default:
         return null;

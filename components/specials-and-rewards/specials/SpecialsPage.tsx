@@ -3935,6 +3935,1587 @@ interface SpecialsPageProps {
   data: SpecialsPageData;
 }
 
+// const SpecialsPage: React.FC<SpecialsPageProps> = ({ data }) => {
+//   const [formSubmitting, setFormSubmitting] = useState(false);
+//   const [formMessage, setFormMessage] = useState<{
+//     type: "success" | "error";
+//     text: string;
+//   } | null>(null);
+
+//   const [captchaVerified, setCaptchaVerified] = useState(false);
+
+//   useEffect(() => {
+//     (window as any).onRecaptchaSuccess = () => {
+//       setCaptchaVerified(true);
+//     };
+//   }, []);
+
+//   const {
+//     heroSection,
+//     introSection,
+//     bannerSection1,
+//     columnSection1,
+//     columnSection2,
+//     contactFormSection,
+//     sectionOrder,
+//     globalStyles,
+//   } = data;
+
+  
+//   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+//     e.preventDefault();
+//     setFormSubmitting(true);
+//     setFormMessage(null);
+
+//     const form = e.currentTarget;
+//     const formData = new FormData(form);
+
+//     // ✅ Convert FormData to plain object
+//     const formValues: Record<string, any> = {};
+
+//     formData.forEach((value, key) => {
+//       if (
+//         key !== "human_check" &&
+//         key !== "submit" &&
+//         key !== "g-recaptcha-response-v3"
+//       ) {
+//         formValues[key] = value;
+//       }
+//     });
+
+//     if (!captchaVerified) {
+//       setFormMessage({
+//         type: "error",
+//         text: "Please complete the captcha before submitting.",
+//       });
+//       return;
+//     }
+    
+
+//     try {
+//       const response = await fetch("/api/special-form", {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify(formValues), // ✅ Send the plain object, not FormData
+//       });
+
+//       const result = await response.json();
+
+//       if (response.ok && result.success) {
+//         setFormMessage({
+//           type: "success",
+//           text: result.message || "Thank you! We'll be in touch soon.",
+//         });
+//         form.reset();
+
+//         // Optional redirect
+//         if (data?.contactFormSection.formSettings.redirectUrl) {
+          
+//         }
+//       } else {
+//         setFormMessage({
+//           type: "error",
+//           text: result.message || "Failed to submit form. Please try again.",
+//         });
+//       }
+//     } catch (error) {
+//       console.error("Form submission error:", error);
+//       setFormMessage({
+//         type: "error",
+//         text: "An unexpected error occurred. Please try again.",
+//       });
+//     } finally {
+//       setFormSubmitting(false);
+//     }
+//   };
+
+//   const handleLocationChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+//     const selectedLocationValue = e.target.value;
+
+//     // Clean the slug by removing slashes
+//     const cleanSlug = selectedLocationValue.replace(/^\/+|\/+$/g, "");
+
+//     // If you have access to location data with names, find the matching location
+//     // Otherwise, just use the cleaned slug
+//     // const selectedLocation = locations.find(loc => loc.slug === cleanSlug);
+
+//     // Update form with cleaned location_id
+//     const formElement = e.target.form;
+//     if (formElement) {
+//       const locationInput = formElement.querySelector(
+//         '[name="location_id"]'
+//       ) as HTMLInputElement;
+//       if (locationInput) {
+//         locationInput.value = cleanSlug;
+//       }
+//     }
+//   };
+
+//   const placeholder =
+//     "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
+
+//   const renderSection = (section: string) => {
+//     switch (section) {
+//       case "hero":
+//         if (!heroSection.show) return null;
+//         const heroBgImages = getResponsiveImageUrls(
+//           heroSection.backgroundImage
+//         );
+//         const heroMediaImages = getResponsiveImageUrls(heroSection.mediaImage);
+//         return (
+//           <div
+//             className={`mod_hero banner ${
+//               heroSection.className || "less-padding mobile-stack"
+//             }`}
+//             data-s3-module
+//             style={{ backgroundColor: heroSection.backgroundColor }}
+//           >
+//             <div className="wrapper">
+//               <picture className="background">
+//                 <source
+//                   media="(max-width:420px)"
+//                   srcSet={placeholder}
+//                   data-lazyload-srcset={`${heroBgImages.mobile}?auto=format,compress&w=420, ${heroBgImages.mobile}?auto=format,compress&w=630 2x`}
+//                 />
+//                 <source
+//                   media="(max-width:800px)"
+//                   srcSet={placeholder}
+//                   data-lazyload-srcset={`${heroBgImages.tablet}?auto=format,compress&w=800, ${heroBgImages.tablet}?auto=format,compress&w=1200 2x`}
+//                 />
+//                 <source
+//                   media="(max-width:1400px)"
+//                   srcSet={placeholder}
+//                   data-lazyload-srcset={`${heroBgImages.desktop}?auto=format,compress&w=1400, ${heroBgImages.desktop}?auto=format,compress&w=2100 2x`}
+//                 />
+//                 <source
+//                   srcSet={placeholder}
+//                   data-lazyload-srcset={`${heroBgImages.large}?auto=format,compress&w=1994`}
+//                 />
+//                 <img
+//                   src={placeholder}
+//                   data-lazyload-src={`${heroBgImages.large}?auto=format,compress&w=1994`}
+//                   loading="lazy"
+//                   data-lazyload="img"
+//                   width="1994"
+//                   height="1206"
+//                   alt={heroBgImages.alt || "Background Texture"}
+//                   draggable="false"
+//                 />
+//               </picture>
+//               <div className="row">
+//                 <div className="inner">
+//                   <ul className="partial_breadcrumb" data-s3-partial>
+//                     {heroSection.breadcrumbs.map((crumb, index) => (
+//                       <li key={index}>
+//                         <a
+//                           href={crumb.url}
+//                           role="link"
+//                           aria-label={
+//                             crumb.ariaLabel ||
+//                             "Breadcrumbs to help navigate the user"
+//                           }
+//                         >
+//                           {crumb.label}
+//                         </a>
+//                       </li>
+//                     ))}
+//                   </ul>
+//                   <h1
+//                     style={{
+//                       color: heroSection.titleColor,
+//                       fontSize: heroSection.titleFontSize,
+//                     }}
+//                   >
+//                     {heroSection.title}
+//                   </h1>
+//                 </div>
+//               </div>
+//               <div className="media">
+//                 <picture className="background">
+//                   <source
+//                     media="(max-width:420px)"
+//                     srcSet={`${heroMediaImages.mobile}?auto=format,compress&w=420, ${heroMediaImages.mobile}?auto=format,compress&w=630 2x`}
+//                     data-lazyload-srcset={`${heroMediaImages.mobile}?auto=format,compress&w=420, ${heroMediaImages.mobile}?auto=format,compress&w=630 2x`}
+//                   />
+//                   <source
+//                     media="(max-width:800px)"
+//                     srcSet={`${heroMediaImages.tablet}?auto=format,compress&w=800, ${heroMediaImages.tablet}?auto=format,compress&w=1200 2x`}
+//                     data-lazyload-srcset={`${heroMediaImages.tablet}?auto=format,compress&w=800, ${heroMediaImages.tablet}?auto=format,compress&w=1200 2x`}
+//                   />
+//                   <source
+//                     media="(max-width:1400px)"
+//                     srcSet={`${heroMediaImages.desktop}?auto=format,compress&w=1400, ${heroMediaImages.desktop}?auto=format,compress&w=2100 2x`}
+//                     data-lazyload-srcset={`${heroMediaImages.desktop}?auto=format,compress&w=1400, ${heroMediaImages.desktop}?auto=format,compress&w=2100 2x`}
+//                   />
+//                   <source
+//                     srcSet={`${heroMediaImages.large}?auto=format,compress&w=1600`}
+//                     data-lazyload-srcset={`${heroMediaImages.large}?auto=format,compress&w=1600`}
+//                   />
+//                   <img
+//                     src={`${heroMediaImages.large}?auto=format,compress&w=1600`}
+//                     width="1600"
+//                     height="730"
+//                     alt={heroMediaImages.alt || "team photo"}
+//                     draggable="false"
+//                   />
+//                 </picture>
+//               </div>
+//             </div>
+//           </div>
+//         );
+
+//       case "intro":
+//         if (!introSection.show) return null;
+//         const introLogo = getImageUrl(introSection.logo);
+//         return (
+//           <div
+//             className={`mod_intro container viewport ${
+//               introSection.className || "option-1 wide"
+//             } wow fadeInUp`}
+//             data-s3-module
+//             style={{
+//               backgroundColor: introSection.backgroundColor,
+//               color: introSection.textColor,
+//               paddingBottom: introSection.paddingBottom,
+//             }}
+//           >
+//             <div className="row pb-0">
+//               {introLogo && (
+//                 <picture className="logo">
+//                   <img
+//                     src={introLogo}
+//                     width={introSection.logoWidth || 58}
+//                     height={introSection.logoHeight || 64}
+//                     loading="lazy"
+//                     alt={introSection.logoAlt || "Goldfingers aesthetic logo"}
+//                     draggable="false"
+//                     data-api-key="logo"
+//                   />
+//                 </picture>
+//               )}
+//               <div className="inner" data-api-key="content">
+//                 <h2 style={{ color: introSection.headingColor }}>
+//                   {introSection.heading}
+//                 </h2>
+//                 <div
+//                   dangerouslySetInnerHTML={{
+//                     __html: lexicalToHtml(introSection.content),
+//                   }}
+//                 />
+//               </div>
+//             </div>
+//           </div>
+//         );
+
+//       case "bannerSection1":
+//         if (!bannerSection1.show) return null;
+//         const bannerImages = getResponsiveImageUrls(
+//           bannerSection1.backgroundImage
+//         );
+//         return (
+//           <div
+//             className={`mod_banner ${
+//               bannerSection1.className ||
+//               "dark hide-divider viewport background-1"
+//             }`}
+//             data-s3-module
+//             style={{
+//               backgroundColor: bannerSection1.backgroundColor,
+//               color: bannerSection1.textColor,
+//             }}
+//           >
+//             <div className="row wow fadeInUp">
+//               <div className="content" data-api-key="top_content">
+//                 <div className={`text-${bannerSection1.textAlign || "center"}`}>
+//                   <h2 style={{ color: bannerSection1.headingColor }}>
+//                     {bannerSection1.heading}
+//                   </h2>
+//                   {bannerSection1.content && (
+//                     <div
+//                       dangerouslySetInnerHTML={{
+//                         __html: lexicalToHtml(bannerSection1.content),
+//                       }}
+//                     />
+//                   )}
+//                 </div>
+//               </div>
+//             </div>
+//             <picture className="background">
+//               <source
+//                 media="(max-width:420px)"
+//                 srcSet={placeholder}
+//                 data-lazyload-srcset={`${bannerImages.mobile}?auto=format,compress&w=800, ${bannerImages.mobile}?auto=format,compress&w=1200 2x`}
+//               />
+//               <source
+//                 media="(max-width:800px)"
+//                 srcSet={placeholder}
+//                 data-lazyload-srcset={`${bannerImages.tablet}?auto=format,compress&w=800&q=85&sharp=5, ${bannerImages.tablet}?auto=format,compress&w=1200&q=85&sharp=5 2x`}
+//               />
+//               <source
+//                 media="(max-width:1400px)"
+//                 srcSet={placeholder}
+//                 data-lazyload-srcset={`${bannerImages.desktop}?auto=format,compress&w=1400&q=85&sharp=5, ${bannerImages.desktop}?auto=format,compress&w=2100&q=85&sharp=5 2x`}
+//               />
+//               <source
+//                 srcSet={placeholder}
+//                 data-lazyload-srcset={`${bannerImages.large}?auto=format,compress&w=2200&q=85&sharp=5`}
+//               />
+//               <img
+//                 src={placeholder}
+//                 data-lazyload-src={`${bannerImages.large}?auto=format,compress&w=2200&q=85&sharp=5`}
+//                 loading="lazy"
+//                 data-lazyload="img"
+//                 width="2200"
+//                 height="802"
+//                 alt={bannerImages.alt || "Banner media"}
+//                 draggable="false"
+//               />
+//             </picture>
+//           </div>
+//         );
+
+//       case "columnSection1":
+//         if (!columnSection1.show) return null;
+//         return (
+//           <div
+//             className={`mod_column viewport container ${
+//               columnSection1.className || ""
+//             }`}
+//             data-s3-module
+//             style={{ backgroundColor: columnSection1.backgroundColor }}
+//           >
+//             <div
+//               className={`row text-${columnSection1.textAlign || "center"}`}
+//               data-api-key="content"
+//             >
+//               <div className="item">
+//                 {columnSection1.columns.map((column, index) => (
+//                   <React.Fragment key={index}>
+//                     {column.columnWidth && (
+//                       <div className={column.columnWidth}>
+//                         {column.content && (
+//                           <div
+//                             dangerouslySetInnerHTML={{
+//                               __html: lexicalToHtml(column.content),
+//                             }}
+//                           />
+//                         )}
+//                         {column.image?.url && (
+//                           <img
+//                             src={getImageUrl(column.image.url)}
+//                             width={column.image.width}
+//                             height={column.image.height}
+//                             alt={column.image.alt || ""}
+//                             loading="lazy"
+//                           />
+//                         )}
+//                       </div>
+//                     )}
+//                     {!column.columnWidth && (
+//                       <>
+//                         {column.content && (
+//                           <div
+//                             dangerouslySetInnerHTML={{
+//                               __html: lexicalToHtml(column.content),
+//                             }}
+//                           />
+//                         )}
+//                         {column.image?.url && (
+//                           <img
+//                             src={getImageUrl(column.image.url)}
+//                             width={column.image.width}
+//                             height={column.image.height}
+//                             alt={column.image.alt || ""}
+//                             loading="lazy"
+//                           />
+//                         )}
+//                       </>
+//                     )}
+//                   </React.Fragment>
+//                 ))}
+//               </div>
+//             </div>
+//           </div>
+//         );
+
+//       case "columnSection2":
+//         if (!columnSection2.show) return null;
+//         return (
+//           <div
+//             className={`mod_column viewport container ${
+//               columnSection2.className || ""
+//             }`}
+//             data-s3-module
+//             style={{ backgroundColor: columnSection2.backgroundColor }}
+//           >
+//             <div
+//               className={`row text-${columnSection2.textAlign || "center"}`}
+//               data-api-key="content"
+//             >
+//               <div className="item">
+//                 {columnSection2.columns.map((column, index) => (
+//                   <React.Fragment key={index}>
+//                     {column.columnWidth && (
+//                       <div className={column.columnWidth}>
+//                         {column.content && (
+//                           <div
+//                             dangerouslySetInnerHTML={{
+//                               __html: lexicalToHtml(column.content),
+//                             }}
+//                           />
+//                         )}
+//                         {column.image?.url && (
+//                           <img
+//                             src={getImageUrl(column.image.url)}
+//                             width={column.image.width}
+//                             height={column.image.height}
+//                             alt={column.image.alt || ""}
+//                             loading="lazy"
+//                           />
+//                         )}
+//                       </div>
+//                     )}
+//                     {!column.columnWidth && (
+//                       <>
+//                         {column.content && (
+//                           <div
+//                             dangerouslySetInnerHTML={{
+//                               __html: lexicalToHtml(column.content),
+//                             }}
+//                           />
+//                         )}
+//                         {column.image?.url && (
+//                           <img
+//                             src={getImageUrl(column.image.url)}
+//                             width={column.image.width}
+//                             height={column.image.height}
+//                             alt={column.image.alt || ""}
+//                             loading="lazy"
+//                           />
+//                         )}
+//                       </>
+//                     )}
+//                   </React.Fragment>
+//                 ))}
+//               </div>
+//             </div>
+//           </div>
+//         );
+
+//       case "contactForm":
+//         if (!contactFormSection.show) return null;
+//         return (
+//           <div
+//             className="mod_contact_form"
+//             data-s3-module
+//             style={{
+//               backgroundColor: contactFormSection.backgroundColor,
+//               color: contactFormSection.textColor,
+//             }}
+//           >
+//             <div className="wrapper">
+//               <div className="row">
+//                 <h2 style={{ color: contactFormSection.headingColor }}>
+//                   {contactFormSection.heading}
+//                 </h2>
+//                 <div className="partial_form" data-s3-partial>
+//                   {formMessage && (
+//                     <div
+//                       className={`form-message ${formMessage.type}`}
+//                       style={{
+//                         padding: "10px",
+//                         marginBottom: "20px",
+//                         borderRadius: "4px",
+//                         backgroundColor:
+//                           formMessage.type === "success"
+//                             ? "#d4edda"
+//                             : "#f8d7da",
+//                         color:
+//                           formMessage.type === "success"
+//                             ? "#155724"
+//                             : "#721c24",
+//                         border: `1px solid ${
+//                           formMessage.type === "success" ? "#c3e6cb" : "#f5c6cb"
+//                         }`,
+//                       }}
+//                     >
+//                       {formMessage.text}
+//                     </div>
+//                   )}
+//                   <form
+//                     id={`form_${contactFormSection.formSettings.formId}`}
+//                     className="s3-form"
+//                     method="post"
+//                     onSubmit={handleFormSubmit}
+//                     data-abide=""
+//                     encType="multipart/form-data"
+//                     noValidate
+//                   >
+//                     <div className="fields">
+//                       {contactFormSection.formFields.map((field, index) => {
+//                         const fieldClasses = `field-row ${
+//                           field.columnClass || "col1"
+//                         } ${field.additionalClasses || ""}`.trim();
+
+//                         if (field.fieldType === "hidden") {
+//                           return (
+//                             <div key={index} className={fieldClasses}>
+//                               <div className="field hidden">
+//                                 <input
+//                                   type="hidden"
+//                                   name={field.fieldName}
+//                                   id={field.fieldId}
+//                                   value={field.defaultValue || ""}
+//                                 />
+//                               </div>
+//                             </div>
+//                           );
+//                         }
+
+//                         if (field.fieldType === "textarea") {
+//                           return (
+//                             <div key={index} className={fieldClasses}>
+//                               <div className="field textarea">
+//                                 {field.label && (
+//                                   <label htmlFor={field.fieldId}>
+//                                     {field.label}
+//                                   </label>
+//                                 )}
+//                                 <textarea
+//                                   rows={6}
+//                                   cols={48}
+//                                   name={field.fieldName}
+//                                   id={field.fieldId}
+//                                   placeholder={field.placeholder}
+//                                   required={field.required}
+//                                   aria-required={
+//                                     field.required ? "true" : "false"
+//                                   }
+//                                   defaultValue=""
+//                                 ></textarea>
+//                               </div>
+//                             </div>
+//                           );
+//                         }
+
+//                         if (field.fieldType === "select") {
+//                           return (
+//                             <div key={index} className={fieldClasses}>
+//                               <div className="field select">
+//                                 {field.label && (
+//                                   <label htmlFor={field.fieldId}>
+//                                     {field.label}
+//                                   </label>
+//                                 )}
+//                                 {field.required && (
+//                                   <small>
+//                                     {field.validationMessage ||
+//                                       "This field is required."}
+//                                   </small>
+//                                 )}
+//                                 <select
+//                                   name={field.fieldName}
+//                                   id={field.fieldId}
+//                                   required={field.required}
+//                                   aria-required={
+//                                     field.required ? "true" : "false"
+//                                   }
+//                                 >
+//                                   <option value="" disabled>
+//                                     {field.placeholder}
+//                                   </option>
+//                                   {field.selectOptions?.map(
+//                                     (option, optIndex) => (
+//                                       <option
+//                                         key={optIndex}
+//                                         value={option.value}
+//                                       >
+//                                         {option.label}
+//                                       </option>
+//                                     )
+//                                   )}
+//                                 </select>
+//                               </div>
+//                             </div>
+//                           );
+//                         }
+
+//                         if (field.fieldType === "checkbox") {
+//                           return (
+//                             <div key={index} className={fieldClasses}>
+//                               <div
+//                                 className={`field checkbox ${
+//                                   field.additionalClasses || ""
+//                                 }`}
+//                               >
+//                                 {field.required && (
+//                                   <small>
+//                                     {field.validationMessage ||
+//                                       "This field is required."}
+//                                   </small>
+//                                 )}
+//                                 <div className="field-item checkbox-item">
+//                                   <input
+//                                     type="checkbox"
+//                                     id={field.fieldId}
+//                                     name={field.fieldName}
+//                                     value={field.defaultValue || "Yes"}
+//                                     required={field.required}
+//                                     aria-required={
+//                                       field.required ? "true" : "false"
+//                                     }
+//                                   />
+//                                   {field.label && (
+//                                     <label htmlFor={field.fieldId}>
+//                                       {field.label}
+//                                     </label>
+//                                   )}
+//                                 </div>
+//                               </div>
+//                             </div>
+//                           );
+//                         }
+
+//                         return (
+//                           <div key={index} className={fieldClasses}>
+//                             <div className={`field ${field.fieldType}`}>
+//                               {field.label && (
+//                                 <label htmlFor={field.fieldId}>
+//                                   {field.label}
+//                                 </label>
+//                               )}
+//                               {field.required && (
+//                                 <small>
+//                                   {field.validationMessage ||
+//                                     "This field is required."}
+//                                 </small>
+//                               )}
+//                               <input
+//                                 type={field.fieldType}
+//                                 size={50}
+//                                 name={field.fieldName}
+//                                 id={field.fieldId}
+//                                 defaultValue=""
+//                                 required={field.required}
+//                                 aria-required={
+//                                   field.required ? "true" : "false"
+//                                 }
+//                                 placeholder={field.placeholder}
+//                               />
+//                             </div>
+//                           </div>
+//                         );
+//                       })}
+//                     </div>
+//                     {contactFormSection.enableRecaptcha && (
+//                       <div>
+//                         <input
+//                           id={`${contactFormSection.formSettings.formId}_recaptchaV3`}
+//                           name="g-recaptcha-response-v3"
+//                           type="hidden"
+//                         />
+//                         <div
+//                           id={`${contactFormSection.formSettings.formId}_recaptchaV2`}
+//                           data-recaptcha
+//                         ></div>
+//                         <div
+//                           id={`${contactFormSection.formSettings.formId}_recaptcha`}
+//                           data-recaptcha-error
+//                         >
+//                           <small>This field is required.</small>
+//                         </div>
+//                       </div>
+//                     )}
+//                     <input
+//                       type="hidden"
+//                       name="form_id"
+//                       id="form_id"
+//                       value={contactFormSection.formSettings.formId}
+//                     />
+//                     <input name="human_check" type="hidden" />
+//                     <div className="submit-holder"></div>
+
+//                     <div
+//                       className="captcha-wrapper"
+//                       style={{ marginBottom: "20px" }}
+//                     >
+//                       <div
+//                         className="g-recaptcha"
+//                         data-sitekey="6LctvQ8sAAAAAKw24zdzz58FEKyM6VA9CuZC6Rl2"
+//                         data-callback="onRecaptchaSuccess"
+//                       ></div>
+
+//                       {!captchaVerified && (
+//                         <small
+//                           style={{
+//                             color: "red",
+//                             marginTop: "8px",
+//                             display: "block",
+//                           }}
+//                         >
+//                           Please complete the captcha.
+//                         </small>
+//                       )}
+//                     </div>
+//                     {/* <button
+//                       type="submit"
+//                       id={`submit_${contactFormSection.formSettings.formId}`}
+//                       value="submitted"
+//                       name="submit"
+//                       className="submit btn"
+//                       tabIndex={0}
+//                       disabled={formSubmitting}
+//                       style={{
+//                         backgroundColor:
+//                           contactFormSection.buttonBackgroundColor,
+//                         color: contactFormSection.buttonTextColor,
+//                         opacity: formSubmitting ? 0.6 : 1,
+//                         cursor: formSubmitting ? "not-allowed" : "pointer",
+//                       }}
+//                     >
+//                       {formSubmitting
+//                         ? "Submitting..."
+//                         : contactFormSection.buttonText}
+//                     </button> */}
+
+//                     <button
+//                       type="submit"
+//                       id={`submit_${contactFormSection.formSettings.formId}`}
+//                       value="submitted"
+//                       name="submit"
+//                       className="submit btn"
+//                       tabIndex={0}
+//                       disabled={formSubmitting || !captchaVerified} // 🔥 ADDED
+//                       style={{
+//                         backgroundColor:
+//                           contactFormSection.buttonBackgroundColor,
+//                         color: contactFormSection.buttonTextColor,
+//                         opacity: formSubmitting ? 0.6 : 1,
+//                         cursor: formSubmitting ? "not-allowed" : "pointer",
+//                       }}
+//                     >
+//                       {formSubmitting
+//                         ? "Submitting..."
+//                         : contactFormSection.buttonText}
+//                     </button>
+//                   </form>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         );
+
+//       default:
+//         return null;
+//     }
+//   };
+
+//   return (
+//     <main
+//       id="main"
+//       style={{
+//         maxWidth: globalStyles.containerMaxWidth,
+//         padding: globalStyles.containerPadding,
+//         fontFamily: globalStyles.fontFamily,
+//         color: globalStyles.textColor,
+//         margin: "0 auto",
+//       }}
+//     >
+//       {/* Page Layout */}
+//       {sectionOrder.map((item, index) => (
+//         <React.Fragment key={index}>
+//           {renderSection(item.section)}
+//         </React.Fragment>
+//       ))}
+//       {/* /Page Layout */}
+//     </main>
+//   );
+// };
+
+
+
+// const SpecialsPage: React.FC<SpecialsPageProps> = ({ data }) => {
+//   const [formSubmitting, setFormSubmitting] = useState(false);
+//   const [formMessage, setFormMessage] = useState<{
+//     type: "success" | "error";
+//     text: string;
+//   } | null>(null);
+
+//   const [captchaVerified, setCaptchaVerified] = useState(false);
+
+//   useEffect(() => {
+//     (window as any).onRecaptchaSuccess = () => {
+//       setCaptchaVerified(true);
+//     };
+//   }, []);
+
+//   const {
+//     heroSection,
+//     introSection,
+//     bannerSection1,
+//     columnSection1,
+//     columnSection2,
+//     contactFormSection,
+//     sectionOrder,
+//     globalStyles,
+//   } = data;
+
+//   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+//     e.preventDefault();
+//     setFormSubmitting(true);
+//     setFormMessage(null);
+
+//     const form = e.currentTarget;
+//     const formData = new FormData(form);
+
+//     // ✅ Convert FormData to plain object
+//     const formValues: Record<string, any> = {};
+
+//     formData.forEach((value, key) => {
+//       if (
+//         key !== "human_check" &&
+//         key !== "submit" &&
+//         key !== "g-recaptcha-response-v3"
+//       ) {
+//         formValues[key] = value;
+//       }
+//     });
+
+//     if (!captchaVerified) {
+//       setFormMessage({
+//         type: "error",
+//         text: "Please complete the captcha before submitting.",
+//       });
+//       setFormSubmitting(false);
+//       return;
+//     }
+
+//     try {
+//       const response = await fetch("/api/special-form", {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify(formValues),
+//       });
+
+//       const result = await response.json();
+
+//       if (response.ok && result.success) {
+//         setFormMessage({
+//           type: "success",
+//           text: result.message || "Thank you! We'll be in touch soon.",
+//         });
+//         form.reset();
+//         setCaptchaVerified(false); // Reset captcha
+
+//         // Optional redirect
+//         if (data?.contactFormSection.formSettings.redirectUrl) {
+//           // Uncomment to enable redirect
+//           // setTimeout(() => {
+//           //   window.location.href = data.contactFormSection.formSettings.redirectUrl;
+//           // }, 2000);
+//         }
+//       } else {
+//         setFormMessage({
+//           type: "error",
+//           text: result.message || "Failed to submit form. Please try again.",
+//         });
+//       }
+//     } catch (error) {
+//       console.error("Form submission error:", error);
+//       setFormMessage({
+//         type: "error",
+//         text: "An unexpected error occurred. Please try again.",
+//       });
+//     } finally {
+//       setFormSubmitting(false);
+//     }
+//   };
+
+//   const placeholder =
+//     "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
+
+//   const renderSection = (section: string) => {
+//     switch (section) {
+//       case "hero":
+//         if (!heroSection.show) return null;
+//         const heroBgImages = getResponsiveImageUrls(
+//           heroSection.backgroundImage
+//         );
+//         const heroMediaImages = getResponsiveImageUrls(heroSection.mediaImage);
+//         return (
+//           <div
+//             className={`mod_hero banner ${
+//               heroSection.className || "less-padding mobile-stack"
+//             }`}
+//             data-s3-module
+//             style={{ backgroundColor: heroSection.backgroundColor }}
+//           >
+//             <div className="wrapper">
+//               <picture className="background">
+//                 <source
+//                   media="(max-width:420px)"
+//                   srcSet={placeholder}
+//                   data-lazyload-srcset={`${heroBgImages.mobile}?auto=format,compress&w=420, ${heroBgImages.mobile}?auto=format,compress&w=630 2x`}
+//                 />
+//                 <source
+//                   media="(max-width:800px)"
+//                   srcSet={placeholder}
+//                   data-lazyload-srcset={`${heroBgImages.tablet}?auto=format,compress&w=800, ${heroBgImages.tablet}?auto=format,compress&w=1200 2x`}
+//                 />
+//                 <source
+//                   media="(max-width:1400px)"
+//                   srcSet={placeholder}
+//                   data-lazyload-srcset={`${heroBgImages.desktop}?auto=format,compress&w=1400, ${heroBgImages.desktop}?auto=format,compress&w=2100 2x`}
+//                 />
+//                 <source
+//                   srcSet={placeholder}
+//                   data-lazyload-srcset={`${heroBgImages.large}?auto=format,compress&w=1994`}
+//                 />
+//                 <img
+//                   src={placeholder}
+//                   data-lazyload-src={`${heroBgImages.large}?auto=format,compress&w=1994`}
+//                   loading="lazy"
+//                   data-lazyload="img"
+//                   width="1994"
+//                   height="1206"
+//                   alt={heroBgImages.alt || "Background Texture"}
+//                   draggable="false"
+//                 />
+//               </picture>
+//               <div className="row">
+//                 <div className="inner">
+//                   <ul className="partial_breadcrumb" data-s3-partial>
+//                     {heroSection.breadcrumbs.map((crumb, index) => (
+//                       <li key={index}>
+//                         <a
+//                           href={crumb.url}
+//                           role="link"
+//                           aria-label={
+//                             crumb.ariaLabel ||
+//                             "Breadcrumbs to help navigate the user"
+//                           }
+//                         >
+//                           {crumb.label}
+//                         </a>
+//                       </li>
+//                     ))}
+//                   </ul>
+//                   <h1
+//                     style={{
+//                       color: heroSection.titleColor,
+//                       fontSize: heroSection.titleFontSize,
+//                     }}
+//                   >
+//                     {heroSection.title}
+//                   </h1>
+//                 </div>
+//               </div>
+//               <div className="media">
+//                 <picture className="background">
+//                   <source
+//                     media="(max-width:420px)"
+//                     srcSet={`${heroMediaImages.mobile}?auto=format,compress&w=420, ${heroMediaImages.mobile}?auto=format,compress&w=630 2x`}
+//                     data-lazyload-srcset={`${heroMediaImages.mobile}?auto=format,compress&w=420, ${heroMediaImages.mobile}?auto=format,compress&w=630 2x`}
+//                   />
+//                   <source
+//                     media="(max-width:800px)"
+//                     srcSet={`${heroMediaImages.tablet}?auto=format,compress&w=800, ${heroMediaImages.tablet}?auto=format,compress&w=1200 2x`}
+//                     data-lazyload-srcset={`${heroMediaImages.tablet}?auto=format,compress&w=800, ${heroMediaImages.tablet}?auto=format,compress&w=1200 2x`}
+//                   />
+//                   <source
+//                     media="(max-width:1400px)"
+//                     srcSet={`${heroMediaImages.desktop}?auto=format,compress&w=1400, ${heroMediaImages.desktop}?auto=format,compress&w=2100 2x`}
+//                     data-lazyload-srcset={`${heroMediaImages.desktop}?auto=format,compress&w=1400, ${heroMediaImages.desktop}?auto=format,compress&w=2100 2x`}
+//                   />
+//                   <source
+//                     srcSet={`${heroMediaImages.large}?auto=format,compress&w=1600`}
+//                     data-lazyload-srcset={`${heroMediaImages.large}?auto=format,compress&w=1600`}
+//                   />
+//                   <img
+//                     src={`${heroMediaImages.large}?auto=format,compress&w=1600`}
+//                     width="1600"
+//                     height="730"
+//                     alt={heroMediaImages.alt || "team photo"}
+//                     draggable="false"
+//                   />
+//                 </picture>
+//               </div>
+//             </div>
+//           </div>
+//         );
+
+//       case "intro":
+//         if (!introSection.show) return null;
+//         const introLogo = getImageUrl(introSection.logo);
+//         return (
+//           <div
+//             className={`mod_intro container viewport ${
+//               introSection.className || "option-1 wide"
+//             } wow fadeInUp`}
+//             data-s3-module
+//             style={{
+//               backgroundColor: introSection.backgroundColor,
+//               color: introSection.textColor,
+//               paddingBottom: introSection.paddingBottom,
+//             }}
+//           >
+//             <div className="row pb-0">
+//               {introLogo && (
+//                 <picture className="logo">
+//                   <img
+//                     src={introLogo}
+//                     width={introSection.logoWidth || 58}
+//                     height={introSection.logoHeight || 64}
+//                     loading="lazy"
+//                     alt={introSection.logoAlt || "Goldfingers aesthetic logo"}
+//                     draggable="false"
+//                     data-api-key="logo"
+//                   />
+//                 </picture>
+//               )}
+//               <div className="inner" data-api-key="content">
+//                 <h2 style={{ color: introSection.headingColor }}>
+//                   {introSection.heading}
+//                 </h2>
+//                 <div
+//                   dangerouslySetInnerHTML={{
+//                     __html: lexicalToHtml(introSection.content),
+//                   }}
+//                 />
+//               </div>
+//             </div>
+//           </div>
+//         );
+
+//       case "bannerSection1":
+//         if (!bannerSection1.show) return null;
+//         const bannerImages = getResponsiveImageUrls(
+//           bannerSection1.backgroundImage
+//         );
+//         return (
+//           <div
+//             className={`mod_banner ${
+//               bannerSection1.className ||
+//               "dark hide-divider viewport background-1"
+//             }`}
+//             data-s3-module
+//             style={{
+//               backgroundColor: bannerSection1.backgroundColor,
+//               color: bannerSection1.textColor,
+//             }}
+//           >
+//             <div className="row wow fadeInUp">
+//               <div className="content" data-api-key="top_content">
+//                 <div className={`text-${bannerSection1.textAlign || "center"}`}>
+//                   <h2 style={{ color: bannerSection1.headingColor }}>
+//                     {bannerSection1.heading}
+//                   </h2>
+//                   {bannerSection1.content && (
+//                     <div
+//                       dangerouslySetInnerHTML={{
+//                         __html: lexicalToHtml(bannerSection1.content),
+//                       }}
+//                     />
+//                   )}
+//                 </div>
+//               </div>
+//             </div>
+//             <picture className="background">
+//               <source
+//                 media="(max-width:420px)"
+//                 srcSet={placeholder}
+//                 data-lazyload-srcset={`${bannerImages.mobile}?auto=format,compress&w=800, ${bannerImages.mobile}?auto=format,compress&w=1200 2x`}
+//               />
+//               <source
+//                 media="(max-width:800px)"
+//                 srcSet={placeholder}
+//                 data-lazyload-srcset={`${bannerImages.tablet}?auto=format,compress&w=800&q=85&sharp=5, ${bannerImages.tablet}?auto=format,compress&w=1200&q=85&sharp=5 2x`}
+//               />
+//               <source
+//                 media="(max-width:1400px)"
+//                 srcSet={placeholder}
+//                 data-lazyload-srcset={`${bannerImages.desktop}?auto=format,compress&w=1400&q=85&sharp=5, ${bannerImages.desktop}?auto=format,compress&w=2100&q=85&sharp=5 2x`}
+//               />
+//               <source
+//                 srcSet={placeholder}
+//                 data-lazyload-srcset={`${bannerImages.large}?auto=format,compress&w=2200&q=85&sharp=5`}
+//               />
+//               <img
+//                 src={placeholder}
+//                 data-lazyload-src={`${bannerImages.large}?auto=format,compress&w=2200&q=85&sharp=5`}
+//                 loading="lazy"
+//                 data-lazyload="img"
+//                 width="2200"
+//                 height="802"
+//                 alt={bannerImages.alt || "Banner media"}
+//                 draggable="false"
+//               />
+//             </picture>
+//           </div>
+//         );
+
+//       case "columnSection1":
+//         if (!columnSection1.show) return null;
+//         return (
+//           <div
+//             className={`mod_column viewport container ${
+//               columnSection1.className || ""
+//             }`}
+//             data-s3-module
+//             style={{ backgroundColor: columnSection1.backgroundColor }}
+//           >
+//             <div
+//               className={`row text-${columnSection1.textAlign || "center"}`}
+//               data-api-key="content"
+//             >
+//               <div className="item">
+//                 {columnSection1.columns.map((column, index) => (
+//                   <React.Fragment key={index}>
+//                     {column.columnWidth && (
+//                       <div className={column.columnWidth}>
+//                         {column.content && (
+//                           <div
+//                             dangerouslySetInnerHTML={{
+//                               __html: lexicalToHtml(column.content),
+//                             }}
+//                           />
+//                         )}
+//                         {column.image?.url && (
+//                           <img
+//                             src={getImageUrl(column.image.url)}
+//                             width={column.image.width}
+//                             height={column.image.height}
+//                             alt={column.image.alt || ""}
+//                             loading="lazy"
+//                           />
+//                         )}
+//                       </div>
+//                     )}
+//                     {!column.columnWidth && (
+//                       <>
+//                         {column.content && (
+//                           <div
+//                             dangerouslySetInnerHTML={{
+//                               __html: lexicalToHtml(column.content),
+//                             }}
+//                           />
+//                         )}
+//                         {column.image?.url && (
+//                           <img
+//                             src={getImageUrl(column.image.url)}
+//                             width={column.image.width}
+//                             height={column.image.height}
+//                             alt={column.image.alt || ""}
+//                             loading="lazy"
+//                           />
+//                         )}
+//                       </>
+//                     )}
+//                   </React.Fragment>
+//                 ))}
+//               </div>
+//             </div>
+//           </div>
+//         );
+
+//       case "columnSection2":
+//         if (!columnSection2.show) return null;
+//         return (
+//           <div
+//             className={`mod_column viewport container ${
+//               columnSection2.className || ""
+//             }`}
+//             data-s3-module
+//             style={{ backgroundColor: columnSection2.backgroundColor }}
+//           >
+//             <div
+//               className={`row text-${columnSection2.textAlign || "center"}`}
+//               data-api-key="content"
+//             >
+//               <div className="item">
+//                 {columnSection2.columns.map((column, index) => (
+//                   <React.Fragment key={index}>
+//                     {column.columnWidth && (
+//                       <div className={column.columnWidth}>
+//                         {column.content && (
+//                           <div
+//                             dangerouslySetInnerHTML={{
+//                               __html: lexicalToHtml(column.content),
+//                             }}
+//                           />
+//                         )}
+//                         {column.image?.url && (
+//                           <img
+//                             src={getImageUrl(column.image.url)}
+//                             width={column.image.width}
+//                             height={column.image.height}
+//                             alt={column.image.alt || ""}
+//                             loading="lazy"
+//                           />
+//                         )}
+//                       </div>
+//                     )}
+//                     {!column.columnWidth && (
+//                       <>
+//                         {column.content && (
+//                           <div
+//                             dangerouslySetInnerHTML={{
+//                               __html: lexicalToHtml(column.content),
+//                             }}
+//                           />
+//                         )}
+//                         {column.image?.url && (
+//                           <img
+//                             src={getImageUrl(column.image.url)}
+//                             width={column.image.width}
+//                             height={column.image.height}
+//                             alt={column.image.alt || ""}
+//                             loading="lazy"
+//                           />
+//                         )}
+//                       </>
+//                     )}
+//                   </React.Fragment>
+//                 ))}
+//               </div>
+//             </div>
+//           </div>
+//         );
+
+//       // ... keep all other cases (hero, intro, bannerSection1, columnSection1, columnSection2) as they are ...
+
+//       case "contactForm":
+//         if (!contactFormSection.show) return null;
+//         return (
+//           <div
+//             className="mod_contact_form"
+//             data-s3-module
+//             style={{
+//               backgroundColor: contactFormSection.backgroundColor,
+//               color: contactFormSection.textColor,
+//             }}
+//           >
+//             <div className="wrapper">
+//               <div className="row">
+//                 <h2 style={{ color: contactFormSection.headingColor }}>
+//                   {contactFormSection.heading}
+//                 </h2>
+//                 <div className="partial_form" data-s3-partial>
+//                   {formMessage && (
+//                     <div
+//                       className={`form-message ${formMessage.type}`}
+//                       style={{
+//                         padding: "10px",
+//                         marginBottom: "20px",
+//                         borderRadius: "4px",
+//                         backgroundColor:
+//                           formMessage.type === "success"
+//                             ? "#d4edda"
+//                             : "#f8d7da",
+//                         color:
+//                           formMessage.type === "success"
+//                             ? "#155724"
+//                             : "#721c24",
+//                         border: `1px solid ${
+//                           formMessage.type === "success" ? "#c3e6cb" : "#f5c6cb"
+//                         }`,
+//                       }}
+//                     >
+//                       {formMessage.text}
+//                     </div>
+//                   )}
+//                   <form
+//                     id={`form_${contactFormSection.formSettings.formId}`}
+//                     className="s3-form"
+//                     method="post"
+//                     onSubmit={handleFormSubmit}
+//                     data-abide=""
+//                     encType="multipart/form-data"
+//                     noValidate
+//                   >
+//                     <div className="fields">
+//                       {contactFormSection.formFields.map((field, index) => {
+//                         const fieldClasses = `field-row ${
+//                           field.columnClass || "col1"
+//                         } ${field.additionalClasses || ""}`.trim();
+
+//                         if (field.fieldType === "hidden") {
+//                           return (
+//                             <div key={index} className={fieldClasses}>
+//                               <div className="field hidden">
+//                                 <input
+//                                   type="hidden"
+//                                   name={field.fieldName}
+//                                   id={field.fieldId}
+//                                   value={field.defaultValue || ""}
+//                                 />
+//                               </div>
+//                             </div>
+//                           );
+//                         }
+
+//                         if (field.fieldType === "textarea") {
+//                           return (
+//                             <div key={index} className={fieldClasses}>
+//                               <div className="field textarea">
+//                                 {field.label && (
+//                                   <label htmlFor={field.fieldId}>
+//                                     {field.label}
+//                                   </label>
+//                                 )}
+//                                 <textarea
+//                                   rows={6}
+//                                   cols={48}
+//                                   name={field.fieldName}
+//                                   id={field.fieldId}
+//                                   placeholder={field.placeholder}
+//                                   required={field.required}
+//                                   aria-required={
+//                                     field.required ? "true" : "false"
+//                                   }
+//                                   defaultValue=""
+//                                 ></textarea>
+//                               </div>
+//                             </div>
+//                           );
+//                         }
+
+//                         if (field.fieldType === "select") {
+//                           // ✅ Check if this is the location field
+//                           const isLocationField =
+//                             field.fieldName === "location_id" ||
+//                             field.fieldName === "location" ||
+//                             field.fieldId?.includes("location");
+
+//                           return (
+//                             <div key={index} className={fieldClasses}>
+//                               <div className="field select">
+//                                 {field.label && (
+//                                   <label htmlFor={field.fieldId}>
+//                                     {field.label}
+//                                   </label>
+//                                 )}
+//                                 {field.required && (
+//                                   <small>
+//                                     {field.validationMessage ||
+//                                       "This field is required."}
+//                                   </small>
+//                                 )}
+//                                 <select
+//                                   name={field.fieldName}
+//                                   id={field.fieldId}
+//                                   required={field.required}
+//                                   aria-required={
+//                                     field.required ? "true" : "false"
+//                                   }
+//                                 >
+//                                   <option value="" disabled>
+//                                     {field.placeholder}
+//                                   </option>
+//                                   {field.selectOptions?.map(
+//                                     (option, optIndex) => (
+//                                       <option
+//                                         key={optIndex}
+//                                         value={
+//                                           isLocationField
+//                                             ? option.value.replace(
+//                                                 /^\/+|\/+$/g,
+//                                                 ""
+//                                               ) // ✅ Clean slashes for location
+//                                             : option.value // Keep original for other selects
+//                                         }
+//                                       >
+//                                         {option.label}
+//                                       </option>
+//                                     )
+//                                   )}
+//                                 </select>
+//                               </div>
+//                             </div>
+//                           );
+//                         }
+
+//                         if (field.fieldType === "checkbox") {
+//                           return (
+//                             <div key={index} className={fieldClasses}>
+//                               <div
+//                                 className={`field checkbox ${
+//                                   field.additionalClasses || ""
+//                                 }`}
+//                               >
+//                                 {field.required && (
+//                                   <small>
+//                                     {field.validationMessage ||
+//                                       "This field is required."}
+//                                   </small>
+//                                 )}
+//                                 <div className="field-item checkbox-item">
+//                                   <input
+//                                     type="checkbox"
+//                                     id={field.fieldId}
+//                                     name={field.fieldName}
+//                                     value={field.defaultValue || "Yes"}
+//                                     required={field.required}
+//                                     aria-required={
+//                                       field.required ? "true" : "false"
+//                                     }
+//                                   />
+//                                   {field.label && (
+//                                     <label htmlFor={field.fieldId}>
+//                                       {field.label}
+//                                     </label>
+//                                   )}
+//                                 </div>
+//                               </div>
+//                             </div>
+//                           );
+//                         }
+
+//                         return (
+//                           <div key={index} className={fieldClasses}>
+//                             <div className={`field ${field.fieldType}`}>
+//                               {field.label && (
+//                                 <label htmlFor={field.fieldId}>
+//                                   {field.label}
+//                                 </label>
+//                               )}
+//                               {field.required && (
+//                                 <small>
+//                                   {field.validationMessage ||
+//                                     "This field is required."}
+//                                 </small>
+//                               )}
+//                               <input
+//                                 type={field.fieldType}
+//                                 size={50}
+//                                 name={field.fieldName}
+//                                 id={field.fieldId}
+//                                 defaultValue=""
+//                                 required={field.required}
+//                                 aria-required={
+//                                   field.required ? "true" : "false"
+//                                 }
+//                                 placeholder={field.placeholder}
+//                               />
+//                             </div>
+//                           </div>
+//                         );
+//                       })}
+//                     </div>
+
+//                     {contactFormSection.enableRecaptcha && (
+//                       <div>
+//                         <input
+//                           id={`${contactFormSection.formSettings.formId}_recaptchaV3`}
+//                           name="g-recaptcha-response-v3"
+//                           type="hidden"
+//                         />
+//                         <div
+//                           id={`${contactFormSection.formSettings.formId}_recaptchaV2`}
+//                           data-recaptcha
+//                         ></div>
+//                         <div
+//                           id={`${contactFormSection.formSettings.formId}_recaptcha`}
+//                           data-recaptcha-error
+//                         >
+//                           <small>This field is required.</small>
+//                         </div>
+//                       </div>
+//                     )}
+
+//                     <input
+//                       type="hidden"
+//                       name="form_id"
+//                       id="form_id"
+//                       value={contactFormSection.formSettings.formId}
+//                     />
+//                     <input name="human_check" type="hidden" />
+//                     <div className="submit-holder"></div>
+
+//                     <div
+//                       className="captcha-wrapper"
+//                       style={{ marginBottom: "20px" }}
+//                     >
+//                       <div
+//                         className="g-recaptcha"
+//                         data-sitekey="6LctvQ8sAAAAAKw24zdzz58FEKyM6VA9CuZC6Rl2"
+//                         data-callback="onRecaptchaSuccess"
+//                       ></div>
+
+//                       {!captchaVerified && (
+//                         <small
+//                           style={{
+//                             color: "red",
+//                             marginTop: "8px",
+//                             display: "block",
+//                           }}
+//                         >
+//                           Please complete the captcha.
+//                         </small>
+//                       )}
+//                     </div>
+
+//                     <button
+//                       type="submit"
+//                       id={`submit_${contactFormSection.formSettings.formId}`}
+//                       value="submitted"
+//                       name="submit"
+//                       className="submit btn"
+//                       tabIndex={0}
+//                       disabled={formSubmitting || !captchaVerified}
+//                       style={{
+//                         backgroundColor:
+//                           contactFormSection.buttonBackgroundColor,
+//                         color: contactFormSection.buttonTextColor,
+//                         opacity: formSubmitting || !captchaVerified ? 0.6 : 1,
+//                         cursor:
+//                           formSubmitting || !captchaVerified
+//                             ? "not-allowed"
+//                             : "pointer",
+//                       }}
+//                     >
+//                       {formSubmitting
+//                         ? "Submitting..."
+//                         : contactFormSection.buttonText}
+//                     </button>
+//                   </form>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         );
+
+//       default:
+//         return null;
+//     }
+//   };
+
+//   return (
+//     <main
+//       id="main"
+//       style={{
+//         maxWidth: globalStyles.containerMaxWidth,
+//         padding: globalStyles.containerPadding,
+//         fontFamily: globalStyles.fontFamily,
+//         color: globalStyles.textColor,
+//         margin: "0 auto",
+//       }}
+//     >
+//       {sectionOrder.map((item, index) => (
+//         <React.Fragment key={index}>
+//           {renderSection(item.section)}
+//         </React.Fragment>
+//       ))}
+//     </main>
+//   );
+// };
+
+
+
 const SpecialsPage: React.FC<SpecialsPageProps> = ({ data }) => {
   const [formSubmitting, setFormSubmitting] = useState(false);
   const [formMessage, setFormMessage] = useState<{
@@ -3961,7 +5542,6 @@ const SpecialsPage: React.FC<SpecialsPageProps> = ({ data }) => {
     globalStyles,
   } = data;
 
-  
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormSubmitting(true);
@@ -3970,7 +5550,7 @@ const SpecialsPage: React.FC<SpecialsPageProps> = ({ data }) => {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    // ✅ Convert FormData to plain object
+    // ✅ Convert FormData to plain object with proper checkbox handling
     const formValues: Record<string, any> = {};
 
     formData.forEach((value, key) => {
@@ -3979,18 +5559,23 @@ const SpecialsPage: React.FC<SpecialsPageProps> = ({ data }) => {
         key !== "submit" &&
         key !== "g-recaptcha-response-v3"
       ) {
+        // Store the value as-is (will be "Yes" for checked checkboxes)
         formValues[key] = value;
       }
     });
+
+    console.log("=== FORM VALUES BEING SENT ===");
+    console.log(formValues);
+    console.log("==============================");
 
     if (!captchaVerified) {
       setFormMessage({
         type: "error",
         text: "Please complete the captcha before submitting.",
       });
+      setFormSubmitting(false);
       return;
     }
-    
 
     try {
       const response = await fetch("/api/special-form", {
@@ -3998,7 +5583,7 @@ const SpecialsPage: React.FC<SpecialsPageProps> = ({ data }) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formValues), // ✅ Send the plain object, not FormData
+        body: JSON.stringify(formValues),
       });
 
       const result = await response.json();
@@ -4009,10 +5594,14 @@ const SpecialsPage: React.FC<SpecialsPageProps> = ({ data }) => {
           text: result.message || "Thank you! We'll be in touch soon.",
         });
         form.reset();
+        setCaptchaVerified(false); // Reset captcha
 
         // Optional redirect
         if (data?.contactFormSection.formSettings.redirectUrl) {
-          
+          // Uncomment to enable redirect
+          // setTimeout(() => {
+          //   window.location.href = data.contactFormSection.formSettings.redirectUrl;
+          // }, 2000);
         }
       } else {
         setFormMessage({
@@ -4382,6 +5971,8 @@ const SpecialsPage: React.FC<SpecialsPageProps> = ({ data }) => {
           </div>
         );
 
+      // ... keep all other cases (hero, intro, bannerSection1, columnSection1, columnSection2) as they are ...
+
       case "contactForm":
         if (!contactFormSection.show) return null;
         return (
@@ -4479,6 +6070,12 @@ const SpecialsPage: React.FC<SpecialsPageProps> = ({ data }) => {
                         }
 
                         if (field.fieldType === "select") {
+                          // ✅ Check if this is the location field
+                          const isLocationField =
+                            field.fieldName === "location_id" ||
+                            field.fieldName === "location" ||
+                            field.fieldId?.includes("location");
+
                           return (
                             <div key={index} className={fieldClasses}>
                               <div className="field select">
@@ -4508,7 +6105,14 @@ const SpecialsPage: React.FC<SpecialsPageProps> = ({ data }) => {
                                     (option, optIndex) => (
                                       <option
                                         key={optIndex}
-                                        value={option.value}
+                                        value={
+                                          isLocationField
+                                            ? option.value.replace(
+                                                /^\/+|\/+$/g,
+                                                ""
+                                              ) // ✅ Clean slashes for location
+                                            : option.value // Keep original for other selects
+                                        }
                                       >
                                         {option.label}
                                       </option>
@@ -4539,7 +6143,7 @@ const SpecialsPage: React.FC<SpecialsPageProps> = ({ data }) => {
                                     type="checkbox"
                                     id={field.fieldId}
                                     name={field.fieldName}
-                                    value={field.defaultValue || "Yes"}
+                                    value="Yes"
                                     required={field.required}
                                     aria-required={
                                       field.required ? "true" : "false"
@@ -4587,6 +6191,7 @@ const SpecialsPage: React.FC<SpecialsPageProps> = ({ data }) => {
                         );
                       })}
                     </div>
+
                     {contactFormSection.enableRecaptcha && (
                       <div>
                         <input
@@ -4606,6 +6211,7 @@ const SpecialsPage: React.FC<SpecialsPageProps> = ({ data }) => {
                         </div>
                       </div>
                     )}
+
                     <input
                       type="hidden"
                       name="form_id"
@@ -4637,26 +6243,6 @@ const SpecialsPage: React.FC<SpecialsPageProps> = ({ data }) => {
                         </small>
                       )}
                     </div>
-                    {/* <button
-                      type="submit"
-                      id={`submit_${contactFormSection.formSettings.formId}`}
-                      value="submitted"
-                      name="submit"
-                      className="submit btn"
-                      tabIndex={0}
-                      disabled={formSubmitting}
-                      style={{
-                        backgroundColor:
-                          contactFormSection.buttonBackgroundColor,
-                        color: contactFormSection.buttonTextColor,
-                        opacity: formSubmitting ? 0.6 : 1,
-                        cursor: formSubmitting ? "not-allowed" : "pointer",
-                      }}
-                    >
-                      {formSubmitting
-                        ? "Submitting..."
-                        : contactFormSection.buttonText}
-                    </button> */}
 
                     <button
                       type="submit"
@@ -4665,13 +6251,16 @@ const SpecialsPage: React.FC<SpecialsPageProps> = ({ data }) => {
                       name="submit"
                       className="submit btn"
                       tabIndex={0}
-                      disabled={formSubmitting || !captchaVerified} // 🔥 ADDED
+                      disabled={formSubmitting || !captchaVerified}
                       style={{
                         backgroundColor:
                           contactFormSection.buttonBackgroundColor,
                         color: contactFormSection.buttonTextColor,
-                        opacity: formSubmitting ? 0.6 : 1,
-                        cursor: formSubmitting ? "not-allowed" : "pointer",
+                        opacity: formSubmitting || !captchaVerified ? 0.6 : 1,
+                        cursor:
+                          formSubmitting || !captchaVerified
+                            ? "not-allowed"
+                            : "pointer",
                       }}
                     >
                       {formSubmitting
@@ -4701,13 +6290,11 @@ const SpecialsPage: React.FC<SpecialsPageProps> = ({ data }) => {
         margin: "0 auto",
       }}
     >
-      {/* Page Layout */}
       {sectionOrder.map((item, index) => (
         <React.Fragment key={index}>
           {renderSection(item.section)}
         </React.Fragment>
       ))}
-      {/* /Page Layout */}
     </main>
   );
 };
