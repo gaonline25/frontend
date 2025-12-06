@@ -405,10 +405,10 @@ interface CustomHeadProps {
 }
 
 export default function CustomHead({
-  title = "Your Site Title",
-  description = "Your site description here",
-  canonical = "https://yoursite.com/",
-  ogImage = "https://yoursite.com/og-image.jpg",
+  title = "Goldfingers Aesthetics | Florida’s Premier Med Spa",
+  description = "Goldfingers Aesthetics offers expert Botox, fillers, and aesthetic treatments across Florida. Experience beauty, confidence, and innovation with our award-winning med spa.",
+  canonical = "https://www.goldfingersaesthetics.com/",
+  ogImage = "https://res.cloudinary.com/dk3v64cs6/image/upload/v1700000000/default-og.jpg",
 }: CustomHeadProps) {
   return (
     <>
