@@ -2567,6 +2567,79 @@ const ProviderLocator = () => {
     );
   }, [map, locations, providers, calculateDistance]);
 
+  const SCHEDULE_URLS: Record<string, string> = {
+    "northdale tampa": "https://www.vagaro.com/goldfigersaestheticstampa",
+
+    "daytona beach": "https://www.vagaro.com/goldfingersaestheticsdaytona",
+
+    clearwater: "https://www.vagaro.com/goldfingersaestheticsclearwater",
+
+    clermont: "https://www.vagaro.com/goldfingersaestheticsclermont",
+
+    "downtown tampa":
+      "https://www.vagaro.com/goldfingersaestheticsdowntowntampa",
+
+    "lake mary": "https://www.vagaro.com/goldfingersaestheticslakemary",
+
+    "lake nona": "https://www.vagaro.com/goldfingersaestheticslakenona",
+
+    longwood: "https://www.vagaro.com/goldfingersaestheticslongwood",
+
+    "mt dora": "https://www.vagaro.com/goldfingersaestheticsmtdora",
+
+    "new smyrna beach":
+      "https://www.vagaro.com/goldfingersaestheticsnewsmyrnabeach",
+
+    ocala: "https://www.vagaro.com/goldfingersaestheticsocala",
+
+    "port orange": "https://www.vagaro.com/goldfingersaestheticsportorange",
+
+    sarasota: "https://www.vagaro.com/goldfingersaestheticssarasota",
+
+    "st pete": "https://www.vagaro.com/goldfingersaestheticsstpetersburg",
+
+    "st petersburg": "https://www.vagaro.com/goldfingersaestheticsstpetersburg",
+
+    villages: "https://www.vagaro.com/goldfingersaestheticsvillages",
+
+    "wesley chapel": "https://www.vagaro.com/goldfingersaestheticswesleychapel",
+
+    "winter garden": "https://www.vagaro.com/goldfingersaestheticswintergarden",
+
+    "winter park": "https://www.vagaro.com/goldfingersaestheticswinterpark",
+
+    "winter springs":
+      "https://www.vagaro.com/goldfingersaestheticswintersprings",
+  };
+
+  const normalizeName = (value: string) =>
+    value
+      .toLowerCase()
+      .replace(/\./g, "")
+      .replace(/-/g, " ")
+      .replace(/\//g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+  
+  
+
+      const handleSchedule = useCallback((location: Location) => {
+        const normalizedName = normalizeName(location.name);
+
+        console.log("📍 Schedule location:", normalizedName);
+
+        const url = SCHEDULE_URLS[normalizedName];
+
+        if (!url) {
+          console.error("❌ No schedule URL found for:", normalizedName);
+          return;
+        }
+
+        window.open(url, "_blank", "noopener,noreferrer");
+      }, []);
+      
+  
+
   // Custom scrollbar effect
   useEffect(() => {
     const contentBody = contentBodyRef.current;
@@ -3299,6 +3372,9 @@ const ProviderLocator = () => {
                           data-type="location"
                           data-id={selectedItem.id}
                           style={{ display: "block" }}
+                          onClick={() =>
+                            handleSchedule(selectedItem as Location)
+                          }
                         >
                           Schedule
                         </div>
@@ -3753,13 +3829,22 @@ const ProviderLocator = () => {
                       </div>
                       <div className="result-footer">
                         <div className="left">
-                          <div
+                          {/* <div
                             className="cta-button schedule"
                             data-type="location"
                             data-id={location.id}
                           >
                             Schedule
+                          </div> */}
+
+                          <div
+                            className="cta-button schedule"
+                            onClick={() => handleSchedule(location)}
+                            style={{ cursor: "pointer" }}
+                          >
+                            Schedule
                           </div>
+
                           <div
                             className="cta-link location"
                             data-type="location"

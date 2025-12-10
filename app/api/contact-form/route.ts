@@ -373,7 +373,7 @@ const LOCATION_EMAILS: Record<string, string> = {
   "port-orange": "port-orange@goldfingersaesthetics.com",
   sarasota: "sarasota@goldfingersaesthetics.com",
   "downtown-tampa": "downtown-tampa@goldfingersaesthetics.com",
-  "st-petersburg": "st-petersburg@goldfingersaesthetics.com",
+  "st-petersburg": "saint-petersburg@goldfingersaesthetics.com",
   tampa: "tampa@goldfingersaesthetics.com",
   "wesley-chapel": "wesley-chapel@goldfingersaesthetics.com",
   "winter-park": "winter-park@goldfingersaesthetics.com",
