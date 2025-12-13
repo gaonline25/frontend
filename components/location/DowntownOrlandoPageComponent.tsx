@@ -140,6 +140,15 @@ const DowntownOrlandoPageComponent: React.FC<
                       </ul>
                     )}
                   {heroSection.title && renderRichText(heroSection.title)}
+                  <p>
+                    <a
+                      className="btn white"
+                      href=""
+                      role="button"
+                    >
+                      Book now
+                    </a>
+                  </p>
                 </div>
               </div>
               <div className="media">

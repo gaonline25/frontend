@@ -196,6 +196,16 @@ function TampaContent({ data }: { data: PageData | null }) {
                 <h1 style={hero.titleColor ? { color: hero.titleColor } : {}}>
                   {hero.title}
                 </h1>
+
+                <p>
+                  <a
+                    className="btn white"
+                    href="https://www.vagaro.com/goldfigersaestheticstampa"
+                    role="button"
+                  >
+                    Book now
+                  </a>
+                </p>
               </div>
             </div>
             {heroMediaImage.mobile && (

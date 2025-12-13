@@ -209,6 +209,16 @@ function WesleyChapel({ data }: WesleyChapelProps) {
                 >
                   {hero.title}
                 </h1>
+
+                <p>
+                  <a
+                    className="btn white"
+                    href="https://www.vagaro.com/goldfingersaestheticswesleychapel"
+                    role="button"
+                  >
+                    Book now
+                  </a>
+                </p>
               </div>
             </div>
             {hero.mediaImage && (

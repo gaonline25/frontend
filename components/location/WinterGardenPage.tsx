@@ -177,6 +177,16 @@ const WinterGardenPage: React.FC<WinterGardenPageProps> = ({ data }) => {
                 <h1 style={{ color: hero.titleColor }}>
                   {hero.title || "Winter Garden"}
                 </h1>
+
+                <p>
+                  <a
+                    className="btn white"
+                    href="https://www.vagaro.com/goldfingersaestheticswintergarden"
+                    role="button"
+                  >
+                    Book now
+                  </a>
+                </p>
               </div>
             </div>
             <div className="media">

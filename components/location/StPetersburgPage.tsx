@@ -207,6 +207,16 @@ function StPetersburgPage({ data }: { data: PageData | null }) {
                     }}
                   />
                 )}
+
+                <p>
+                  <a
+                    className="btn white"
+                    href="https://www.vagaro.com/goldfingersaestheticsstpetersburg"
+                    role="button"
+                  >
+                    Book now
+                  </a>
+                </p>
               </div>
             </div>
             {heroMediaImage.mobile && (

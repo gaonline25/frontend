@@ -835,7 +835,7 @@ export default function Footer() {
                     aria-label={trademarkSection.designCredit?.ariaLabel}
                     style={{ color: trademarkSection.designCredit?.textColor }}
                   >
-                    <span className="s3-logo" />{" "}
+                    {/* <span className="s3-logo" /> */}
                     {trademarkSection.designCredit?.mainText ||
                       "Website Design: Studio III Marketing"}
                     <span className="block">

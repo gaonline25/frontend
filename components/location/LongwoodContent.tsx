@@ -303,6 +303,16 @@ const LongwoodContent: React.FC<LongwoodContentProps> = ({ data }) => {
                       {renderRichText(heroSection.description)}
                     </div>
                   )}
+
+                  <p>
+                    <a
+                      className="btn white"
+                      href="https://www.vagaro.com/goldfingersaestheticslongwood"
+                      role="button"
+                    >
+                      Book now
+                    </a>
+                  </p>
                 </div>
               </div>
               <div className="media">

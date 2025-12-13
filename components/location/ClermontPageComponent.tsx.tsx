@@ -128,6 +128,15 @@ const ClermontPageComponent: React.FC<ClermontPageComponentProps> = ({
                       {renderRichText(heroSection.description)}
                     </div>
                   )}
+                  <p>
+                    <a
+                      className="btn white"
+                      href="https://www.vagaro.com/goldfingersaestheticsclermont"
+                      role="button"
+                    >
+                      Book now
+                    </a>
+                  </p>
                 </div>
               </div>
               <div className="media">

@@ -203,6 +203,16 @@ const WinterParkPage: React.FC<WinterParkPageProps> = ({ data }) => {
                     <span className="small">{hero.titleSmall}</span>
                   )}
                 </h1>
+
+                <p>
+                  <a
+                    className="btn white"
+                    href="https://www.vagaro.com/goldfingersaestheticswinterpark"
+                    role="button"
+                  >
+                    Book now
+                  </a>
+                </p>
               </div>
             </div>
             <div className="media">

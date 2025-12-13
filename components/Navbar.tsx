@@ -1415,6 +1415,9 @@
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 
+import { usePathname } from "next/navigation";
+
+
 // Sitemap data for search
 const sitemapData = [
   { title: "Home", slug: "", url: "/" },
@@ -1658,6 +1661,9 @@ export default function Navbar() {
   const searchRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
+  const pathname = usePathname();
+
+
   // Filter results based on search query
   useEffect(() => {
     if (searchQuery.trim() === "") {
@@ -1719,6 +1725,30 @@ export default function Navbar() {
     setSearchQuery("");
     setFilteredResults([]);
   };
+
+  const closeHamburgerMenu = () => {
+    // Remove common "open" classes
+    document.body.classList.remove("nav-open", "menu-open", "is-open");
+
+    // Handle aria-expanded hamburger buttons
+    const expandedBtn = document.querySelector(
+      '[aria-expanded="true"]'
+    ) as HTMLElement | null;
+
+    expandedBtn?.setAttribute("aria-expanded", "false");
+  };
+
+  
+  useEffect(() => {
+    // Close hamburger menu on route change
+    closeHamburgerMenu();
+
+    // Also close search if it's open
+    setIsSearchOpen(false);
+    setSearchQuery("");
+    setFilteredResults([]);
+  }, [pathname]);
+  
 
   return (
     <>

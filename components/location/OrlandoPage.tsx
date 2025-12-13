@@ -115,6 +115,16 @@ const OrlandoPage: React.FC<OrlandoPageProps> = ({ data }) => {
                     }}
                   />
                 )}
+
+                <p>
+                  <a
+                    className="btn white"
+                    href="https://www.goldfingersaesthetics.com/orlando/"
+                    role="button"
+                  >
+                    Book now
+                  </a>
+                </p>
               </div>
             </div>
             {heroMediaImages.mobile && (

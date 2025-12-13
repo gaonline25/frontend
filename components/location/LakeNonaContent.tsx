@@ -325,6 +325,16 @@ const LakeNonaContent: React.FC<LakeNonaContentProps> = ({ data }) => {
                       {heroSection.title}
                     </h1>
                   )}
+
+                  <p>
+                    <a
+                      className="btn white"
+                      href="https://www.vagaro.com/goldfingersaestheticslakenona"
+                      role="button"
+                    >
+                      Book now
+                    </a>
+                  </p>
                 </div>
               </div>
               <div className="media">

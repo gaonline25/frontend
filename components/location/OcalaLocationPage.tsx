@@ -129,6 +129,16 @@ const OcalaLocationPage: React.FC<OcalaLocationPageProps> = ({
                     {heroSection.title}
                   </h1>
                 )}
+
+                <p>
+                  <a
+                    className="btn white"
+                    href="https://www.vagaro.com/goldfingersaestheticsocala"
+                    role="button"
+                  >
+                    Book now
+                  </a>
+                </p>
               </div>
             </div>
             <div className="media">

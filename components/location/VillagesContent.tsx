@@ -208,6 +208,16 @@ function VillagesContent({ data }: VillagesContentProps) {
                     <span className="small">{hero.titleSmall}</span>
                   )}
                 </h1>
+
+                <p>
+                  <a
+                    className="btn white"
+                    href="https://www.vagaro.com/goldfingersaestheticsvillages"
+                    role="button"
+                  >
+                    Book now
+                  </a>
+                </p>
               </div>
             </div>
             {hero.mediaImage && (

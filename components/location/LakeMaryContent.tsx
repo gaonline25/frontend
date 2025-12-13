@@ -162,6 +162,16 @@ const LakeMaryContent: React.FC<LakeMaryContentProps> = ({ data }) => {
                       <p>{heroSection.description}</p>
                     </div>
                   )}
+
+                  <p>
+                    <a
+                      className="btn white"
+                      href="https://www.vagaro.com/goldfingersaestheticslakemary"
+                      role="button"
+                    >
+                      Book now
+                    </a>
+                  </p>
                 </div>
               </div>
               <div className="media">

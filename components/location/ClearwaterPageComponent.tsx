@@ -974,6 +974,15 @@ const ClearwaterPageComponent: React.FC<ClearwaterPageComponentProps> = ({
                   >
                     {heroSection.title || "Clearwater"}
                   </h1>
+                  <p>
+                    <a
+                      className="btn white"
+                      href="https://www.vagaro.com/goldfingersaestheticsclearwater"
+                      role="button"
+                    >
+                      Book now
+                    </a>
+                  </p>
                 </div>
               </div>
               <div className="media">

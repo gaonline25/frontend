@@ -303,6 +303,16 @@ const PortOrangeContent: React.FC<PortOrangeContentProps> = ({ data }) => {
                       )}
                     </h1>
                   )}
+
+                  <p>
+                    <a
+                      className="btn white"
+                      href="https://www.vagaro.com/goldfingersaestheticsportorange"
+                      role="button"
+                    >
+                      Book now
+                    </a>
+                  </p>
                 </div>
               </div>
               <div className="media">

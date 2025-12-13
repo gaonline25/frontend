@@ -195,6 +195,16 @@ const SatelliteLocations: React.FC<SatelliteLocationsProps> = ({ data }) => {
                     {data.heroSection.subtitle}
                   </p>
                 </div>
+
+                <p>
+                  <a
+                    className="btn white"
+                    href=""
+                    role="button"
+                  >
+                    Book now
+                  </a>
+                </p>
               </div>
             </div>
             <div className="media">

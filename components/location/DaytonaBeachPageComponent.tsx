@@ -116,6 +116,15 @@ const DaytonaBeachPageComponent: React.FC<DaytonaBeachPageProps> = ({
                 <div className="text">
                   <p>{hero.contentText}</p>
                 </div>
+                <p>
+                  <a
+                    className="btn white"
+                    href="https://www.vagaro.com/goldfingersaestheticsdaytona"
+                    role="button"
+                  >
+                    Book now
+                  </a>
+                </p>
               </div>
             </div>
             <div className="media">

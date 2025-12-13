@@ -147,6 +147,15 @@ const DowntownTampaPageComponent: React.FC<DowntownTampaPageComponentProps> = ({
                       {renderRichText(heroSection.title)}
                     </h1>
                   )}
+                  <p>
+                    <a
+                      className="btn white"
+                      href="https://www.vagaro.com/goldfigersaestheticstampa"
+                      role="button"
+                    >
+                      Book now
+                    </a>
+                  </p>
                 </div>
               </div>
               <div className="media">
