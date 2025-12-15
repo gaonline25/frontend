@@ -242,8 +242,6 @@
 //   );
 // }
 
-
-
 // // components/CustomHead.tsx
 // import Head from 'next/head'
 // import Script from 'next/script'
@@ -255,7 +253,7 @@
 //   ogImage?: string;
 // }
 
-// export default function CustomHead({ 
+// export default function CustomHead({
 //   title = "Your Site Title",
 //   description = "Your site description here",
 //   canonical = "https://yoursite.com/",
@@ -267,15 +265,15 @@
 //         <title>{title}</title>
 //         <meta name="description" content={description} />
 //         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        
+
 //         {/* Canonical URL */}
 //         <link rel="canonical" href={canonical} />
-        
+
 //         {/* Favicon - Update with your own */}
-//         <link 
-//           href="/favicon.ico" 
-//           rel="icon" 
-//           type="image/x-icon" 
+//         <link
+//           href="/favicon.ico"
+//           rel="icon"
+//           type="image/x-icon"
 //         />
 
 //         {/* Open Graph Meta Tags */}
@@ -390,8 +388,6 @@
 //   )
 // }
 
-
-
 // components/CustomHead.tsx
 "use client";
 
@@ -480,6 +476,20 @@ export default function CustomHead({
             environment: "production",
           };
         `}
+      </Script>
+
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-S8MQXHMK85"
+        strategy="afterInteractive"
+      />
+
+      <Script id="google-gtag" strategy="afterInteractive">
+        {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S8MQXHMK85');
+  `}
       </Script>
     </>
   );
