@@ -491,6 +491,20 @@ export default function CustomHead({
     gtag('config', 'G-S8MQXHMK85');
   `}
       </Script>
+
+      <Script id="google-gtag" strategy="afterInteractive">
+        {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    // Google Analytics
+    gtag('config', 'G-S8MQXHMK85');
+
+    // Google Ads
+    gtag('config', 'AW-997436413');
+  `}
+      </Script>
     </>
   );
 }
