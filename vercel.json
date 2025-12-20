@@ -1,0 +1,20 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)/",
+      "destination": "/$1",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.goldfingersaesthetics.com"
+        }
+      ],
+      "destination": "https://goldfingersaesthetics.com/:path*",
+      "permanent": true
+    }
+  ]
+}
