@@ -2579,6 +2579,9 @@ const ProviderLocator = () => {
     "downtown tampa":
       "https://www.vagaro.com/goldfingersaestheticsdowntowntampa",
 
+    "downtown orlando":
+      "https://www.vagaro.com/Users/BusinessWidget.aspx?enc=MMLjhIwJMcwFQhXLL7ifVPH9LlzSjp5nw/3jmU22JlIlXQ5u9AxtP5beLOgarTdqVaIjnUfr6uYpEu5rHmsVKji4X/PrBN+mVWeMEgiy1fEYrBgGsbnRb95g4DTIsW5A/WSPYu2rs3Fdqi/xzHeTwKUI4256L6Kh0n81B3SQsf8iCfnNscu/ESqxDa1yknEg5xUF8cZw38qUlZhxH1hy4aEw0m/UWFBakSW3Fr7EHJSsElC6hbJi2BC42WyhtVw2FwDb+R1o6UFDijLiyNw4gxBvkXpsYGg5Yf1WL7eHhO8y6IvF9ENp7hHCr+zNzi5uCuM8J9H2ndU7sRP5652cn++0MQSEAJ8YgxsKGdau2deH1Rn+CoV5eF7FdSepwP1+VhhaCJ3TXWOqwcfxOZt3we0EkTIDZEkWzo7WraGEVxtkifXmFssfyqBAYJajb0ikTX96K6PyqA/1xz/UVnT6fC+DUyd98yAvxDuK9FIjebxdcdLaf6P/QGI4SiS4PTupFrbbN7OiQMlNgn+WMzX0XA==",
+
     "lake mary": "https://www.vagaro.com/goldfingersaestheticslakemary",
 
     "lake nona": "https://www.vagaro.com/goldfingersaestheticslakenona",

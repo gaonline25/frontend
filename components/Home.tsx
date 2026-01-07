@@ -5322,8 +5322,8 @@ function HeroBannerSection({
       style={style}
       data-s3-module=""
     >
-      <div className="row">
-        <div className="inner">
+      <div className="row" style={{ color: "#141f3b !important" }}>
+        <div className="inner" style={{ color: "#141f3b !important" }}>
           {data.logo && (
             <picture className="logo">
               <img
@@ -5336,10 +5336,16 @@ function HeroBannerSection({
               />
             </picture>
           )}
-          {data.mainHeading && <h1>{data.mainHeading}</h1>}
+          {data.mainHeading && (
+            <h1 style={{ color: "#141f3b !important" }}>{data.mainHeading}</h1>
+          )}
           {(data.subHeadingLine1 || data.subHeadingLine2) && (
             <div className="content">
-              <p role="heading" aria-level={1}>
+              <p
+                role="heading"
+                aria-level={1}
+                style={{ color: "#141f3b !important" }}
+              >
                 {data.subHeadingLine1}
                 {data.subHeadingLine2 && (
                   <span role="heading" aria-level={1}>

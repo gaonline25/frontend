@@ -136,6 +136,16 @@ const GoldfingersPage: React.FC<GoldfingersPageProps> = ({
                     />
                   </div>
                 )}
+
+                <p>
+                  <a
+                    className="btn white"
+                    href="https://www.vagaro.com/goldfingersaestheticsnewsmyrnabeach"
+                    role="button"
+                  >
+                    Book now
+                  </a>
+                </p>
               </div>
             </div>
             <div className="media">
