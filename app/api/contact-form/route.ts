@@ -368,7 +368,8 @@ const LOCATION_EMAILS: Record<string, string> = {
   ocala: "villages@goldfingersaesthetics.com",
 
   orlando: "allyson@goldfingersaesthetics.com",
-  "downtown-orlando": "thornton-park@goldfingersaesthetics.com",
+  "downtown-orlando":
+    "thornton-park@goldfingersaesthetics.com,allyson@goldfingersaesthetics.com",
 
   "port-orange": "port-orange@goldfingersaesthetics.com",
   sarasota: "sarasota@goldfingersaesthetics.com",
