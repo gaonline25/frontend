@@ -5355,6 +5355,11 @@ function HeroBannerSection({
               </p>
             </div>
           )}
+          <p>
+            <a className="btn white" href="/book-appointment" role="button">
+              Book now
+            </a>
+          </p>
         </div>
       </div>
       <div className="media">
