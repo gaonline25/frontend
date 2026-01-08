@@ -5255,6 +5255,7 @@
 
 import { getImageUrl, HomePageData, Section } from "@/lib/api/home";
 import { Star } from "lucide-react";
+import { useEffect, useState } from "react";
 
 // Section Renderer Component
 function SectionRenderer({ section }: { section: Section }) {
@@ -5265,9 +5266,26 @@ function SectionRenderer({ section }: { section: Section }) {
     ...(textColor && { color: textColor }),
   };
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  const textColors = isMobile ? "#ffffff" : "#141f3b";
+
   switch (sectionType) {
     case "hero_banner":
-      return <HeroBannerSection section={section} style={sectionStyle} />;
+      return (
+        <HeroBannerSection
+          textColors={textColors}
+          section={section}
+          style={sectionStyle}
+        />
+      );
     case "anchor_links":
       return <AnchorLinksSection section={section} style={sectionStyle} />;
     case "intro_section":
@@ -5309,9 +5327,11 @@ function SectionRenderer({ section }: { section: Section }) {
 function HeroBannerSection({
   section,
   style,
+  textColors,
 }: {
   section: Section;
   style: React.CSSProperties;
+  textColors: string;
 }) {
   const data = section.heroBanner;
   if (!data) return null;
@@ -5322,8 +5342,8 @@ function HeroBannerSection({
       style={style}
       data-s3-module=""
     >
-      <div className="row" style={{ color: "#141f3b !important" }}>
-        <div className="inner" style={{ color: "#141f3b !important" }}>
+      <div className="row" style={{ color: textColors }}>
+        <div className="inner" style={{ color: textColors }}>
           {data.logo && (
             <picture className="logo">
               <img
@@ -5337,18 +5357,18 @@ function HeroBannerSection({
             </picture>
           )}
           {data.mainHeading && (
-            <h1 style={{ color: "#141f3b !important" }}>{data.mainHeading}</h1>
+            <h1 style={{ color: textColors }}>{data.mainHeading}</h1>
           )}
           {(data.subHeadingLine1 || data.subHeadingLine2) && (
             <div className="content">
-              <p
-                role="heading"
-                aria-level={1}
-                style={{ color: "#141f3b !important" }}
-              >
+              <p role="heading" aria-level={1} style={{ color: textColors }}>
                 {data.subHeadingLine1}
                 {data.subHeadingLine2 && (
-                  <span role="heading" aria-level={1}>
+                  <span
+                    role="heading"
+                    aria-level={1}
+                    style={{ color: textColors }}
+                  >
                     {data.subHeadingLine2}
                   </span>
                 )}
