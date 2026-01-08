@@ -1884,6 +1884,8 @@ async function getContactData() {
 
     const data = await response.json();
 
+    
+
     // Assuming you have one contact component, get the first one
     return data.docs[0];
   } catch (error) {

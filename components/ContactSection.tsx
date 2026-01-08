@@ -1262,6 +1262,40 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
     //   );
     // }
 
+    // if (field.name === "location_id" || field.fieldType === "location") {
+    //   return (
+    //     <div key={index} className="field-row col1">
+    //       <div className="field select">
+    //         {field.label && (
+    //           <label htmlFor="contact_location_id">{field.label}</label>
+    //         )}
+    //         {field.required && <small>This field is required.</small>}
+    //         <select
+    //           name="location_id"
+    //           id="contact_location_id"
+    //           required={field.required}
+    //           onChange={handleLocationChange}
+    //           value={formData.location_id || ""}
+    //         >
+    //           <option value="" disabled>
+    //             {field.placeholder || "Select a location"}
+    //           </option>
+    //           {data.locationsBanner.locations.map((location, locIndex) => {
+    //             // ✅ Clean the slug when creating options
+    //             const cleanSlug =
+    //               location.slug?.replace(/^\/+|\/+$/g, "") || location.name;
+    //             return (
+    //               <option key={locIndex} value={cleanSlug}>
+    //                 {location.name}
+    //               </option>
+    //             );
+    //           })}
+    //         </select>
+    //       </div>
+    //     </div>
+    //   );
+    // }
+    
     if (field.name === "location_id" || field.fieldType === "location") {
       return (
         <div key={index} className="field-row col1">
@@ -1280,13 +1314,12 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
               <option value="" disabled>
                 {field.placeholder || "Select a location"}
               </option>
-              {data.locationsBanner.locations.map((location, locIndex) => {
-                // ✅ Clean the slug when creating options
-                const cleanSlug =
-                  location.slug?.replace(/^\/+|\/+$/g, "") || location.name;
+              {field.options?.map((option: any, optIndex: number) => {
+                // Clean the value to ensure consistency
+                const cleanValue = option.value.toLowerCase().trim();
                 return (
-                  <option key={locIndex} value={cleanSlug}>
-                    {location.name}
+                  <option key={optIndex} value={cleanValue}>
+                    {option.label}
                   </option>
                 );
               })}
