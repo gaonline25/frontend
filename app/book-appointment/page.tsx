@@ -752,6 +752,14 @@ export default function ContactPage() {
       style: { left: "87%", top: "29%" },
       url: "https://www.vagaro.com/goldfingersaestheticswinterpark",
     },
+    {
+      id: "68fe385e4e4439389dffb234",
+      name: "Winter Springs",
+      phone: "(407) 462-4405",
+      address: "",
+      style: { left: "87%", top: "29%" },
+      url: "https://www.vagaro.com/goldfingersaestheticswintersprings",
+    },
   ];
 
   return (
