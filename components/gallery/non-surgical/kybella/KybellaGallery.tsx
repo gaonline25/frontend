@@ -608,11 +608,11 @@ const KybellaGallery: React.FC = () => {
         const data = await res.json();
         const activeComponent =
           data.docs?.find((component: any) => component.isActive) || null;
-        console.log("Fetched Botox Gallery data:", activeComponent);
-        console.log(
-          "Gallery Items Count:",
-          activeComponent?.gallerySection?.galleryItems?.length || 0
-        );
+        // console.log("Fetched Botox Gallery data:", activeComponent);
+        // console.log(
+        //   "Gallery Items Count:",
+        //   activeComponent?.gallerySection?.galleryItems?.length || 0
+        // );
         setPageData(activeComponent);
       } catch (error) {
         console.error("Error fetching Botox Gallery data:", error);

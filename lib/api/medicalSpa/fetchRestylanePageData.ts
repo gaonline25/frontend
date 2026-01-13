@@ -18,7 +18,7 @@ export async function fetchRestylanePageData() {
     const data = await res.json();
     const activeComponent =
       data.docs?.find((component: any) => component.isActive) || null;
-    console.log("Fetched Restylane data:", activeComponent); // Debug log
+    // console.log("Fetched Restylane data:", activeComponent); // Debug log
     return activeComponent;
   } catch (error) {
     console.error("Error fetching Restylane page data:", error);

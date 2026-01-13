@@ -1594,11 +1594,11 @@ const JuvedermGallery: React.FC = () => {
           data.docs?.find((component: any) => component.isActive) || null;
 
         if (process.env.NODE_ENV === "development") {
-          console.log("Fetched Juvederm Gallery data:", activeComponent);
-          console.log(
-            "Gallery Items Count:",
-            activeComponent?.gallerySection?.galleryItems?.length || 0
-          );
+          // console.log("Fetched Juvederm Gallery data:", activeComponent);
+          // console.log(
+          //   "Gallery Items Count:",
+          //   activeComponent?.gallerySection?.galleryItems?.length || 0
+          // );
         }
 
         setPageData(activeComponent);

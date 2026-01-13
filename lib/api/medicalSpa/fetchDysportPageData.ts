@@ -117,7 +117,7 @@ export async function fetchDysportPageData(id = "68ea6e1a8253bd170bd9d752") {
       );
     }
     const data = await res.json();
-    console.log("Fetched Dysport data:", data); // Debug log
+    // console.log("Fetched Dysport data:", data); // Debug log
     return data.isActive ? data : null;
   } catch (error) {
     console.error("Error fetching Dysport page data:", error);

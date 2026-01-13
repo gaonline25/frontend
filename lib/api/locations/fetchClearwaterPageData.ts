@@ -24,7 +24,7 @@ export async function fetchClearwaterPageData() {
     const activeComponent =
       data.docs?.find((component: any) => component.isActive) || null;
 
-    console.log("Fetched Clearwater data:", activeComponent);
+    // console.log("Fetched Clearwater data:", activeComponent);
     return activeComponent;
   } catch (error) {
     console.error("Error fetching Clearwater page data:", error);

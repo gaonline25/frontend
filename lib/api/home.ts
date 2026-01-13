@@ -173,9 +173,9 @@ export async function fetchHomePage(): Promise<HomePageData | null> {
     let data = await res.json();
 
     // Manually populate all media fields
-    console.log("Populating media fields...");
+    // console.log("Populating media fields...");
     data = await populateMediaFields(data);
-    console.log("Media fields populated!");
+    // console.log("Media fields populated!");
 
     return data;
   } catch (error) {

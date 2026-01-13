@@ -601,9 +601,9 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
 
-    console.log("=== SPECIAL FORM RECEIVED DATA ===");
-    console.log("Body:", body);
-    console.log("==================================");
+    // console.log("=== SPECIAL FORM RECEIVED DATA ===");
+    // console.log("Body:", body);
+    // console.log("==================================");
 
     const ipAddress =
       request.headers.get("x-forwarded-for") ||
@@ -633,9 +633,9 @@ export async function POST(request: NextRequest) {
       status: "new",
     };
 
-    console.log("=== MAPPED SUBMISSION DATA ===");
-    console.log("Submission Data:", submissionData);
-    console.log("==============================");
+    // console.log("=== MAPPED SUBMISSION DATA ===");
+    // console.log("Submission Data:", submissionData);
+    // console.log("==============================");
 
     /* =====================
        SAVE TO PAYLOAD
@@ -674,18 +674,18 @@ export async function POST(request: NextRequest) {
       ?.trim();
 
     // Log for debugging (remove in production)
-    console.log("=== SPECIAL FORM EMAIL ROUTING DEBUG ===");
-    console.log("Received location_id:", body.location_id);
-    console.log("Processed slug:", slug);
-    console.log("Available email keys:", Object.keys(LOCATION_EMAILS));
+    // console.log("=== SPECIAL FORM EMAIL ROUTING DEBUG ===");
+    // console.log("Received location_id:", body.location_id);
+    // console.log("Processed slug:", slug);
+    // console.log("Available email keys:", Object.keys(LOCATION_EMAILS));
 
     // Look up the email
     const toEmail =
       slug && LOCATION_EMAILS[slug] ? LOCATION_EMAILS[slug] : DEFAULT_EMAIL;
 
-    console.log("Selected email:", toEmail);
-    console.log("Is default email?", toEmail === DEFAULT_EMAIL);
-    console.log("========================================");
+    // console.log("Selected email:", toEmail);
+    // console.log("Is default email?", toEmail === DEFAULT_EMAIL);
+    // console.log("========================================");
 
     // Build email HTML content dynamically based on what fields exist
     let emailContent = `

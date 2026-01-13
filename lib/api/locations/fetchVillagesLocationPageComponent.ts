@@ -16,7 +16,7 @@ export async function fetchVillagesLocationPageComponent() {
     const data = await res.json();
     const activeComponent =
       data.docs?.find((component: any) => component.isActive) || null;
-    console.log("Fetched Clermont data:", activeComponent);
+    // console.log("Fetched Clermont data:", activeComponent);
     return activeComponent;
   } catch (error) {
     console.error("Error fetching Clermont page data:", error);

@@ -1144,10 +1144,10 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
       return cleanSlug === selectedLocationId;
     });
 
-    console.log("Location selected:", {
-      value: selectedLocationId,
-      location: selectedLocation?.name,
-    });
+    // console.log("Location selected:", {
+    //   value: selectedLocationId,
+    //   location: selectedLocation?.name,
+    // });
 
     setFormData((prev) => ({
       ...prev,

@@ -21,7 +21,7 @@ export async function fetchBreastRevisionPageData() {
     const data = await res.json();
     const activeComponent =
       data.docs?.find((component: any) => component.isActive) || null;
-    console.log("Fetched Lip Fillers data:", activeComponent);
+    // console.log("Fetched Lip Fillers data:", activeComponent);
     return activeComponent;
   } catch (error) {
     console.error("Error fetching Lip Fillers page data:", error);

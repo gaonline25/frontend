@@ -42,7 +42,7 @@ const DowntownOrlandoPageComponent: React.FC<
 
   const renderRichText = (content: any) => {
     if (!content) {
-      console.log("renderRichText: Content is null or undefined");
+      // console.log("renderRichText: Content is null or undefined");
       return null;
     }
     if (typeof content === "string") {
@@ -72,7 +72,7 @@ const DowntownOrlandoPageComponent: React.FC<
   };
 
   const renderSection = (sectionKey: string) => {
-    console.log(`Rendering section: ${sectionKey}`);
+    // console.log(`Rendering section: ${sectionKey}`);
     switch (sectionKey) {
       case "hero":
         if (!heroSection?.show) return null;

@@ -16,7 +16,7 @@ export async function fetchDermalFillersPageData(id = "68ea72218253bd170bd9da6c"
       );
     }
     const data = await res.json();
-    console.log("Fetched Dermal Fillers data:", data);
+    // console.log("Fetched Dermal Fillers data:", data);
     return data.isActive ? data : null;
   } catch (error) {
     console.error("Error fetching Dermal Fillers page data:", error);

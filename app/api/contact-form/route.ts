@@ -457,18 +457,18 @@ export async function POST(request: NextRequest) {
       ?.trim();
 
     // Log for debugging (remove in production)
-    console.log("=== EMAIL ROUTING DEBUG ===");
-    console.log("Received location_id:", body.location_id);
-    console.log("Processed slug:", slug);
-    console.log("Available email keys:", Object.keys(LOCATION_EMAILS));
+    // console.log("=== EMAIL ROUTING DEBUG ===");
+    // console.log("Received location_id:", body.location_id);
+    // console.log("Processed slug:", slug);
+    // console.log("Available email keys:", Object.keys(LOCATION_EMAILS));
 
     // Look up the email
     const toEmail =
       slug && LOCATION_EMAILS[slug] ? LOCATION_EMAILS[slug] : DEFAULT_EMAIL;
 
-    console.log("Selected email:", toEmail);
-    console.log("Is default email?", toEmail === DEFAULT_EMAIL);
-    console.log("=========================");
+    // console.log("Selected email:", toEmail);
+    // console.log("Is default email?", toEmail === DEFAULT_EMAIL);
+    // console.log("=========================");
 
     await transporter.sendMail({
       from: `"Goldfingers Contact" <${process.env.SMTP_USER}>`,

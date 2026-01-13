@@ -70,7 +70,7 @@ const LakeMaryContent: React.FC<LakeMaryContentProps> = ({ data }) => {
   };
 
   const renderSection = (sectionKey) => {
-    console.log(`Rendering section: ${sectionKey}`);
+    // console.log(`Rendering section: ${sectionKey}`);
     switch (sectionKey) {
       case "hero":
         if (!heroSection?.show) return null;

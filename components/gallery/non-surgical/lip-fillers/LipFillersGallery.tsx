@@ -3068,12 +3068,12 @@ const LipFillerGalleryPaginated: React.FC = () => {
           data.docs?.find((component: any) => component.isActive) || null;
 
         if (process.env.NODE_ENV === "development") {
-          console.log("Fetched Lip Filler Gallery data:", activeComponent);
-          console.log(
-            "Total Items:",
-            activeComponent?.gallerySection?.galleryItems?.length || 0
-          );
-          console.log("Current Page:", currentPage);
+          // console.log("Fetched Lip Filler Gallery data:", activeComponent);
+          // console.log(
+          //   "Total Items:",
+          //   activeComponent?.gallerySection?.galleryItems?.length || 0
+          // );
+          // console.log("Current Page:", currentPage);
         }
 
         setPageData(activeComponent);

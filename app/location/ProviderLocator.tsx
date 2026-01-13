@@ -2354,7 +2354,7 @@ const ProviderLocator = () => {
 
         setMap(mapInstance);
         mapInitializedRef.current = true;
-        console.log("✅ Google Map initialized successfully");
+        // console.log("✅ Google Map initialized successfully");
       } catch (err) {
         console.error("❌ Map initialization error:", err);
         setTimeout(attemptInit, 300);
@@ -2629,7 +2629,7 @@ const ProviderLocator = () => {
       const handleSchedule = useCallback((location: Location) => {
         const normalizedName = normalizeName(location.name);
 
-        console.log("📍 Schedule location:", normalizedName);
+        // console.log("📍 Schedule location:", normalizedName);
 
         const url = SCHEDULE_URLS[normalizedName];
 
@@ -2681,11 +2681,11 @@ const ProviderLocator = () => {
     [locations]
   );
 
-  console.log({
-    googleLoaded,
-    hasDiv: !!mapRef.current,
-    divSize: mapRef.current?.getBoundingClientRect(),
-  });
+  // console.log({
+  //   googleLoaded,
+  //   hasDiv: !!mapRef.current,
+  //   divSize: mapRef.current?.getBoundingClientRect(),
+  // });
 
   if (loading) {
     return (

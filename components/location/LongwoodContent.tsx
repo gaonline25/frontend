@@ -216,7 +216,7 @@ const LongwoodContent: React.FC<LongwoodContentProps> = ({ data }) => {
   };
 
   const renderSection = (sectionKey: string): JSX.Element | null => {
-    console.log(`Rendering section: ${sectionKey}`);
+    // console.log(`Rendering section: ${sectionKey}`);
     switch (sectionKey) {
       case "hero":
         if (!heroSection?.show) return null;

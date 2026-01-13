@@ -158,7 +158,7 @@ export async function fetchUpperNav(): Promise<UpperNavData | null> {
 
     const data = await res.json();
 
-    console.log(data, 'this is real data')
+    // console.log(data, 'this is real data')
     // Fix: Remove docs?.[0] - the response is the navbar data directly
     return data || null;
   } catch (error) {

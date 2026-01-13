@@ -175,7 +175,7 @@ export async function fetchLinesAndWrinklesPageData() {
   try {
     // Fetch the collection to find the active document
     const endpoint = `${PAYLOAD_API_URL}/lines-wrinkles-page-component`;
-    console.log("Fetching from:", endpoint);
+    // console.log("Fetching from:", endpoint);
 
     const res = await fetch(
       `${endpoint}?where[isActive][equals]=true&depth=2&limit=1`,
@@ -190,11 +190,11 @@ export async function fetchLinesAndWrinklesPageData() {
     }
 
     const data = await res.json();
-    console.log("API Response:", data);
+    // console.log("API Response:", data);
 
     // Check if we got docs array
     if (data.docs && Array.isArray(data.docs) && data.docs.length > 0) {
-      console.log("Found active document:", data.docs[0]);
+      // console.log("Found active document:", data.docs[0]);
       return data.docs[0];
     }
 

@@ -6492,7 +6492,7 @@ const Home: React.FC<HomeProps> = ({ data }) => {
     return null; // Error handled in server component
   }
 
-  console.log(data, "this is home data");
+  // console.log(data, "this is home data");
 
   return (
     <div className="home sticky-header">

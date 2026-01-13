@@ -65,7 +65,7 @@ export async function fetchJuvedermPageData() {
     }
     const data = await res.json();
     const activeComponent = data.docs?.[0] || null;
-    console.log("Fetched Juvederm data:", activeComponent); // Debug log
+    // console.log("Fetched Juvederm data:", activeComponent); // Debug log
     return activeComponent;
   } catch (error) {
     console.error("Error fetching Juvederm page data:", error);

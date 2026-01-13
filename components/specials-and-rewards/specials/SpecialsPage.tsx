@@ -5564,9 +5564,9 @@ const SpecialsPage: React.FC<SpecialsPageProps> = ({ data }) => {
       }
     });
 
-    console.log("=== FORM VALUES BEING SENT ===");
-    console.log(formValues);
-    console.log("==============================");
+    // console.log("=== FORM VALUES BEING SENT ===");
+    // console.log(formValues);
+    // console.log("==============================");
 
     if (!captchaVerified) {
       setFormMessage({
