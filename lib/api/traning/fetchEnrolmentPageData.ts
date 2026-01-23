@@ -1,9 +1,9 @@
 const PAYLOAD_API_URL = "https://backend-orpin-six-56.vercel.app/api";
 
-export async function fetchMembershipPageData() {
+export async function fetchEnrolmentPageData() {
   try {
     const res = await fetch(
-      `${PAYLOAD_API_URL}/membership-page-component?where[isActive][equals]=true&depth=2&limit=100&draft=false&trash=false`,
+      `${PAYLOAD_API_URL}/enrolmentComponent?where[isActive][equals]=true&depth=2&limit=100&draft=false&trash=false`,
       {
         next: { revalidate: 60 },
         cache: "force-cache",
@@ -11,19 +11,17 @@ export async function fetchMembershipPageData() {
     );
 
     if (!res.ok) {
-      throw new Error(
-        `Failed to fetch Membership page data: ${res.statusText}`
-      );
+      throw new Error(`Failed to fetch Enrolment page data: ${res.statusText}`);
     }
 
     const data = await res.json();
     const activeComponent =
       data.docs?.find((component: any) => component.isActive) || null;
 
-    // console.log("Fetched Membership data:", activeComponent);
+    // console.log("Fetched Enrolment data:", activeComponent);
     return activeComponent;
   } catch (error) {
-    console.error("Error fetching Membership page data:", error);
+    console.error("Error fetching Enrolment page data:", error);
     return null;
   }
 }

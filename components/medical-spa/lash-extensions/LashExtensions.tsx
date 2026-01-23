@@ -1316,18 +1316,32 @@ const LashExtensions: React.FC = () => {
   if (loading) return <div>Loading...</div>;
   if (!pageData) return <div>No data available</div>;
 
+  // const {
+  //   heroSection,
+  //   introSection,
+  //   bannerSection1,
+  //   columnSection1,
+  //   halfImageSection,
+  //   columnSection2,
+  //   ctaGeneralSection,
+  //   columnSection3,
+  //   globalStyles = {},
+  //   buttonStyles = {},
+  // } = pageData;
+
   const {
-    heroSection,
-    introSection,
-    bannerSection1,
-    columnSection1,
-    halfImageSection,
-    columnSection2,
-    ctaGeneralSection,
-    columnSection3,
+    heroSection = { show: false },
+    introSection = { show: false },
+    bannerSection1 = { show: false },
+    columnSection1 = { show: false },
+    halfImageSection = { show: false },
+    columnSection2 = { show: false },
+    ctaGeneralSection = { show: false },
+    columnSection3 = { show: false },
     globalStyles = {},
     buttonStyles = {},
   } = pageData;
+  
 
   const heroBgImages = heroSection.show
     ? getResponsiveImageUrls(heroSection.backgroundImage)
