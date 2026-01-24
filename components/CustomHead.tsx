@@ -430,6 +430,16 @@ export default function CustomHead({
       <link rel="dns-prefetch" href="https://www.datocms-assets.com/" />
       <link rel="dns-prefetch" href="https://js.tresiocdn.com/" />
 
+      <meta
+        name="author"
+        content="Website developed by Sourav Mehta — https://souravmehta.com"
+      />
+
+      <meta
+        name="developer"
+        content="Website developed by Sourav Mehta | https://souravmehta.com"
+      />
+
       {/* Preload assets */}
       <link
         rel="preload"

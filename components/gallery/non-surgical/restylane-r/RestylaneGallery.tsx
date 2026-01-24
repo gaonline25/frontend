@@ -1160,6 +1160,8 @@ import ImageCarousel from "@/components/gallery/ImageCarousel";
 import { getResponsiveImageUrls } from "@/lib/api/Gallery/non-surgical/BotoxPage";
 import { ChevronLeft } from "lucide-react";
 
+import { usePathname } from "next/navigation";
+
 interface BotoxGalleryPageData {
   componentName: string;
   slug: string;
@@ -1273,9 +1275,25 @@ interface RestylaneGalleryProps {
   data: BotoxGalleryPageData | null;
 }
 
+const normalizePath = (url: string) => {
+  try {
+    // Handle absolute URLs
+    const parsed = url.startsWith("http") ? new URL(url) : null;
+
+    const path = parsed ? parsed.pathname : url;
+
+    return path.replace(/\/$/, "").toLowerCase();
+  } catch {
+    return url.replace(/\/$/, "").toLowerCase();
+  }
+};
+
 const RestylaneGallery: React.FC<RestylaneGalleryProps> = ({ data }) => {
   const [isCarouselOpen, setIsCarouselOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const pathname = usePathname();
+      const normalizedPathname = normalizePath(pathname);
 
   if (!data) {
     return null; // Error handled in server component
@@ -1290,6 +1308,20 @@ const RestylaneGallery: React.FC<RestylaneGalleryProps> = ({ data }) => {
     sectionOrder,
     seo,
   } = data;
+
+  const currentDropdownItem =
+    dropdownSection.dropdownItems.find((item) => {
+      return normalizePath(item.url) === normalizedPathname;
+    }) ||
+    dropdownSection.dropdownItems.find((item) => item.isActive) ||
+    dropdownSection.dropdownItems[0];
+
+  const orderedDropdownItems = [
+    currentDropdownItem,
+    ...dropdownSection.dropdownItems.filter(
+      (item) => item !== currentDropdownItem
+    ),
+  ];
 
   // Inject custom CSS if provided (with cleanup)
   useEffect(() => {
@@ -1374,48 +1406,102 @@ const RestylaneGallery: React.FC<RestylaneGalleryProps> = ({ data }) => {
           </div>
         );
 
-      case "dropdown":
-        return (
-          <div className="partial_gallery_dropdown" data-s3-partial="">
-            <ul className="dropdown">
-              <li>
-                <div className="selector">
-                  <span>{dropdownSection.selectedItemLabel}</span>
-                  <ChevronLeft
-                    className={
-                      dropdownSection.backButton.iconClass || "icon-left-open"
-                    }
-                    style={{ marginTop: "3px" }}
-                  />
-                  <ul className="children">
-                    {dropdownSection.dropdownItems.map((item, index) => (
-                      <li key={index}>
-                        <a href={item.url}>{item.label}</a>
+      // case "dropdown":
+      //   return (
+      //     <div className="partial_gallery_dropdown" data-s3-partial="">
+      //       <ul className="dropdown">
+      //         <li>
+      //           <div className="selector">
+      //             <span>{dropdownSection.selectedItemLabel}</span>
+      //             <ChevronLeft
+      //               className={
+      //                 dropdownSection.backButton.iconClass || "icon-left-open"
+      //               }
+      //               style={{ marginTop: "3px" }}
+      //             />
+      //             <ul className="children">
+      //               {dropdownSection.dropdownItems.map((item, index) => (
+      //                 <li key={index}>
+      //                   <a href={item.url}>{item.label}</a>
+      //                 </li>
+      //               ))}
+      //             </ul>
+      //           </div>
+      //         </li>
+      //       </ul>
+      //       <a
+      //         href={dropdownSection.backButton.url}
+      //         className="link"
+      //         style={{
+      //           display: "flex",
+      //           alignItems: "center",
+      //           gap: "6px",
+      //         }}
+      //       >
+      //         <ChevronLeft
+      //           className={
+      //             dropdownSection.backButton.iconClass || "icon-left-open"
+      //           }
+      //           style={{ marginTop: "0" }}
+      //         />
+      //         {dropdownSection.backButton.label}
+      //       </a>
+      //     </div>
+      //   );
+
+        case "dropdown":
+                return (
+                  <div className="partial_gallery_dropdown" data-s3-partial="">
+                    <ul className="dropdown">
+                      <li>
+                        <div className="selector">
+                          {/* ✅ Current page label */}
+                          <span>{currentDropdownItem.label}</span>
+        
+                          <ChevronLeft
+                            className={
+                              dropdownSection.backButton.iconClass || "icon-left-open"
+                            }
+                            style={{ marginTop: "3px" }}
+                          />
+        
+                          {/* ✅ Dropdown list (excluding current page visually if needed) */}
+                          <ul className="children">
+                            {orderedDropdownItems.map((item, index) => (
+                              <li key={index}>
+                                <a
+                                  href={item.url}
+                                  className={
+                                    item === currentDropdownItem ? "current" : ""
+                                  }
+                                >
+                                  {item.label}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       </li>
-                    ))}
-                  </ul>
-                </div>
-              </li>
-            </ul>
-            <a
-              href={dropdownSection.backButton.url}
-              className="link"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "6px",
-              }}
-            >
-              <ChevronLeft
-                className={
-                  dropdownSection.backButton.iconClass || "icon-left-open"
-                }
-                style={{ marginTop: "0" }}
-              />
-              {dropdownSection.backButton.label}
-            </a>
-          </div>
-        );
+                    </ul>
+        
+                    {/* Back button */}
+                    {dropdownSection.backButton.url && (
+                      <a
+                        href={dropdownSection.backButton.url}
+                        className="link"
+                        style={{ display: "flex", alignItems: "center", gap: "6px" }}
+                      >
+                        <ChevronLeft
+                          className={
+                            dropdownSection.backButton.iconClass || "icon-left-open"
+                          }
+                        />
+                        {dropdownSection.backButton.label}
+                      </a>
+                    )}
+                  </div>
+                );
+        
 
       case "gallery":
         return (

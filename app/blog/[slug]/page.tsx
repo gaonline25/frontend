@@ -576,16 +576,49 @@ const PAYLOAD_URL =
 export const revalidate = 300; // ✅ Rebuild every 5 min
 
 // ✅ Generate metadata dynamically per post
+// export async function generateMetadata({
+//   params,
+// }: {
+//   params: { slug: string };
+// }): Promise<Metadata> {
+//   const post = await getPost(params.slug);
+//   if (!post)
+//     return {
+//       title: "Post Not Found | Goldfingers Aesthetics",
+//     };
+
+//   return {
+//     title: `${post.title} | Goldfingers Aesthetics`,
+//     description: post.excerpt || "Read more from Goldfingers Aesthetics blog.",
+//     openGraph: {
+//       title: post.title,
+//       description: post.excerpt,
+//       images: [
+//         {
+//           url:
+//             post.featuredImage?.image?.cloudinary_url ||
+//             post.featuredImage?.image?.url ||
+//             "https://www.goldfingersaesthetics.com/default-og.jpg",
+//         },
+//       ],
+//     },
+//   };
+// }
+
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const post = await getPost(params.slug);
-  if (!post)
+  const { slug } = await params;
+
+  const post = await getPost(slug);
+
+  if (!post) {
     return {
       title: "Post Not Found | Goldfingers Aesthetics",
     };
+  }
 
   return {
     title: `${post.title} | Goldfingers Aesthetics`,
@@ -604,6 +637,7 @@ export async function generateMetadata({
     },
   };
 }
+
 
 // ✅ Fetch post by slug
 async function getPost(slug: string): Promise<BlogPost | null> {
@@ -689,9 +723,15 @@ function getImageUrl(media?: Media) {
 export default async function BlogPostPage({
   params,
 }: {
-  params: { slug: string };
+  // params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const post = await getPost(params.slug);
+  // const post = await getPost(params.slug);
+  // if (!post) return notFound();
+
+  const { slug } = await params;
+
+  const post = await getPost(slug);
   if (!post) return notFound();
 
   const mainImageUrl = getImageUrl(post.featuredImage?.image);
