@@ -345,44 +345,50 @@ import nodemailer from "nodemailer";
 // };
 
 const LOCATION_EMAILS: Record<string, string> = {
-  clearwater: "clearwater@goldfingersaesthetics.com",
+  clearwater: "clearwater@goldfingersaesthetics.com,myphamskincare@gmail.com",
   clermont:
-    "clermont@goldfingersaesthetics.com,allyson@goldfingersaesthetics.com",
+    "clermont@goldfingersaesthetics.com,allyson@goldfingersaesthetics.com,myphamskincare@gmail.com",
   "lake-nona":
-    "lakenona@goldfingersaesthetics.com,allyson@goldfingersaesthetics.com",
+    "lakenona@goldfingersaesthetics.com,allyson@goldfingersaesthetics.com,myphamskincare@gmail.com",
   "winter-garden":
-    "wintergarden@goldfingersaesthetics.com,allyson@goldfingersaesthetics.com",
+    "wintergarden@goldfingersaesthetics.com,allyson@goldfingersaesthetics.com,myphamskincare@gmail.com",
   "thornton-park":
-    "thornton-park@goldfingersaesthetics.com,allyson@goldfingersaesthetics.com",
+    "thornton-park@goldfingersaesthetics.com,allyson@goldfingersaesthetics.com,myphamskincare@gmail.com",
   "dr-phillips":
-    "dr-phillips@goldfingersaesthetics.com,allyson@goldfingersaesthetics.com",
+    "dr-phillips@goldfingersaesthetics.com,allyson@goldfingersaesthetics.com,myphamskincare@gmail.com",
   "winter-springs":
-    "dr-phillips@goldfingersaesthetics.com,allyson@goldfingersaesthetics.com",
+    "dr-phillips@goldfingersaesthetics.com,allyson@goldfingersaesthetics.com,myphamskincare@gmail.com",
 
-  "daytona-beach": "daytona-beach@goldfingersaesthetics.com",
-  "lady-lake": "villages@goldfingersaesthetics.com",
-  "lake-mary": "lakemary@goldfingersaesthetics.com",
-  longwood: "longwood@goldfingersaesthetics.com",
-  "mount-dora": "villages@goldfingersaesthetics.com",
-  "new-smyrna-beach": "nsb@goldfingersaesthetics.com",
-  ocala: "villages@goldfingersaesthetics.com",
+  "daytona-beach":
+    "daytona-beach@goldfingersaesthetics.com,myphamskincare@gmail.com",
+  "lady-lake": "villages@goldfingersaesthetics.com,myphamskincare@gmail.com",
+  "lake-mary": "lakemary@goldfingersaesthetics.com,myphamskincare@gmail.com",
+  longwood: "longwood@goldfingersaesthetics.com,myphamskincare@gmail.com",
+  "mount-dora": "villages@goldfingersaesthetics.com,myphamskincare@gmail.com",
+  "new-smyrna-beach": "nsb@goldfingersaesthetics.com,myphamskincare@gmail.com",
+  ocala: "villages@goldfingersaesthetics.com,myphamskincare@gmail.com",
 
   orlando:
-    "allyson@goldfingersaesthetics.com,dr-phillips@goldfingersaesthetics.com",
+    "allyson@goldfingersaesthetics.com,dr-phillips@goldfingersaesthetics.com,myphamskincare@gmail.com",
   "downtown-orlando":
-    "thornton-park@goldfingersaesthetics.com,allyson@goldfingersaesthetics.com",
+    "thornton-park@goldfingersaesthetics.com,allyson@goldfingersaesthetics.com,myphamskincare@gmail.com",
 
-  "port-orange": "port-orange@goldfingersaesthetics.com",
-  sarasota: "sarasota@goldfingersaesthetics.com",
-  "downtown-tampa": "downtown-tampa@goldfingersaesthetics.com",
-  "st-petersburg": "saint-petersburg@goldfingersaesthetics.com",
-  tampa: "tampa@goldfingersaesthetics.com",
-  "wesley-chapel": "wesley-chapel@goldfingersaesthetics.com",
-  "winter-park": "winter-park@goldfingersaesthetics.com",
+  "port-orange":
+    "port-orange@goldfingersaesthetics.com,myphamskincare@gmail.com",
+  sarasota: "sarasota@goldfingersaesthetics.com,myphamskincare@gmail.com",
+  "downtown-tampa":
+    "downtown-tampa@goldfingersaesthetics.com,myphamskincare@gmail.com",
+  "st-petersburg":
+    "saint-petersburg@goldfingersaesthetics.com,myphamskincare@gmail.com",
+  tampa: "tampa@goldfingersaesthetics.com,myphamskincare@gmail.com",
+  "wesley-chapel":
+    "wesley-chapel@goldfingersaesthetics.com,myphamskincare@gmail.com",
+  "winter-park":
+    "winter-park@goldfingersaesthetics.com,myphamskincare@gmail.com",
 };
 
 
-const DEFAULT_EMAIL = "clearwater@goldfingersaesthetics.com";
+const DEFAULT_EMAIL = "myphamskincare@gmail.com";
 
 /* =====================================================
    NODEMAILER
