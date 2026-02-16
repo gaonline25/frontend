@@ -417,7 +417,11 @@ export default function CustomHead({
       <link rel="canonical" href={canonical} />
 
       {/* Favicon */}
-      <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+      {/* <link rel="icon" href="/favicon.ico" type="image/x-icon" /> */}
+
+      <link rel="icon" href="/newfav.svg" type="image/svg+xml" />
+      <link rel="shortcut icon" href="/newfav.svg" />
+      <link rel="apple-touch-icon" href="/newfav.svg" />
 
       {/* Open Graph */}
       <meta property="og:title" content={title} />

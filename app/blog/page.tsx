@@ -266,6 +266,7 @@
 import Link from "next/link";
 import { Metadata } from "next";
 import React from "react";
+import Script from "next/script";
 
 interface Media {
   id: string;
@@ -298,21 +299,60 @@ const PAYLOAD_URL =
 export const revalidate = 300; // ✅ Rebuild every 5 minutes
 
 // ✅ SEO Metadata
+// export const metadata: Metadata = {
+//   title: "Blog | Goldfingers Aesthetics",
+//   description:
+//     "Stay updated with the latest insights, trends, and tips in aesthetics, skincare, and wellness by Goldfingers Aesthetics.",
+//   alternates: {
+//     canonical: "https://www.goldfingersaesthetics.com/blog",
+//   },
+//   openGraph: {
+//     title: "Blog | Goldfingers Aesthetics",
+//     description:
+//       "Stay updated with the latest insights, trends, and tips from Goldfingers Aesthetics.",
+//     url: "https://www.goldfingersaesthetics.com/blog",
+//     siteName: "Goldfingers Aesthetics",
+//   },
+// };
+
+
+
 export const metadata: Metadata = {
-  title: "Blog | Goldfingers Aesthetics",
+  title:
+    "Medical Aesthetics Blog | Botox, Fillers & Skincare Insights | Goldfingers Aesthetics",
   description:
-    "Stay updated with the latest insights, trends, and tips in aesthetics, skincare, and wellness by Goldfingers Aesthetics.",
+    "Explore expert insights on Botox, dermal fillers, skincare, and aesthetic treatments from Goldfingers Aesthetics — Florida’s premier medical spa.",
+  metadataBase: new URL("https://www.goldfingersaesthetics.com"),
   alternates: {
     canonical: "https://www.goldfingersaesthetics.com/blog",
   },
   openGraph: {
-    title: "Blog | Goldfingers Aesthetics",
+    title: "Medical Aesthetics Blog | Goldfingers Aesthetics Florida",
     description:
-      "Stay updated with the latest insights, trends, and tips from Goldfingers Aesthetics.",
+      "Expert advice, treatment guides, and aesthetic insights on Botox, dermal fillers, and advanced skincare.",
     url: "https://www.goldfingersaesthetics.com/blog",
     siteName: "Goldfingers Aesthetics",
+    type: "website",
+    locale: "en_US",
   },
+  twitter: {
+    card: "summary_large_image",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  keywords: [
+    "Botox blog Florida",
+    "Dermal filler guide",
+    "Medical spa blog",
+    "Aesthetic treatments blog",
+    "Skincare tips Florida",
+    "Goldfingers Aesthetics blog",
+  ],
 };
+
+
 
 // ✅ Fetch all blog posts server-side (cached)
 async function getBlogPosts(): Promise<BlogPost[]> {
@@ -349,109 +389,139 @@ function getImageUrl(media?: Media) {
 export default async function Blog() {
   const posts = await getBlogPosts();
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: "Goldfingers Aesthetics Blog",
+    url: "https://www.goldfingersaesthetics.com/blog",
+    description:
+      "Expert insights and educational content about Botox, dermal fillers, and aesthetic treatments.",
+    publisher: {
+      "@type": "Organization",
+      name: "Goldfingers Aesthetics",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.goldfingersaesthetics.com/logo.png",
+      },
+    },
+  };
+
   return (
-    <main id="main">
-      <div className="partial_abstract_type_hero banner" data-s3-partial>
-        <div className="row">
-          <div className="inner">
-            <h1>Blog</h1>
-            <ul className="partial_breadcrumb" data-s3-partial>
-              <li>
-                <Link href="/" role="link" aria-label="Go to Home">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog/" role="link" aria-label="Go to Blog">
-                  Blog
-                </Link>
-              </li>
-            </ul>
+    <>
+      <Script
+        id="blog-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
+      <main id="main">
+        <div className="partial_abstract_type_hero banner" data-s3-partial>
+          <div className="row">
+            <div className="inner">
+              <h1>Blog</h1>
+              <ul className="partial_breadcrumb" data-s3-partial>
+                <li>
+                  <Link href="/" role="link" aria-label="Go to Home">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog/" role="link" aria-label="Go to Blog">
+                    Blog
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="container">
-        <div className="row">
-          <div className="partial_blog_index" data-s3-partial>
-            {posts.length === 0 ? (
-              <p>No published blog posts found.</p>
-            ) : (
-              posts.map((post, index) => {
-                const { day, month } = formatDate(post.publishedDate);
-                const mainImageUrl = getImageUrl(post.featuredImage?.image);
-                const mobileImageUrl = getImageUrl(post.featuredImage?.mobile);
-                const tabletImageUrl = getImageUrl(post.featuredImage?.tablet);
-                const desktopImageUrl = getImageUrl(
-                  post.featuredImage?.desktop
-                );
+        <div className="container">
+          <div className="row">
+            <div className="partial_blog_index" data-s3-partial>
+              {posts.length === 0 ? (
+                <p>No published blog posts found.</p>
+              ) : (
+                posts.map((post, index) => {
+                  const { day, month } = formatDate(post.publishedDate);
+                  const mainImageUrl = getImageUrl(post.featuredImage?.image);
+                  const mobileImageUrl = getImageUrl(
+                    post.featuredImage?.mobile
+                  );
+                  const tabletImageUrl = getImageUrl(
+                    post.featuredImage?.tablet
+                  );
+                  const desktopImageUrl = getImageUrl(
+                    post.featuredImage?.desktop
+                  );
 
-                return (
-                  <React.Fragment key={post.id}>
-                    <div className="index-item">
-                      <div className="date">
-                        <p className="day">{day}</p>
-                        <p className="month">{month}</p>
-                      </div>
-                      <div className="content">
-                        {mainImageUrl && (
+                  return (
+                    <React.Fragment key={post.id}>
+                      <div className="index-item">
+                        <div className="date">
+                          <p className="day">{day}</p>
+                          <p className="month">{month}</p>
+                        </div>
+                        <div className="content">
+                          {mainImageUrl && (
+                            <Link
+                              href={`/blog/${post.slug}/`}
+                              className="image"
+                              title={post.title}
+                              aria-label={`View blog article ${post.title}`}
+                            >
+                              <picture>
+                                {mobileImageUrl && (
+                                  <source
+                                    media="(max-width:420px)"
+                                    srcSet={`${mobileImageUrl}?auto=format,compress&w=420, ${mobileImageUrl}?auto=format,compress&w=630 2x`}
+                                  />
+                                )}
+                                {tabletImageUrl && (
+                                  <source
+                                    media="(max-width:800px)"
+                                    srcSet={`${tabletImageUrl}?auto=format,compress&w=800, ${tabletImageUrl}?auto=format,compress&w=1200 2x`}
+                                  />
+                                )}
+                                <source
+                                  srcSet={`${desktopImageUrl || mainImageUrl}?auto=format,compress&w=800`}
+                                />
+                                <img
+                                  src={`${mainImageUrl}?auto=format,compress&w=800`}
+                                  loading="lazy"
+                                  width="800"
+                                  height="auto"
+                                  alt={post.featuredImage?.alt || post.title}
+                                  draggable="false"
+                                />
+                              </picture>
+                            </Link>
+                          )}
+                          <h2 className="title">
+                            <Link href={`/blog/${post.slug}/`} rel="bookmark">
+                              {post.title}
+                            </Link>
+                          </h2>
+                          <p>{post.excerpt}</p>
                           <Link
+                            className="btn"
                             href={`/blog/${post.slug}/`}
-                            className="image"
-                            title={post.title}
-                            aria-label={`View blog article ${post.title}`}
+                            title="View full blog article"
+                            aria-label="View full blog article"
                           >
-                            <picture>
-                              {mobileImageUrl && (
-                                <source
-                                  media="(max-width:420px)"
-                                  srcSet={`${mobileImageUrl}?auto=format,compress&w=420, ${mobileImageUrl}?auto=format,compress&w=630 2x`}
-                                />
-                              )}
-                              {tabletImageUrl && (
-                                <source
-                                  media="(max-width:800px)"
-                                  srcSet={`${tabletImageUrl}?auto=format,compress&w=800, ${tabletImageUrl}?auto=format,compress&w=1200 2x`}
-                                />
-                              )}
-                              <source
-                                srcSet={`${desktopImageUrl || mainImageUrl}?auto=format,compress&w=800`}
-                              />
-                              <img
-                                src={`${mainImageUrl}?auto=format,compress&w=800`}
-                                loading="lazy"
-                                width="800"
-                                height="auto"
-                                alt={post.featuredImage?.alt || post.title}
-                                draggable="false"
-                              />
-                            </picture>
+                            View More
                           </Link>
-                        )}
-                        <h2 className="title">
-                          <Link href={`/blog/${post.slug}/`} rel="bookmark">
-                            {post.title}
-                          </Link>
-                        </h2>
-                        <p>{post.excerpt}</p>
-                        <Link
-                          className="btn"
-                          href={`/blog/${post.slug}/`}
-                          title="View full blog article"
-                          aria-label="View full blog article"
-                        >
-                          View More
-                        </Link>
+                        </div>
                       </div>
-                    </div>
-                    {index < posts.length - 1 && <hr />}
-                  </React.Fragment>
-                );
-              })
-            )}
+                      {index < posts.length - 1 && <hr />}
+                    </React.Fragment>
+                  );
+                })
+              )}
+            </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }

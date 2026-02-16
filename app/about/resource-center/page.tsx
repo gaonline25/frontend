@@ -13,6 +13,7 @@
 // app/resource-center/page.tsx
 import VideoGallery from "@/components/resource-center/VideoGallery";
 import { Metadata } from "next";
+import Script from "next/script";
 
 export const revalidate = 300; // ✅ Regenerate every 5 minutes
 
@@ -33,27 +34,44 @@ export async function generateMetadata(): Promise<Metadata> {
     const data = json?.docs?.[0] || {};
     const hero = data.heroSection || {};
 
-    const title = hero.title || "Video Gallery | Goldfingers Aesthetics";
+    const title =
+      hero.title || "Video Gallery | Goldfingers Aesthetics Florida Med Spa";
+
     const description =
       hero.metaDescription ||
-      "Watch Goldfingers Aesthetics videos featuring expert tips, procedures, and transformations from our Florida locations.";
+      "Explore expert video content from Goldfingers Aesthetics featuring Botox treatments, dermal fillers, patient transformations, and aesthetic education across Florida locations.";
+
     const ogImage =
+      hero.backgroundImage?.cloudinary_url ||
       hero.backgroundImage?.url ||
+      hero.mediaImage?.cloudinary_url ||
       hero.mediaImage?.url ||
       "https://www.goldfingersaesthetics.com/default-og.jpg";
+
+    const url = "https://www.goldfingersaesthetics.com/resource-center";
 
     return {
       title,
       description,
+      metadataBase: new URL("https://www.goldfingersaesthetics.com"),
       alternates: {
-        canonical: "https://www.goldfingersaesthetics.com/resource-center",
+        canonical: url,
       },
       openGraph: {
         title,
         description,
-        url: "https://www.goldfingersaesthetics.com/resource-center",
-        images: [{ url: ogImage }],
+        url,
         siteName: "Goldfingers Aesthetics",
+        type: "website",
+        locale: "en_US",
+        images: [
+          {
+            url: ogImage,
+            width: 1200,
+            height: 630,
+            alt: "Goldfingers Aesthetics Video Gallery",
+          },
+        ],
       },
       twitter: {
         card: "summary_large_image",
@@ -61,16 +79,28 @@ export async function generateMetadata(): Promise<Metadata> {
         description,
         images: [ogImage],
       },
+      robots: {
+        index: true,
+        follow: true,
+      },
+      keywords: [
+        "Goldfingers Aesthetics videos",
+        "Florida Botox videos",
+        "Dermal filler transformations",
+        "Medical spa video gallery",
+        "Aesthetic treatment videos Florida",
+        "Botox before and after video",
+      ],
     };
   } catch (error) {
-    console.error("Error generating metadata:", error);
     return {
-      title: "Video Gallery | Goldfingers Aesthetics",
+      title: "Video Gallery | Goldfingers Aesthetics Florida Med Spa",
       description:
-        "Discover educational and inspiring videos from Goldfingers Aesthetics.",
+        "Watch expert treatment videos and aesthetic transformations from Goldfingers Aesthetics.",
     };
   }
 }
+
 
 // ✅ Server-side data fetching (ISR)
 async function getVideoGalleryData() {
@@ -88,8 +118,44 @@ async function getVideoGalleryData() {
   return json?.docs?.[0] || null;
 }
 
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      name: "Video Gallery",
+      url: "https://www.goldfingersaesthetics.com/resource-center",
+      description:
+        "Video gallery featuring Botox treatments, dermal fillers, and aesthetic education from Goldfingers Aesthetics Florida.",
+      isPartOf: {
+        "@type": "WebSite",
+        name: "Goldfingers Aesthetics",
+        url: "https://www.goldfingersaesthetics.com",
+      },
+    },
+    {
+      "@type": "Organization",
+      name: "Goldfingers Aesthetics",
+      url: "https://www.goldfingersaesthetics.com",
+      logo: "https://www.goldfingersaesthetics.com/logo.png",
+    },
+  ],
+};
+
 // ✅ Page Component
 export default async function Resource() {
   const data = await getVideoGalleryData();
-  return <VideoGallery data={data} />;
+  return (
+    <>
+      <Script
+        id="video-gallery-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
+      <VideoGallery data={data} />
+    </>
+  );
 }

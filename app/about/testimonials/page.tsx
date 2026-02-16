@@ -13,6 +13,7 @@
 // app/testimonials/page.tsx
 import TestimonialsPage from "@/components/testimonials/TestimonialsPage";
 import { Metadata } from "next";
+import Script from "next/script";
 
 export const revalidate = 300; // ✅ Regenerate every 5 minutes
 
@@ -33,27 +34,44 @@ export async function generateMetadata(): Promise<Metadata> {
     const hero = data?.docs?.[0]?.heroSection || {};
 
     const title =
-      hero.title || "Client Testimonials | Goldfingers Aesthetics";
+      hero.title ||
+      "Client Reviews & Testimonials | Goldfingers Aesthetics Florida";
+
     const description =
       hero.metaDescription ||
-      "Discover what clients say about their experiences at Goldfingers Aesthetics — trusted experts in Florida’s aesthetic and wellness treatments.";
+      "Read real client testimonials from Goldfingers Aesthetics — Florida’s premier medical spa specializing in Botox, dermal fillers, and advanced aesthetic treatments. Trusted results. Proven expertise.";
+
     const ogImage =
+      hero.backgroundImage?.cloudinary_url ||
       hero.backgroundImage?.url ||
+      hero.mediaImage?.cloudinary_url ||
       hero.mediaImage?.url ||
       "https://www.goldfingersaesthetics.com/default-og.jpg";
+
+    const url = "https://www.goldfingersaesthetics.com/testimonials";
 
     return {
       title,
       description,
+      metadataBase: new URL("https://www.goldfingersaesthetics.com"),
       alternates: {
-        canonical: "https://www.goldfingersaesthetics.com/testimonials",
+        canonical: url,
       },
       openGraph: {
         title,
         description,
-        url: "https://www.goldfingersaesthetics.com/testimonials",
-        images: [{ url: ogImage }],
+        url,
         siteName: "Goldfingers Aesthetics",
+        type: "website",
+        locale: "en_US",
+        images: [
+          {
+            url: ogImage,
+            width: 1200,
+            height: 630,
+            alt: "Goldfingers Aesthetics Client Reviews",
+          },
+        ],
       },
       twitter: {
         card: "summary_large_image",
@@ -61,13 +79,24 @@ export async function generateMetadata(): Promise<Metadata> {
         description,
         images: [ogImage],
       },
+      robots: {
+        index: true,
+        follow: true,
+      },
+      keywords: [
+        "Goldfingers Aesthetics reviews",
+        "Florida med spa testimonials",
+        "Botox clinic reviews Florida",
+        "Dermal filler testimonials",
+        "Medical spa ratings Florida",
+        "Aesthetic clinic client feedback",
+      ],
     };
-  } catch (error) {
-    console.error("Error generating testimonials metadata:", error);
+  } catch {
     return {
-      title: "Client Testimonials | Goldfingers Aesthetics",
+      title: "Client Reviews & Testimonials | Goldfingers Aesthetics Florida",
       description:
-        "Read what clients say about Goldfingers Aesthetics — delivering trusted care and stunning results across Florida.",
+        "Read trusted client testimonials from Goldfingers Aesthetics across Florida.",
     };
   }
 }
@@ -88,8 +117,46 @@ async function getTestimonialsData() {
   return json?.docs?.[0] || null;
 }
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalBusiness",
+      name: "Goldfingers Aesthetics",
+      url: "https://www.goldfingersaesthetics.com",
+      logo: "https://www.goldfingersaesthetics.com/logo.png",
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.9", // <-- update with real data
+        reviewCount: "1000", // <-- update with real data
+      },
+    },
+    {
+      "@type": "WebPage",
+      name: "Client Reviews & Testimonials",
+      url: "https://www.goldfingersaesthetics.com/testimonials",
+      isPartOf: {
+        "@type": "WebSite",
+        name: "Goldfingers Aesthetics",
+        url: "https://www.goldfingersaesthetics.com",
+      },
+    },
+  ],
+};
+
 // ✅ Page Component (Server Component)
 export default async function Testimonials() {
   const testimonialsData = await getTestimonialsData();
-  return <TestimonialsPage testimonialsData={testimonialsData} />;
+  return (
+    <>
+      <Script
+        id="testimonials-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
+      <TestimonialsPage testimonialsData={testimonialsData} />
+    </>
+  );
 }
