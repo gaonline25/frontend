@@ -1450,13 +1450,93 @@
 
 
 
+// import LongwoodContent from "@/components/location/LongwoodContent";
+// import { fetchLongwoodPageData } from "@/lib/api/locations/fetchLongwoodPageData";
+// import type { Metadata } from "next";
+
+// export const revalidate = 60; // ✅ ISR: Regenerate every 60 seconds
+
+// // ✅ Server-side CMS data fetch
+// async function getData() {
+//   try {
+//     const data = await fetchLongwoodPageData();
+//     return data || null;
+//   } catch (error) {
+//     console.error("❌ Error fetching Longwood page data:", error);
+//     return null;
+//   }
+// }
+
+// // ✅ Dynamic SEO metadata generation
+// export async function generateMetadata(): Promise<Metadata> {
+//   const data = await getData();
+//   const seo = (data as any)?.seoSettings || {};
+
+//   return {
+//     title:
+//       seo.metaTitle ||
+//       "Goldfingers Aesthetics Longwood | Botox, Fillers & Med Spa Experts",
+//     description:
+//       seo.metaDescription ||
+//       "Goldfingers Aesthetics Longwood offers professional Botox, dermal fillers, and med spa treatments for rejuvenation and beauty in Central Florida.",
+//     openGraph: {
+//       title:
+//         seo.metaTitle ||
+//         "Goldfingers Aesthetics Longwood | Botox & Med Spa Experts",
+//       description:
+//         seo.metaDescription ||
+//         "Discover Goldfingers Aesthetics Longwood — your destination for Botox, fillers, and advanced med spa services in Florida.",
+//       images: [
+//         {
+//           url:
+//             seo.ogImage?.url ||
+//             "https://res.cloudinary.com/dk3v64cs6/image/upload/v1700000000/default-og.jpg",
+//           width: 1200,
+//           height: 630,
+//           alt: "Goldfingers Aesthetics Longwood Med Spa",
+//         },
+//       ],
+//     },
+//     keywords:
+//       seo.keywords ||
+//       "Longwood med spa, Botox Longwood, Fillers Longwood, Goldfingers Aesthetics, skincare Longwood, medspa near me, facial rejuvenation, Florida aesthetics",
+//     robots: seo.robots || "index, follow",
+//     alternates: { canonical: seo.canonicalUrl },
+//   };
+// }
+
+// // ✅ Server-rendered page entry
+// export default async function LongwoodPage() {
+//   const data = await getData();
+
+//   if (!data) {
+//     return (
+//       <main className="flex items-center justify-center min-h-[60vh]">
+//         <p className="text-gray-500 text-center">
+//           Unable to load Longwood page content.
+//         </p>
+//       </main>
+//     );
+//   }
+
+//   // ✅ Pass fetched CMS data to client component
+//   return <LongwoodContent data={data} />;
+// }
+
+
+
+
+
 import LongwoodContent from "@/components/location/LongwoodContent";
 import { fetchLongwoodPageData } from "@/lib/api/locations/fetchLongwoodPageData";
 import type { Metadata } from "next";
+import Script from "next/script";
 
-export const revalidate = 60; // ✅ ISR: Regenerate every 60 seconds
+export const revalidate = 60;
 
-// ✅ Server-side CMS data fetch
+// ==========================
+// ✅ Fetch CMS Data
+// ==========================
 async function getData() {
   try {
     const data = await fetchLongwoodPageData();
@@ -1467,25 +1547,40 @@ async function getData() {
   }
 }
 
-// ✅ Dynamic SEO metadata generation
+// ==========================
+// ✅ SEO Metadata (Local Optimized)
+// ==========================
 export async function generateMetadata(): Promise<Metadata> {
   const data = await getData();
   const seo = (data as any)?.seoSettings || {};
 
+  const url = "https://www.goldfingersaesthetics.com/longwood";
+
   return {
+    metadataBase: new URL("https://www.goldfingersaesthetics.com"),
+
     title:
       seo.metaTitle ||
-      "Goldfingers Aesthetics Longwood | Botox, Fillers & Med Spa Experts",
+      "Botox & Dermal Fillers in Longwood, FL | Goldfingers Aesthetics",
+
     description:
       seo.metaDescription ||
-      "Goldfingers Aesthetics Longwood offers professional Botox, dermal fillers, and med spa treatments for rejuvenation and beauty in Central Florida.",
+      "Looking for Botox in Longwood, FL? Goldfingers Aesthetics offers expert dermal fillers, lip injections, and advanced aesthetic treatments in Longwood.",
+
+    alternates: {
+      canonical: url,
+    },
+
     openGraph: {
       title:
-        seo.metaTitle ||
-        "Goldfingers Aesthetics Longwood | Botox & Med Spa Experts",
+        seo.metaTitle || "Goldfingers Aesthetics Longwood | Botox & Med Spa",
       description:
         seo.metaDescription ||
-        "Discover Goldfingers Aesthetics Longwood — your destination for Botox, fillers, and advanced med spa services in Florida.",
+        "Visit Goldfingers Aesthetics in Longwood, FL for Botox, fillers, and professional med spa treatments.",
+      url,
+      siteName: "Goldfingers Aesthetics",
+      type: "website",
+      locale: "en_US",
       images: [
         {
           url:
@@ -1493,19 +1588,95 @@ export async function generateMetadata(): Promise<Metadata> {
             "https://res.cloudinary.com/dk3v64cs6/image/upload/v1700000000/default-og.jpg",
           width: 1200,
           height: 630,
-          alt: "Goldfingers Aesthetics Longwood Med Spa",
+          alt: "Goldfingers Aesthetics Longwood Location",
         },
       ],
     },
-    keywords:
-      seo.keywords ||
-      "Longwood med spa, Botox Longwood, Fillers Longwood, Goldfingers Aesthetics, skincare Longwood, medspa near me, facial rejuvenation, Florida aesthetics",
-    robots: seo.robots || "index, follow",
-    alternates: { canonical: seo.canonicalUrl },
+
+    twitter: {
+      card: "summary_large_image",
+    },
+
+    robots: {
+      index: true,
+      follow: true,
+    },
+
+    keywords: [
+      "Botox Longwood FL",
+      "Dermal fillers Longwood",
+      "Med spa Longwood",
+      "Lip fillers Longwood",
+      "Goldfingers Aesthetics Longwood",
+      "Aesthetic clinic Longwood Florida",
+      "Botox near me Longwood",
+    ],
   };
 }
 
-// ✅ Server-rendered page entry
+// ==========================
+// ✅ Structured Data (Local Authority)
+// ==========================
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalClinic",
+      name: "Goldfingers Aesthetics Longwood",
+      url: "https://www.goldfingersaesthetics.com/longwood",
+      image:
+        "https://res.cloudinary.com/dk3v64cs6/image/upload/v1700000000/default-og.jpg",
+      telephone: "+14074923169",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "165 Wekiva Springs Road, Suite C-135",
+        addressLocality: "Longwood",
+        addressRegion: "FL",
+        postalCode: "32779",
+        addressCountry: "US",
+      },
+      areaServed: {
+        "@type": "City",
+        name: "Longwood",
+      },
+      medicalSpecialty: ["Aesthetic Medicine", "Cosmetic Dermatology"],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Aesthetic Services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "MedicalProcedure",
+              name: "Botox Injections",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "MedicalProcedure",
+              name: "Dermal Fillers",
+            },
+          },
+        ],
+      },
+    },
+    {
+      "@type": "WebPage",
+      name: "Botox & Dermal Fillers in Longwood, FL",
+      url: "https://www.goldfingersaesthetics.com/longwood",
+      isPartOf: {
+        "@type": "WebSite",
+        name: "Goldfingers Aesthetics",
+        url: "https://www.goldfingersaesthetics.com",
+      },
+    },
+  ],
+};
+
+// ==========================
+// ✅ Page Component
+// ==========================
 export default async function LongwoodPage() {
   const data = await getData();
 
@@ -1519,6 +1690,16 @@ export default async function LongwoodPage() {
     );
   }
 
-  // ✅ Pass fetched CMS data to client component
-  return <LongwoodContent data={data} />;
+  return (
+    <>
+      <Script
+        id="longwood-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
+      <LongwoodContent data={data} />
+    </>
+  );
 }

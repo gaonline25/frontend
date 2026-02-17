@@ -1133,13 +1133,92 @@
 
 
 
+// import StPetersburgPage from "@/components/location/StPetersburgPage";
+// import { fetchStPetersburgLocationPageComponent } from "@/lib/api/locations/fetchStPetersburgLocationPageComponent";
+// import type { Metadata } from "next";
+
+// export const revalidate = 60; // ✅ Regenerate every 60 seconds (ISR)
+
+// // ✅ Server-side fetch for CMS data
+// async function getData() {
+//   try {
+//     const data = await fetchStPetersburgLocationPageComponent();
+//     return data || null;
+//   } catch (error) {
+//     console.error("❌ Error fetching St. Petersburg page data:", error);
+//     return null;
+//   }
+// }
+
+// // ✅ Dynamic SEO generation from CMS
+// export async function generateMetadata(): Promise<Metadata> {
+//   const data = await getData();
+//   const seo = (data as any)?.seoSettings || {};
+
+//   return {
+//     title:
+//       seo.metaTitle ||
+//       "Goldfingers Aesthetics St. Petersburg | Botox, Fillers & Med Spa Experts",
+//     description:
+//       seo.metaDescription ||
+//       "Experience premium Botox, fillers, and medical spa treatments at Goldfingers Aesthetics St. Petersburg. Restore, refresh, and rejuvenate your natural beauty.",
+//     openGraph: {
+//       title:
+//         seo.metaTitle ||
+//         "Goldfingers Aesthetics St. Petersburg | Botox & Med Spa Experts",
+//       description:
+//         seo.metaDescription ||
+//         "Visit Goldfingers Aesthetics St. Petersburg — your trusted destination for facial rejuvenation, skincare, and body contouring in Florida.",
+//       images: [
+//         {
+//           url:
+//             seo.ogImage?.url ||
+//             "https://res.cloudinary.com/dk3v64cs6/image/upload/v1700000000/default-og.jpg",
+//           width: 1200,
+//           height: 630,
+//           alt: "Goldfingers Aesthetics St. Petersburg Med Spa",
+//         },
+//       ],
+//     },
+//     keywords:
+//       seo.keywords ||
+//       "St. Petersburg med spa, Botox St. Petersburg, Fillers St. Petersburg, Goldfingers Aesthetics, facial rejuvenation, skincare, Florida aesthetics, lip fillers",
+//     robots: seo.robots || "index, follow",
+//     alternates: { canonical: seo.canonicalUrl },
+//   };
+// }
+
+// // ✅ Page entry component
+// export default async function StPetersburgLocationPage() {
+//   const data = await getData();
+
+//   if (!data) {
+//     return (
+//       <main className="flex items-center justify-center min-h-[60vh]">
+//         <p className="text-gray-500 text-center">
+//           Unable to load St. Petersburg page content.
+//         </p>
+//       </main>
+//     );
+//   }
+
+//   // ✅ Pass CMS data to client-side page
+//   return <StPetersburgPage data={data} />;
+// }
+
+
+
+
 import StPetersburgPage from "@/components/location/StPetersburgPage";
 import { fetchStPetersburgLocationPageComponent } from "@/lib/api/locations/fetchStPetersburgLocationPageComponent";
 import type { Metadata } from "next";
+import Script from "next/script";
 
-export const revalidate = 60; // ✅ Regenerate every 60 seconds (ISR)
+export const revalidate = 60;
 
-// ✅ Server-side fetch for CMS data
+// ==========================
+// ✅ Secure Server Fetch
+// ==========================
 async function getData() {
   try {
     const data = await fetchStPetersburgLocationPageComponent();
@@ -1150,25 +1229,40 @@ async function getData() {
   }
 }
 
-// ✅ Dynamic SEO generation from CMS
+// ==========================
+// ✅ High-Intent SEO Metadata
+// ==========================
 export async function generateMetadata(): Promise<Metadata> {
   const data = await getData();
   const seo = (data as any)?.seoSettings || {};
+  const url = "https://www.goldfingersaesthetics.com/st-petersburg";
 
   return {
+    metadataBase: new URL("https://www.goldfingersaesthetics.com"),
+
     title:
       seo.metaTitle ||
-      "Goldfingers Aesthetics St. Petersburg | Botox, Fillers & Med Spa Experts",
+      "Botox & Dermal Fillers in St. Petersburg, FL | Goldfingers Aesthetics",
+
     description:
       seo.metaDescription ||
-      "Experience premium Botox, fillers, and medical spa treatments at Goldfingers Aesthetics St. Petersburg. Restore, refresh, and rejuvenate your natural beauty.",
+      "Looking for Botox in St. Petersburg, FL? Goldfingers Aesthetics offers expert dermal fillers, lip injections, and advanced anti-aging treatments at our St. Pete med spa.",
+
+    alternates: {
+      canonical: url,
+    },
+
     openGraph: {
       title:
         seo.metaTitle ||
-        "Goldfingers Aesthetics St. Petersburg | Botox & Med Spa Experts",
+        "Goldfingers Aesthetics St. Petersburg | Botox & Med Spa",
       description:
         seo.metaDescription ||
-        "Visit Goldfingers Aesthetics St. Petersburg — your trusted destination for facial rejuvenation, skincare, and body contouring in Florida.",
+        "Visit our St. Petersburg med spa for Botox, dermal fillers, and luxury aesthetic treatments delivered by trusted experts.",
+      url,
+      siteName: "Goldfingers Aesthetics",
+      type: "website",
+      locale: "en_US",
       images: [
         {
           url:
@@ -1176,19 +1270,110 @@ export async function generateMetadata(): Promise<Metadata> {
             "https://res.cloudinary.com/dk3v64cs6/image/upload/v1700000000/default-og.jpg",
           width: 1200,
           height: 630,
-          alt: "Goldfingers Aesthetics St. Petersburg Med Spa",
+          alt: "Goldfingers Aesthetics St. Petersburg Location",
         },
       ],
     },
-    keywords:
-      seo.keywords ||
-      "St. Petersburg med spa, Botox St. Petersburg, Fillers St. Petersburg, Goldfingers Aesthetics, facial rejuvenation, skincare, Florida aesthetics, lip fillers",
-    robots: seo.robots || "index, follow",
-    alternates: { canonical: seo.canonicalUrl },
+
+    twitter: {
+      card: "summary_large_image",
+    },
+
+    robots: {
+      index: true,
+      follow: true,
+    },
+
+    keywords: [
+      "Botox St Petersburg FL",
+      "Dermal fillers St Petersburg",
+      "Lip fillers St Pete",
+      "Med spa St Petersburg",
+      "Best Botox St Pete",
+      "Aesthetic clinic St Petersburg",
+      "Anti-aging treatments St Petersburg",
+      "Goldfingers Aesthetics St Petersburg",
+    ],
   };
 }
 
-// ✅ Page entry component
+// ==========================
+// ✅ Advanced Structured Data (Local Authority Boost)
+// ==========================
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalClinic",
+      name: "Goldfingers Aesthetics St. Petersburg",
+      url: "https://www.goldfingersaesthetics.com/st-petersburg",
+      image:
+        "https://res.cloudinary.com/dk3v64cs6/image/upload/v1700000000/default-og.jpg",
+      telephone: "+17273105120",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "1701 Central Ave N Ste 1739",
+        addressLocality: "St. Petersburg",
+        addressRegion: "FL",
+        postalCode: "33713",
+        addressCountry: "US",
+      },
+      areaServed: {
+        "@type": "City",
+        name: "St. Petersburg",
+      },
+      medicalSpecialty: ["Aesthetic Medicine", "Cosmetic Dermatology"],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Aesthetic Treatments",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "MedicalProcedure",
+              name: "Botox Injections",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "MedicalProcedure",
+              name: "Dermal Fillers",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "MedicalProcedure",
+              name: "Lip Fillers",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "MedicalProcedure",
+              name: "Facial Rejuvenation Treatments",
+            },
+          },
+        ],
+      },
+    },
+    {
+      "@type": "WebPage",
+      name: "Botox & Dermal Fillers in St. Petersburg, FL",
+      url: "https://www.goldfingersaesthetics.com/st-petersburg",
+      isPartOf: {
+        "@type": "WebSite",
+        name: "Goldfingers Aesthetics",
+        url: "https://www.goldfingersaesthetics.com",
+      },
+    },
+  ],
+};
+
+// ==========================
+// ✅ Page Component
+// ==========================
 export default async function StPetersburgLocationPage() {
   const data = await getData();
 
@@ -1202,6 +1387,16 @@ export default async function StPetersburgLocationPage() {
     );
   }
 
-  // ✅ Pass CMS data to client-side page
-  return <StPetersburgPage data={data} />;
+  return (
+    <>
+      <Script
+        id="st-petersburg-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
+      <StPetersburgPage data={data} />
+    </>
+  );
 }

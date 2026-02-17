@@ -1588,6 +1588,7 @@
 import ClermontPageComponent from "@/components/location/ClermontPageComponent.tsx";
 import { fetchClermontPageData } from "@/lib/api/locations/fetchClermontPageData";
 import type { Metadata } from "next";
+import Script from "next/script";
 
 export const revalidate = 60; // ✅ Regenerate every 60 seconds
 
@@ -1602,25 +1603,32 @@ async function getData() {
   }
 }
 
-// ✅ Dynamic SEO Metadata (auto from CMS)
 export async function generateMetadata(): Promise<Metadata> {
   const data = await getData();
   const seo = (data as any)?.seoSettings || {};
 
+  const url = "https://www.goldfingersaesthetics.com/clermont";
+
   return {
+    metadataBase: new URL("https://www.goldfingersaesthetics.com"),
     title:
       seo.metaTitle ||
-      "Goldfingers Aesthetics Clermont | Botox, Fillers & Med Spa Experts",
+      "Botox & Fillers in Clermont, FL | Goldfingers Aesthetics",
     description:
       seo.metaDescription ||
-      "Visit Goldfingers Aesthetics in Clermont for Botox, fillers, facials, and aesthetic enhancements. Trusted med spa specialists for rejuvenation and beauty.",
+      "Goldfingers Aesthetics Clermont offers expert Botox, dermal fillers, and advanced aesthetic treatments. Serving Clermont and surrounding Florida communities.",
+    alternates: {
+      canonical: url,
+    },
     openGraph: {
-      title:
-        seo.metaTitle ||
-        "Goldfingers Aesthetics Clermont | Rejuvenation & Med Spa",
+      title: seo.metaTitle || "Goldfingers Aesthetics Clermont | Med Spa",
       description:
         seo.metaDescription ||
-        "Book your appointment at Goldfingers Clermont and experience world-class Botox, fillers, and cosmetic care in Florida.",
+        "Visit our Clermont med spa for Botox, fillers, and luxury skincare treatments.",
+      url,
+      siteName: "Goldfingers Aesthetics",
+      type: "website",
+      locale: "en_US",
       images: [
         {
           url:
@@ -1628,17 +1636,67 @@ export async function generateMetadata(): Promise<Metadata> {
             "https://res.cloudinary.com/dk3v64cs6/image/upload/v1700000000/default-og.jpg",
           width: 1200,
           height: 630,
-          alt: "Goldfingers Aesthetics Clermont Med Spa",
+          alt: "Goldfingers Aesthetics Clermont",
         },
       ],
     },
-    keywords:
-      seo.keywords ||
-      "Clermont med spa, Botox Clermont, Fillers Clermont, Goldfingers Aesthetics, skincare, Florida beauty clinic",
-    robots: seo.robots || "index, follow",
-    alternates: { canonical: seo.canonicalUrl },
+    twitter: {
+      card: "summary_large_image",
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+    keywords: [
+      "Botox Clermont FL",
+      "Dermal fillers Clermont",
+      "Med spa Clermont",
+      "Clermont aesthetic clinic",
+      "Goldfingers Aesthetics Clermont",
+      "Botox near me Clermont",
+    ],
   };
 }
+
+// ==========================
+// ✅ Structured Data
+// ==========================
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalClinic",
+      name: "Goldfingers Aesthetics Clermont",
+      image:
+        "https://res.cloudinary.com/dk3v64cs6/image/upload/v1700000000/default-og.jpg",
+      url: "https://www.goldfingersaesthetics.com/clermont",
+      telephone: "+14074618193",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "861 Oakley Seaver Dr., Suite B",
+        addressLocality: "Clermont",
+        addressRegion: "FL",
+        postalCode: "34711",
+        addressCountry: "US",
+      },
+      areaServed: {
+        "@type": "City",
+        name: "Clermont",
+      },
+      medicalSpecialty: ["Aesthetic Medicine", "Cosmetic Dermatology"],
+    },
+    {
+      "@type": "WebPage",
+      name: "Goldfingers Aesthetics Clermont",
+      url: "https://www.goldfingersaesthetics.com/clermont",
+      isPartOf: {
+        "@type": "WebSite",
+        name: "Goldfingers Aesthetics",
+        url: "https://www.goldfingersaesthetics.com",
+      },
+    },
+  ],
+};
 
 // ✅ Server-rendered page component
 export default async function Clermont() {
@@ -1655,5 +1713,16 @@ export default async function Clermont() {
   }
 
   // ✅ Pass CMS data into the client component
-  return <ClermontPageComponent data={data} />;
+  return (
+    <>
+      <Script
+        id="clermont-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
+      <ClermontPageComponent data={data} />
+    </>
+  );
 }
