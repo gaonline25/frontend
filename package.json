@@ -14,7 +14,8 @@
     "nodemailer": "^7.0.11",
     "payload": "^3.61.1",
     "react": "^19.2.1",
-    "react-dom": "^19.2.1"
+    "react-dom": "^19.2.1",
+    "react-image-gallery": "^2.1.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

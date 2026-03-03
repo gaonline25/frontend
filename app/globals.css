@@ -30223,3 +30223,25 @@
         overflow: hidden;
       }
       
+      .somehehe {
+        margin-left: 0;
+      }
+      
+      /* Large screens only */
+      @media (min-width: 1024px) {
+        .somehehe {
+          margin-left: -35px;
+        }
+      }
+
+      .image-gallery-play-button, .image-gallery-fullscreen-button {
+        display: none !important;
+      }
+
+      .image-gallery-icon {
+        border: none !important;
+      }
+
+      .image-gallery-icon > svg {
+        height: 50px !important;
+      }

@@ -1686,6 +1686,7 @@ import {
   getResponsiveImageUrls,
   lexicalToHtml,
 } from "@/lib/api/medicalSpa/fetchPermanentMakeupPageComponent";
+import MyGallery from "@/components/ImageGallery";
 
 interface PermanentMakeupData {
   componentName: string;
@@ -2776,6 +2777,20 @@ const PermanentMakeupPage: React.FC<PermanentMakeupPageProps> = ({ data }) => {
           {renderSection(item.section)}
         </React.Fragment>
       ))}
+      <div
+        className="mod_column viewport container in-viewport"
+        data-s3-module="true"
+      >
+        <div className="row mt-30" data-api-key="content">
+          <div className="item">
+            <h2>Explore our gallery</h2>
+
+            <div>
+              <MyGallery />
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   );
 };
