@@ -100,7 +100,7 @@
 // // //             <Link href="/" className="logo">
 // // //               <picture className="">
 // // //                 <img
-// // //                   src="https://www.datocms-assets.com/105497/1692813206-logo-nav.svg"
+// // //                   src="https://i.postimg.cc/Df50kWx6/goldfingers-logo.png"
 // // //                   width={232}
 // // //                   height={65}
 // // //                   alt="Goldfingers Aesthetics Website Logo"
@@ -955,7 +955,7 @@
 //             <Link href="/" className="logo">
 //               <picture className="">
 //                 <img
-//                   src="https://www.datocms-assets.com/105497/1692813206-logo-nav.svg"
+//                   src="https://i.postimg.cc/Df50kWx6/goldfingers-logo.png"
 //                   width={232}
 //                   height={65}
 //                   alt="Goldfingers Aesthetics Website Logo"
@@ -1838,7 +1838,7 @@ export default function Navbar() {
               <a href="/" className="logo">
                 <picture className="">
                   <img
-                    src="https://www.datocms-assets.com/105497/1692813206-logo-nav.svg"
+                    src="https://i.postimg.cc/Df50kWx6/goldfingers-logo.png"
                     width={232}
                     height={65}
                     alt="Goldfingers Aesthetics Website Logo"
