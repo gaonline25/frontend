@@ -459,6 +459,11 @@ export default function CustomHead({
         content="85YZIFma5GlfgQ9POPKBPdzIsBwjRNuOn5XYlsIDrxI"
       />
 
+      <meta
+        name="google-site-verification"
+        content="jWIRWK_Yxj_qvej_9jKVix4KB0WEMetihRMSVRxPyTw"
+      />
+
       {/* External Scripts */}
       <Script
         src="https://code.jquery.com/jquery-3.7.1.min.js"
