@@ -464,6 +464,8 @@ export default function CustomHead({
         content="jWIRWK_Yxj_qvej_9jKVix4KB0WEMetihRMSVRxPyTw"
       />
 
+      <script src="https://analytics.ahrefs.com/analytics.js" data-key="5aWCpSKHS60hn8vTnyFepA" async></script>
+
       {/* External Scripts */}
       <Script
         src="https://code.jquery.com/jquery-3.7.1.min.js"
