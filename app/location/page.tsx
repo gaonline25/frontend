@@ -25122,33 +25122,8 @@
 import ProviderLocator from "./ProviderLocator";
 
 
-
-// Generate JSON-LD structured data for SEO
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "MedicalBusiness",
-  name: "Your Organization Name",
-  description: "Find healthcare providers and medical locations near you",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com",
-  logo: `${process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com"}/logo.png`,
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: "+1-XXX-XXX-XXXX",
-    contactType: "customer service",
-    areaServed: "US",
-    availableLanguage: "en",
-  },
-};
-
 export default function LocationsPage() {
   return (
-    <>
-      {/* Add JSON-LD structured data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <ProviderLocator />
-    </>
+    <ProviderLocator />
   );
 }
