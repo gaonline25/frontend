@@ -393,42 +393,15 @@
 
 import Script from "next/script";
 
-interface CustomHeadProps {
-  title?: string;
-  description?: string;
-  canonical?: string;
-  ogImage?: string;
-}
-
-export default function CustomHead({
-  title = "Goldfingers Aesthetics | Florida’s Premier Med Spa",
-  description = "Goldfingers Aesthetics offers expert Botox, fillers, and aesthetic treatments across Florida. Experience beauty, confidence, and innovation with our award-winning med spa.",
-  canonical = "https://www.goldfingersaesthetics.com/",
-  ogImage = "https://res.cloudinary.com/dk3v64cs6/image/upload/v1700000000/default-og.jpg",
-}: CustomHeadProps) {
+export default function CustomHead() {
   return (
     <>
-      {/* Basic meta */}
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-      {/* Canonical */}
-      <link rel="canonical" href={canonical} />
-
       {/* Favicon */}
       {/* <link rel="icon" href="/favicon.ico" type="image/x-icon" /> */}
 
       <link rel="icon" href="/newfav.svg" type="image/svg+xml" />
       <link rel="shortcut icon" href="/newfav.svg" />
       <link rel="apple-touch-icon" href="/newfav.svg" />
-
-      {/* Open Graph */}
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content={canonical} />
-      <meta property="og:image" content={ogImage} />
 
       {/* DNS Prefetch */}
       <link rel="dns-prefetch" href="https://www.datocms-assets.com/" />
@@ -464,7 +437,11 @@ export default function CustomHead({
         content="jWIRWK_Yxj_qvej_9jKVix4KB0WEMetihRMSVRxPyTw"
       />
 
-      <script src="https://analytics.ahrefs.com/analytics.js" data-key="5aWCpSKHS60hn8vTnyFepA" async></script>
+      <script
+        src="https://analytics.ahrefs.com/analytics.js"
+        data-key="5aWCpSKHS60hn8vTnyFepA"
+        async
+      ></script>
 
       {/* External Scripts */}
       <Script
