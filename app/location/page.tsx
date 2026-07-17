@@ -25119,66 +25119,9 @@
 
 // export default ProviderLocator;
 
-import { Metadata } from "next";
 import ProviderLocator from "./ProviderLocator";
 
-export const metadata: Metadata = {
-  title: "Find Healthcare Providers & Locations Near You | Provider Locator",
-  description:
-    "Discover qualified healthcare providers and medical locations in your area. Search by location, specialty, and provider name to find the best healthcare services near you.",
-  keywords:
-    "healthcare providers, medical locations, find doctors, healthcare services, medical professionals, provider search",
-  authors: [{ name: "Your Organization Name" }],
-  creator: "Your Organization Name",
-  publisher: "Your Organization Name",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://yourdomain.com"
-  ),
-  alternates: {
-    canonical: "/locations",
-  },
-  openGraph: {
-    title: "Find Healthcare Providers & Locations Near You",
-    description:
-      "Discover qualified healthcare providers and medical locations in your area.",
-    url: "/locations",
-    siteName: "Your Organization Name",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Provider Locator",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Find Healthcare Providers & Locations Near You",
-    description:
-      "Discover qualified healthcare providers and medical locations in your area.",
-    images: ["/twitter-image.jpg"],
-    creator: "@yourtwitterhandle",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-};
+
 
 // Generate JSON-LD structured data for SEO
 const jsonLd = {
