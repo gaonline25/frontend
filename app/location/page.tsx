@@ -25117,13 +25117,44 @@
 //   );
 // };
 
-// export default ProviderLocator;
 
+
+import type { Metadata } from "next";
 import ProviderLocator from "./ProviderLocator";
 
+const title = "Locations | Goldfingers Aesthetics";
+
+const description =
+  "Goldfingers Aesthetics offers expert Botox, fillers, and aesthetic treatments across Florida. Experience beauty, confidence, and innovation with our award-winning med spa.";
+
+const canonicalUrl = "https://goldfingersaesthetics.com/location";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://goldfingersaesthetics.com"),
+  title,
+  description,
+  alternates: {
+    canonical: canonicalUrl,
+  },
+  openGraph: {
+    title,
+    description,
+    url: canonicalUrl,
+    siteName: "Goldfingers Aesthetics",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function LocationsPage() {
-  return (
-    <ProviderLocator />
-  );
+  return <ProviderLocator />;
 }
