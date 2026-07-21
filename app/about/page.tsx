@@ -111,12 +111,12 @@ export async function generateMetadata(): Promise<Metadata> {
       hero.backgroundImage?.url ||
       "https://www.goldfingersaesthetics.com/default-og.jpg";
 
-    const url = "https://www.goldfingersaesthetics.com/about";
+    const url = "https://goldfingersaesthetics.com/about";
 
     return {
       title,
       description,
-      metadataBase: new URL("https://www.goldfingersaesthetics.com"),
+      metadataBase: new URL("https://goldfingersaesthetics.com"),
       alternates: {
         canonical: url,
       },
