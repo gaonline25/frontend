@@ -107,10 +107,10 @@ export async function generateMetadata(): Promise<Metadata> {
   const data = await getData();
   const seo = (data as any)?.seoSettings || {};
 
-  const url = "https://www.goldfingersaesthetics.com/medical-spa/juvederm";
+  const url = "https://goldfingersaesthetics.com/medical-spa/juvederm";
 
   return {
-    metadataBase: new URL("https://www.goldfingersaesthetics.com"),
+    metadataBase: new URL("https://goldfingersaesthetics.com"),
 
     title:
       seo.metaTitle ||
@@ -181,7 +181,7 @@ const structuredData = {
     {
       "@type": "MedicalBusiness",
       name: "Goldfingers Aesthetics",
-      url: "https://www.goldfingersaesthetics.com",
+      url: "https://goldfingersaesthetics.com",
       medicalSpecialty: "Cosmetic",
       areaServed: {
         "@type": "State",
@@ -201,11 +201,11 @@ const structuredData = {
     {
       "@type": "WebPage",
       name: "JUVÉDERM® Fillers",
-      url: "https://www.goldfingersaesthetics.com/medical-spa/juvederm",
+      url: "https://goldfingersaesthetics.com/medical-spa/juvederm",
       isPartOf: {
         "@type": "WebSite",
         name: "Goldfingers Aesthetics",
-        url: "https://www.goldfingersaesthetics.com",
+        url: "https://goldfingersaesthetics.com",
       },
     },
   ],
