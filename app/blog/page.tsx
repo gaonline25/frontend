@@ -304,13 +304,13 @@ export const revalidate = 300; // ✅ Rebuild every 5 minutes
 //   description:
 //     "Stay updated with the latest insights, trends, and tips in aesthetics, skincare, and wellness by Goldfingers Aesthetics.",
 //   alternates: {
-//     canonical: "https://www.goldfingersaesthetics.com/blog",
+//     canonical: "https://goldfingersaesthetics.com/blog",
 //   },
 //   openGraph: {
 //     title: "Blog | Goldfingers Aesthetics",
 //     description:
 //       "Stay updated with the latest insights, trends, and tips from Goldfingers Aesthetics.",
-//     url: "https://www.goldfingersaesthetics.com/blog",
+//     url: "https://goldfingersaesthetics.com/blog",
 //     siteName: "Goldfingers Aesthetics",
 //   },
 // };
@@ -322,9 +322,9 @@ export const metadata: Metadata = {
     "Medical Aesthetics Blog | Botox, Fillers & Skincare Insights | Goldfingers Aesthetics",
   description:
     "Explore expert insights on Botox, dermal fillers, skincare, and aesthetic treatments from Goldfingers Aesthetics — Florida’s premier medical spa.",
-  metadataBase: new URL("https://www.goldfingersaesthetics.com"),
+  metadataBase: new URL("https://goldfingersaesthetics.com"),
   alternates: {
-    canonical: "https://www.goldfingersaesthetics.com/blog",
+    canonical: "https://goldfingersaesthetics.com/blog",
   },
   openGraph: {
     title: "Medical Aesthetics Blog | Goldfingers Aesthetics Florida",
