@@ -115,10 +115,10 @@ export async function generateMetadata(): Promise<Metadata> {
   const seo = (data as any)?.seoSettings || {};
 
   const url =
-    "https://www.goldfingersaesthetics.com/medical-spa/restylane-contour";
+    "https://goldfingersaesthetics.com/medical-spa/restylane-contour";
 
   return {
-    metadataBase: new URL("https://www.goldfingersaesthetics.com"),
+    metadataBase: new URL("https://goldfingersaesthetics.com"),
 
     title:
       seo.metaTitle ||
@@ -186,7 +186,7 @@ const structuredData = {
     {
       "@type": "MedicalBusiness",
       name: "Goldfingers Aesthetics",
-      url: "https://www.goldfingersaesthetics.com",
+      url: "https://goldfingersaesthetics.com",
       medicalSpecialty: "Cosmetic",
       areaServed: {
         "@type": "State",
@@ -211,7 +211,7 @@ const structuredData = {
     {
       "@type": "WebPage",
       name: "Restylane Contour",
-      url: "https://www.goldfingersaesthetics.com/medical-spa/restylane-contour",
+      url: "https://goldfingersaesthetics.com/medical-spa/restylane-contour",
     },
   ],
 };
