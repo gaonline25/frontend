@@ -113,10 +113,10 @@ export async function generateMetadata(): Promise<Metadata> {
   const seo = (data as any)?.seoSettings || {};
 
   const url =
-    "https://www.goldfingersaesthetics.com/plastic-surgery/tummy-tuck";
+    "https://goldfingersaesthetics.com/plastic-surgery/tummy-tuck";
 
   return {
-    metadataBase: new URL("https://www.goldfingersaesthetics.com"),
+    metadataBase: new URL("https://goldfingersaesthetics.com"),
 
     title:
       seo.metaTitle ||
@@ -185,7 +185,7 @@ const structuredData = {
     {
       "@type": "MedicalBusiness",
       name: "Goldfingers Aesthetics",
-      url: "https://www.goldfingersaesthetics.com",
+      url: "https://goldfingersaesthetics.com",
       medicalSpecialty: "PlasticSurgery",
       areaServed: {
         "@type": "State",
