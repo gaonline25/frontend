@@ -1875,10 +1875,10 @@ export async function generateMetadata(): Promise<Metadata> {
   const data = await getData();
   const seo = (data as any)?.seoSettings || {};
 
-  const url = "https://www.goldfingersaesthetics.com/port-orange";
+  const url = "https://goldfingersaesthetics.com/port-orange";
 
   return {
-    metadataBase: new URL("https://www.goldfingersaesthetics.com"),
+    metadataBase: new URL("https://goldfingersaesthetics.com"),
 
     title:
       seo.metaTitle ||
@@ -1945,7 +1945,7 @@ const structuredData = {
     {
       "@type": "MedicalClinic",
       name: "Goldfingers Aesthetics Port Orange",
-      url: "https://www.goldfingersaesthetics.com/port-orange",
+      url: "https://goldfingersaesthetics.com/port-orange",
       image:
         "https://res.cloudinary.com/dk3v64cs6/image/upload/v1700000000/default-og.jpg",
       telephone: "+13868010024",
@@ -1993,11 +1993,11 @@ const structuredData = {
     {
       "@type": "WebPage",
       name: "Botox & Dermal Fillers in Port Orange, FL",
-      url: "https://www.goldfingersaesthetics.com/port-orange",
+      url: "https://goldfingersaesthetics.com/port-orange",
       isPartOf: {
         "@type": "WebSite",
         name: "Goldfingers Aesthetics",
-        url: "https://www.goldfingersaesthetics.com",
+        url: "https://goldfingersaesthetics.com",
       },
     },
   ],
