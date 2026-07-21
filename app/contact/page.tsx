@@ -1868,7 +1868,17 @@
 // Example usage in a Next.js page
 // app/contact/page.tsx (App Router)
 
+import type { Metadata } from "next";
 import ContactSection from '@/components/ContactSection';
+
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    alternates: {
+      canonical: "https://goldfingersaesthetics.com/contact",
+    },
+  };
+}
 
 async function getContactData() {
   const payloadUrl = process.env.NEXT_PUBLIC_PAYLOAD_URL || 'https://backend-orpin-six-56.vercel.app';
