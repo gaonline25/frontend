@@ -46,14 +46,14 @@ export async function generateMetadata(): Promise<Metadata> {
       hero.backgroundImage?.url ||
       hero.mediaImage?.cloudinary_url ||
       hero.mediaImage?.url ||
-      "https://www.goldfingersaesthetics.com/default-og.jpg";
+      "https://goldfingersaesthetics.com/default-og.jpg";
 
-    const url = "https://www.goldfingersaesthetics.com/resource-center";
+    const url = "https://goldfingersaesthetics.com/resource-center";
 
     return {
       title,
       description,
-      metadataBase: new URL("https://www.goldfingersaesthetics.com"),
+      metadataBase: new URL("https://goldfingersaesthetics.com"),
       alternates: {
         canonical: url,
       },
@@ -125,20 +125,20 @@ const structuredData = {
     {
       "@type": "WebPage",
       name: "Video Gallery",
-      url: "https://www.goldfingersaesthetics.com/resource-center",
+      url: "https://goldfingersaesthetics.com/resource-center",
       description:
         "Video gallery featuring Botox treatments, dermal fillers, and aesthetic education from Goldfingers Aesthetics Florida.",
       isPartOf: {
         "@type": "WebSite",
         name: "Goldfingers Aesthetics",
-        url: "https://www.goldfingersaesthetics.com",
+        url: "https://goldfingersaesthetics.com",
       },
     },
     {
       "@type": "Organization",
       name: "Goldfingers Aesthetics",
-      url: "https://www.goldfingersaesthetics.com",
-      logo: "https://www.goldfingersaesthetics.com/logo.png",
+      url: "https://goldfingersaesthetics.com",
+      logo: "https://goldfingersaesthetics.com/logo.png",
     },
   ],
 };
