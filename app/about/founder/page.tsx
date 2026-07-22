@@ -140,14 +140,14 @@ export async function generateMetadata(): Promise<Metadata> {
       hero.mainImage?.image?.url ||
       hero.backgroundImage?.image?.cloudinary_url ||
       hero.backgroundImage?.image?.url ||
-      "https://www.goldfingersaesthetics.com/default-og.jpg";
+      "https://goldfingersaesthetics.com/default-og.jpg";
 
-    const url = "https://www.goldfingersaesthetics.com/founders";
+    const url = "https://goldfingersaesthetics.com/founders";
 
     return {
       title,
       description,
-      metadataBase: new URL("https://www.goldfingersaesthetics.com"),
+      metadataBase: new URL("https://goldfingersaesthetics.com"),
       alternates: {
         canonical: url,
       },
@@ -223,19 +223,19 @@ const structuredData = {
     {
       "@type": "Organization",
       name: "Goldfingers Aesthetics",
-      url: "https://www.goldfingersaesthetics.com",
-      logo: "https://www.goldfingersaesthetics.com/logo.png",
+      url: "https://goldfingersaesthetics.com",
+      logo: "https://goldfingersaesthetics.com/logo.png",
       description:
         "Florida’s premier medical aesthetics brand specializing in Botox, dermal fillers, and advanced aesthetic treatments.",
     },
     {
       "@type": "WebPage",
       name: "Our Founders",
-      url: "https://www.goldfingersaesthetics.com/founders",
+      url: "https://goldfingersaesthetics.com/founders",
       isPartOf: {
         "@type": "WebSite",
         name: "Goldfingers Aesthetics",
-        url: "https://www.goldfingersaesthetics.com",
+        url: "https://goldfingersaesthetics.com",
       },
     },
   ],
