@@ -48,7 +48,7 @@ export async function generateMetadata(): Promise<Metadata> {
     "View our Kybella treatment before & after gallery and explore real patient results by Goldfingers Aesthetics.";
   const ogImage =
     seo.ogImage?.url ||
-    "https://www.goldfingersaesthetics.com/default-og.jpg";
+    "https://goldfingersaesthetics.com/default-og.jpg";
 
   return {
     title,
@@ -56,12 +56,12 @@ export async function generateMetadata(): Promise<Metadata> {
     keywords: seo.metaKeywords || "Kybella, Goldfingers Aesthetics, Gallery",
     alternates: {
       canonical:
-        "https://www.goldfingersaesthetics.com/gallery/non-surgical/kybella",
+        "https://goldfingersaesthetics.com/gallery/non-surgical/kybella",
     },
     openGraph: {
       title,
       description,
-      url: "https://www.goldfingersaesthetics.com/gallery/non-surgical/kybella",
+      url: "https://goldfingersaesthetics.com/gallery/non-surgical/kybella",
       images: [{ url: ogImage }],
       siteName: "Goldfingers Aesthetics",
     },
