@@ -2096,10 +2096,10 @@ async function getData() {
 export async function generateMetadata(): Promise<Metadata> {
   const data = await getData();
   const seo = (data as any)?.seoSettings || {};
-  const url = "https://www.goldfingersaesthetics.com/winter-park";
+  const url = "https://goldfingersaesthetics.com/winter-park";
 
   return {
-    metadataBase: new URL("https://www.goldfingersaesthetics.com"),
+    metadataBase: new URL("https://goldfingersaesthetics.com"),
 
     title:
       seo.metaTitle ||
@@ -2167,7 +2167,7 @@ const structuredData = {
     {
       "@type": "MedicalClinic",
       name: "Goldfingers Aesthetics Winter Park",
-      url: "https://www.goldfingersaesthetics.com/winter-park",
+      url: "https://goldfingersaesthetics.com/winter-park",
       image:
         "https://res.cloudinary.com/dk3v64cs6/image/upload/v1700000000/default-og.jpg",
       address: {
@@ -2219,11 +2219,11 @@ const structuredData = {
     {
       "@type": "WebPage",
       name: "Botox & Dermal Fillers in Winter Park, FL",
-      url: "https://www.goldfingersaesthetics.com/winter-park",
+      url: "https://goldfingersaesthetics.com/winter-park",
       isPartOf: {
         "@type": "WebSite",
         name: "Goldfingers Aesthetics",
-        url: "https://www.goldfingersaesthetics.com",
+        url: "https://goldfingersaesthetics.com",
       },
     },
   ],
