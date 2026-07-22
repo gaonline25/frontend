@@ -1607,10 +1607,10 @@ export async function generateMetadata(): Promise<Metadata> {
   const data = await getData();
   const seo = (data as any)?.seoSettings || {};
 
-  const url = "https://www.goldfingersaesthetics.com/clermont";
+  const url = "https://goldfingersaesthetics.com/clermont";
 
   return {
-    metadataBase: new URL("https://www.goldfingersaesthetics.com"),
+    metadataBase: new URL("https://goldfingersaesthetics.com"),
     title:
       seo.metaTitle ||
       "Botox & Fillers in Clermont, FL | Goldfingers Aesthetics",
@@ -1669,7 +1669,7 @@ const structuredData = {
       name: "Goldfingers Aesthetics Clermont",
       image:
         "https://res.cloudinary.com/dk3v64cs6/image/upload/v1700000000/default-og.jpg",
-      url: "https://www.goldfingersaesthetics.com/clermont",
+      url: "https://goldfingersaesthetics.com/clermont",
       telephone: "+14074618193",
       address: {
         "@type": "PostalAddress",
@@ -1688,11 +1688,11 @@ const structuredData = {
     {
       "@type": "WebPage",
       name: "Goldfingers Aesthetics Clermont",
-      url: "https://www.goldfingersaesthetics.com/clermont",
+      url: "https://goldfingersaesthetics.com/clermont",
       isPartOf: {
         "@type": "WebSite",
         name: "Goldfingers Aesthetics",
-        url: "https://www.goldfingersaesthetics.com",
+        url: "https://goldfingersaesthetics.com",
       },
     },
   ],
