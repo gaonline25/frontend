@@ -1554,10 +1554,10 @@ export async function generateMetadata(): Promise<Metadata> {
   const data = await getData();
   const seo = (data as any)?.seoSettings || {};
 
-  const url = "https://www.goldfingersaesthetics.com/longwood";
+  const url = "https://goldfingersaesthetics.com/longwood";
 
   return {
-    metadataBase: new URL("https://www.goldfingersaesthetics.com"),
+    metadataBase: new URL("https://goldfingersaesthetics.com"),
 
     title:
       seo.metaTitle ||
@@ -1623,7 +1623,7 @@ const structuredData = {
     {
       "@type": "MedicalClinic",
       name: "Goldfingers Aesthetics Longwood",
-      url: "https://www.goldfingersaesthetics.com/longwood",
+      url: "https://goldfingersaesthetics.com/longwood",
       image:
         "https://res.cloudinary.com/dk3v64cs6/image/upload/v1700000000/default-og.jpg",
       telephone: "+14074923169",
@@ -1664,11 +1664,11 @@ const structuredData = {
     {
       "@type": "WebPage",
       name: "Botox & Dermal Fillers in Longwood, FL",
-      url: "https://www.goldfingersaesthetics.com/longwood",
+      url: "https://goldfingersaesthetics.com/longwood",
       isPartOf: {
         "@type": "WebSite",
         name: "Goldfingers Aesthetics",
-        url: "https://www.goldfingersaesthetics.com",
+        url: "https://goldfingersaesthetics.com",
       },
     },
   ],
