@@ -1634,10 +1634,10 @@ export async function generateMetadata(): Promise<Metadata> {
   const data = await getData();
   const seo = (data as any)?.seoSettings || {};
 
-  const url = "https://www.goldfingersaesthetics.com/orlando";
+  const url = "https://goldfingersaesthetics.com/orlando";
 
   return {
-    metadataBase: new URL("https://www.goldfingersaesthetics.com"),
+    metadataBase: new URL("https://goldfingersaesthetics.com"),
 
     title:
       seo.metaTitle ||
@@ -1704,7 +1704,7 @@ const structuredData = {
     {
       "@type": "MedicalClinic",
       name: "Goldfingers Aesthetics Orlando",
-      url: "https://www.goldfingersaesthetics.com/orlando",
+      url: "https://goldfingersaesthetics.com/orlando",
       image:
         "https://res.cloudinary.com/dk3v64cs6/image/upload/v1700000000/default-og.jpg",
       telephone: "+14078214983",
@@ -1752,11 +1752,11 @@ const structuredData = {
     {
       "@type": "WebPage",
       name: "Botox & Dermal Fillers in Orlando, FL",
-      url: "https://www.goldfingersaesthetics.com/orlando",
+      url: "https://goldfingersaesthetics.com/orlando",
       isPartOf: {
         "@type": "WebSite",
         name: "Goldfingers Aesthetics",
-        url: "https://www.goldfingersaesthetics.com",
+        url: "https://goldfingersaesthetics.com",
       },
     },
   ],
