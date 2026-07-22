@@ -105,10 +105,10 @@ export async function generateMetadata(): Promise<Metadata> {
   const data = await getData();
   const seo = (data as any)?.seo || {};
 
-  const url = "https://www.goldfingersaesthetics.com/medical-spa/chin-fillers";
+  const url = "https://goldfingersaesthetics.com/medical-spa/chin-fillers";
 
   return {
-    metadataBase: new URL("https://www.goldfingersaesthetics.com"),
+    metadataBase: new URL("https://goldfingersaesthetics.com"),
 
     title:
       seo?.metaTitle ||
@@ -182,17 +182,17 @@ const structuredData = {
       provider: {
         "@type": "MedicalBusiness",
         name: "Goldfingers Aesthetics",
-        url: "https://www.goldfingersaesthetics.com",
+        url: "https://goldfingersaesthetics.com",
       },
     },
     {
       "@type": "WebPage",
       name: "Chin Fillers",
-      url: "https://www.goldfingersaesthetics.com/medical-spa/chin-fillers",
+      url: "https://goldfingersaesthetics.com/medical-spa/chin-fillers",
       isPartOf: {
         "@type": "WebSite",
         name: "Goldfingers Aesthetics",
-        url: "https://www.goldfingersaesthetics.com",
+        url: "https://goldfingersaesthetics.com",
       },
     },
   ],
