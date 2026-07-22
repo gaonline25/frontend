@@ -1839,10 +1839,10 @@ export async function generateMetadata(): Promise<Metadata> {
   const data = await getData();
   const seo = (data as any)?.seoSettings || {};
 
-  const url = "https://www.goldfingersaesthetics.com/ocala";
+  const url = "https://goldfingersaesthetics.com/ocala";
 
   return {
-    metadataBase: new URL("https://www.goldfingersaesthetics.com"),
+    metadataBase: new URL("https://goldfingersaesthetics.com"),
 
     title:
       seo.metaTitle ||
@@ -1907,7 +1907,7 @@ const structuredData = {
     {
       "@type": "MedicalClinic",
       name: "Goldfingers Aesthetics Ocala",
-      url: "https://www.goldfingersaesthetics.com/ocala",
+      url: "https://goldfingersaesthetics.com/ocala",
       image:
         "https://res.cloudinary.com/dk3v64cs6/image/upload/v1700000000/default-og.jpg",
       telephone: "+13527070707",
@@ -1948,11 +1948,11 @@ const structuredData = {
     {
       "@type": "WebPage",
       name: "Botox & Dermal Fillers in Ocala, FL",
-      url: "https://www.goldfingersaesthetics.com/ocala",
+      url: "https://goldfingersaesthetics.com/ocala",
       isPartOf: {
         "@type": "WebSite",
         name: "Goldfingers Aesthetics",
-        url: "https://www.goldfingersaesthetics.com",
+        url: "https://goldfingersaesthetics.com",
       },
     },
   ],
