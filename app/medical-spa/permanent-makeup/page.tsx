@@ -115,10 +115,10 @@ export async function generateMetadata(): Promise<Metadata> {
   const seo = (data as any)?.seoSettings || {};
 
   const url =
-    "https://www.goldfingersaesthetics.com/medical-spa/permanent-makeup";
+    "https://goldfingersaesthetics.com/medical-spa/permanent-makeup";
 
   return {
-    metadataBase: new URL("https://www.goldfingersaesthetics.com"),
+    metadataBase: new URL("https://goldfingersaesthetics.com"),
 
     title:
       seo.metaTitle ||
@@ -187,7 +187,7 @@ const structuredData = {
     {
       "@type": "MedicalBusiness",
       name: "Goldfingers Aesthetics",
-      url: "https://www.goldfingersaesthetics.com",
+      url: "https://goldfingersaesthetics.com",
       medicalSpecialty: "Cosmetic",
       areaServed: {
         "@type": "State",
@@ -212,7 +212,7 @@ const structuredData = {
     {
       "@type": "WebPage",
       name: "Permanent Makeup",
-      url: "https://www.goldfingersaesthetics.com/medical-spa/permanent-makeup",
+      url: "https://goldfingersaesthetics.com/medical-spa/permanent-makeup",
     },
   ],
 };
