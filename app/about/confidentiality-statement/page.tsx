@@ -114,15 +114,15 @@ export async function generateMetadata(): Promise<Metadata> {
       hero.backgroundImage?.url ||
       hero.mediaImage?.cloudinary_url ||
       hero.mediaImage?.url ||
-      "https://www.goldfingersaesthetics.com/default-og.jpg";
+      "https://goldfingersaesthetics.com/default-og.jpg";
 
     const url =
-      "https://www.goldfingersaesthetics.com/confidentiality-statement";
+      "https://goldfingersaesthetics.com/confidentiality-statement";
 
     return {
       title,
       description,
-      metadataBase: new URL("https://www.goldfingersaesthetics.com"),
+      metadataBase: new URL("https://goldfingersaesthetics.com"),
       alternates: {
         canonical: url,
       },
@@ -195,19 +195,19 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   name: "Confidentiality & Privacy Policy",
-  url: "https://www.goldfingersaesthetics.com/confidentiality-statement",
+  url: "https://goldfingersaesthetics.com/confidentiality-statement",
   description:
     "Goldfingers Aesthetics confidentiality and privacy statement outlining patient data protection, HIPAA-aligned practices, and medical information security across Florida locations.",
   inLanguage: "en-US",
   isPartOf: {
     "@type": "WebSite",
     name: "Goldfingers Aesthetics",
-    url: "https://www.goldfingersaesthetics.com",
+    url: "https://goldfingersaesthetics.com",
   },
   publisher: {
     "@type": "MedicalBusiness",
     name: "Goldfingers Aesthetics",
-    url: "https://www.goldfingersaesthetics.com",
+    url: "https://goldfingersaesthetics.com",
   },
 };
 
