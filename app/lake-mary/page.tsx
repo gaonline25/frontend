@@ -1917,10 +1917,10 @@ export async function generateMetadata(): Promise<Metadata> {
   const data = await getData();
   const seo = (data as any)?.seoSettings || {};
 
-  const url = "https://www.goldfingersaesthetics.com/lake-mary";
+  const url = "https://goldfingersaesthetics.com/lake-mary";
 
   return {
-    metadataBase: new URL("https://www.goldfingersaesthetics.com"),
+    metadataBase: new URL("https://goldfingersaesthetics.com"),
 
     title:
       seo.metaTitle ||
@@ -1988,7 +1988,7 @@ const structuredData = {
       name: "Goldfingers Aesthetics Lake Mary",
       image:
         "https://res.cloudinary.com/dk3v64cs6/image/upload/v1700000000/default-og.jpg",
-      url: "https://www.goldfingersaesthetics.com/lake-mary",
+      url: "https://goldfingersaesthetics.com/lake-mary",
       telephone: "+14074053388",
       address: {
         "@type": "PostalAddress",
@@ -2010,11 +2010,11 @@ const structuredData = {
     {
       "@type": "WebPage",
       name: "Goldfingers Aesthetics Lake Mary",
-      url: "https://www.goldfingersaesthetics.com/lake-mary",
+      url: "https://goldfingersaesthetics.com/lake-mary",
       isPartOf: {
         "@type": "WebSite",
         name: "Goldfingers Aesthetics",
-        url: "https://www.goldfingersaesthetics.com",
+        url: "https://goldfingersaesthetics.com",
       },
     },
   ],
