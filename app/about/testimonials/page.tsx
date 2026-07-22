@@ -46,14 +46,14 @@ export async function generateMetadata(): Promise<Metadata> {
       hero.backgroundImage?.url ||
       hero.mediaImage?.cloudinary_url ||
       hero.mediaImage?.url ||
-      "https://www.goldfingersaesthetics.com/default-og.jpg";
+      "https://goldfingersaesthetics.com/default-og.jpg";
 
-    const url = "https://www.goldfingersaesthetics.com/testimonials";
+    const url = "https://goldfingersaesthetics.com/testimonials";
 
     return {
       title,
       description,
-      metadataBase: new URL("https://www.goldfingersaesthetics.com"),
+      metadataBase: new URL("https://goldfingersaesthetics.com"),
       alternates: {
         canonical: url,
       },
@@ -123,8 +123,8 @@ const structuredData = {
     {
       "@type": "MedicalBusiness",
       name: "Goldfingers Aesthetics",
-      url: "https://www.goldfingersaesthetics.com",
-      logo: "https://www.goldfingersaesthetics.com/logo.png",
+      url: "https://goldfingersaesthetics.com",
+      logo: "https://goldfingersaesthetics.com/logo.png",
       aggregateRating: {
         "@type": "AggregateRating",
         ratingValue: "4.9", // <-- update with real data
@@ -134,11 +134,11 @@ const structuredData = {
     {
       "@type": "WebPage",
       name: "Client Reviews & Testimonials",
-      url: "https://www.goldfingersaesthetics.com/testimonials",
+      url: "https://goldfingersaesthetics.com/testimonials",
       isPartOf: {
         "@type": "WebSite",
         name: "Goldfingers Aesthetics",
-        url: "https://www.goldfingersaesthetics.com",
+        url: "https://goldfingersaesthetics.com",
       },
     },
   ],
