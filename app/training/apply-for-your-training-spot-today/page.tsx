@@ -106,10 +106,26 @@
 
 import TrainingApplication from "@/components/training/apply-for-your-training-spot-today/TrainingApplication";
 import { transformTrainingData } from "@/components/transformTrainingData";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://goldfingersaesthetics.com"),
+
+  title: "Apply for Training | Goldfingers Aesthetics Academy",
+
+  description:
+    "Launch your career in aesthetics. Apply today for a training spot at Goldfingers Aesthetics Academy and learn from Florida's top injection experts.",
+
+  alternates: {
+    canonical:
+      "https://goldfingersaesthetics.com/training/apply-for-your-training-spot-today",
+  },
+};
 
 async function getTrainingApplicationData() {
   const payloadUrl =
-    process.env.NEXT_PUBLIC_PAYLOAD_URL || "https://backend-orpin-six-56.vercel.app";
+    process.env.NEXT_PUBLIC_PAYLOAD_URL ||
+    "https://backend-orpin-six-56.vercel.app";
 
   try {
     const response = await fetch(
@@ -124,7 +140,7 @@ async function getTrainingApplicationData() {
     }
 
     const data = await response.json();
-    
+
     // Transform the Payload data to component format
     return transformTrainingData(data.docs[0]);
   } catch (error) {
