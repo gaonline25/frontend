@@ -8438,7 +8438,7 @@
         display: block;
       }
       .partial_blog_index .content a.image picture img {
-        max-width: 320px;
+        width: 100%;
         object-fit: cover;
       }
       .partial_blog_index .no-results {
