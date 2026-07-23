@@ -6075,16 +6075,15 @@ function LocationsBannerSection({
                           )}
                         </p>
                       </span>
-                      {loc.phone && loc.phoneLink && (
-                        <a
-                          className="tel ppc-href"
-                          href={loc.phoneLink}
-                          aria-label="Call Goldfingers Aesthetics on the phone"
-                          role="link"
-                        >
-                          <span className="ppc-number">{loc.phone}</span>
-                        </a>
-                      )}
+{loc.phone && (
+  <a
+    className="tel ppc-href"
+    href={`tel:${loc.phone.replace(/\D/g, "")}`}
+    aria-label={`Call ${loc.name} at ${loc.phone}`}
+  >
+    <span className="ppc-number">{loc.phone}</span>
+  </a>
+)}
                     </span>
                   </span>
                 </span>
