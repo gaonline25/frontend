@@ -122,6 +122,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+  source: "/medical-spa/face-lift",
+  destination: "/medical-spa/liquid-facelift",
+  permanent: true,
+},
+      {
         source: "/gallery/non-surgical/svvsv",
         destination: "/gallery/non-surgical",
         permanent: true,
