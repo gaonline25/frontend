@@ -12,7 +12,25 @@
 
 
 // app/non-surgical/botox/page.tsx
+
+import type { Metadata } from "next";
 import BotoxGallery from "@/components/gallery/non-surgical/botox/BotoxGallery";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    metadataBase: new URL("https://goldfingersaesthetics.com"),
+
+    title: "Botox Before & After Photos | Goldfingers Aesthetics",
+
+    description:
+      "View real Botox before and after photos from Goldfingers Aesthetics patients. See the natural, refreshed results our expert injectors deliver.",
+
+    alternates: {
+      canonical:
+        "https://goldfingersaesthetics.com/gallery/non-surgical/botox",
+    },
+  };
+}
 
 export const revalidate = 60; // ✅ incremental static regeneration (every 60 s)
 
