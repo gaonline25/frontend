@@ -538,6 +538,20 @@
 
 import React from "react";
 import { fetchPrivacyPolicyComponent, getResponsiveImageUrls } from "@/lib/api/fetchPrivacyPolicy";
+import type { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Privacy Policy | Goldfingers Aesthetics",
+
+    description:
+      "Learn how Goldfingers Aesthetics collects, uses, and protects your personal information. Review our full privacy policy before using our website.",
+
+    alternates: {
+      canonical: "https://goldfingersaesthetics.com/privacy-policy",
+    },
+  };
+}
 
 const PrivacyPolicy: React.FC = async () => {
   const componentData = await fetchPrivacyPolicyComponent();
