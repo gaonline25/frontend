@@ -132,6 +132,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+  source: "/gallery/non-surgical/svdsvs",
+  destination: "/gallery/non-surgical",
+  permanent: true,
+},
+      {
         source: "/gallery/non-surgical/dgdgd",
         destination: "/gallery/non-surgical",
         permanent: true,
