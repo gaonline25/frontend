@@ -275,6 +275,23 @@ import {
   getResponsiveImageUrls,
 } from "@/lib/api/fetchTermsAndConditionsComponent";
 
+import type { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    metadataBase: new URL("https://goldfingersaesthetics.com"),
+
+    title: "Terms and Conditions | Goldfingers Aesthetics",
+
+    description:
+      "Read the terms and conditions for using the Goldfingers Aesthetics website and services. Please review these policies before booking an appointment.",
+
+    alternates: {
+      canonical: "https://goldfingersaesthetics.com/terms-and-conditions",
+    },
+  };
+}
+
 const TermsAndConditions: React.FC = async () => {
   const componentData = await fetchTermsAndConditionsComponent();
 
