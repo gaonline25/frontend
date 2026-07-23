@@ -8429,7 +8429,7 @@
       }
       .partial_blog_index .content a.image {
         display: block;
-        width: 300px;
+        width: 100%;
         overflow: hidden;
         border-radius: 6px;
         margin-bottom: 20px;
