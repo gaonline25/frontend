@@ -1869,11 +1869,15 @@
 // app/contact/page.tsx (App Router)
 
 import type { Metadata } from "next";
-import ContactSection from '@/components/ContactSection';
-
+import ContactSection from "@/components/ContactSection";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
+    title: "Contact Us | Goldfingers Aesthetics Med Spa Florida",
+
+    description:
+      "Contact Goldfingers Aesthetics to schedule your consultation. Reach out to any of our Florida med spa locations for Botox, fillers, and skincare.",
+
     alternates: {
       canonical: "https://goldfingersaesthetics.com/contact",
     },
@@ -1881,25 +1885,24 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 async function getContactData() {
-  const payloadUrl = process.env.NEXT_PUBLIC_PAYLOAD_URL || 'https://backend-orpin-six-56.vercel.app';
+  const payloadUrl =
+    process.env.NEXT_PUBLIC_PAYLOAD_URL ||
+    "https://backend-orpin-six-56.vercel.app";
 
   try {
     const response = await fetch(`${payloadUrl}/api/contact-component`, {
-      next: { revalidate: 60 }, // Revalidate every 60 seconds
+      next: { revalidate: 60 },
     });
 
     if (!response.ok) {
-      throw new Error('Failed to fetch contact data');
+      throw new Error("Failed to fetch contact data");
     }
 
     const data = await response.json();
 
-    
-
-    // Assuming you have one contact component, get the first one
     return data.docs[0];
   } catch (error) {
-    console.error('Error fetching contact data:', error);
+    console.error("Error fetching contact data:", error);
     return null;
   }
 }
