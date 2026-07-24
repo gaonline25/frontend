@@ -150,7 +150,7 @@ const DowntownTampaPageComponent: React.FC<DowntownTampaPageComponentProps> = ({
                   <p>
                     <a
                       className="btn white"
-                      href="https://www.vagaro.com/goldfigersaestheticstampa"
+                      href="https://www.vagaro.com/goldfingersaestheticsdowntowntampa"
                       role="button"
                     >
                       Book now
