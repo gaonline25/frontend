@@ -1753,7 +1753,7 @@ export default function Navbar() {
   return (
     <>
       <header className="partial_nav_header light" data-s3-partial="">
-        <div className="upper-nav"> 
+        <div className="upper-nav">
           <nav>
             <ul className="partial_nav">
               <li className="partial_nav_item contact desktop-only">
@@ -2177,6 +2177,11 @@ export default function Navbar() {
                       <li className="partial_nav_item" data-s3-partial="">
                         <Link href="/specials-and-rewards/gift-cards/">
                           Gift Cards
+                        </Link>
+                      </li>
+                      <li className="partial_nav_item" data-s3-partial="">
+                        <Link href="/packages/">
+                          Packages
                         </Link>
                       </li>
                     </ul>

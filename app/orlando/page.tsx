@@ -668,7 +668,6 @@
 
 // // // export default OrlandoPage;
 
-
 // // "use client";
 
 // // import React, { useEffect, useState } from "react";
@@ -1527,10 +1526,6 @@
 
 // // export default OrlandoPage;
 
-
-
-
-
 // import OrlandoPage from "@/components/location/OrlandoPage";
 // import { fetchOrlandoLocationPageComponent } from "@/lib/api/locations/fetchOrlandoLocationPageComponent";
 // import type { Metadata } from "next";
@@ -1603,9 +1598,6 @@
 //   // ✅ Pass CMS data to client component
 //   return <OrlandoPage data={data} />;
 // }
-
-
-
 
 import OrlandoPage from "@/components/location/OrlandoPage";
 import { fetchOrlandoLocationPageComponent } from "@/lib/api/locations/fetchOrlandoLocationPageComponent";

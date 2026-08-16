@@ -1,0 +1,296 @@
+/* ===========================================================
+   Location Offers section — plain custom CSS (no Tailwind)
+   =========================================================== */
+
+   .xkqm__zr {
+    --ink: #0d1520;
+    --paper: #ffffff;
+    --cream: #fdf4ea;
+    --cream-strong: #f7e6d0;
+    --line: #e7d9c4;
+    --gold: #b08a54;
+    --muted: #8b8b8b;
+    --strike: #9b9b9b;
+    --radius: 18px;
+  
+    background: var(--paper);
+    color: var(--ink);
+    padding: clamp(32px, 6vw, 72px) clamp(16px, 4vw, 40px);
+    
+  }
+  
+  .wlph__vn {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .qmsx__hd {
+    text-align: center;
+    margin-bottom: clamp(20px, 3vw, 32px);
+    z-index: 1 !important;
+  }
+  
+  .kprt__tt {
+    
+    font-weight: 600;
+    font-size: clamp(1.9rem, 5vw, 3rem);
+    line-height: 1.1;
+    margin: 0 0 10px;
+  }
+  
+  .vnwx__sb {
+    margin: 0 auto;
+    max-width: 46ch;
+    color: var(--muted);
+    font-size: clamp(0.95rem, 2.4vw, 1.05rem);
+    line-height: 1.6;
+  }
+  
+  /* ---------- Location tabs ---------- */
+  .lmrt__tb {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: clamp(20px, 4vw, 36px) 0;
+  }
+  
+  .xzqp__bt {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    color: var(--ink);
+    border-radius: 999px;
+    padding: 12px 22px;
+    font: inherit;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition:
+      background 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+  
+  .xzqp__bt:hover {
+    transform: translateY(-1px);
+    border-color: var(--gold);
+  }
+  
+  .xzqp__bt:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+  
+  .xzqp__bt[aria-selected="true"] {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: #fff;
+  }
+  
+  .xzqp__pn {
+    font-size: 1rem;
+    line-height: 1;
+  }
+  
+  /* ---------- Location panel ---------- */
+  .nwvk__ls {
+    display: grid;
+    gap: clamp(20px, 3vw, 32px);
+  }
+  
+  .nwvk__im {
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: var(--paper);
+    padding: clamp(18px, 3vw, 32px);
+    scroll-margin-top: 90px;
+  }
+  
+  .nwvk__hd {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 14px;
+    padding-bottom: clamp(14px, 2vw, 22px);
+    border-bottom: 1px solid var(--line);
+  }
+  
+  .nwvk__pn {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--ink);
+    font-size: 1.1rem;
+  }
+  
+  .nwvk__nm {
+    
+    font-weight: 600;
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    line-height: 1.15;
+    margin: 0;
+  }
+  
+  .nwvk__ad {
+    margin: 4px 0 0;
+    color: var(--muted);
+    font-size: clamp(0.85rem, 2.4vw, 1rem);
+    line-height: 1.45;
+  }
+  
+  /* ---------- Offer cards ---------- */
+  .pkql__gd {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(14px, 2.4vw, 24px);
+    margin-top: clamp(16px, 2.5vw, 26px);
+  }
+  
+  @media (min-width: 760px) {
+    .pkql__gd {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  
+  @media (min-width: 1180px) {
+    .pkql__gd_wd {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  
+  .pkql__im {
+    display: flex;
+    flex-direction: column;
+    background: var(--cream);
+    border: 1px solid var(--cream-strong);
+    border-radius: var(--radius);
+    padding: clamp(18px, 3vw, 28px);
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+  
+  .pkql__im:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px -22px rgba(13, 21, 32, 0.35);
+  }
+  
+  .pkql__tg {
+    align-self: flex-start;
+    background: var(--cream-strong);
+    color: var(--gold);
+    border-radius: 999px;
+    padding: 7px 14px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  
+  .pkql__nm {
+    
+    font-weight: 600;
+    font-size: clamp(1.45rem, 4.4vw, 1.9rem);
+    line-height: 1.15;
+    margin: 18px 0 0;
+  }
+  
+  .pkql__mt {
+    margin: 10px 0 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+  
+  .pkql__pr {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: clamp(18px, 3vw, 28px) 0 clamp(16px, 2.5vw, 22px);
+  }
+  
+  .pkql__nw {
+    
+    font-size: clamp(2rem, 7vw, 2.75rem);
+    font-weight: 600;
+    line-height: 1;
+  }
+  
+  .pkql__ws {
+    color: var(--strike);
+    text-decoration: line-through;
+    font-size: clamp(1rem, 3.4vw, 1.15rem);
+    font-weight: 600;
+  }
+  
+  .pkql__ct {
+    margin-top: auto;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    background: var(--ink);
+    color: #fff;
+    padding: 16px 20px;
+    font: inherit;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+      background 0.2s ease,
+      transform 0.15s ease;
+  }
+  
+  .pkql__ct:hover {
+    background: #1b2939;
+    color: #fff;
+  }
+  
+  .pkql__ct:active {
+    transform: scale(0.985);
+  }
+  
+  .pkql__ct:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+  }
+  
+  .xkqm__nt {
+    margin: clamp(22px, 4vw, 34px) auto 0;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+    max-width: 60ch;
+    line-height: 1.6;
+  }
+  
+  @media (max-width: 400px) {
+    .nwvk__im {
+      border-radius: 18px;
+      padding: 16px;
+    }
+    .nwvk__pn {
+      width: 38px;
+      height: 38px;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .pkql__im,
+    .xzqp__bt,
+    .pkql__ct {
+      transition: none;
+    }
+  }
+  .xzqp__pn{color:var(--gold);font-size:1.05rem;flex-shrink:0}
+  .xzqp__bt[aria-selected="true"] .xzqp__pn{color:#e7c99b}
+  .nwvk__pn svg{color:#f0d3a8;font-size:1.25rem}
