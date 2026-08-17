@@ -324,7 +324,7 @@ export default function LocationOffers() {
                   height="1206"
                   alt="nurse smiling with woman"
                   draggable="false"
-                  src="https://images.unsplash.com/photo-1659823300663-93084f1795d7?q=80&w=2062&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src="https://res.cloudinary.com/dq0bv42no/image/upload/v1760248172/payload-media/1694632205-banner-left-with-text-5.avif?auto=format,compress&amp;w=1994"
                 />
               </picture>
             </div>
