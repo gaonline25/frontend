@@ -22,13 +22,13 @@ export const metadata: Metadata = {
   description:
     "Explore our Dermal Filler before and after gallery showcasing real patient transformations at Goldfingers Aesthetics.",
   alternates: {
-    canonical: "https://goldfingersaesthetics.com/non-surgical/dermal-filler",
+    canonical: "https://goldfingersaesthetics.com/gallery/non-surgical/dermal-filler",
   },
   openGraph: {
     title: "Dermal Filler Gallery | Goldfingers Aesthetics",
     description:
       "Real Dermal Filler transformations by Goldfingers Aesthetics. Explore our gallery of natural, refined results.",
-    url: "https://goldfingersaesthetics.com/non-surgical/dermal-filler",
+    url: "https://goldfingersaesthetics.com/gallery/non-surgical/dermal-filler",
     type: "website",
     images: [
       {
