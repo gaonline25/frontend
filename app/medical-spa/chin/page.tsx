@@ -105,7 +105,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const data = await getData();
   const seo = (data as any)?.seo || {};
 
-  const url = "https://goldfingersaesthetics.com/medical-spa/chin-fillers";
+  const url = "https://goldfingersaesthetics.com/medical-spa/chin";
 
   return {
     metadataBase: new URL("https://goldfingersaesthetics.com"),
@@ -188,7 +188,7 @@ const structuredData = {
     {
       "@type": "WebPage",
       name: "Chin Fillers",
-      url: "https://goldfingersaesthetics.com/medical-spa/chin-fillers",
+      url: "https://goldfingersaesthetics.com/medical-spa/chin",
       isPartOf: {
         "@type": "WebSite",
         name: "Goldfingers Aesthetics",
