@@ -23,13 +23,13 @@ export const metadata: Metadata = {
   description:
     "Explore our Cheek Contour before and after results at Goldfingers Aesthetics. Real transformations that highlight your natural beauty.",
   alternates: {
-    canonical: "https://goldfingersaesthetics.com/non-surgical/cheek-contour",
+    canonical: "https://goldfingersaesthetics.com/gallery/non-surgical/cheek-contour",
   },
   openGraph: {
     title: "Cheek Contour Gallery | Goldfingers Aesthetics",
     description:
       "Explore our Cheek Contour transformations and real client results.",
-    url: "https://goldfingersaesthetics.com/non-surgical/cheek-contour",
+    url: "https://goldfingersaesthetics.com/gallery/non-surgical/cheek-contour",
     type: "website",
     images: [
       {
