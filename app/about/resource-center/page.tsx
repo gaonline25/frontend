@@ -48,7 +48,7 @@ export async function generateMetadata(): Promise<Metadata> {
       hero.mediaImage?.url ||
       "https://goldfingersaesthetics.com/default-og.jpg";
 
-    const url = "https://goldfingersaesthetics.com/resource-center";
+   const url = "https://goldfingersaesthetics.com/about/resource-center";
 
     return {
       title,
@@ -125,7 +125,7 @@ const structuredData = {
     {
       "@type": "WebPage",
       name: "Video Gallery",
-      url: "https://goldfingersaesthetics.com/resource-center",
+      url: "https://goldfingersaesthetics.com/about/resource-center",
       description:
         "Video gallery featuring Botox treatments, dermal fillers, and aesthetic education from Goldfingers Aesthetics Florida.",
       isPartOf: {
