@@ -142,7 +142,7 @@ export async function generateMetadata(): Promise<Metadata> {
       hero.backgroundImage?.image?.url ||
       "https://goldfingersaesthetics.com/default-og.jpg";
 
-    const url = "https://goldfingersaesthetics.com/founders";
+    const url = "https://goldfingersaesthetics.com/about/founder";
 
     return {
       title,
@@ -231,7 +231,7 @@ const structuredData = {
     {
       "@type": "WebPage",
       name: "Our Founders",
-      url: "https://goldfingersaesthetics.com/founders",
+      url: "https://goldfingersaesthetics.com/about/founder",
       isPartOf: {
         "@type": "WebSite",
         name: "Goldfingers Aesthetics",
