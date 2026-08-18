@@ -117,7 +117,7 @@ export async function generateMetadata(): Promise<Metadata> {
       "https://goldfingersaesthetics.com/default-og.jpg";
 
     const url =
-      "https://goldfingersaesthetics.com/confidentiality-statement";
+       "https://goldfingersaesthetics.com/about/confidentiality-statement";
 
     return {
       title,
@@ -195,7 +195,7 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   name: "Confidentiality & Privacy Policy",
-  url: "https://goldfingersaesthetics.com/confidentiality-statement",
+  url: "https://goldfingersaesthetics.com/about/confidentiality-statement",
   description:
     "Goldfingers Aesthetics confidentiality and privacy statement outlining patient data protection, HIPAA-aligned practices, and medical information security across Florida locations.",
   inLanguage: "en-US",
