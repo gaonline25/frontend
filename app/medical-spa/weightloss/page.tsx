@@ -113,7 +113,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const data = await getData();
   const seo = (data as any)?.seoSettings || {};
 
-  const url = "https://goldfingersaesthetics.com/medical-spa/weight-loss";
+ const url = "https://goldfingersaesthetics.com/medical-spa/weightloss";
 
   return {
     metadataBase: new URL("https://goldfingersaesthetics.com"),
