@@ -172,7 +172,7 @@ const Sitemap: React.FC = () => {
                     </a>
                   </li>
                   <li
-                    className="partial_nav_item tresio-nav__list-item level-2 blog"
+                    className="partial_nav_item tresio-nav__list-item level-2 blog tresio-nav__list-item--has-children"
                     data-s3-partial=""
                     role="menuitem"
                   >
@@ -180,9 +180,222 @@ const Sitemap: React.FC = () => {
                       href="/blog/"
                       className="tresio-nav__link level-2"
                       role="link"
+                      aria-haspopup="true"
+                      aria-expanded="false"
                     >
                       Blog
                     </a>
+                    <a
+                      className="tresio-nav__dropdown level-2"
+                      href="#"
+                      aria-label="Blog dropdown"
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                      role="button"
+                    >
+                      ▾
+                    </a>
+                    <ul
+                      className="tresio-nav__list level-3"
+                      role="menu"
+                      aria-label="Submenu"
+                    >
+                      <li
+                        className="partial_nav_item tresio-nav__list-item level-3 hyaluronic-acid-benefits"
+                        data-s3-partial=""
+                        role="menuitem"
+                      >
+                        <a
+                          href="/blog/hyaluronic-acid-benefits/"
+                          className="tresio-nav__link level-3"
+                          role="link"
+                        >
+                          Hyaluronic Acid Benefits
+                        </a>
+                      </li>
+                      <li
+                        className="partial_nav_item tresio-nav__list-item level-3 daxxify-vs-botox"
+                        data-s3-partial=""
+                        role="menuitem"
+                      >
+                        <a
+                          href="/blog/daxxify-vs-botox/"
+                          className="tresio-nav__link level-3"
+                          role="link"
+                        >
+                          DAXXIFY® vs. BOTOX®
+                        </a>
+                      </li>
+                      <li
+                        className="partial_nav_item tresio-nav__list-item level-3 how-long-does-botox-last"
+                        data-s3-partial=""
+                        role="menuitem"
+                      >
+                        <a
+                          href="/blog/how-long-does-botox-last/"
+                          className="tresio-nav__link level-3"
+                          role="link"
+                        >
+                          How Long Does BOTOX® Last?
+                        </a>
+                      </li>
+                      <li
+                        className="partial_nav_item tresio-nav__list-item level-3 xeomin-vs-botox"
+                        data-s3-partial=""
+                        role="menuitem"
+                      >
+                        <a
+                          href="/blog/xeomin-vs-botox/"
+                          className="tresio-nav__link level-3"
+                          role="link"
+                        >
+                          XEOMIN® vs. BOTOX®
+                        </a>
+                      </li>
+                      <li
+                        className="partial_nav_item tresio-nav__list-item level-3 how-much-does-botox-cost"
+                        data-s3-partial=""
+                        role="menuitem"
+                      >
+                        <a
+                          href="/blog/how-much-does-botox-cost/"
+                          className="tresio-nav__link level-3"
+                          role="link"
+                        >
+                          How Much Does BOTOX® Cost?
+                        </a>
+                      </li>
+                      <li
+                        className="partial_nav_item tresio-nav__list-item level-3 dysport-vs-botox"
+                        data-s3-partial=""
+                        role="menuitem"
+                      >
+                        <a
+                          href="/blog/dysport-vs-botox/"
+                          className="tresio-nav__link level-3"
+                          role="link"
+                        >
+                          Dysport vs. BOTOX®
+                        </a>
+                      </li>
+                      <li
+                        className="partial_nav_item tresio-nav__list-item level-3 what-is-hyaluronic-acid"
+                        data-s3-partial=""
+                        role="menuitem"
+                      >
+                        <a
+                          href="/blog/what-is-hyaluronic-acid/"
+                          className="tresio-nav__link level-3"
+                          role="link"
+                        >
+                          What Is Hyaluronic Acid?
+                        </a>
+                      </li>
+                      <li
+                        className="partial_nav_item tresio-nav__list-item level-3 what-does-hyaluronic-acid-do"
+                        data-s3-partial=""
+                        role="menuitem"
+                      >
+                        <a
+                          href="/blog/what-does-hyaluronic-acid-do/"
+                          className="tresio-nav__link level-3"
+                          role="link"
+                        >
+                          What Does Hyaluronic Acid Do?
+                        </a>
+                      </li>
+                      <li
+                        className="partial_nav_item tresio-nav__list-item level-3 why-the-baby-boomers-are-putting-the-boom-in-aesthetics"
+                        data-s3-partial=""
+                        role="menuitem"
+                      >
+                        <a
+                          href="/blog/why-the-baby-boomers-are-putting-the-boom-in-aesthetics/"
+                          className="tresio-nav__link level-3"
+                          role="link"
+                        >
+                          Why the Baby Boomers Are Putting the Boom in Aesthetics
+                        </a>
+                      </li>
+                      <li
+                        className="partial_nav_item tresio-nav__list-item level-3 wondering-about-about-the-differences-between-botox-vs-dermal-fillers-read-this-article-to-find-out-more"
+                        data-s3-partial=""
+                        role="menuitem"
+                      >
+                        <a
+                          href="/blog/wondering-about-about-the-differences-between-botox-vs-dermal-fillers-read-this-article-to-find-out-more/"
+                          className="tresio-nav__link level-3"
+                          role="link"
+                        >
+                          Wondering about about the differences between Botox vs. Dermal Fillers read this article to find out more!
+                        </a>
+                      </li>
+                      <li
+                        className="partial_nav_item tresio-nav__list-item level-3 the-importance-of-customized-aesthetic-treatment-plans-for-older-adults"
+                        data-s3-partial=""
+                        role="menuitem"
+                      >
+                        <a
+                          href="/blog/the-importance-of-customized-aesthetic-treatment-plans-for-older-adults/"
+                          className="tresio-nav__link level-3"
+                          role="link"
+                        >
+                          The Importance of Customized Aesthetic Treatment Plans for Older Adults
+                        </a>
+                      </li>
+                      <li
+                        className="partial_nav_item tresio-nav__list-item level-3 eleven-ways-to-maintain-a-youthful-appearance"
+                        data-s3-partial=""
+                        role="menuitem"
+                      >
+                        <a
+                          href="/blog/eleven-ways-to-maintain-a-youthful-appearance/"
+                          className="tresio-nav__link level-3"
+                          role="link"
+                        >
+                          Eleven Ways to Maintain a Youthful Appearance
+                        </a>
+                      </li>
+                      <li
+                        className="partial_nav_item tresio-nav__list-item level-3 facials-the-what-why-and-when"
+                        data-s3-partial=""
+                        role="menuitem"
+                      >
+                        <a
+                          href="/blog/facials-the-what-why-and-when/"
+                          className="tresio-nav__link level-3"
+                          role="link"
+                        >
+                          Facials: the What, Why and When
+                        </a>
+                      </li>
+                      <li
+                        className="partial_nav_item tresio-nav__list-item level-3 botox-101"
+                        data-s3-partial=""
+                        role="menuitem"
+                      >
+                        <a
+                          href="/blog/botox-101/"
+                          className="tresio-nav__link level-3"
+                          role="link"
+                        >
+                          Botox 101
+                        </a>
+                      </li>
+                      <li
+                        className="partial_nav_item tresio-nav__list-item level-3 10-benefits-of-dermal-fillers"
+                        data-s3-partial=""
+                        role="menuitem"
+                      >
+                        <a
+                          href="/blog/10-benefits-of-dermal-fillers/"
+                          className="tresio-nav__link level-3"
+                          role="link"
+                        >
+                          10 Benefits of Dermal Fillers
+                        </a>
+                      </li>
+                    </ul>
                   </li>
                   <li
                     className="partial_nav_item tresio-nav__list-item level-2 videos"
