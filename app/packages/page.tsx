@@ -218,28 +218,28 @@ const LOCATIONS: Location[] = [
       },
     ],
   },
-  {
-    id: "south-tampa",
-    name: "SOUTH TAMPA",
-    address: "27440 Cashford Cir #102, Wesley Chapel, FL 33544",
-    offers: [
-      {
-        tag: "tag name",
-        name: "SOUTH TAMPA - GOLDFINGERS AESTHETICS",
-        meta: "goldfinger",
-        price: "$550",
-        was: "$600",
-        link: "https://www.clover.com/pay-widgets/57329562-b13d-4c75-9808-d1fbe5bf0321",
-      },
-      //   {
-      //     tag: "Fuller. Softer.",
-      //     name: "Juv\u00E9derm\u00AE Lip Filler",
-      //     meta: "1 syringe",
-      //     price: "$550",
-      //     was: "$750+",
-      //   },
-    ],
-  },
+//   {
+//     id: "south-tampa",
+//     name: "SOUTH TAMPA",
+//     address: "27440 Cashford Cir #102, Wesley Chapel, FL 33544",
+//     offers: [
+//       {
+//         tag: "tag name",
+//         name: "SOUTH TAMPA - GOLDFINGERS AESTHETICS",
+//         meta: "goldfinger",
+//         price: "$550",
+//         was: "$600",
+//         link: "https://www.clover.com/pay-widgets/57329562-b13d-4c75-9808-d1fbe5bf0321",
+//       },
+//       //   {
+//       //     tag: "Fuller. Softer.",
+//       //     name: "Juv\u00E9derm\u00AE Lip Filler",
+//       //     meta: "1 syringe",
+//       //     price: "$550",
+//       //     was: "$750+",
+//       //   },
+//     ],
+//   },
 ];
 
 function Pin({ className }: { className?: string }) {
