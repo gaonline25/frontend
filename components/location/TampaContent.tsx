@@ -200,7 +200,7 @@ function TampaContent({ data }: { data: PageData | null }) {
                 <p>
                   <a
                     className="btn white"
-                    href="https://www.vagaro.com/goldfigersaestheticstampa"
+                    href="https://www.vagaro.com/tampaatgoldfingersaesthetics"
                     role="button"
                   >
                     Book now

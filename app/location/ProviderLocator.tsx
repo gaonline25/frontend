@@ -2568,7 +2568,7 @@ const ProviderLocator = () => {
   }, [map, locations, providers, calculateDistance]);
 
   const SCHEDULE_URLS: Record<string, string> = {
-    "northdale tampa": "https://www.vagaro.com/goldfigersaestheticstampa",
+    "tampa (northdale)": "https://www.vagaro.com/tampaatgoldfingersaesthetics",
 
     "daytona beach": "https://www.vagaro.com/goldfingersaestheticsdaytona",
 
