@@ -19,7 +19,7 @@ export function PaginatedGallerySchema({
 }: PaginatedGallerySchemaProps) {
   if (!pageData) return null;
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yoursite.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://goldfingersaesthetics.com";
   const fullBaseUrl = `${siteUrl}${baseUrl}`;
   const currentPageUrl =
     currentPage === 1 ? fullBaseUrl : `${fullBaseUrl}/${currentPage}`;

@@ -7,7 +7,7 @@ interface SchemaProps {
 export function JuvedermGallerySchema({ pageData }: SchemaProps) {
   if (!pageData) return null;
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yoursite.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://goldfingersaesthetics.com";
   const pageUrl = `${siteUrl}/gallery/juvederm`;
 
   // Build image gallery schema

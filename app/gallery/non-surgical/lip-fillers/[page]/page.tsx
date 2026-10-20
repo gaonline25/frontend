@@ -568,7 +568,7 @@ export async function generateMetadata({
       ? getResponsiveImageUrls({ desktop: seo.ogImage }).desktop
       : null;
 
-    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yoursite.com";
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://goldfingersaesthetics.com";
     const baseUrl = `${siteUrl}/gallery/non-surgical/lip-fillers`;
     const pageUrl = currentPage === 1 ? baseUrl : `${baseUrl}/${currentPage}`;
 
@@ -657,7 +657,7 @@ export async function generateMetadata({
 
 // Fallback metadata function
 function generateFallbackMetadata(currentPage: number): Metadata {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yoursite.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://goldfingersaesthetics.com";
   const baseUrl = `${siteUrl}/gallery/non-surgical/lip-fillers`;
   const pageUrl = currentPage === 1 ? baseUrl : `${baseUrl}/${currentPage}`;
 

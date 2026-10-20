@@ -71,7 +71,7 @@ export async function generateMetadata(): Promise<Metadata> {
       ? getResponsiveImageUrls({ desktop: seo.ogImage }).desktop
       : null;
 
-    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yoursite.com";
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://goldfingersaesthetics.com";
     const pageUrl = `${siteUrl}/gallery/juvederm`; // Update with your actual path
 
     return {

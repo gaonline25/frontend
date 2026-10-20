@@ -12,8 +12,8 @@
 // export default function CustomHead({
 //   title = "Your Site Title",
 //   description = "Your site description here",
-//   canonical = "https://yoursite.com/",
-//   ogImage = "https://yoursite.com/og-image.jpg",
+//   canonical = "https://goldfingersaesthetics.com/",
+//   ogImage = "https://goldfingersaesthetics.com/og-image.jpg",
 // }: CustomHeadProps) {
 //   return (
 //     <>
@@ -256,8 +256,8 @@
 // export default function CustomHead({
 //   title = "Your Site Title",
 //   description = "Your site description here",
-//   canonical = "https://yoursite.com/",
-//   ogImage = "https://yoursite.com/og-image.jpg"
+//   canonical = "https://goldfingersaesthetics.com/",
+//   ogImage = "https://goldfingersaesthetics.com/og-image.jpg"
 // }: CustomHeadProps) {
 //   return (
 //     <>
