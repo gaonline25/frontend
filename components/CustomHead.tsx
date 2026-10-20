@@ -10,8 +10,8 @@
 // }
 
 // export default function CustomHead({
-//   title = "Your Site Title",
-//   description = "Your site description here",
+//   title = "Goldfingers Aesthetics",
+//   description = "Goldfingers Aesthetics",
 //   canonical = "https://goldfingersaesthetics.com/",
 //   ogImage = "https://goldfingersaesthetics.com/og-image.jpg",
 // }: CustomHeadProps) {
@@ -254,8 +254,8 @@
 // }
 
 // export default function CustomHead({
-//   title = "Your Site Title",
-//   description = "Your site description here",
+//   title = "Goldfingers Aesthetics",
+//   description = "Goldfingers Aesthetics",
 //   canonical = "https://goldfingersaesthetics.com/",
 //   ogImage = "https://goldfingersaesthetics.com/og-image.jpg"
 // }: CustomHeadProps) {
@@ -369,7 +369,7 @@
 //                 siteSettings: {
 //                   galleryType: "default",
 //                   enableCookiesPolicy: false,
-//                   client: "Your Site Name",
+//                   client: "Goldfingers Aesthetics",
 //                   galleryConfig: null,
 //                 },
 //                 s3TrackingConfig: { disableFormFields: true },
@@ -461,7 +461,7 @@ export default function CustomHead() {
             siteSettings: {
               galleryType: "default",
               enableCookiesPolicy: false,
-              client: "Your Site Name",
+              client: "Goldfingers Aesthetics",
               galleryConfig: null,
             },
             s3TrackingConfig: { disableFormFields: true },
