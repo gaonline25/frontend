@@ -1480,11 +1480,11 @@ const sitemapData = [
     slug: "liquid-chin-jaw-contouring",
     url: "/gallery/non-surgical/liquid-chin-and-jaw-contouring/",
   },
-  {
-    title: "Liquid Rhinoplasty",
-    slug: "liquid-rhinoplasty",
-    url: "/gallery/non-surgical/liquid-rhinoplasty/",
-  },
+  // {
+  //   title: "Liquid Rhinoplasty",
+  //   slug: "liquid-rhinoplasty",
+  //   url: "/gallery/non-surgical/liquid-rhinoplasty/",
+  // },
   {
     title: "Marionette Lines",
     slug: "marionette-lines",
@@ -1951,11 +1951,11 @@ export default function Navbar() {
                               Liquid Chin &amp; Jaw Contouring
                             </Link>
                           </li>
-                          <li className="partial_nav_item" data-s3-partial="">
+                          {/* <li className="partial_nav_item" data-s3-partial="">
                             <Link href="/gallery/non-surgical/liquid-rhinoplasty/">
                               Liquid Rhinoplasty
                             </Link>
-                          </li>
+                          </li> */}
                           <li className="partial_nav_item" data-s3-partial="">
                             <Link href="/gallery/non-surgical/marionette-lines/">
                               Marionette Lines
